@@ -18,12 +18,12 @@
 <resources>
 
     <!-- App -->
-    <string name="app_name">SlimOTA</string>
-    <string name="app_title">SlimOTA</string>
+    <string name="app_name">XenonHD Updates</string>
+    <string name="app_title">XenonHD Updates</string>
 
     <!-- Categories -->
-    <string name="ota_category">OTA</string>
-    <string name="links_category">Links</string>
+    <string name="ota_category">Update info</string>
+    <string name="links_category">Download links</string>
 
     <!-- ROM info -->
     <string name="latest_version">Latest version: %1$s</string>
@@ -31,10 +31,10 @@
     <string name="system_uptodate">Your system is up to date</string>
 
     <!-- Check update -->
-    <string name="check_update_title">Check update</string>
-    <string name="last_check_summary">Last check: %1$s</string>
+    <string name="check_update_title">Check for updates</string>
+    <string name="last_check_summary">Last checked: %1$s</string>
     <string name="last_check_never">Never</string>
-    <string name="check_update_failed">Can\'t check update</string>
+    <string name="check_update_failed">Can\'t check for updates, make sure your device is supported by XenonHD</string>
     <string name="no_update_available">No update available</string>
 
     <!-- Update interval -->
@@ -43,10 +43,10 @@
     <string name="autoupdate_disabled">Automatic update is disabled</string>
 
     <!-- Notification -->
-    <string name="notification_title">ROM Update</string>
-    <string name="notification_message">New update available!</string>
+    <string name="notification_title">XenonHD Update</string>
+    <string name="notification_message">A new version is available!</string>
 
     <!-- Dialog -->
-    <string name="dialog_message">Checking for ROM updates, please wait…</string>
+    <string name="dialog_message">Checking for updates, please wait…</string>
 
 </resources>
