@@ -32,6 +32,6 @@
   <string name="autoupdate_enabled">Actualización automática activada</string>
   <string name="autoupdate_disabled">Actualización automática desactivada</string>
   <string name="notification_title">Actualización XenonHD</string>
-  <string name="notification_message">¡Una nueva version está disponible!</string>
+  <string name="notification_message">¡Una nueva versión está disponible!</string>
   <string name="dialog_message">Buscando actualizaciones, por favor espere&#8230;</string>
 </resources>

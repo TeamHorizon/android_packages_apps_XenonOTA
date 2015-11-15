@@ -16,11 +16,12 @@
   ~ limitations under the License.
   -->
 <resources>
-  <string name="app_name">обновления XenonHD</string>
-  <string name="app_title">обновления XenonHD</string>
+  <string name="app_name">Обновления XenonHD</string>
+  <string name="app_title">Обновления XenonHD</string>
   <string name="ota_category">Информация об обновлении</string>
+  <string name="links_category">Ссылки на загрузку</string>
   <string name="latest_version">Последняя версия: %1$s</string>
-  <string name="unknown">Неизвестен</string>
+  <string name="unknown">Неизвестно</string>
   <string name="system_uptodate">Ваша система обновлена до последней версии</string>
   <string name="check_update_title">Проверка обновлений</string>
   <string name="last_check_summary">Последняя проверка: %1$s</string>
@@ -30,7 +31,7 @@
   <string name="interval_title">Интервал автоматического обновления</string>
   <string name="autoupdate_enabled">Автоматическое обновление включено</string>
   <string name="autoupdate_disabled">Автоматическое обновление отключено</string>
-  <string name="notification_title">обновления XenonHD</string>
+  <string name="notification_title">Обновления XenonHD</string>
   <string name="notification_message">Новая версия доступна!</string>
-  <string name="dialog_message">Проверка обновлений, пожалуйста подождите&#8230;</string>
+  <string name="dialog_message">Проверка обновлений, пожалуйста подождите...</string>
 </resources>
