@@ -16,22 +16,29 @@
   ~ limitations under the License.
   -->
 <resources>
+  <!-- App -->
   <string name="app_name">Ενημερώσεις XenonHD</string>
   <string name="app_title">Ενημερώσεις XenonHD</string>
+  <!-- Categories -->
   <string name="ota_category">Πληροφορίες Ενημέρωσης</string>
-  <string name="links_category">Συνδέσεις για κατέβασμα</string>
+  <string name="links_category">Λήψη συνδέσμων</string>
+  <!-- ROM info -->
   <string name="latest_version">Τελευταία έκδοση: %1$s</string>
   <string name="unknown">Άγνωστο</string>
   <string name="system_uptodate">Η συσκευή σας είναι ενημερωμένη</string>
+  <!-- Check update -->
   <string name="check_update_title">Έλεγχος για ενημερώσεις</string>
   <string name="last_check_summary">Τελευταίος έλεγχος: %1$s</string>
   <string name="last_check_never">Ποτέ</string>
   <string name="check_update_failed">Δεν είναι δυνατός ο έλεγχος για ενημερώσεις. Βεβαιωθείτε ότι η συσκευή σας υποστηρίζεται από την XenonHD</string>
   <string name="no_update_available">Δεν υπάρχουν διαθέσιμες ενημερώσεις</string>
+  <!-- Update interval -->
   <string name="interval_title">Χρονικό διάστημα αυτόματης ενημέρωσης</string>
   <string name="autoupdate_enabled">Οι αυτόματες ενημερώσεις είναι ενεργοποιημένες</string>
   <string name="autoupdate_disabled">Η αυτόματες ενημερώσεις είναι απενεργοποιημένες</string>
+  <!-- Notification -->
   <string name="notification_title">Ενημερώση XenonHD</string>
-  <string name="notification_message">Μια νέα έκδοση είναι διαθέσιμη!</string>
+  <string name="notification_message">Μία νέα έκδοση είναι διαθέσιμη!</string>
+  <!-- Dialog -->
   <string name="dialog_message">Ελέγχος για ενημερώσεις, παρακαλώ περιμένετε&#8230;</string>
 </resources>

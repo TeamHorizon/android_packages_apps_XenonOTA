@@ -16,22 +16,29 @@
   ~ limitations under the License.
   -->
 <resources>
+  <!-- App -->
   <string name="app_name">Aggiornamenti XenonHD</string>
   <string name="app_title">Aggiornamenti XenonHD</string>
+  <!-- Categories -->
   <string name="ota_category">Info Aggiornamento</string>
   <string name="links_category">Link Download</string>
+  <!-- ROM info -->
   <string name="latest_version">Ultima versione: %1$s</string>
   <string name="unknown">Sconosciuto</string>
   <string name="system_uptodate">Il tuo sistema è aggiornato</string>
+  <!-- Check update -->
   <string name="check_update_title">Verifica aggiornamenti</string>
   <string name="last_check_summary">Data di ultima verifica: %1$s</string>
   <string name="last_check_never">Mai</string>
   <string name="check_update_failed">Non è possibile controllare gli aggiornamenti, assicurarsi che il dispositivo è supportato da XenonHD</string>
   <string name="no_update_available">Nessun aggiornamento disponibile</string>
+  <!-- Update interval -->
   <string name="interval_title">Intervallo di aggiornamento automatico</string>
   <string name="autoupdate_enabled">Aggiornamento automatico è abilitato</string>
   <string name="autoupdate_disabled">Aggiornamento automatico è disattivato</string>
+  <!-- Notification -->
   <string name="notification_title">Aggiornamento XenonHD</string>
   <string name="notification_message">È disponibile una nuova versione!</string>
+  <!-- Dialog -->
   <string name="dialog_message">Controllo degli aggiornamenti, si prega di attendere&#8230;</string>
 </resources>
