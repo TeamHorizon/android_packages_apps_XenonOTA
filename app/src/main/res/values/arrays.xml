@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2015 Chandra Poerwanto
+  ~ Copyright (C) 2015 Team Horizon
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 
 <resources>
     <string-array name="interval_entries">
-        <item>Disabled</item>
-        <item>Every hour</item>
-        <item>Every 12 hours</item>
-        <item>Every 24 hours</item>
+        <item>@string/disabled</item>
+        <item>@string/hour</item>
+        <item>@string/twelve_hours</item>
+        <item>@string/twentyfour_hours</item>
     </string-array>
 
     <string-array name="interval_values">
