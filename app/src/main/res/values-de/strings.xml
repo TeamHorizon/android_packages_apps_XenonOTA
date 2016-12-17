@@ -36,6 +36,10 @@
   <string name="interval_title">Automatische Aktualisierung der Daten</string>
   <string name="autoupdate_enabled">Automatische Aktualisierung ist aktiviert</string>
   <string name="autoupdate_disabled">Automatische Aktualisierung ist deaktiviert</string>
+  <string name="disabled">Ausschalten</string>
+  <string name="hour">Stündlich</string>
+  <string name="twelve_hours">Alle 12 Stunden</string>
+  <string name="twentyfour_hours">Alle 24 Stunden</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD Update</string>
   <string name="notification_message">Eine neue Version ist verfügbar!</string>

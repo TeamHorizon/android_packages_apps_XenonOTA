@@ -17,9 +17,20 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">تحديثات XenonHD</string>
+  <string name="app_title">تحديثات XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">تحديث معلومات</string>
+  <string name="links_category">وصلات التحميل</string>
   <!-- ROM info -->
+  <string name="latest_version">أحدث إصدار: %1$s</string>
+  <string name="unknown">مجهول</string>
+  <string name="system_uptodate">نظامك محدث</string>
   <!-- Check update -->
+  <string name="check_update_title">تحقق من وجود تحديثات</string>
+  <string name="last_check_summary">آخر فحص: %1$s</string>
+  <string name="last_check_never">أبداً</string>
+  <string name="check_update_failed">لا يمكن التحقق من وجود تحديثات، تأكد من أن الجهاز مؤيد من قبل XenonHD</string>
   <!-- Update interval -->
   <!-- Notification -->
   <!-- Dialog -->
