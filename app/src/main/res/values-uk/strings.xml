@@ -17,7 +17,7 @@
   -->
 <resources>
   <!-- App -->
-  <string name="app_name">Оновлення XenonHD</string>
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">Оновлення XenonHD</string>
   <!-- Categories -->
   <string name="ota_category">Оновлення інформації</string>
@@ -36,6 +36,10 @@
   <string name="interval_title">Інтервал автоматичного оновлення</string>
   <string name="autoupdate_enabled">Автоматичне оновлення увімкнуто</string>
   <string name="autoupdate_disabled">Автоматичне оновлення вимкнено</string>
+  <string name="disabled">Вимкнути</string>
+  <string name="hour">Кожну годину</string>
+  <string name="twelve_hours">Кожні 12 годин</string>
+  <string name="twentyfour_hours">Кожні 24 години</string>
   <!-- Notification -->
   <string name="notification_title">Оновлення XenonHD</string>
   <string name="notification_message">Нова версія доступна!</string>

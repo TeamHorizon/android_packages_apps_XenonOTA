@@ -17,7 +17,7 @@
   -->
 <resources>
   <!-- App -->
-  <string name="app_name">Actualizaciones XenonHD</string>
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">Actualizaciones XenonHD</string>
   <!-- Categories -->
   <string name="ota_category">Información de actualizaciones</string>
@@ -30,12 +30,16 @@
   <string name="check_update_title">Buscar actualizaciones</string>
   <string name="last_check_summary">Última vez: %1$s</string>
   <string name="last_check_never">Nunca</string>
-  <string name="check_update_failed">No se pueden buscar actualizaciones, asegurate que tu dispositivo es compatible con XenonHD</string>
+  <string name="check_update_failed">No se pueden buscar actualizaciones, asegurate que tu dispositivo este soportado por XenonHD</string>
   <string name="no_update_available">No hay actualizaciones disponibles</string>
   <!-- Update interval -->
   <string name="interval_title">Buscar actualizaciones automaticamente</string>
   <string name="autoupdate_enabled">Actualización automática activada</string>
   <string name="autoupdate_disabled">Actualización automática desactivada</string>
+  <string name="disabled">Desactivar</string>
+  <string name="hour">Cada Hora</string>
+  <string name="twelve_hours">Cada 12 Horas</string>
+  <string name="twentyfour_hours">Cada 24 horas</string>
   <!-- Notification -->
   <string name="notification_title">Actualización XenonHD</string>
   <string name="notification_message">¡Una nueva versión está disponible!</string>

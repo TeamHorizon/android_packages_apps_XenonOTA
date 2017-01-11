@@ -17,7 +17,6 @@
   -->
 <resources>
   <!-- App -->
-  <string name="app_name">XenonHD Aktualizácie</string>
   <string name="app_title">XenonHD Aktualizácie</string>
   <!-- Categories -->
   <string name="ota_category">Informácie o aktualizácii</string>

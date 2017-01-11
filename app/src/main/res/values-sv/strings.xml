@@ -17,7 +17,7 @@
   -->
 <resources>
   <!-- App -->
-  <string name="app_name">XenonHD-uppdateringar</string>
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">XenonHD-uppdateringar</string>
   <!-- Categories -->
   <string name="ota_category">Uppdatera information</string>
@@ -36,6 +36,9 @@
   <string name="interval_title">Automatisk uppdateringsintervall</string>
   <string name="autoupdate_enabled">Automatisk uppdatering är aktiverat</string>
   <string name="autoupdate_disabled">Automatisk uppdatering är inaktiverat</string>
+  <string name="hour">Varje timme</string>
+  <string name="twelve_hours">Var 12:e timme</string>
+  <string name="twentyfour_hours">Var 24:e timme</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD-uppdatering</string>
   <string name="notification_message">En ny version är tillgänglig!</string>

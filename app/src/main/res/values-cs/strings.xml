@@ -17,10 +17,32 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
+  <string name="app_title">Aktualizace XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">Informace o aktualizaci</string>
+  <string name="links_category">Odkazy ke stažení</string>
   <!-- ROM info -->
+  <string name="latest_version">Nejnovější verze: %1$s</string>
+  <string name="unknown">Neznámá</string>
+  <string name="system_uptodate">Váš systém je aktuální</string>
   <!-- Check update -->
+  <string name="check_update_title">Zkontrolovat aktualizace</string>
+  <string name="last_check_summary">Poslední kontrola: %1$s</string>
+  <string name="last_check_never">Nikdy</string>
+  <string name="check_update_failed">Nelze zkontrolovat aktualizace, zkontrolujte, zda vaše zařízení podporuje XenonHD</string>
+  <string name="no_update_available">Nejsou dostupné žádné aktualizace</string>
   <!-- Update interval -->
+  <string name="interval_title">Interval automatické aktualizace</string>
+  <string name="autoupdate_enabled">Automatická aktualizace je povolena</string>
+  <string name="autoupdate_disabled">Automatická aktualizace je zakázána</string>
+  <string name="disabled">Zakázat</string>
+  <string name="hour">Každou hodinu</string>
+  <string name="twelve_hours">Každých 12 hodin</string>
+  <string name="twentyfour_hours">Každých 24 hodin</string>
   <!-- Notification -->
+  <string name="notification_title">Aktualizace XenonHD</string>
+  <string name="notification_message">Nová verze je k dispozici!</string>
   <!-- Dialog -->
+  <string name="dialog_message">Kontrola aktualizací, počkejte prosím&#8230;</string>
 </resources>

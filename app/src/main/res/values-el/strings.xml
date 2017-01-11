@@ -17,7 +17,6 @@
   -->
 <resources>
   <!-- App -->
-  <string name="app_name">Ενημερώσεις XenonHD</string>
   <string name="app_title">Ενημερώσεις XenonHD</string>
   <!-- Categories -->
   <string name="ota_category">Πληροφορίες Ενημέρωσης</string>

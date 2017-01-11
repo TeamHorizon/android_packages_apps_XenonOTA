@@ -17,7 +17,7 @@
   -->
 <resources>
   <!-- App -->
-  <string name="app_name">XenonHD Güncelleştirmeleri</string>
+  <string name="app_name">Xenon Güncellemeleri</string>
   <string name="app_title">XenonHD Güncelleştirmeleri</string>
   <!-- Categories -->
   <string name="ota_category">Güncelleme bilgisi</string>
@@ -36,6 +36,10 @@
   <string name="interval_title">Otomatik güncelleştirme aralığı</string>
   <string name="autoupdate_enabled">Otomatik güncelleştirme etkin</string>
   <string name="autoupdate_disabled">Otomatik güncelleştirme devre dışı</string>
+  <string name="disabled">Devredışı</string>
+  <string name="hour">Saat başı </string>
+  <string name="twelve_hours">12 saatte bir</string>
+  <string name="twentyfour_hours">24 saatte bir</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD güncelleştirme</string>
   <string name="notification_message">Yeni bir sürüm kullanılabilir!</string>
