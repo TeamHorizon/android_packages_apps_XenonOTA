@@ -17,10 +17,32 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
+  <string name="app_title">XenonHD Uuendused</string>
   <!-- Categories -->
+  <string name="ota_category">Uuenduse teave</string>
+  <string name="links_category">Allalaadimise lingid</string>
   <!-- ROM info -->
+  <string name="latest_version">Uusim versioon: %1$s</string>
+  <string name="unknown">Tundmatu</string>
+  <string name="system_uptodate">Teie süsteem on kõige uuemal versioonil</string>
   <!-- Check update -->
+  <string name="check_update_title">Kontrolli uuendusi</string>
+  <string name="last_check_summary">Viimati kontrollitud: %1$s</string>
+  <string name="last_check_never">Mitte kunagi</string>
+  <string name="check_update_failed">Uuenduste otsimine polnud võimalik, veenduge et teie seade toetab XenonHD</string>
+  <string name="no_update_available">Uuendusi ei leitud</string>
   <!-- Update interval -->
+  <string name="interval_title">Automaatse uuendamise sagedus</string>
+  <string name="autoupdate_enabled">Automaatne uuendamine on lubatud</string>
+  <string name="autoupdate_disabled">Automaatne uuendamine on keelatud</string>
+  <string name="disabled">Keela</string>
+  <string name="hour">Iga tund</string>
+  <string name="twelve_hours">Iga 12 tunni järel</string>
+  <string name="twentyfour_hours">Iga 24 tunni järelt</string>
   <!-- Notification -->
+  <string name="notification_title">XenonHD Uuendused</string>
+  <string name="notification_message">Uuem versioon on saadaval!</string>
   <!-- Dialog -->
+  <string name="dialog_message">Uuenduste kontrollimine, palun oodake&#8230;</string>
 </resources>

@@ -17,8 +17,10 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_title">XenonHD frissítések</string>
   <!-- Categories -->
   <!-- ROM info -->
+  <string name="unknown">Ismeretlen</string>
   <!-- Check update -->
   <!-- Update interval -->
   <!-- Notification -->
