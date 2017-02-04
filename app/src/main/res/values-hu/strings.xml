@@ -17,12 +17,32 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">XenonHD frissítések</string>
   <!-- Categories -->
+  <string name="ota_category">Frissítési információ</string>
+  <string name="links_category">Letöltő linkek</string>
   <!-- ROM info -->
+  <string name="latest_version">Legújabb verzió: %1$s</string>
   <string name="unknown">Ismeretlen</string>
+  <string name="system_uptodate">A rendszer naprakész</string>
   <!-- Check update -->
+  <string name="check_update_title">Frissítések keresése</string>
+  <string name="last_check_summary">Utolsó ellenőrzés: %1$s</string>
+  <string name="last_check_never">Soha</string>
+  <string name="check_update_failed">Frissítések keresése sikertelen, győződjön meg róla, hogy a XenonHD támogatja-e az eszközét</string>
+  <string name="no_update_available">Nincs elérhető frissítés</string>
   <!-- Update interval -->
+  <string name="interval_title">Automatikus frissítési időköz</string>
+  <string name="autoupdate_enabled">Automatikus frissítés engedélyezve van</string>
+  <string name="autoupdate_disabled">Automatikus frissítés le van tiltva</string>
+  <string name="disabled">Letiltva</string>
+  <string name="hour">Minden órában</string>
+  <string name="twelve_hours">12 óránként</string>
+  <string name="twentyfour_hours">24 óránként</string>
   <!-- Notification -->
+  <string name="notification_title">XenonHD frissítés</string>
+  <string name="notification_message">Új verzió érhető el!</string>
   <!-- Dialog -->
+  <string name="dialog_message">Frissítések keresése, kis türelmet&#8230;</string>
 </resources>

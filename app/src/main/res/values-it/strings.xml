@@ -17,25 +17,25 @@
   -->
 <resources>
   <!-- App -->
-  <string name="app_name">Xenon OTA</string>
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">Aggiornamenti XenonHD</string>
   <!-- Categories -->
-  <string name="ota_category">Info Aggiornamento</string>
-  <string name="links_category">Link Download</string>
+  <string name="ota_category">Informazioni dell\'aggiornamento</string>
+  <string name="links_category">Link per il download</string>
   <!-- ROM info -->
   <string name="latest_version">Ultima versione: %1$s</string>
   <string name="unknown">Sconosciuto</string>
   <string name="system_uptodate">Il tuo sistema è aggiornato</string>
   <!-- Check update -->
-  <string name="check_update_title">Verifica aggiornamenti</string>
+  <string name="check_update_title">Cerca aggiornamenti</string>
   <string name="last_check_summary">Ultimo controllo: %1$s</string>
   <string name="last_check_never">Mai</string>
   <string name="check_update_failed">Non è possibile controllare gli aggiornamenti, assicurati che il tuo dispositivo sia supportato da XenonHD</string>
   <string name="no_update_available">Nessun aggiornamento disponibile</string>
   <!-- Update interval -->
   <string name="interval_title">Intervallo di aggiornamento automatico</string>
-  <string name="autoupdate_enabled">Gli aggiornamenti automatici sono abilitati</string>
-  <string name="autoupdate_disabled">Aggiornamento automatico è disattivato</string>
+  <string name="autoupdate_enabled">L\'aggiornamento automatico è abilitato</string>
+  <string name="autoupdate_disabled">L\'aggiornamento automatico è disabilitato</string>
   <string name="disabled">Disabilitato</string>
   <string name="hour">Ogni ora</string>
   <string name="twelve_hours">Ogni 12 ore</string>
