@@ -17,6 +17,7 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">XenonHD-Updates</string>
   <!-- Categories -->
   <string name="ota_category">Update-Info</string>
@@ -40,6 +41,7 @@
   <string name="twelve_hours">Alle 12 Stunden</string>
   <string name="twentyfour_hours">Alle 24 Stunden</string>
   <!-- Notification -->
+  <string name="notification_title">XenonHD Update</string>
   <string name="notification_message">Eine neue Version ist verfügbar!</string>
   <!-- Dialog -->
   <string name="dialog_message">Suche nach Updates, bitte warten&#8230;</string>

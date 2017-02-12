@@ -17,10 +17,26 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
   <!-- Categories -->
   <!-- ROM info -->
+  <string name="latest_version">Phiên bản mới nhất: %1$s</string>
+  <string name="system_uptodate">Hệ thống đã được cập nhật</string>
   <!-- Check update -->
+  <string name="check_update_title">Kiểm tra cập nhật</string>
+  <string name="last_check_summary">Kiểm tra cuối: %1$s</string>
+  <string name="last_check_never">Không bao giờ</string>
+  <string name="check_update_failed">Không thể kiểm tra bản cập nhật, hãy đảm bảo rằng thiết bị được hỗ trợ bởi XenonHD</string>
+  <string name="no_update_available">Không có bản cập nhật mới hơn</string>
   <!-- Update interval -->
+  <string name="autoupdate_enabled">Cập nhật tự động được bật</string>
+  <string name="disabled">Tắt</string>
+  <string name="hour">Hàng giờ</string>
+  <string name="twelve_hours">Mỗi 12 tiếng</string>
+  <string name="twentyfour_hours">Mỗi 24 tiếng</string>
   <!-- Notification -->
+  <string name="notification_title">XenonHD Update</string>
+  <string name="notification_message">Một phiên bản mới có sẵn!</string>
   <!-- Dialog -->
+  <string name="dialog_message">Đang kiểm tra cập nhật, vui lòng chờ....</string>
 </resources>

@@ -27,7 +27,7 @@
   <string name="unknown">Nieznana</string>
   <string name="system_uptodate">Twój system jest aktualny</string>
   <!-- Check update -->
-  <string name="check_update_title">Sprawdź czy jest nowa wersja</string>
+  <string name="check_update_title">Sprawdź dostępność aktualizacji</string>
   <string name="last_check_summary">Ostatnio sprawdzono: %1$s</string>
   <string name="last_check_never">Nigdy</string>
   <string name="check_update_failed">Nie można sprawdzić dostępności aktualizacji, upewnij się, że urządzenie jest obsługiwane przez XenonHD</string>
