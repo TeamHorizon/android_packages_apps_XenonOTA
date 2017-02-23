@@ -17,6 +17,7 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">Actualización Xenon</string>
   <string name="app_title">Actualizaciones XenonHD</string>
   <!-- Categories -->
   <string name="ota_category">Información de actualizaciones</string>
@@ -32,7 +33,7 @@
   <string name="check_update_failed">No se pueden buscar actualizaciones, asegurate que tu dispositivo este soportado por XenonHD</string>
   <string name="no_update_available">No hay actualizaciones disponibles</string>
   <!-- Update interval -->
-  <string name="interval_title">Buscar actualizaciones automaticamente</string>
+  <string name="interval_title">Intervalo de actualización automática</string>
   <string name="autoupdate_enabled">Actualización automática activada</string>
   <string name="autoupdate_disabled">Actualización automática desactivada</string>
   <string name="disabled">Desactivar</string>

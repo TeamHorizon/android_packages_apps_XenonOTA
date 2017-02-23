@@ -17,8 +17,14 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
+  <string name="app_title">Actualizări XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">Informații despre actualizare</string>
+  <string name="links_category">Link-uri pentru descărcare</string>
   <!-- ROM info -->
+  <string name="latest_version">Ultima versiune: %1$s</string>
+  <string name="unknown">Necunoscut</string>
   <!-- Check update -->
   <!-- Update interval -->
   <!-- Notification -->
