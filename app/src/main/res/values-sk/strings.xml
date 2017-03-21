@@ -17,6 +17,7 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">XenonHD Aktualizácie</string>
   <!-- Categories -->
   <string name="ota_category">Informácie o aktualizácii</string>
@@ -35,6 +36,10 @@
   <string name="interval_title">Interval automatickej aktualizácie</string>
   <string name="autoupdate_enabled">Automatická aktualizácia je zapnutá</string>
   <string name="autoupdate_disabled">Automatická aktualizácia je vypnutá</string>
+  <string name="disabled">Zakázať</string>
+  <string name="hour">Každú hodinu</string>
+  <string name="twelve_hours">Každých 12 hodín</string>
+  <string name="twentyfour_hours">Každých 24 hodín</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD Aktualizácie</string>
   <string name="notification_message">Nová verzia je k dispozícii!</string>

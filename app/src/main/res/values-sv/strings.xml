@@ -17,6 +17,7 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">XenonHD-uppdateringar</string>
   <!-- Categories -->
   <string name="ota_category">Uppdatera information</string>
