@@ -17,9 +17,10 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">Xenon更新</string>
   <string name="app_title">XenonHD更新</string>
   <!-- Categories -->
-  <string name="ota_category">更新信息</string>
+  <string name="ota_category">升级信息</string>
   <string name="links_category">下载链接</string>
   <!-- ROM info -->
   <string name="latest_version">最新版本：%1$s</string>
@@ -29,12 +30,16 @@
   <string name="check_update_title">检查更新</string>
   <string name="last_check_summary">上次检查：%1$s</string>
   <string name="last_check_never">从不</string>
-  <string name="check_update_failed">不能检查到更新，确认你的设备已被XenonHD支持</string>
+  <string name="check_update_failed">没法检查到更新，请确认你的设备是否被XenonHD官方支持</string>
   <string name="no_update_available">没有可用的更新</string>
   <!-- Update interval -->
   <string name="interval_title">自动更新间隔</string>
   <string name="autoupdate_enabled">自动更新已启用</string>
   <string name="autoupdate_disabled">自动更新已禁用</string>
+  <string name="disabled">禁用</string>
+  <string name="hour">每小时</string>
+  <string name="twelve_hours">每12小时</string>
+  <string name="twentyfour_hours">每24小时</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD更新</string>
   <string name="notification_message">一个新的版本可用。</string>
