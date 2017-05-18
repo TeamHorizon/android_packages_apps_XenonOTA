@@ -36,6 +36,7 @@
   <string name="interval_title">Automatisk uppdateringsintervall</string>
   <string name="autoupdate_enabled">Automatisk uppdatering är aktiverat</string>
   <string name="autoupdate_disabled">Automatisk uppdatering är inaktiverat</string>
+  <string name="disabled">Inaktivera</string>
   <string name="hour">Varje timme</string>
   <string name="twelve_hours">Var 12:e timme</string>
   <string name="twentyfour_hours">Var 24:e timme</string>
