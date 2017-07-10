@@ -17,6 +17,7 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">تحديث الزينون على الهواء</string>
   <string name="app_title">تحديثات XenonHD</string>
   <!-- Categories -->
   <string name="ota_category">تحديث معلومات</string>
@@ -30,7 +31,18 @@
   <string name="last_check_summary">آخر فحص: %1$s</string>
   <string name="last_check_never">أبداً</string>
   <string name="check_update_failed">لا يمكن التحقق من وجود تحديثات، تأكد من أن الجهاز مؤيد من قبل XenonHD</string>
+  <string name="no_update_available">لا توجد تحديثات متوفرة</string>
   <!-- Update interval -->
+  <string name="interval_title">الفاصل الزمني للتحديث التلقائي</string>
+  <string name="autoupdate_enabled">تفعيل التحديث التلقائي</string>
+  <string name="autoupdate_disabled">ايقاف التحديث التلقائي</string>
+  <string name="disabled">تعطيل</string>
+  <string name="hour">كل ساعة</string>
+  <string name="twelve_hours">كل 12 ساعة</string>
+  <string name="twentyfour_hours">كل ٢٤ ساعة</string>
   <!-- Notification -->
+  <string name="notification_title">تحديثات XenonHD</string>
+  <string name="notification_message">يتوفر إصدار جديد!</string>
   <!-- Dialog -->
+  <string name="dialog_message">التحقق من وجود تحديثات، الرجاء الإنتظار.</string>
 </resources>
