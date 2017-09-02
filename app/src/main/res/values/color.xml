@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2016 Team Horizon
+  ~ Copyright (C) 2015 Chandra Poerwanto
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -16,10 +16,8 @@
   -->
 
 <resources>
-    <style name="Theme.Main" parent="@android:style/Theme.Material.DayNight">
-        <item name="android:colorPrimary">@*android:color/material_pixel_blue_dark</item>
-        <item name="android:colorPrimaryDark">@*android:color/black</item>
-        <item name="android:colorAccent">@*android:color/material_pixel_blue_bright</item>
-        <item name="android:titleTextStyle">@*android:color/white</item>
-    </style>
+    <!-- Palette colors referenced by top-level themes. -->
+    <color name="theme_primary">#ff263238</color>
+    <color name="theme_primary_dark">#ff21272b</color>
+    <color name="theme_accent">#ff009688</color>
 </resources>
