@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Chandra Poerwanto
+ * Copyright (C) 2017 Team Horizon
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,14 +64,14 @@ public class WaitDialogFragment extends DialogFragment {
         }
     }
 
-    public interface OTADialogListener {
-        void onProgressCancelled();
-    }
-
     private OTADialogListener getOTADialogListener() {
         if (getActivity() instanceof OTADialogListener) {
             return (OTADialogListener) getActivity();
         }
         return null;
+    }
+
+    public interface OTADialogListener {
+        void onProgressCancelled();
     }
 }

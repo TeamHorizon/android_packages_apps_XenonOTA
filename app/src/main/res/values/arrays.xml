@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2015 Team Horizon
+  ~ Copyright (C) 2017 Team Horizon
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <resources>
     <string-array name="interval_entries">
         <item>@string/disabled</item>
@@ -22,7 +21,6 @@
         <item>@string/twelve_hours</item>
         <item>@string/twentyfour_hours</item>
     </string-array>
-
     <string-array name="interval_values">
         <item>0</item>
         <item>1</item>

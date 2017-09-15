@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Chandra Poerwanto
+ * Copyright (C) 2017 Team Horizon
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,20 +26,17 @@ import java.io.InputStream;
 
 public class OTAParser {
 
-    private static final String ns = null;
-    private static final String FILENAME_TAG = "Filename";
-    private static final String URL_TAG = "Url";
-
     public static final String ID = "id";
     public static final String TITLE = "title";
     public static final String DESCRIPTION = "description";
     public static final String URL = "url";
-
+    private static final String ns = null;
+    private static final String FILENAME_TAG = "Filename";
+    private static final String URL_TAG = "Url";
+    private static OTAParser mInstance;
     private String mDeviceName = null;
     private String mReleaseType = null;
     private OTADevice mDevice = null;
-
-    private static OTAParser mInstance;
 
     private OTAParser() {
     }
@@ -49,6 +46,10 @@ public class OTAParser {
             mInstance = new OTAParser();
         }
         return mInstance;
+    }
+
+    private static boolean isUrlTag(String tagName) {
+        return tagName.toLowerCase().endsWith(URL_TAG.toLowerCase());
     }
 
     public OTADevice parse(InputStream in, String deviceName, String releaseType) throws XmlPullParserException, IOException {
@@ -165,9 +166,5 @@ public class OTAParser {
                     break;
             }
         }
-    }
-
-    private static boolean isUrlTag(String tagName) {
-        return tagName.toLowerCase().endsWith(URL_TAG.toLowerCase());
     }
 }

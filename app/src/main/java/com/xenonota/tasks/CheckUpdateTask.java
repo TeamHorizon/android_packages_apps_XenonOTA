@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Chandra Poerwanto
+ * Copyright (C) 2017 Team Horizon
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,12 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
             mInstance = new CheckUpdateTask(isBackgroundThread);
         }
         return mInstance;
+    }
+
+    private static boolean isConnectivityAvailable(Context context) {
+        ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = connMgr.getActiveNetworkInfo();
+        return (netInfo != null && netInfo.isConnected());
     }
 
     @Override
@@ -142,12 +148,6 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
         if (!mIsBackgroundThread) {
             OTAUtils.toast(messageId, mContext);
         }
-    }
-
-    private static boolean isConnectivityAvailable(Context context) {
-        ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = connMgr.getActiveNetworkInfo();
-        return (netInfo != null && netInfo.isConnected());
     }
 
     private void showNotification(Context context) {

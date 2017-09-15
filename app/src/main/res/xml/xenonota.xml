@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2015 Chandra Poerwanto
+  ~ Copyright (C) 2017 Team Horizon
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -32,11 +32,11 @@
         </PreferenceScreen>
 
         <ListPreference
-            android:key="key_update_interval"
-            android:title="@string/interval_title"
             android:dialogTitle="@string/interval_title"
             android:entries="@array/interval_entries"
-            android:entryValues="@array/interval_values" />
+            android:entryValues="@array/interval_values"
+            android:key="key_update_interval"
+            android:title="@string/interval_title" />
 
     </PreferenceCategory>
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Chandra Poerwanto
+ * Copyright (C) 2017 Team Horizon
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@ package com.xenonota.configs;
 
 import android.content.Context;
 
+import com.xenonota.utils.OTAUtils;
 import com.xenonota.xml.OTALink;
 import com.xenonota.xml.OTAParser;
-import com.xenonota.utils.OTAUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -84,6 +84,13 @@ public class LinkConfig {
         }
     }
 
+    private static LinkConfigListener getLinkConfigListener(Context context) {
+        if (context instanceof LinkConfigListener) {
+            return (LinkConfigListener) context;
+        }
+        return null;
+    }
+
     public List<OTALink> getLinks(Context context, boolean force) {
         if (mLinks == null || force) {
             try {
@@ -127,12 +134,5 @@ public class LinkConfig {
 
     public interface LinkConfigListener {
         void onConfigChange();
-    }
-
-    private static LinkConfigListener getLinkConfigListener(Context context) {
-        if (context instanceof LinkConfigListener) {
-            return (LinkConfigListener) context;
-        }
-        return null;
     }
 }

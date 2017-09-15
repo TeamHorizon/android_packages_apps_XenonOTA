@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Chandra Poerwanto
+ * Copyright (C) 2017 Team Horizon
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,11 +36,11 @@ public class OTADevice {
         return mLinks;
     }
 
-    public void setLatestVersion(String latestVersion) {
-        this.mLatestVersion = latestVersion;
-    }
-
     public String getLatestVersion() {
         return mLatestVersion;
+    }
+
+    public void setLatestVersion(String latestVersion) {
+        this.mLatestVersion = latestVersion;
     }
 }
