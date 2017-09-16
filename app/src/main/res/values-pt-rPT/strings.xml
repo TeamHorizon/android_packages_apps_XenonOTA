@@ -17,10 +17,20 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">OTA Xenon</string>
+  <string name="app_title">Actualizações XenonHD</string>
   <!-- Categories -->
   <!-- ROM info -->
+  <string name="unknown">Desconhecido</string>
   <!-- Check update -->
   <!-- Update interval -->
+  <string name="disabled">Desactivado</string>
+  <string name="hour">A cada hora</string>
+  <string name="twelve_hours">A cada 12 horas</string>
+  <string name="twentyfour_hours">A cada 24 horas</string>
   <!-- Notification -->
+  <string name="notification_title">Actualização XenonHD</string>
+  <string name="notification_message">Nova versão disponível!</string>
   <!-- Dialog -->
+  <string name="dialog_message">A verificar actualizações. Por favor, aguarde&#8230;</string>
 </resources>

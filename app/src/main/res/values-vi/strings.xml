@@ -18,9 +18,11 @@
 <resources>
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">Bản cập nhật XenonHD</string>
   <!-- Categories -->
   <!-- ROM info -->
   <string name="latest_version">Phiên bản mới nhất: %1$s</string>
+  <string name="unknown">Không rõ</string>
   <string name="system_uptodate">Hệ thống đã được cập nhật</string>
   <!-- Check update -->
   <string name="check_update_title">Kiểm tra cập nhật</string>
