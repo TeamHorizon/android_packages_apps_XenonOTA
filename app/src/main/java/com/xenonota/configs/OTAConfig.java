@@ -64,7 +64,7 @@ public class OTAConfig extends Properties {
     }
 
     public String getReleaseType() {
-        return getProperty(OTAConfig.RELEASE_TYPE, "Stable");
+        return getProperty(OTAConfig.RELEASE_TYPE, "Oreo");
     }
 
     public String getVersionSource() {
