@@ -24,11 +24,11 @@ public class OTADevice {
     private List<OTALink> mLinks;
     private String mLatestVersion;
 
-    public OTADevice() {
+    OTADevice() {
         mLinks = new ArrayList<>();
     }
 
-    public void addLink(OTALink link) {
+    void addLink(OTALink link) {
         mLinks.add(link);
     }
 
@@ -40,7 +40,7 @@ public class OTADevice {
         return mLatestVersion;
     }
 
-    public void setLatestVersion(String latestVersion) {
+    void setLatestVersion(String latestVersion) {
         this.mLatestVersion = latestVersion;
     }
 }

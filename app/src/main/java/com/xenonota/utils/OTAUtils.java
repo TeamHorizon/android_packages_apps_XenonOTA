@@ -20,27 +20,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
-import android.util.SystemProperties;
 import android.widget.Toast;
 
-import com.xenonota.configs.OTAConfig;
-
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Properties;
 
 public final class OTAUtils {
 
     private static final String TAG = "XenonOTA";
     private static final boolean DEBUG = true;
-
-    private static final String BUILD_PROP = "/system/build.prop";
 
     private OTAUtils() {
     }
@@ -65,17 +57,21 @@ public final class OTAUtils {
     }
 
     public static String getDeviceName(Context context) {
-        return SystemProperties.get("Prop you need to find device name"); //TODO update this
+        return SystemProperties.get("ro.xenonhd.device");
+    }
+
+    public static String getBuildVersion(Context context) {
+        return SystemProperties.get("ro.xenonhd.version");
     }
 
     public static String runCommand(String command) {
         try {
-            StringBuffer output = new StringBuffer();
+            StringBuilder output = new StringBuilder();
             Process p = Runtime.getRuntime().exec(command);
             BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            String line = "";
+            String line;
             while ((line = reader.readLine()) != null) {
-                output.append(line + "\n");
+                output.append(line).append("\n");
             }
             reader.close();
             p.waitFor();

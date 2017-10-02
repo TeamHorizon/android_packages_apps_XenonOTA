@@ -56,9 +56,7 @@ public class LinkConfig {
         try {
             File dir = context.getFilesDir();
             File file = new File(dir, FILENAME);
-            if (file.exists()) {
-                file.delete();
-            }
+            boolean isFile = file.exists() || file.delete();
 
             FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
 
@@ -98,7 +96,7 @@ public class LinkConfig {
 
                 FileInputStream fis = context.openFileInput(FILENAME);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
-                StringBuffer out = new StringBuffer();
+                StringBuilder out = new StringBuilder();
                 String line;
                 while ((line = reader.readLine()) != null) {
                     out.append(line);

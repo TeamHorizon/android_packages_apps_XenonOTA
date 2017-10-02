@@ -29,19 +29,18 @@ public class MainActivity extends PreferenceActivity implements
         WaitDialogFragment.OTADialogListener, LinkConfig.LinkConfigListener {
 
     private static final String FRAGMENT_TAG = XenonOTAFragment.class.getName();
-    private XenonOTAFragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mFragment = (XenonOTAFragment) getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
+        XenonOTAFragment mFragment = (XenonOTAFragment) getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
         if (mFragment == null) {
             getFragmentManager().beginTransaction()
                     .replace(android.R.id.content, new XenonOTAFragment(), FRAGMENT_TAG)
                     .commit();
         }
-
+        assert getActionBar() != null;
         getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

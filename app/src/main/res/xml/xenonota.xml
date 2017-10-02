@@ -15,21 +15,16 @@
   ~ limitations under the License.
   -->
 
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/app_title">
 
-    <PreferenceCategory
-        android:title="@string/ota_category">
+    <PreferenceCategory android:title="@string/ota_category">
 
-        <PreferenceScreen
-            android:key="key_rom_info">
-        </PreferenceScreen>
+        <PreferenceScreen android:key="key_rom_info" />
 
         <PreferenceScreen
             android:key="key_check_update"
-            android:title="@string/check_update_title">
-        </PreferenceScreen>
+            android:title="@string/check_update_title" />
 
         <ListPreference
             android:dialogTitle="@string/interval_title"
@@ -42,7 +37,6 @@
 
     <PreferenceCategory
         android:key="category_links"
-        android:title="@string/links_category">
-    </PreferenceCategory>
+        android:title="@string/links_category" />
 
 </PreferenceScreen>

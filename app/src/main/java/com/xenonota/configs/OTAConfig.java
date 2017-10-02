@@ -67,7 +67,7 @@ public class OTAConfig extends Properties {
         return getProperty(OTAConfig.RELEASE_TYPE, "Oreo");
     }
 
-    public String getVersionSource() {
+    String getVersionSource() {
         return getProperty(VERSION_SOURCE, getProperty("version_name", ""));
     }
 
@@ -75,11 +75,11 @@ public class OTAConfig extends Properties {
         return getProperty(OTAConfig.DEVICE_NAME, "");
     }
 
-    public String getDelimiter() {
+    String getDelimiter() {
         return getProperty(OTAConfig.VERSION_DELIMITER, "");
     }
 
-    public int getPosition() {
+    int getPosition() {
         int position;
         try {
             position = Integer.parseInt(getProperty(OTAConfig.VERSION_POSITION));
@@ -89,7 +89,7 @@ public class OTAConfig extends Properties {
         return position;
     }
 
-    public SimpleDateFormat getFormat() {
+    SimpleDateFormat getFormat() {
         String format = getProperty(OTAConfig.VERSION_FORMAT, "");
         if (format.isEmpty()) {
             return null;

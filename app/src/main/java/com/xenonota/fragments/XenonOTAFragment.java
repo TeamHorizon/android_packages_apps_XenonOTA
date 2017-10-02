@@ -38,14 +38,11 @@ import java.util.List;
 
 public class XenonOTAFragment extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener,
-        SharedPreferences.OnSharedPreferenceChangeListener ,
+        SharedPreferences.OnSharedPreferenceChangeListener,
         WaitDialogFragment.OTADialogListener,
         LinkConfig.LinkConfigListener {
 
-    private static final String KEY_ROM_INFO = "key_rom_info";
-    private static final String KEY_CHECK_UPDATE = "key_check_update";
-    private static final String KEY_UPDATE_INTERVAL = "key_update_interval";
-    private static final String CATEGORY_LINKS = "category_links";
+    private final String KEY_CHECK_UPDATE = "key_check_update";
 
     private PreferenceScreen mRomInfo;
     private PreferenceScreen mCheckUpdate;
@@ -61,14 +58,17 @@ public class XenonOTAFragment extends PreferenceFragment implements
 
         addPreferencesFromResource(R.xml.xenonota);
 
+        String KEY_ROM_INFO = "key_rom_info";
         mRomInfo = (PreferenceScreen) getPreferenceScreen().findPreference(KEY_ROM_INFO);
         mCheckUpdate = (PreferenceScreen) getPreferenceScreen().findPreference(KEY_CHECK_UPDATE);
 
+        String KEY_UPDATE_INTERVAL = "key_update_interval";
         mUpdateInterval = (ListPreference) getPreferenceScreen().findPreference(KEY_UPDATE_INTERVAL);
         if (mUpdateInterval != null) {
             mUpdateInterval.setOnPreferenceChangeListener(this);
         }
 
+        String CATEGORY_LINKS = "category_links";
         mLinksCategory = (PreferenceCategory) getPreferenceScreen().findPreference(CATEGORY_LINKS);
     }
 
@@ -131,7 +131,7 @@ public class XenonOTAFragment extends PreferenceFragment implements
     }
 
     @Override
-     public void onResume() {
+    public void onResume() {
         super.onResume();
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
         updatePreferences();

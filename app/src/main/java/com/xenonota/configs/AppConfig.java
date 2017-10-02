@@ -50,7 +50,7 @@ public final class AppConfig {
         return UPDATE_INTERVAL;
     }
 
-    public static String buildLastCheckSummary(long time, Context context) {
+    private static String buildLastCheckSummary(long time, Context context) {
         String prefix = context.getResources().getString(R.string.last_check_summary);
         if (time > 0) {
             final String date = DateFormat.getDateTimeInstance().format(new Date(time));
@@ -82,7 +82,7 @@ public final class AppConfig {
 
     public static void persistUpdateIntervalIndex(int intervalIndex, Context context) {
         long intervalValue;
-        switch(intervalIndex) {
+        switch (intervalIndex) {
             case 0:
                 intervalValue = 0;
                 break;
