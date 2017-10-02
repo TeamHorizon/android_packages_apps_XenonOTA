@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
+import android.util.SystemProperties;
 import android.widget.Toast;
 
 import com.xenonota.configs.OTAConfig;
@@ -64,21 +65,7 @@ public final class OTAUtils {
     }
 
     public static String getDeviceName(Context context) {
-        String propName = OTAConfig.getInstance(context).getDeviceSource();
-        return OTAUtils.getBuildProp(propName);
-    }
-
-    public static String getBuildProp(String propertyName) {
-        Properties buildProps = new Properties();
-        try {
-            FileInputStream is = new FileInputStream(new File(BUILD_PROP));
-            buildProps.load(is);
-            is.close();
-            return buildProps.getProperty(propertyName, "");
-        } catch (IOException e) {
-            logError(e);
-        }
-        return "";
+        return SystemProperties.get("Prop you need to find device name"); //TODO update this
     }
 
     public static String runCommand(String command) {
