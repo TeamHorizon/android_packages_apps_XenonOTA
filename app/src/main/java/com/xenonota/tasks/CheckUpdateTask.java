@@ -17,6 +17,7 @@
 package com.xenonota.tasks;
 
 import android.app.Notification;
+import android.support.v4.app.NotificationCompat;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -151,7 +152,8 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
     }
 
     private void showNotification(Context context) {
-        Notification.Builder builder = new Notification.Builder(context);
+        // TODO don't hardcode XenonOTA and check if any import is not used
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "XenonOTA");
         builder.setContentTitle(context.getString(R.string.notification_title));
         builder.setContentText(context.getString(R.string.notification_message));
         builder.setSmallIcon(R.drawable.ic_notification_xenonota);
