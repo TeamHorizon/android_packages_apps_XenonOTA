@@ -15,33 +15,44 @@
   ~ limitations under the License.
   -->
 <resources>
+
     <!-- App -->
     <string name="app_name">XenonOTA</string>
-    <string name="app_title">XenonHD Updates</string>
+    <string name="app_title">XenonHD updates</string>
+
     <!-- Categories -->
-    <string name="ota_category">Update info</string>
-    <string name="links_category">Download links</string>
+    <string name="ota_category">Update section</string>
+    <string name="links_category">Download section</string>
+
+    <!-- Dialog -->
+    <string name="dialog_message">Checking for updates, please wait…</string>
+
     <!-- ROM info -->
-    <string name="latest_version">Latest version: %1$s</string>
+    <string name="latest_version">Update available!\nLatest version: %1$s</string>
     <string name="unknown">Unknown</string>
     <string name="system_uptodate">Your system is up to date</string>
+
     <!-- Check update -->
     <string name="check_update_title">Check for updates</string>
     <string name="last_check_summary">Last checked: %1$s</string>
     <string name="last_check_never">Never</string>
-    <string name="check_update_failed">Can\'t check for updates, make sure your device is supported by XenonHD</string>
+    <string name="check_update_failed">Can\'t check for updates. Check your internet connection and whether your device is officially supported</string>
+    <string name="update_available">Update available!</string>
     <string name="no_update_available">No update available</string>
-    <!-- Update interval -->
-    <string name="interval_title">Automatic update interval</string>
-    <string name="autoupdate_enabled">Automatic update is enabled</string>
-    <string name="autoupdate_disabled">Automatic update is disabled</string>
-    <string name="disabled">Disable</string>
-    <string name="hour">Every hour</string>
-    <string name="twelve_hours">Every 12 hours</string>
-    <string name="twentyfour_hours">Every 24 hours</string>
+
     <!-- Notification -->
     <string name="notification_title">XenonHD Update</string>
     <string name="notification_message">A new version is available!</string>
-    <!-- Dialog -->
-    <string name="dialog_message">Checking for updates, please wait…</string>
+    <string name="xenonota_channel">XenonOTA notifications</string>
+    <string name="xenonota_channel_description">Notifications about new XenonHD updates</string>
+
+    <!-- Update interval -->
+    <string name="interval_title">Automatically check for updates</string>
+    <string name="autoupdate_enabled">Automatic check for updates is enabled</string>
+    <string name="autoupdate_disabled">Automatic check for updates is disabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="hour">Every hour</string>
+    <string name="twelve_hours">Every 12 hours</string>
+    <string name="twentyfour_hours">Every 24 hours</string>
+
 </resources>
