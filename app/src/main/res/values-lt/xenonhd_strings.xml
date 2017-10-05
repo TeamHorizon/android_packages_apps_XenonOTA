@@ -20,21 +20,20 @@
   <string name="app_name">XenonOTA</string>
   <!-- Categories -->
   <!-- Dialog -->
-  <string name="dialog_message">Uuenduste kontrollimine, palun oodake…</string>
+  <string name="dialog_message">Tikrinami atnaujinimai, prašome palaukti…</string>
   <!-- ROM info -->
-  <string name="unknown">Tundmatu</string>
-  <string name="system_uptodate">Teie süsteem on kõige uuemal versioonil</string>
+  <string name="system_uptodate">Jūsų sistema yra naujausios versijos</string>
   <!-- Check update -->
-  <string name="check_update_title">Kontrolli uuendusi</string>
-  <string name="last_check_summary">Viimati kontrollitud: %1$s</string>
-  <string name="last_check_never">Mitte kunagi</string>
-  <string name="no_update_available">Uuendusi ei leitud</string>
+  <string name="check_update_title">Ieškoti atnaujinimų</string>
+  <string name="last_check_summary">Paskutinį kartą tikrinta %1$s</string>
+  <string name="last_check_never">Niekada</string>
+  <string name="no_update_available">Atnaujinimų nėra</string>
   <!-- Notification -->
-  <string name="notification_title">XenonHD Uuendused</string>
-  <string name="notification_message">Uuem versioon on saadaval!</string>
+  <string name="notification_title">XenonHD atnaujinimas</string>
+  <string name="notification_message">Galima nauja versija!</string>
   <!-- Update interval -->
-  <string name="disabled">Keelatud</string>
-  <string name="hour">Iga tund</string>
-  <string name="twelve_hours">Iga 12 tunni järel</string>
-  <string name="twentyfour_hours">Iga 24 tunni järelt</string>
+  <string name="disabled">Išjungta</string>
+  <string name="hour">Kas valandą</string>
+  <string name="twelve_hours">Kas 12 valandų</string>
+  <string name="twentyfour_hours">Kas 24 valandas</string>
 </resources>
