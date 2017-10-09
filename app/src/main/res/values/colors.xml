@@ -18,4 +18,5 @@
     <color name="theme_accent">#029789</color>
     <color name="statusbar_color">#e6e6e6</color>
     <color name="text_color">@android:color/black</color>
+    <color name="ic_xenonota_launcher_background">#E6E6E6</color>
 </resources>
