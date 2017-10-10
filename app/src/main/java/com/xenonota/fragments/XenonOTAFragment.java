@@ -37,7 +37,6 @@ import com.xenonota.xml.OTALink;
 import java.util.List;
 
 public class XenonOTAFragment extends PreferenceFragment implements
-        Preference.OnPreferenceChangeListener,
         SharedPreferences.OnSharedPreferenceChangeListener,
         WaitDialogFragment.OTADialogListener,
         LinkConfig.LinkConfigListener {
@@ -46,7 +45,6 @@ public class XenonOTAFragment extends PreferenceFragment implements
 
     private PreferenceScreen mRomInfo;
     private PreferenceScreen mCheckUpdate;
-    private ListPreference mUpdateInterval;
     private PreferenceCategory mLinksCategory;
 
     private CheckUpdateTask mTask;
@@ -62,12 +60,6 @@ public class XenonOTAFragment extends PreferenceFragment implements
         mRomInfo = (PreferenceScreen) getPreferenceScreen().findPreference(KEY_ROM_INFO);
         mCheckUpdate = (PreferenceScreen) getPreferenceScreen().findPreference(KEY_CHECK_UPDATE);
 
-        String KEY_UPDATE_INTERVAL = "key_update_interval";
-        mUpdateInterval = (ListPreference) getPreferenceScreen().findPreference(KEY_UPDATE_INTERVAL);
-        if (mUpdateInterval != null) {
-            mUpdateInterval.setOnPreferenceChangeListener(this);
-        }
-
         String CATEGORY_LINKS = "category_links";
         mLinksCategory = (PreferenceCategory) getPreferenceScreen().findPreference(CATEGORY_LINKS);
     }
@@ -75,7 +67,6 @@ public class XenonOTAFragment extends PreferenceFragment implements
     private void updatePreferences() {
         updateRomInfo();
         updateLastCheckSummary();
-        updateIntervalSummary();
         updateLinks(false);
     }
 
@@ -120,13 +111,6 @@ public class XenonOTAFragment extends PreferenceFragment implements
     private void updateLastCheckSummary() {
         if (mCheckUpdate != null) {
             mCheckUpdate.setSummary(AppConfig.getLastCheck(getActivity()));
-        }
-    }
-
-    private void updateIntervalSummary() {
-        if (mUpdateInterval != null) {
-            mUpdateInterval.setValueIndex(AppConfig.getUpdateIntervalIndex(getActivity()));
-            mUpdateInterval.setSummary(mUpdateInterval.getEntry());
         }
     }
 
@@ -177,24 +161,12 @@ public class XenonOTAFragment extends PreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object value) {
-        if (preference == mUpdateInterval) {
-            AppConfig.persistUpdateIntervalIndex(Integer.valueOf((String) value), getActivity());
-            return true;
-        }
-        return false;
-    }
-
-    @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals(AppConfig.getLatestVersionKey())) {
             updateRomInfo();
         }
         if (key.equals(AppConfig.getLastCheckKey())) {
             updateLastCheckSummary();
-        }
-        if (key.equals(AppConfig.getUpdateIntervalKey())) {
-            updateIntervalSummary();
         }
     }
 }

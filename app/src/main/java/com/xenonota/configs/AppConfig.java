@@ -21,9 +21,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.commonsware.cwac.wakeful.WakefulIntentService;
 import com.xenonota.R;
-import com.xenonota.scheduler.OTAListener;
 import com.xenonota.utils.OTAUtils;
 
 import java.text.DateFormat;
@@ -32,7 +30,6 @@ import java.util.Date;
 public final class AppConfig {
 
     private static final String LAST_CHECK = "last_check";
-    private static final String UPDATE_INTERVAL = "update_interval";
     private static final String LATEST_VERSION = "latest_version";
 
     private AppConfig() {
@@ -44,10 +41,6 @@ public final class AppConfig {
 
     public static String getLastCheckKey() {
         return LAST_CHECK;
-    }
-
-    public static String getUpdateIntervalKey() {
-        return UPDATE_INTERVAL;
     }
 
     private static String buildLastCheckSummary(long time, Context context) {
@@ -78,57 +71,5 @@ public final class AppConfig {
     public static void persistLastCheck(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         sharedPreferences.edit().putLong(LAST_CHECK, System.currentTimeMillis()).apply();
-    }
-
-    public static void persistUpdateIntervalIndex(int intervalIndex, Context context) {
-        long intervalValue;
-        switch (intervalIndex) {
-            case 0:
-                intervalValue = 0;
-                break;
-            case 1:
-                intervalValue = AlarmManager.INTERVAL_HOUR;
-                break;
-            case 2:
-                intervalValue = AlarmManager.INTERVAL_HALF_DAY;
-                break;
-            case 3:
-                intervalValue = AlarmManager.INTERVAL_DAY;
-                break;
-            default:
-                intervalValue = OTAListener.DEFAULT_INTERVAL_VALUE;
-                break;
-        }
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        sharedPreferences.edit().putLong(UPDATE_INTERVAL, intervalValue).apply();
-        if (intervalValue > 0) {
-            WakefulIntentService.cancelAlarms(context);
-            WakefulIntentService.scheduleAlarms(new OTAListener(), context, true);
-            OTAUtils.toast(R.string.autoupdate_enabled, context);
-        } else {
-            WakefulIntentService.cancelAlarms(context);
-            OTAUtils.toast(R.string.autoupdate_disabled, context);
-        }
-    }
-
-    public static int getUpdateIntervalIndex(Context context) {
-        long value = getUpdateIntervalTime(context);
-        int index;
-        if (value == 0) {
-            index = 0;
-        } else if (value == AlarmManager.INTERVAL_HOUR) {
-            index = 1;
-        } else if (value == AlarmManager.INTERVAL_HALF_DAY) {
-            index = 2;
-        } else {
-            index = 3;
-        }
-        return index;
-    }
-
-    public static long getUpdateIntervalTime(Context context) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getLong(UPDATE_INTERVAL, OTAListener.DEFAULT_INTERVAL_VALUE);
     }
 }

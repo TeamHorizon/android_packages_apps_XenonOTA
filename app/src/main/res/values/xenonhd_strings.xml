@@ -46,13 +46,4 @@
     <string name="xenonota_channel">XenonOTA notifications</string>
     <string name="xenonota_channel_description">Notifications about new XenonHD updates</string>
 
-    <!-- Update interval -->
-    <string name="interval_title">Automatically check for updates</string>
-    <string name="autoupdate_enabled">Automatic check for updates is enabled</string>
-    <string name="autoupdate_disabled">Automatic check for updates is disabled</string>
-    <string name="disabled">Disabled</string>
-    <string name="hour">Every hour</string>
-    <string name="twelve_hours">Every 12 hours</string>
-    <string name="twentyfour_hours">Every 24 hours</string>
-
 </resources>

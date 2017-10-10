@@ -26,13 +26,6 @@
             android:key="key_check_update"
             android:title="@string/check_update_title" />
 
-        <ListPreference
-            android:dialogTitle="@string/interval_title"
-            android:entries="@array/interval_entries"
-            android:entryValues="@array/interval_values"
-            android:key="key_update_interval"
-            android:title="@string/interval_title" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
