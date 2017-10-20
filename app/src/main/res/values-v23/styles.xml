@@ -15,8 +15,8 @@
   -->
 <resources>
     <style name="Theme.Main" parent="@android:style/Theme.Material.Light.LightStatusBar">
-        <item name="android:colorAccent">@color/theme_accent</item>
-        <item name="android:textColorPrimary">@color/theme_accent</item>
+        <item name="android:colorAccent">@*android:color/accent_device_default_light</item>
+        <item name="android:textColorPrimary">@*android:color/accent_device_default_light</item>
         <item name="android:textColor">@color/text_color</item>
         <item name="android:statusBarColor">@color/statusbar_color</item>
     </style>
