@@ -17,5 +17,4 @@
 <resources>
     <color name="statusbar_color">#e6e6e6</color>
     <color name="text_color">@android:color/black</color>
-    <color name="ic_xenonota_launcher_background">#e0e0e0</color>
 </resources>
