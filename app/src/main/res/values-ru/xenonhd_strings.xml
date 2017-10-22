@@ -17,18 +17,26 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">Обновления XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">Раздел обновлений</string>
+  <string name="links_category">Раздел загрузок</string>
   <!-- Dialog -->
   <string name="dialog_message">Проверка наличия обновлений, пожалуйста подождите...</string>
   <!-- ROM info -->
+  <string name="latest_version">Доступно обновление! Последняя версия</string>
   <string name="unknown">Неизвестно</string>
   <string name="system_uptodate">Ваша система обновлена до последней версии</string>
   <!-- Check update -->
   <string name="check_update_title">Проверить наличие обновлений</string>
   <string name="last_check_summary">Последняя проверка: %1$s</string>
   <string name="last_check_never">Никогда</string>
+  <string name="check_update_failed">Не удается проверить наличие обновлений. Проверьте подключение к Интернету и поддерживается ли ваше устройство официально</string>
+  <string name="update_available">Доступны обновление!</string>
   <string name="no_update_available">Нет доступных обновлений</string>
   <!-- Notification -->
   <string name="notification_title">Обновления XenonHD</string>
   <string name="notification_message">Новая версия доступна!</string>
+  <string name="xenonota_channel">Уведомления XenonOTA</string>
+  <string name="xenonota_channel_description">Уведомления об обновлениях XenonHD</string>
 </resources>

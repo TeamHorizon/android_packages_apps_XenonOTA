@@ -17,18 +17,26 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">XenonHD 更新</string>
   <!-- Categories -->
+  <string name="ota_category">更新部分</string>
+  <string name="links_category">已下載部分</string>
   <!-- Dialog -->
   <string name="dialog_message">正在檢查更新，請稍候…</string>
   <!-- ROM info -->
+  <string name="latest_version">有可用更新！\n最新版本為：%1$s</string>
   <string name="unknown">未知</string>
   <string name="system_uptodate">您的系統已處於最新狀態</string>
   <!-- Check update -->
   <string name="check_update_title">檢查更新</string>
   <string name="last_check_summary">上次檢查：%1$s</string>
   <string name="last_check_never">永不</string>
+  <string name="check_update_failed">無法檢查更新。請檢查您的網際網路連線和是否正式支援您的裝置</string>
+  <string name="update_available">可用的更新 ！</string>
   <string name="no_update_available">沒有可用的更新</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD 更新</string>
   <string name="notification_message">有可用的新版本！</string>
+  <string name="xenonota_channel">XenonOTA 通知</string>
+  <string name="xenonota_channel_description">有關新的 XenonHD 更新的通知</string>
 </resources>
