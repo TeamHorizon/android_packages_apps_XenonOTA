@@ -17,18 +17,26 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">Aggiornamenti XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">Aggiornamento della sezione</string>
+  <string name="links_category">Sezione download</string>
   <!-- Dialog -->
   <string name="dialog_message">Controllo degli aggiornamenti, si prega di attendere…</string>
   <!-- ROM info -->
+  <string name="latest_version">Aggiornamento disponibile! \nL’ultima versione è: %1$s</string>
   <string name="unknown">Sconosciuto</string>
   <string name="system_uptodate">Il tuo sistema è aggiornato</string>
   <!-- Check update -->
   <string name="check_update_title">Cerca aggiornamenti</string>
   <string name="last_check_summary">Ultimo controllo: %1$s</string>
   <string name="last_check_never">Mai</string>
+  <string name="check_update_failed">Impossibile controllare gli aggiornamenti. Controlla la connessione internet e se il dispositivo è ufficialmente supportato</string>
+  <string name="update_available">Aggiornamento disponibile!</string>
   <string name="no_update_available">Nessun aggiornamento disponibile</string>
   <!-- Notification -->
   <string name="notification_title">Aggiornamento XenonHD</string>
   <string name="notification_message">È disponibile una nuova versione!</string>
+  <string name="xenonota_channel">Notifiche di XenonOTA</string>
+  <string name="xenonota_channel_description">Notifiche sui nuovi aggiornamenti di XenonHD</string>
 </resources>

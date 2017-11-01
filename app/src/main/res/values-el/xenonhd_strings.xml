@@ -16,18 +16,27 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
+  <string name="app_title">Ενημερώσεις λειτουργικού XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">Τμήμα ενημερώσεων</string>
+  <string name="links_category">Τμήμα λήψεων</string>
   <!-- Dialog -->
   <string name="dialog_message">Ελέγχος για ενημερώσεις, παρακαλώ περιμένετε…</string>
   <!-- ROM info -->
+  <string name="latest_version">Μια ενημέρωση είναι διαθέσιμη!\nΤελευταία έκδοση: %1$s</string>
   <string name="unknown">Άγνωστο</string>
   <string name="system_uptodate">Η συσκευή σας είναι ενημερωμένη</string>
   <!-- Check update -->
   <string name="check_update_title">Έλεγχος για ενημερώσεις</string>
   <string name="last_check_summary">Τελευταίος έλεγχος: %1$s</string>
   <string name="last_check_never">Ποτέ</string>
+  <string name="check_update_failed">Δεν είναι εφικτή ο έλεγχος για ενημερώσεις. Ελέγξτε την σύνδεση σας στο διαδίκτυο και αν η συσκευή σας είναι επισήμως υποστηριζόμενη</string>
+  <string name="update_available">Μια νέα ενημέρωση είναι διαθέσιμη!</string>
   <string name="no_update_available">Δεν υπάρχουν διαθέσιμες ενημερώσεις</string>
   <!-- Notification -->
   <string name="notification_title">Ενημερώση XenonHD</string>
   <string name="notification_message">Μία νέα έκδοση είναι διαθέσιμη!</string>
+  <string name="xenonota_channel">Ειδοποίησεις για ενημρώσεις XenonHD</string>
+  <string name="xenonota_channel_description">Ενημερώσεις για νέες ενημερώσεις XenonHD</string>
 </resources>
