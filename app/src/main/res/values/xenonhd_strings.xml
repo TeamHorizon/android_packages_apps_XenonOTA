@@ -14,7 +14,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <!-- App -->
     <string name="app_name">XenonOTA</string>
     <string name="app_title">XenonHD updates</string>
@@ -44,5 +43,4 @@
     <string name="notification_message">A new version is available!</string>
     <string name="xenonota_channel">XenonOTA notifications</string>
     <string name="xenonota_channel_description">Notifications about new XenonHD updates</string>
-
 </resources>
