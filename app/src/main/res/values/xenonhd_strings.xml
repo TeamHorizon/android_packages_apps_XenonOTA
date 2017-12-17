@@ -43,4 +43,7 @@
     <string name="notification_message">A new version is available!</string>
     <string name="xenonota_channel">XenonOTA notifications</string>
     <string name="xenonota_channel_description">Notifications about new XenonHD updates</string>
+
+    <!-- Toast -->
+    <string name="toast_message">There\'s no browser installed\nCheck out BrowserInstaller app</string>
 </resources>
