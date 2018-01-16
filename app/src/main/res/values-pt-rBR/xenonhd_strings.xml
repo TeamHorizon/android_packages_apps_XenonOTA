@@ -31,4 +31,5 @@
   <!-- Notification -->
   <string name="notification_title">Atualizações XenonHD</string>
   <string name="notification_message">Uma nova versão está disponível!</string>
+  <!-- Toast -->
 </resources>

@@ -39,4 +39,6 @@
   <string name="notification_message">Новая версия доступна!</string>
   <string name="xenonota_channel">Уведомления XenonOTA</string>
   <string name="xenonota_channel_description">Уведомления об обновлениях XenonHD</string>
+  <!-- Toast -->
+  <string name="toast_message">Нет установленного браузера\nПроверьте приложение BrowserInstaller</string>
 </resources>

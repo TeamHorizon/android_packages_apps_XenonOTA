@@ -31,4 +31,5 @@
   <!-- Notification -->
   <string name="notification_title">XenonHD frissítés</string>
   <string name="notification_message">Új verzió érhető el!</string>
+  <!-- Toast -->
 </resources>

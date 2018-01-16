@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
   <!-- Categories -->
   <!-- Dialog -->
   <string name="dialog_message">업데이트 확인중, 기다려 주세요</string>
@@ -30,4 +31,5 @@
   <!-- Notification -->
   <string name="notification_title">XenonHD 업데이트</string>
   <string name="notification_message">새 버전을 사용할 수 있습니다.</string>
+  <!-- Toast -->
 </resources>

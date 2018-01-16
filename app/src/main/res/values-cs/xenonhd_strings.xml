@@ -39,4 +39,6 @@
   <string name="notification_message">Nová verze je k dispozici!</string>
   <string name="xenonota_channel">Upozornění XenonOTA</string>
   <string name="xenonota_channel_description">Upozornění na nové aktualizace XenonHD</string>
+  <!-- Toast -->
+  <string name="toast_message">Není nainstalován žádný prohlížeč\nZkontrolujte aplikaci BrowserInstaller</string>
 </resources>

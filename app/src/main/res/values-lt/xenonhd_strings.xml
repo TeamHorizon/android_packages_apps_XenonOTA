@@ -30,4 +30,5 @@
   <!-- Notification -->
   <string name="notification_title">XenonHD atnaujinimas</string>
   <string name="notification_message">Galima nauja versija!</string>
+  <!-- Toast -->
 </resources>

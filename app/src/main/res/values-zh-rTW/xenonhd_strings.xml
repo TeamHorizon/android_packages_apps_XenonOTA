@@ -39,4 +39,6 @@
   <string name="notification_message">有可用的新版本！</string>
   <string name="xenonota_channel">XenonOTA 通知</string>
   <string name="xenonota_channel_description">有關新的 XenonHD 更新的通知</string>
+  <!-- Toast -->
+  <string name="toast_message">沒有安裝瀏覽器。\n檢查瀏覽器安裝程式的應用程式</string>
 </resources>
