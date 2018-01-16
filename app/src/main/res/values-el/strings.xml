@@ -17,6 +17,7 @@
   -->
 <resources>
   <!-- App -->
+  <string name="app_name">XenonOTA</string>
   <string name="app_title">Ενημερώσεις XenonHD</string>
   <!-- Categories -->
   <string name="ota_category">Πληροφορίες Ενημέρωσης</string>
@@ -35,6 +36,10 @@
   <string name="interval_title">Χρονικό διάστημα αυτόματης ενημέρωσης</string>
   <string name="autoupdate_enabled">Οι αυτόματες ενημερώσεις είναι ενεργοποιημένες</string>
   <string name="autoupdate_disabled">Η αυτόματες ενημερώσεις είναι απενεργοποιημένες</string>
+  <string name="disabled">Απενεργοποίηση</string>
+  <string name="hour">Κάθε ώρα</string>
+  <string name="twelve_hours">Κάθε 12 ώρες</string>
+  <string name="twentyfour_hours">Κάθε 24 ώρες</string>
   <!-- Notification -->
   <string name="notification_title">Ενημερώση XenonHD</string>
   <string name="notification_message">Μία νέα έκδοση είναι διαθέσιμη!</string>
