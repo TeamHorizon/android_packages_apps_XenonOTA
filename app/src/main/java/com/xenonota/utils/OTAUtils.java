@@ -60,11 +60,25 @@ public final class OTAUtils {
     }
 
     public static String getDeviceName(Context context) {
-        return SystemProperties.get("ro.xenonhd.device");
+        String propName = OTAConfig.getInstance(context).getDeviceSource();
+        return OTAUtils.getProp(propName);
     }
 
-    public static String getBuildVersion(Context context) {
-        return SystemProperties.get("ro.xenonhd.version");
+    public static String getProp(String propName) {
+        Process p = null;
+        String result = "";
+        try {
+            p = new ProcessBuilder("/system/bin/getprop", propName).redirectErrorStream(true).start();
+            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String line = "";
+            while ((line=br.readLine()) != null) {
+                result = line;
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+            return result;
     }
 
     public static String runCommand(String command) {
