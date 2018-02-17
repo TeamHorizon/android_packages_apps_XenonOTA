@@ -14,10 +14,40 @@
   ~ limitations under the License.
   -->
 <resources>
-    <style name="Theme.Main" parent="@android:style/Theme.Material.Light.LightStatusBar">
-        <item name="android:colorAccent">@*android:color/accent_device_default_light</item>
-        <item name="android:textColorPrimary">@*android:color/accent_device_default_light</item>
-        <item name="android:textColor">@color/text_color</item>
-        <item name="android:statusBarColor">@color/statusbar_color</item>
+    <style name="Theme.Main" parent="@android:style/Theme.DeviceDefault.Settings" >
+        <item name="android:switchPreferenceStyle">@style/SettingsSwitchPreference</item>
+        <item name="android:preferenceCategoryStyle">@style/SettingsPreferenceCategory</item>
+        <item name="android:preferenceStyle">@style/SettingsPreference</item>
+        <item name="android:dialogPreferenceStyle">@style/SettingsDialogPreference</item>
+        <item name="android:preferenceScreenStyle">@style/SettingsPreferenceScreen</item>
+        <item name="android:listDivider">@null</item>
     </style>
+
+    <!-- Preferences -->
+    <style name="SettingsPreference" parent="@*android:style/Preference.DeviceDefault">
+        <item name="android:singleLineTitle">false</item>
+        <item name="android:iconSpaceReserved">true</item>
+    </style>
+
+    <style name="SettingsSwitchPreference" parent="@*android:style/Preference.DeviceDefault.SwitchPreference">
+        <item name="android:iconSpaceReserved">true</item>
+        <item name="android:singleLineTitle">false</item>
+    </style>
+
+    <style name="SettingsPreferenceCategory" parent="@*android:style/Preference.DeviceDefault.Category">
+        <item name="android:layout">@layout/preference_category_material_settings</item>
+    </style>
+
+    <style name="SettingsDialogPreference" parent="@*android:style/Preference.DeviceDefault.DialogPreference">
+        <item name="android:singleLineTitle">false</item>
+        <item name="android:iconSpaceReserved">true</item>
+    </style>
+
+    <style name="SettingsPreferenceScreen" parent="@*android:style/Preference.DeviceDefault.PreferenceScreen">
+        <item name="android:singleLineTitle">false</item>
+        <item name="android:iconSpaceReserved">true</item>
+    </style>
+
+    <style name="SettingsListPreference" parent="SettingsPreference"/>
+
 </resources>
