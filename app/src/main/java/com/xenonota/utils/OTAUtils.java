@@ -24,6 +24,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.xenonota.R;
+import com.xenonota.configs.OTAConfig;
 
 import java.io.BufferedReader;
 import java.io.IOException;
