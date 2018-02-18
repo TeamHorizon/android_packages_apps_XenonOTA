@@ -96,13 +96,21 @@ public class XenonOTAFragment extends PreferenceFragment implements
                     linkPref.setTitle(getActivity().getResources().getString(R.string.links_rom_title));
                     linkPref.setSummary(getActivity().getResources().getString(R.string.links_rom_summary));
                     break;
+                case "md5":
+                    linkPref.setTitle(getActivity().getResources().getString(R.string.links_md5_title));
+                    linkPref.setSummary(getActivity().getResources().getString(R.string.links_md5_summary));
+                    break;
+                case "gapps":
+                    linkPref.setTitle(getActivity().getResources().getString(R.string.links_gapps_title));
+                    linkPref.setSummary(getActivity().getResources().getString(R.string.links_gapps_summary));
+                    break;
                 case "changelog":
                     linkPref.setTitle(getActivity().getResources().getString(R.string.links_changelog_title));
                     linkPref.setSummary(getActivity().getResources().getString(R.string.links_changelog_summary));
                     break;
-                case "donation":
-                    linkPref.setTitle(getActivity().getResources().getString(R.string.links_donation_title));
-                    linkPref.setSummary(getActivity().getResources().getString(R.string.links_donation_summary));
+                case "donate":
+                    linkPref.setTitle(getActivity().getResources().getString(R.string.links_donate_title));
+                    linkPref.setSummary(getActivity().getResources().getString(R.string.links_donate_summary));
                     break;
                 default:
                     linkPref.setTitle(title.isEmpty() ? id : title);
