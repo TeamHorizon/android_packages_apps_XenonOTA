@@ -55,4 +55,12 @@
     <string name="hour">Every hour</string>
     <string name="twelve_hours">Every 12 hours</string>
     <string name="twentyfour_hours">Every 24 hours</string>
+
+    <!-- Links -->
+    <string name="links_rom_title">ROM</string>
+    <string name="links_rom_summary">Download the latest build</string>
+    <string name="links_changelog_title">Changelog</string>
+    <string name="links_changelog_summary">View the latest changelog</string>
+    <string name="links_donation_title">Support</string>
+    <string name="links_donation_summary">Donate to your device maintainer</string>
 </resources>
