@@ -43,4 +43,11 @@
   <string name="toast_message">Δεν έχετε εγκαταστήσει κάποιον περιηγητή.\in
 
 Ρίξτε μια ματία στην εφαρμογή BrowserInstaller!</string>
+  <!-- Update interval -->
+  <string name="disabled">Απενεργοποιημένο</string>
+  <string name="hour">Κάθε ώρα</string>
+  <string name="twelve_hours">Κάθε 12 ώρες</string>
+  <string name="twentyfour_hours">Κάθε 24 ώρες</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Κατάλογος αλλαγών</string>
 </resources>

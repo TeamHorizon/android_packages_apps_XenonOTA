@@ -32,4 +32,11 @@
   <string name="notification_title">XenonHD Uuendused</string>
   <string name="notification_message">Uuem versioon on saadaval!</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">Keelatud</string>
+  <string name="hour">Iga tund</string>
+  <string name="twelve_hours">Iga 12 tunni järel</string>
+  <string name="twentyfour_hours">Iga 24 tunni järelt</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Muudatuste logi</string>
 </resources>

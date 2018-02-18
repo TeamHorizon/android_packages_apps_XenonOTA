@@ -41,4 +41,11 @@
   <string name="xenonota_channel_description">Уведомления об обновлениях XenonHD</string>
   <!-- Toast -->
   <string name="toast_message">Нет установленного браузера\nПроверьте приложение BrowserInstaller</string>
+  <!-- Update interval -->
+  <string name="disabled">Отключено</string>
+  <string name="hour">Каждый час</string>
+  <string name="twelve_hours">Каждые 12 часов</string>
+  <string name="twentyfour_hours">Каждые 24 часа</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Список изменений</string>
 </resources>

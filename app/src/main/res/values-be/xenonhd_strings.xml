@@ -39,4 +39,11 @@
   <string name="notification_message">Даступная новая версія!</string>
   <string name="xenonota_channel">Апавяшчэнні XenonOTA</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">Адключана</string>
+  <string name="hour">Кожную гадзіну</string>
+  <string name="twelve_hours">Кожных 12 гадзін</string>
+  <string name="twentyfour_hours">Кожных 24 гадзіны</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Спіс змен</string>
 </resources>

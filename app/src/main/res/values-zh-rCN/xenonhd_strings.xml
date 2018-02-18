@@ -40,4 +40,11 @@
   <string name="xenonota_channel">XenonOTA 通知</string>
   <string name="xenonota_channel_description">有关新 XenonHD 更新的通知</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">已禁用</string>
+  <string name="hour">每小时</string>
+  <string name="twelve_hours">每12小时</string>
+  <string name="twentyfour_hours">每24小时</string>
+  <!-- Links -->
+  <string name="links_changelog_title">更新日志</string>
 </resources>

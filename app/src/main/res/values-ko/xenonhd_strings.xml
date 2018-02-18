@@ -32,4 +32,7 @@
   <string name="notification_title">XenonHD 업데이트</string>
   <string name="notification_message">새 버전을 사용할 수 있습니다.</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <!-- Links -->
+  <string name="links_changelog_title">체인지 로그</string>
 </resources>

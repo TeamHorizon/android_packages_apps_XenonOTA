@@ -41,4 +41,11 @@
   <string name="xenonota_channel_description">Upozornenia na nové aktualizácie XenonHD</string>
   <!-- Toast -->
   <string name="toast_message">Nie je nainštalovaný žiadny prehliadač\nSkontrolujte aplikáciu BrowserInstaller</string>
+  <!-- Update interval -->
+  <string name="disabled">Vypnuté</string>
+  <string name="hour">Každú hodinu</string>
+  <string name="twelve_hours">Každých 12 hodín</string>
+  <string name="twentyfour_hours">Každých 24 hodín</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Prehľad zmien</string>
 </resources>

@@ -17,19 +17,35 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">Xenon Güncellemeleri</string>
+  <string name="app_title">XenonHD Güncellemeleri</string>
   <!-- Categories -->
+  <string name="ota_category">Güncelleme bölümü</string>
+  <string name="links_category">İndirme bölümü</string>
   <!-- Dialog -->
   <string name="dialog_message">Güncellemeler kontrol ediliyor, lütfen bekleyin…</string>
   <!-- ROM info -->
+  <string name="latest_version">Güncelleme mevcut!\nYeni sürüm: %1$s</string>
   <string name="unknown">Bilinmeyen</string>
   <string name="system_uptodate">Sisteminiz güncel</string>
   <!-- Check update -->
   <string name="check_update_title">Güncellemeleri kontrol et</string>
   <string name="last_check_summary">Son kontrol: %1$s</string>
   <string name="last_check_never">Hiçbir Zaman</string>
+  <string name="check_update_failed">Güncellemeleri kontrol edilmiyor. İnternet bağlantınızı ve cihazınızın resmi olarak desteklenip desteklenmediğini kontrol edin</string>
+  <string name="update_available">Güncelleme mevcut!</string>
   <string name="no_update_available">Kullanılabilir güncelleme yok</string>
   <!-- Notification -->
-  <string name="notification_title">XenonHD güncelleştirme</string>
-  <string name="notification_message">Yeni bir sürüm kullanılabilir!</string>
+  <string name="notification_title">XenonHD Güncellemeleri</string>
+  <string name="notification_message">Kullanılabilir yeni sürüm mevcut!</string>
+  <string name="xenonota_channel">XenonOTA bildirimleri</string>
+  <string name="xenonota_channel_description">Yeni XenonHD güncellemeleri ile ilgili bildirimler</string>
   <!-- Toast -->
+  <string name="toast_message">Tarayıcı yüklü değil Tarayıcı yükleyici uygulamasını kontrol et</string>
+  <!-- Update interval -->
+  <string name="disabled">Devre Dışı</string>
+  <string name="hour">Saat başı </string>
+  <string name="twelve_hours">12 saatte bir</string>
+  <string name="twentyfour_hours">24 saatte bir</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Değişiklikler</string>
 </resources>

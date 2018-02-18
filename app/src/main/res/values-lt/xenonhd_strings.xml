@@ -31,4 +31,10 @@
   <string name="notification_title">XenonHD atnaujinimas</string>
   <string name="notification_message">Galima nauja versija!</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">Išjungta</string>
+  <string name="hour">Kas valandą</string>
+  <string name="twelve_hours">Kas 12 valandų</string>
+  <string name="twentyfour_hours">Kas 24 valandas</string>
+  <!-- Links -->
 </resources>

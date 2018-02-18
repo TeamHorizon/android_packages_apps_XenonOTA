@@ -41,4 +41,23 @@
   <string name="xenonota_channel_description">Powiadomienia o nowych aktualizacjach XenonHD</string>
   <!-- Toast -->
   <string name="toast_message">Brak zainstalowanej przeglądarki\nSprawdź aplikację Instalator przeglądarki</string>
+  <!-- Update interval -->
+  <string name="interval_title">Automatycznie sprawdzaj aktualizacje</string>
+  <string name="autoupdate_enabled">Automatyczne sprawdzanie aktualizacji jest włączone</string>
+  <string name="autoupdate_disabled">Automatyczne sprawdzanie aktualizacji jest wyłączone</string>
+  <string name="disabled">Wyłączony</string>
+  <string name="hour">Co godzinę</string>
+  <string name="twelve_hours">Co 12 godzin</string>
+  <string name="twentyfour_hours">Co 24 godziny</string>
+  <!-- Links -->
+  <string name="links_rom_title">ROM</string>
+  <string name="links_rom_summary">Pobierz najnowszą wersję XenonHD</string>
+  <string name="links_md5_title">MD5</string>
+  <string name="links_md5_summary">Pobierz sumę kontrolną najnowszej kompilacji</string>
+  <string name="links_gapps_title">Gapps</string>
+  <string name="links_gapps_summary">Pobierz Open Gapps</string>
+  <string name="links_changelog_title">Lista zmian</string>
+  <string name="links_changelog_summary">Zobacz zmiany w najnowszej kompilacji</string>
+  <string name="links_donate_title">Wsparcie</string>
+  <string name="links_donate_summary">Przekaż darowiznę opiekunowi urządzenia</string>
 </resources>

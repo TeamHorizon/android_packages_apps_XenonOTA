@@ -41,4 +41,11 @@
   <string name="xenonota_channel_description">有關新的 XenonHD 更新的通知</string>
   <!-- Toast -->
   <string name="toast_message">沒有安裝瀏覽器。\n檢查瀏覽器安裝程式的應用程式</string>
+  <!-- Update interval -->
+  <string name="disabled">已停用</string>
+  <string name="hour">每小時</string>
+  <string name="twelve_hours">每 12 小時</string>
+  <string name="twentyfour_hours">每 24 小時</string>
+  <!-- Links -->
+  <string name="links_changelog_title">更新日誌</string>
 </resources>

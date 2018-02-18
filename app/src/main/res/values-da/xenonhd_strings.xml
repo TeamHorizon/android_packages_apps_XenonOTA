@@ -22,4 +22,7 @@
   <!-- Check update -->
   <!-- Notification -->
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">Deaktiveret</string>
+  <!-- Links -->
 </resources>

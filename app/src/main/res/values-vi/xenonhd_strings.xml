@@ -32,4 +32,10 @@
   <string name="notification_title">XenonHD Update</string>
   <string name="notification_message">Một phiên bản mới có sẵn!</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="hour">Hàng giờ</string>
+  <string name="twelve_hours">Mỗi 12 tiếng</string>
+  <string name="twentyfour_hours">Mỗi 24 tiếng</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Nhật ký thay đổi</string>
 </resources>

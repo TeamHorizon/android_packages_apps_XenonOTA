@@ -32,4 +32,10 @@
   <string name="notification_title">XenonHD ažuriranja</string>
   <string name="notification_message">Nova verzija %s je dostupna!</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="hour">Svaki sat</string>
+  <string name="twelve_hours">Svakih 12 sati</string>
+  <string name="twentyfour_hours">Svaka 24 sata</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Lista promjena</string>
 </resources>

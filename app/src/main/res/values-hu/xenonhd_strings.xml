@@ -32,4 +32,11 @@
   <string name="notification_title">XenonHD frissítés</string>
   <string name="notification_message">Új verzió érhető el!</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">Kikapcsolva</string>
+  <string name="hour">Minden órában</string>
+  <string name="twelve_hours">12 óránként</string>
+  <string name="twentyfour_hours">24 óránként</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Változásnapló</string>
 </resources>

@@ -41,4 +41,11 @@
   <string name="xenonota_channel_description">Notifiche sui nuovi aggiornamenti di XenonHD</string>
   <!-- Toast -->
   <string name="toast_message">Nessun browser è installato, controlla l\'applicazione Browser Installer</string>
+  <!-- Update interval -->
+  <string name="disabled">Disabilitato</string>
+  <string name="hour">Ogni ora</string>
+  <string name="twelve_hours">Ogni 12 ore</string>
+  <string name="twentyfour_hours">Ogni 24 ore</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Modifiche</string>
 </resources>

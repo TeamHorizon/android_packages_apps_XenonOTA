@@ -32,4 +32,11 @@
   <string name="notification_title">Mises à jour XenonHD</string>
   <string name="notification_message">Une nouvelle version est disponible!</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">Désactivé</string>
+  <string name="hour">Toutes les heures</string>
+  <string name="twelve_hours">Toutes les 12 heures</string>
+  <string name="twentyfour_hours">Toutes les 24 heures</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Note de version</string>
 </resources>

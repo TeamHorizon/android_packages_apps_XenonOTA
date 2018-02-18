@@ -32,4 +32,11 @@
   <string name="notification_title">Оновлення XenonHD</string>
   <string name="notification_message">Нова версія доступна!</string>
   <!-- Toast -->
+  <!-- Update interval -->
+  <string name="disabled">Вимкнено</string>
+  <string name="hour">Кожну годину</string>
+  <string name="twelve_hours">Кожні 12 годин</string>
+  <string name="twentyfour_hours">Кожні 24 години</string>
+  <!-- Links -->
+  <string name="links_changelog_title">Список змін</string>
 </resources>

@@ -24,4 +24,7 @@
   <!-- Check update -->
   <!-- Notification -->
   <!-- Toast -->
+  <!-- Update interval -->
+  <!-- Links -->
+  <string name="links_changelog_title">Istoricul schimbărilor</string>
 </resources>
