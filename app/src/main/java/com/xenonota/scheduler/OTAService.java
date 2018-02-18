@@ -14,27 +14,25 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.application'
+package com.xenonota.scheduler;
 
-android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.0'
+import android.content.Intent;
+import android.os.AsyncTask;
 
-    defaultConfig {
-        applicationId "com.xenonota"
-        minSdkVersion 26
-        targetSdkVersion 26
-        versionCode 8
-        versionName "8.0.0"
+import com.commonsware.cwac.wakeful.WakefulIntentService;
+import com.xenonota.tasks.CheckUpdateTask;
+
+public class OTAService extends WakefulIntentService {
+
+    public OTAService() {
+        super("XenonOTA");
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    @Override
+    protected void doWakefulWork(Intent intent) {
+        CheckUpdateTask otaChecker = CheckUpdateTask.getInstance(true);
+        if (!otaChecker.getStatus().equals(AsyncTask.Status.RUNNING)) {
+            otaChecker.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getApplicationContext());
         }
     }
-}
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 }

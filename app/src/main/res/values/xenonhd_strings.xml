@@ -46,4 +46,13 @@
 
     <!-- Toast -->
     <string name="toast_message">There\'s no browser installed\nCheck out BrowserInstaller app</string>
+
+    <!-- Update interval -->
+    <string name="interval_title">Automatically check for updates</string>
+    <string name="autoupdate_enabled">Automatic check for updates is enabled</string>
+    <string name="autoupdate_disabled">Automatic check for updates is disabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="hour">Every hour</string>
+    <string name="twelve_hours">Every 12 hours</string>
+    <string name="twentyfour_hours">Every 24 hours</string>
 </resources>
