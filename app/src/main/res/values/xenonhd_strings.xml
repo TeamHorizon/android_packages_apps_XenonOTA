@@ -24,6 +24,7 @@
 
     <!-- Dialog -->
     <string name="dialog_message">Checking for updates, please wait…</string>
+    <string name="reboot_recovery">Reboot to recovery</string>
 
     <!-- ROM info -->
     <string name="latest_version">Update available!\nLatest version: %1$s</string>

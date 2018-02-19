@@ -19,11 +19,15 @@ package com.xenonota;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 
+import com.xenonota.R;
 import com.xenonota.configs.LinkConfig;
 import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.fragments.XenonOTAFragment;
+
+import java.io.IOException;
 
 public class MainActivity extends PreferenceActivity implements
         WaitDialogFragment.OTADialogListener, LinkConfig.LinkConfigListener {
@@ -45,12 +49,25 @@ public class MainActivity extends PreferenceActivity implements
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.reboot_recovery, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 finish();
                 return true;
+            case R.id.recovery:
+                try {
+                    Process revovery = Runtime.getRuntime().exec("reboot recovery");
+                } catch (IOException e) {
+                   e.printStackTrace();
+                }
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
