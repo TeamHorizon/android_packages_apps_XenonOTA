@@ -16,8 +16,10 @@
 
 package com.xenonota;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.preference.PreferenceActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -62,11 +64,7 @@ public class MainActivity extends PreferenceActivity implements
                 finish();
                 return true;
             case R.id.recovery:
-                try {
-                    Process revovery = Runtime.getRuntime().exec("reboot recovery");
-                } catch (IOException e) {
-                   e.printStackTrace();
-                }
+                    ((PowerManager) getApplicationContext().getSystemService(Activity.POWER_SERVICE)).reboot("recovery-update");
                 break;
         }
         return super.onOptionsItemSelected(item);
