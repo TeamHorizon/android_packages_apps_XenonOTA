@@ -23,29 +23,42 @@
   <string name="links_category">Раздел загрузок</string>
   <!-- Dialog -->
   <string name="dialog_message">Проверка наличия обновлений, пожалуйста подождите...</string>
+  <string name="reboot_recovery">Перезагрузить в рекавери</string>
   <!-- ROM info -->
   <string name="latest_version">Доступно обновление! Последняя версия</string>
   <string name="unknown">Неизвестно</string>
-  <string name="system_uptodate">Ваша система обновлена до последней версии</string>
+  <string name="system_uptodate">Система обновлена</string>
   <!-- Check update -->
   <string name="check_update_title">Проверить наличие обновлений</string>
   <string name="last_check_summary">Последняя проверка: %1$s</string>
   <string name="last_check_never">Никогда</string>
   <string name="check_update_failed">Не удается проверить наличие обновлений. Проверьте подключение к Интернету и поддерживается ли ваше устройство официально</string>
-  <string name="update_available">Доступны обновление!</string>
+  <string name="update_available">Доступны обновления!</string>
   <string name="no_update_available">Нет доступных обновлений</string>
   <!-- Notification -->
   <string name="notification_title">Обновления XenonHD</string>
-  <string name="notification_message">Новая версия доступна!</string>
+  <string name="notification_message">Доступна новая версия!</string>
   <string name="xenonota_channel">Уведомления XenonOTA</string>
   <string name="xenonota_channel_description">Уведомления об обновлениях XenonHD</string>
   <!-- Toast -->
   <string name="toast_message">Нет установленного браузера\nПроверьте приложение BrowserInstaller</string>
   <!-- Update interval -->
+  <string name="interval_title">Автоматически проверять наличие обновлений</string>
+  <string name="autoupdate_enabled">Автоматическая проверка обновлений включена</string>
+  <string name="autoupdate_disabled">Автоматическая проверка обновлений выключена</string>
   <string name="disabled">Отключено</string>
   <string name="hour">Каждый час</string>
   <string name="twelve_hours">Каждые 12 часов</string>
   <string name="twentyfour_hours">Каждые 24 часа</string>
   <!-- Links -->
+  <string name="links_rom_title">Прошивка</string>
+  <string name="links_rom_summary">Загрузить последнюю версию</string>
+  <string name="links_md5_title">MD5</string>
+  <string name="links_md5_summary">Загрузить контрольную сумму последней сборки</string>
+  <string name="links_gapps_title">Gapps</string>
+  <string name="links_gapps_summary">Загрузить Open Gapps</string>
   <string name="links_changelog_title">Список изменений</string>
+  <string name="links_changelog_summary">Просмотреть последние изменения</string>
+  <string name="links_donate_title">Поддержка</string>
+  <string name="links_donate_summary">Пожертвования для сопровождающего вашего устройства</string>
 </resources>

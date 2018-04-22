@@ -22,7 +22,12 @@
   <string name="dialog_message">A verificar actualizações. Por favor, aguarde…</string>
   <!-- ROM info -->
   <string name="unknown">Desconhecido</string>
+  <string name="system_uptodate">O seu sistema está atualizado</string>
   <!-- Check update -->
+  <string name="check_update_title">Procurar atualizações</string>
+  <string name="last_check_summary">Última verificação: %1$s</string>
+  <string name="last_check_never">Nunca</string>
+  <string name="no_update_available">Sem atualizações disponíveis</string>
   <!-- Notification -->
   <string name="notification_title">Actualização XenonHD</string>
   <string name="notification_message">Nova versão disponível!</string>

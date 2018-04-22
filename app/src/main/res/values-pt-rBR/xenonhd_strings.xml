@@ -17,26 +17,48 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">Atualizações XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">Seção de atualização</string>
+  <string name="links_category">Seção de download</string>
   <!-- Dialog -->
-  <string name="dialog_message">Verificação de atualizações, aguarde...</string>
+  <string name="dialog_message">Verificando atualizações, aguarde...</string>
+  <string name="reboot_recovery">Reiniciar para recuperação</string>
   <!-- ROM info -->
+  <string name="latest_version">Atualização disponível!\nÚltima versão: %1$s</string>
   <string name="unknown">Desconhecido</string>
   <string name="system_uptodate">Seu sistema está atualizado</string>
   <!-- Check update -->
   <string name="check_update_title">Verificar atualizações</string>
   <string name="last_check_summary">Última verificação: %1$s</string>
   <string name="last_check_never">Nunca</string>
+  <string name="check_update_failed">Não é possível verificar se há atualizações. Verifique a sua ligação à Internet e se o seu dispositivo é oficialmente suportado</string>
+  <string name="update_available">Atualização disponível!</string>
   <string name="no_update_available">Nenhuma atualização disponível</string>
   <!-- Notification -->
   <string name="notification_title">Atualizações XenonHD</string>
   <string name="notification_message">Uma nova versão está disponível!</string>
+  <string name="xenonota_channel">Notificações XenonOTA</string>
+  <string name="xenonota_channel_description">Notificações sobre novas atualizações XenonHD</string>
   <!-- Toast -->
+  <string name="toast_message">Não há nenhum navegador instalado\nConfira o aplicativo instalador do navegador</string>
   <!-- Update interval -->
+  <string name="interval_title">Verificar atualizações automaticamente</string>
+  <string name="autoupdate_enabled">A verificação automática de atualizações está ativada</string>
+  <string name="autoupdate_disabled">Verificação automática de atualizações está desativada</string>
   <string name="disabled">Desativado</string>
   <string name="hour">De hora em hora</string>
   <string name="twelve_hours">De 12 em 12 horas</string>
   <string name="twentyfour_hours">A cada 24 horas</string>
   <!-- Links -->
-  <string name="links_changelog_title">Registro de Alterações</string>
+  <string name="links_rom_title">ROM</string>
+  <string name="links_rom_summary">Faça o download da versão mais recente</string>
+  <string name="links_md5_title">MD5</string>
+  <string name="links_md5_summary">Baixe a soma de verificação da compilação mais recente</string>
+  <string name="links_gapps_title">GApps</string>
+  <string name="links_gapps_summary">Download Open GApps</string>
+  <string name="links_changelog_title">Registro de mudanças</string>
+  <string name="links_changelog_summary">Veja o registro de mudanças mais recente</string>
+  <string name="links_donate_title">Suporte</string>
+  <string name="links_donate_summary">Doar para o mantenedor do dispositivo</string>
 </resources>

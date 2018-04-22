@@ -17,26 +17,48 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">XenonHD Uuendused</string>
   <!-- Categories -->
+  <string name="ota_category">Uuenduste lõik</string>
+  <string name="links_category">Allalaadimiste lõik</string>
   <!-- Dialog -->
   <string name="dialog_message">Uuenduste kontrollimine, palun oodake…</string>
+  <string name="reboot_recovery">Taaskäivita taastamise režiimi</string>
   <!-- ROM info -->
+  <string name="latest_version">Värskendus saadaval! \nLatest versioon: %1$s</string>
   <string name="unknown">Tundmatu</string>
   <string name="system_uptodate">Teie süsteem on kõige uuemal versioonil</string>
   <!-- Check update -->
   <string name="check_update_title">Kontrolli uuendusi</string>
   <string name="last_check_summary">Viimati kontrollitud: %1$s</string>
   <string name="last_check_never">Mitte kunagi</string>
+  <string name="check_update_failed">Ei saa värskendusi kontrollida. Kontrollige oma internetiühendust ja kas sinu seade on ametlikult toetatud</string>
+  <string name="update_available">Värskendus saadaval!</string>
   <string name="no_update_available">Uuendusi ei leitud</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD Uuendused</string>
   <string name="notification_message">Uuem versioon on saadaval!</string>
+  <string name="xenonota_channel">XenonOTA teated</string>
+  <string name="xenonota_channel_description">Teavitused uute XenonHD uuenduste kohta</string>
   <!-- Toast -->
+  <string name="toast_message">Ühtegi brauserit ei ole installitud\nkontrollige brauseri installeerimise rakendust</string>
   <!-- Update interval -->
+  <string name="interval_title">Automaatne uuenduste kontroll</string>
+  <string name="autoupdate_enabled">Automaatne uuenduste kontroll on lubatud</string>
+  <string name="autoupdate_disabled">Automaatne uuenduste kontroll on keelatud</string>
   <string name="disabled">Keelatud</string>
   <string name="hour">Iga tund</string>
   <string name="twelve_hours">Iga 12 tunni järel</string>
   <string name="twentyfour_hours">Iga 24 tunni järelt</string>
   <!-- Links -->
+  <string name="links_rom_title">ROM</string>
+  <string name="links_rom_summary">Lae alla uusim versioon</string>
+  <string name="links_md5_title">MD5</string>
+  <string name="links_md5_summary">Lae alla viimase versiooni kontrollsumma</string>
+  <string name="links_gapps_title">Gapps</string>
+  <string name="links_gapps_summary">Lae alla Gapps-id</string>
   <string name="links_changelog_title">Muudatuste logi</string>
+  <string name="links_changelog_summary">Vaata viimast muudatuste logi</string>
+  <string name="links_donate_title">Tugi</string>
+  <string name="links_donate_summary">Anneta oma seadme hooldajale</string>
 </resources>

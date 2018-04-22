@@ -17,26 +17,48 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">XenonHD frissítések</string>
   <!-- Categories -->
+  <string name="ota_category">Frissítések szekció</string>
+  <string name="links_category">Letöltések szekció</string>
   <!-- Dialog -->
   <string name="dialog_message">Frissítések keresése, kis türelmet…</string>
+  <string name="reboot_recovery">Újraindítás Recovery módba</string>
   <!-- ROM info -->
+  <string name="latest_version">Frissítés elérhető! \nLegújabb verzió: %1$s</string>
   <string name="unknown">Ismeretlen</string>
   <string name="system_uptodate">A rendszer naprakész</string>
   <!-- Check update -->
   <string name="check_update_title">Frissítések keresése</string>
   <string name="last_check_summary">Utolsó ellenőrzés: %1$s</string>
   <string name="last_check_never">Soha</string>
+  <string name="check_update_failed">Nem sikerült a frissítések ellenőrzése. Ellenőrizze a hálózati kapcsolatot, illetve hogy a készüléke támogatott-e hivatalosan</string>
+  <string name="update_available">Frissítés elérhető!</string>
   <string name="no_update_available">Nincs elérhető frissítés</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD frissítés</string>
   <string name="notification_message">Új verzió érhető el!</string>
+  <string name="xenonota_channel">XenonOTA értesítések</string>
+  <string name="xenonota_channel_description">Értesítések az új XenonHD frissítésekről</string>
   <!-- Toast -->
+  <string name="toast_message">Nincs böngésző telepítve\nPróbálja ki a Böngészőtelepítő alkalmazást</string>
   <!-- Update interval -->
+  <string name="interval_title">Frissítések automatikus keresése</string>
+  <string name="autoupdate_enabled">Automatikus frissítéskeresés engedélyezve van</string>
+  <string name="autoupdate_disabled">Automatikus frissítéskeresés le van tiltva</string>
   <string name="disabled">Kikapcsolva</string>
   <string name="hour">Minden órában</string>
   <string name="twelve_hours">12 óránként</string>
   <string name="twentyfour_hours">24 óránként</string>
   <!-- Links -->
+  <string name="links_rom_title">ROM</string>
+  <string name="links_rom_summary">A legújabb verzió letöltése</string>
+  <string name="links_md5_title">MD5</string>
+  <string name="links_md5_summary">Legújabb verzió ellenőrzőösszege</string>
+  <string name="links_gapps_title">Gapps</string>
+  <string name="links_gapps_summary">Open Gapps letöltése</string>
   <string name="links_changelog_title">Változásnapló</string>
+  <string name="links_changelog_summary">Legújabb változások listájának megtekintése</string>
+  <string name="links_donate_title">Támogatás</string>
+  <string name="links_donate_summary">Adományozás a készülék-karbantartó részére</string>
 </resources>

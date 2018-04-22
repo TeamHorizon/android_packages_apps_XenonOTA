@@ -23,6 +23,7 @@
   <string name="links_category">下载部分</string>
   <!-- Dialog -->
   <string name="dialog_message">正在检查更新，请稍等......</string>
+  <string name="reboot_recovery">重启至恢复模式</string>
   <!-- ROM info -->
   <string name="latest_version">更新可用! 最新版本为:</string>
   <string name="unknown">未知</string>
@@ -41,10 +42,21 @@
   <string name="xenonota_channel_description">有关新 XenonHD 更新的通知</string>
   <!-- Toast -->
   <!-- Update interval -->
+  <string name="interval_title">自动检查更新</string>
+  <string name="autoupdate_enabled">自动检查更新已启用</string>
+  <string name="autoupdate_disabled">自动检查更新已禁用</string>
   <string name="disabled">已禁用</string>
   <string name="hour">每小时</string>
   <string name="twelve_hours">每12小时</string>
   <string name="twentyfour_hours">每24小时</string>
   <!-- Links -->
+  <string name="links_rom_title">ROM</string>
+  <string name="links_rom_summary">下载最新版本</string>
+  <string name="links_md5_title">MD5 值</string>
+  <string name="links_gapps_title">Gapps</string>
+  <string name="links_gapps_summary">下载 Open Gapps</string>
   <string name="links_changelog_title">更新日志</string>
+  <string name="links_changelog_summary">查看最新的更新日志</string>
+  <string name="links_donate_title">支持</string>
+  <string name="links_donate_summary">捐赠你的设备维护者</string>
 </resources>

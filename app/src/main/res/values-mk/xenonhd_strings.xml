@@ -23,5 +23,6 @@
   <!-- Notification -->
   <!-- Toast -->
   <!-- Update interval -->
+  <string name="disabled">Оневозможено</string>
   <!-- Links -->
 </resources>
