@@ -31,7 +31,7 @@
   <!-- Check update -->
   <string name="check_update_title">Güncellemeleri kontrol et</string>
   <string name="last_check_summary">Son kontrol: %1$s</string>
-  <string name="last_check_never">Hiçbir Zaman</string>
+  <string name="last_check_never">Asla</string>
   <string name="check_update_failed">Güncellemeleri kontrol edilmiyor. İnternet bağlantınızı ve cihazınızın resmi olarak desteklenip desteklenmediğini kontrol edin</string>
   <string name="update_available">Güncelleme mevcut!</string>
   <string name="no_update_available">Kullanılabilir güncelleme yok</string>
@@ -52,13 +52,13 @@
   <string name="twentyfour_hours">24 saatte bir</string>
   <!-- Links -->
   <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">En yeni yapıyı indir</string>
+  <string name="links_rom_summary">En son yapıyı indirin</string>
   <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">En yeni yapının sağlama toplamını indir</string>
+  <string name="links_md5_summary">En son yapının sağlama toplamını indirin</string>
   <string name="links_gapps_title">Gapps</string>
   <string name="links_gapps_summary">Gapps İndir</string>
   <string name="links_changelog_title">Değişiklikler</string>
-  <string name="links_changelog_summary">En son değişiklik günlüğünü görüntüle</string>
+  <string name="links_changelog_summary">En son değişiklikleri görüntüle</string>
   <string name="links_donate_title">Bağış yap</string>
   <string name="links_donate_summary">Cihazına destek olan geliştiriciye katkıda bulun</string>
 </resources>
