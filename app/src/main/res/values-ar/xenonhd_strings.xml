@@ -17,26 +17,48 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">تحديث الزينون على الهواء</string>
+  <string name="app_title">تحديثات XenonHD</string>
   <!-- Categories -->
+  <string name="ota_category">قسم التحديث</string>
+  <string name="links_category">قسم التحميل</string>
   <!-- Dialog -->
   <string name="dialog_message">التحقق من وجود تحديثات، الرجاء الإنتظار.</string>
+  <string name="reboot_recovery">اعادة التشغيل إلى وضع الإسترداد</string>
   <!-- ROM info -->
+  <string name="latest_version">تحديث متوفر!\nاخر إصدار: %1$s</string>
   <string name="unknown">مجهول</string>
   <string name="system_uptodate">نظامك محدث</string>
   <!-- Check update -->
   <string name="check_update_title">تحقق من وجود تحديثات</string>
   <string name="last_check_summary">آخر فحص: %1$s</string>
   <string name="last_check_never">أبداً</string>
+  <string name="check_update_failed">لا يمكن التحقق من وجود تحديثات. تحقق من اتصال الإنترنت الخاص بك، وما إذا كان الجهاز الخاص بك معتمد رسميا</string>
+  <string name="update_available">تحديث متوفر!</string>
   <string name="no_update_available">لا توجد تحديثات متوفرة</string>
   <!-- Notification -->
   <string name="notification_title">تحديثات XenonHD</string>
   <string name="notification_message">يتوفر إصدار جديد!</string>
+  <string name="xenonota_channel">اشعارات XenonOTA</string>
+  <string name="xenonota_channel_description">إشعارات حول التحديثات الجديدة لـ XenonHD</string>
   <!-- Toast -->
+  <string name="toast_message">لا يوجد متصفح مثبت\nتحقق من مثبت المتصفح</string>
   <!-- Update interval -->
+  <string name="interval_title">التحقق تلقائياً من وجود تحديثات</string>
+  <string name="autoupdate_enabled">التحقق تلقائياً من وجود تحديثات ممكن</string>
+  <string name="autoupdate_disabled">التحقق تلقائياً من وجود تحديثات معطل</string>
   <string name="disabled">غير مفعل</string>
   <string name="hour">كل ساعة</string>
   <string name="twelve_hours">كل 12 ساعة</string>
   <string name="twentyfour_hours">كل ٢٤ ساعة</string>
   <!-- Links -->
+  <string name="links_rom_title">ROM</string>
+  <string name="links_rom_summary">تحميل الإصدار الأحدث</string>
+  <string name="links_md5_title">MD5</string>
+  <string name="links_md5_summary">تحميل المجموع الاختباري للأصدار الأحدث</string>
+  <string name="links_gapps_title">تطبيقات Google</string>
+  <string name="links_gapps_summary">التحميل من موقع Open Gapps</string>
   <string name="links_changelog_title">سجل التغيرات</string>
+  <string name="links_changelog_summary">عرض سجل التغييرات الأخيرة</string>
+  <string name="links_donate_title">الدعم</string>
+  <string name="links_donate_summary">التبرع للمطور</string>
 </resources>

@@ -38,12 +38,12 @@
   <!-- Notification -->
   <string name="notification_title">XenonHD Güncellemeleri</string>
   <string name="notification_message">Kullanılabilir yeni sürüm mevcut!</string>
-  <string name="xenonota_channel">XenonOTA bildirimleri</string>
+  <string name="xenonota_channel">Xenon bildirimleri</string>
   <string name="xenonota_channel_description">Yeni XenonHD güncellemeleri ile ilgili bildirimler</string>
   <!-- Toast -->
-  <string name="toast_message">Tarayıcı yüklü değil Tarayıcı yükleyici uygulamasını kontrol et</string>
+  <string name="toast_message">Tarayıcı yüklü değil\nTarayıcı yükleyici uygulamasını kontrol edin</string>
   <!-- Update interval -->
-  <string name="interval_title">Güncellemeleri otomatik olarak kontrol et</string>
+  <string name="interval_title">Güncellemeleri otomatik kontrol et</string>
   <string name="autoupdate_enabled">Otomatik güncelleme kontrolu etkin</string>
   <string name="autoupdate_disabled">Otomatik güncelleme kontrolu devre dışı</string>
   <string name="disabled">Devre dışı</string>
@@ -56,7 +56,7 @@
   <string name="links_md5_title">MD5</string>
   <string name="links_md5_summary">En son yapının sağlama toplamını indirin</string>
   <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Gapps İndir</string>
+  <string name="links_gapps_summary">Google gapps paketi indirin</string>
   <string name="links_changelog_title">Değişiklikler</string>
   <string name="links_changelog_summary">En son değişiklikleri görüntüle</string>
   <string name="links_donate_title">Bağış yap</string>
