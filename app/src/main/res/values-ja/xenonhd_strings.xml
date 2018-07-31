@@ -17,26 +17,48 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App -->
   <string name="app_name">XenonOTA</string>
+  <string name="app_title">XenonHDの更新</string>
   <!-- Categories -->
+  <string name="ota_category">アップデートエリア</string>
+  <string name="links_category">ダウンロードエリア</string>
   <!-- Dialog -->
   <string name="dialog_message">更新を確認しています。 しばらくお待ち下さい...</string>
+  <string name="reboot_recovery">リカバリーへ再起動</string>
   <!-- ROM info -->
+  <string name="latest_version">アップデート可能です！\n最新バージョン：%1$s</string>
   <string name="unknown">不明</string>
   <string name="system_uptodate">システムは最新の状態です</string>
   <!-- Check update -->
   <string name="check_update_title">更新の確認</string>
   <string name="last_check_summary">前回の更新確認：%1$s</string>
   <string name="last_check_never">指定なし</string>
+  <string name="check_update_failed">更新を確認できません。ネットワーク接続とお使いの端末が公式サポートされているかどうか確認して下さい。</string>
+  <string name="update_available">更新があります！</string>
   <string name="no_update_available">利用可能な更新はありません</string>
   <!-- Notification -->
-  <string name="notification_title">XenonHD 更新</string>
+  <string name="notification_title">XenonHDの更新</string>
   <string name="notification_message">新しいバージョンが利用可能です！</string>
+  <string name="xenonota_channel">XenonOTAの通知</string>
+  <string name="xenonota_channel_description">新しいXenonHDアップデートの通知</string>
   <!-- Toast -->
+  <string name="toast_message">インストールされているブラウザーがありません。\nブラウザーインストーラーアプリを確認して下さい。</string>
   <!-- Update interval -->
+  <string name="interval_title">自動的に更新を確認する</string>
+  <string name="autoupdate_enabled">自動更新確認は有効です</string>
+  <string name="autoupdate_disabled">自動更新確認は無効です</string>
   <string name="disabled">無効</string>
-  <string name="hour">１時間毎</string>
+  <string name="hour">1時間毎</string>
   <string name="twelve_hours">12時間毎</string>
   <string name="twentyfour_hours">24時間毎</string>
   <!-- Links -->
+  <string name="links_rom_title">ROM</string>
+  <string name="links_rom_summary">最新のビルドをダウンロード</string>
+  <string name="links_md5_title">MD5</string>
+  <string name="links_md5_summary">最新のビルドのチェックサムをダウンロード</string>
+  <string name="links_gapps_title">Gapps</string>
+  <string name="links_gapps_summary">Open Gappsをダウンロード</string>
   <string name="links_changelog_title">更新履歴</string>
+  <string name="links_changelog_summary">最新の変更履歴を見る</string>
+  <string name="links_donate_title">サポート</string>
+  <string name="links_donate_summary">お使いの端末のメンテナーに寄付する</string>
 </resources>

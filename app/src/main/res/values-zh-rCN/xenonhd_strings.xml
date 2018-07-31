@@ -41,6 +41,7 @@
   <string name="xenonota_channel">XenonOTA 通知</string>
   <string name="xenonota_channel_description">有关新 XenonHD 更新的通知</string>
   <!-- Toast -->
+  <string name="toast_message">没有安装浏览器。 \n检查浏览器安装程序的应用程序</string>
   <!-- Update interval -->
   <string name="interval_title">自动检查更新</string>
   <string name="autoupdate_enabled">自动检查更新已启用</string>
@@ -53,6 +54,7 @@
   <string name="links_rom_title">ROM</string>
   <string name="links_rom_summary">下载最新版本</string>
   <string name="links_md5_title">MD5 值</string>
+  <string name="links_md5_summary">下载最新版本的校验和</string>
   <string name="links_gapps_title">Gapps</string>
   <string name="links_gapps_summary">下载 Open Gapps</string>
   <string name="links_changelog_title">更新日志</string>

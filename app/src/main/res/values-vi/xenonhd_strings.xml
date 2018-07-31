@@ -33,6 +33,7 @@
   <string name="notification_message">Một phiên bản mới có sẵn!</string>
   <!-- Toast -->
   <!-- Update interval -->
+  <string name="disabled">Vô hiệu hóa</string>
   <string name="hour">Hàng giờ</string>
   <string name="twelve_hours">Mỗi 12 tiếng</string>
   <string name="twentyfour_hours">Mỗi 24 tiếng</string>
