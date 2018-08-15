@@ -75,14 +75,14 @@ public class OTAParser {
             }
             String name = parser.getName();
             if (name.equalsIgnoreCase(mReleaseType)) {
-                readOreo(parser);
+                readPie(parser);
             } else {
                 skip(parser);
             }
         }
     }
 
-    private void readOreo(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private void readPie(XmlPullParser parser) throws XmlPullParserException, IOException {
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;

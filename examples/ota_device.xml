@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
-    <Oreo>
+    <Pie>
         <device>
             <Filename>XenonHD-171003-experimental</Filename>
             <RomUrl
                 id="rom"
                 title="ROM"
-                description="Download the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/experimental/device/XenonHD-171003-experimental-device.zip</RomUrl>
+                description="Download the latest build">https://mirrors.c0urier.net/android/teamhorizon/P/experimental/device/XenonHD-171003-experimental-device.zip</RomUrl>
             <MD5Url
                 id="md5"
                 title="MD5"
-                description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/experimental/device/XenonHD-171003-experimental-device.zip.md5sum</MD5Url>
+                description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/P/experimental/device/XenonHD-171003-experimental-device.zip.md5sum</MD5Url>
             <ChangelogUrl
                 id="changelog"
                 title="Changelog"
-                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/O/experimental/device/Changelog.txt</ChangelogUrl>
+                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/P/experimental/device/Changelog.txt</ChangelogUrl>
             <OpenGappsUrl
                 id="opengapps"
                 title="Open Gapps"
                 description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
         </device>
-    </Oreo>
+    </Pie>
 </XenonOTA>
 
 

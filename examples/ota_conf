@@ -29,9 +29,9 @@
 #
 # OTA_configuration
 #
-ota_url=https://mirrors.c0urier.net/android/teamhorizon/O/OTA/ota_device.xml
+ota_url=https://mirrors.c0urier.net/android/teamhorizon/P/OTA/ota_device.xml
 device_name=ro.xenonhd.device
-release_type=Oreo
+release_type=Pie
 version_source=ro.xenonhd.version
 version_delimiter=-
 version_position=1
