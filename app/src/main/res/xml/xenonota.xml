@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2017 Team Horizon
+  ~ Copyright (C) 2018 XenonHD
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -20,17 +20,21 @@
 
     <PreferenceCategory android:title="@string/ota_category">
 
-        <PreferenceScreen android:key="key_rom_info" />
+        <PreferenceScreen
+            android:key="key_rom_info"
+            android:icon="@drawable/ic_rom_info" />
 
         <PreferenceScreen
             android:key="key_check_update"
+            android:icon="@drawable/ic_check_update"
             android:title="@string/check_update_title" />
 
         <ListPreference
+            android:key="key_update_interval"
             android:dialogTitle="@string/interval_title"
             android:entries="@array/interval_entries"
             android:entryValues="@array/interval_values"
-            android:key="key_update_interval"
+            android:icon="@drawable/ic_update_interval"
             android:title="@string/interval_title" />
 
     </PreferenceCategory>
