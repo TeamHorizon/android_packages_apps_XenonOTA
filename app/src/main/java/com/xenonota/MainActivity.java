@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.xenonota.adapters.ViewPagerAdapter;
 import com.xenonota.fragments.Fragment_Gapps;
+import com.xenonota.fragments.Fragment_Settings;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int STORAGE_PERMISSION_CODE = 200;
 
     Fragment_Gapps fragment_gapps;
+    Fragment_Settings fragment_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
                 case 2:{
+                    fragment_settings.setHasOptionsMenu(false);
                     break;
                 }
             }
@@ -167,7 +170,9 @@ public class MainActivity extends AppCompatActivity {
     {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         fragment_gapps = Fragment_Gapps.newInstance();
+        fragment_settings = Fragment_Settings.newInstance();
         adapter.addFragment(fragment_gapps);
+        adapter.addFragment(fragment_settings);
         viewPager.setAdapter(adapter);
         invalidateOptionsMenu();
     }

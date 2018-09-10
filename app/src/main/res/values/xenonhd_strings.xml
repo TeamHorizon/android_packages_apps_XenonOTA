@@ -49,13 +49,8 @@
     <string name="toast_message">There\'s no browser installed\nCheck out BrowserInstaller app</string>
 
     <!-- Update interval -->
-    <string name="interval_title">Automatically check for updates</string>
     <string name="autoupdate_enabled">Automatic check for updates is enabled</string>
     <string name="autoupdate_disabled">Automatic check for updates is disabled</string>
-    <string name="disabled">Disabled</string>
-    <string name="hour">Every hour</string>
-    <string name="twelve_hours">Every 12 hours</string>
-    <string name="twentyfour_hours">Every 24 hours</string>
 
     <!-- Links -->
     <string name="links_rom_title">ROM</string>
@@ -95,5 +90,26 @@
     <string name="download_confirm_1">Please confirm these informations before clicking Download button:\n\nAndroid version\t\t:\t</string>
     <string name="download_confirm_2">\nCPU platform\t\t\t:\t</string>
     <string name="download_confirm_3">\nPackage variant\t\t:\t</string>
+
+    <!-- Settings -->
+    <string name="interval_title">Check for updates automatically</string>
+    <string name="disabled">Disabled</string>
+    <string name="hour">Every hour</string>
+    <string name="twelve_hours">Every 12 hours</string>
+    <string name="twentyfour_hours">Every 24 hours</string>
+    <string name="onboot">On boot</string>
+    <string name="preferred_type">Preferred update type</string>
+    <string name="official">Official builds only</string>
+    <string name="experimental">Latest Experimental &amp; Official builds</string>
+    <string name="gapps_variant">GApps variant</string>
+    <string name="gapps_aroma" translatable="false">aroma</string>
+    <string name="gapps_super" translatable="false">super</string>
+    <string name="gapps_stock" translatable="false">stock</string>
+    <string name="gapps_full" translatable="false">full</string>
+    <string name="gapps_mini" translatable="false">mini</string>
+    <string name="gapps_micro" translatable="false">micro</string>
+    <string name="gapps_nano" translatable="false">nano</string>
+    <string name="gapps_pico" translatable="false">pico</string>
+    <string name="gapps_tvstock" translatable="false">tvstock</string>
 
 </resources>
