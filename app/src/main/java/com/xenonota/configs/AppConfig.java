@@ -1,5 +1,5 @@
-/**
- * Copyright (C) 2018 XenonHD
+/*
+ * Copyright (C) 2018 Chandra Poerwanto
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ import android.preference.PreferenceManager;
 import com.xenonota.R;
 import com.xenonota.tasks.OTAService;
 import com.xenonota.utils.OTAUtils;
-
-import java.text.DateFormat;
-import java.util.Date;
 
 public final class AppConfig {
 
@@ -140,10 +137,10 @@ public final class AppConfig {
         if (intervalValue > 0) {
             jobScheduler.cancel(0);
             jobScheduler.schedule(new JobInfo.Builder(0,new ComponentName(context,OTAService.class))
-                    .setPeriodic(intervalValue)
-                    .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
-                    .setPersisted(true)
-                    .build());
+                .setPeriodic(intervalValue)
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+                .setPersisted(true)
+                .build());
             OTAUtils.toast(R.string.autoupdate_enabled, context);
         } else {
             jobScheduler.cancel(0);

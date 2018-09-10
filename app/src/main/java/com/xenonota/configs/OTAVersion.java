@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Team Horizon
+ * Copyright (C) 2018 Chandra Poerwanto
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,16 @@ public class OTAVersion {
         OTAUtils.logInfo("localVersion: " + localVersion);
 
         return compareVersion(serverVersion, localVersion, context);
+    }
+
+    public static boolean checkVersions(String version1, String version2, Context context) {
+        version1 = extractVersionFrom(version1, context);
+        version2 = extractVersionFrom(version2, context);
+
+        OTAUtils.logInfo("Version 1: " + version1);
+        OTAUtils.logInfo("Version 2: " + version2);
+
+        return compareVersion(version1, version2, context);
     }
 
     public static boolean compareVersion(String serverVersion, String localVersion, Context context) {

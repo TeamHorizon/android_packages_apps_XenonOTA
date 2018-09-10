@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Nitrogen OS
+ * Copyright (C) 2018 Chandra Poerwanto
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,11 @@ import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.os.AsyncTask;
 
-import com.xenonota.tasks.CheckUpdateTask;
-import com.xenonota.utils.OTAUtils;
-
 public class OTAService extends JobService {
 
     public boolean onStartJob(final JobParameters jobParameters) {
 
-        CheckUpdateTask otaChecker = CheckUpdateTask.getInstance(true);
+        CheckUpdateTask otaChecker = CheckUpdateTask.getInstance(true,null);
         if (!otaChecker.getStatus().equals(AsyncTask.Status.RUNNING)) {
             otaChecker.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getApplicationContext());
         }

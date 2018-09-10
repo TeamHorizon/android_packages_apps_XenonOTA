@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Team Horizon
+ * Copyright (C) 2018 Chandra Poerwanto
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public class OTAConfig extends Properties {
 
     private final static String FILENAME = "ota_conf";
 
-    private final static String OTA_URL = "ota_url";
+    private final static String OTA_OFFICIAL_URL = "ota_official";
+    private final static String OTA_EXPERIMENTAL_URL = "ota_experimental";
+
     private final static String RELEASE_TYPE = "release_type";
 
     private final static String DEVICE_NAME = "device_name";
@@ -59,12 +61,15 @@ public class OTAConfig extends Properties {
         return mInstance;
     }
 
-    public String getOtaUrl() {
-        return getProperty(OTAConfig.OTA_URL, "");
+    public String getOfficialOtaUrl() {
+        return getProperty(OTAConfig.OTA_OFFICIAL_URL, "");
+    }
+    public String getExperimentalOtaUrl() {
+        return getProperty(OTAConfig.OTA_EXPERIMENTAL_URL, "");
     }
 
     public String getReleaseType() {
-        return getProperty(OTAConfig.RELEASE_TYPE, "Pie");
+        return getProperty(OTAConfig.RELEASE_TYPE, "Oreo");
     }
 
     String getVersionSource() {

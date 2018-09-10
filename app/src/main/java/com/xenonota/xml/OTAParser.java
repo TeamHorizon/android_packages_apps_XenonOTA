@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Team Horizon
+ * Copyright (C) 2018 Chandra Poerwanto
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,13 +26,11 @@ import java.io.InputStream;
 
 public class OTAParser {
 
-    public static final String ID = "id";
-    public static final String TITLE = "title";
-    public static final String DESCRIPTION = "description";
-    public static final String URL = "url";
     private static final String ns = null;
     private static final String FILENAME_TAG = "Filename";
-    private static final String URL_TAG = "Url";
+    private static final String ROMURL_TAG = "RomUrl";
+    private static final String MD5URL_TAG = "MD5Url";
+    private static final String CHANGELOGURL_TAG = "ChangelogUrl";
     private static OTAParser mInstance;
     private String mDeviceName = null;
     private String mReleaseType = null;
@@ -46,10 +44,6 @@ public class OTAParser {
             mInstance = new OTAParser();
         }
         return mInstance;
-    }
-
-    private static boolean isUrlTag(String tagName) {
-        return tagName.toLowerCase().endsWith(URL_TAG.toLowerCase());
     }
 
     public OTADevice parse(InputStream in, String deviceName, String releaseType) throws XmlPullParserException, IOException {
@@ -75,14 +69,14 @@ public class OTAParser {
             }
             String name = parser.getName();
             if (name.equalsIgnoreCase(mReleaseType)) {
-                readPie(parser);
+                readOreo(parser);
             } else {
                 skip(parser);
             }
         }
     }
 
-    private void readPie(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private void readOreo(XmlPullParser parser) throws XmlPullParserException, IOException {
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
@@ -99,6 +93,8 @@ public class OTAParser {
     private void readDevice(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, mDeviceName);
         mDevice = new OTADevice();
+        String ROMURL = "";
+        String CHECKSUMURL = "";
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
@@ -107,32 +103,21 @@ public class OTAParser {
             if (tagName.equalsIgnoreCase(FILENAME_TAG)) {
                 String tagValue = readTag(parser, tagName);
                 mDevice.setLatestVersion(tagValue);
-            } else if (isUrlTag(tagName)) {
-                OTALink link = readLink(parser, tagName);
-                mDevice.addLink(link);
+            } else if (tagName.equalsIgnoreCase(ROMURL_TAG)) {
+                String tagValue = readTag(parser, tagName);
+                ROMURL = tagValue;
+            } else if (tagName.equalsIgnoreCase(MD5URL_TAG)) {
+                String tagValue = readTag(parser, tagName);
+                CHECKSUMURL = tagValue;
+            } else if (tagName.equalsIgnoreCase(CHANGELOGURL_TAG)) {
+                String tagValue = readTag(parser, tagName);
+                mDevice.setChangelogURL(tagValue);
             } else {
                 skip(parser);
             }
         }
-    }
-
-    private OTALink readLink(XmlPullParser parser, String tag) throws XmlPullParserException, IOException {
-        parser.require(XmlPullParser.START_TAG, ns, tag);
-
-        String id = parser.getAttributeValue(null, ID);
-        if (id == null || id.isEmpty()) {
-            id = tag;
-        }
-        OTALink link = new OTALink(id);
-        String title = parser.getAttributeValue(null, TITLE);
-        link.setTitle(title);
-        String description = parser.getAttributeValue(null, DESCRIPTION);
-        link.setDescription(description);
-        String url = readText(parser);
-        link.setUrl(url);
-
-        parser.require(XmlPullParser.END_TAG, ns, tag);
-        return link;
+        mDevice.setROMURL(ROMURL);
+        mDevice.setChecksumURL(CHECKSUMURL);
     }
 
     private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {

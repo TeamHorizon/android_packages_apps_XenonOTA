@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Team Horizon
+ * Copyright (C) 2018 Chandra Poerwanto
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,12 @@
 
 package com.xenonota.utils;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
+import android.os.PowerManager;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.xenonota.R;
 import com.xenonota.configs.OTAConfig;
 
 import java.io.BufferedReader;
@@ -112,16 +110,7 @@ public final class OTAUtils {
         return conn.getInputStream();
     }
 
-    public static void launchUrl(String url, Context context) {
-        if (!url.isEmpty() && context != null) {
-            PackageManager pm = context.getPackageManager();
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            if (intent.resolveActivity(pm) != null) {
-                context.startActivity(intent);
-            } else {
-                Toast toast = Toast.makeText(context, R.string.toast_message, Toast.LENGTH_LONG);
-                toast.show();
-            }
-        }
+    public static void rebootRecovery(Context context){
+        ((PowerManager) context.getApplicationContext().getSystemService(Activity.POWER_SERVICE)).reboot("recovery-update");
     }
 }
