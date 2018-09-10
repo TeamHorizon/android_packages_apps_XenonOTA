@@ -17,6 +17,9 @@
 package com.xenonota;
 
 import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
 
         checkStoragePermissions();
+        initChannels(this);
     }
 
     @Override
@@ -128,6 +132,17 @@ public class MainActivity extends AppCompatActivity {
                     .show();
             finish();
         }
+    }
+
+    public void initChannels(Context context) {
+        NotificationManager notificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationChannel channel = new NotificationChannel("xenonota",
+                "Downloads",
+                NotificationManager.IMPORTANCE_DEFAULT);
+        channel.setSound(null, null);
+        channel.setDescription("Downloads");
+        notificationManager.createNotificationChannel(channel);
     }
 
     private void setupViewPager(ViewPager viewPager)
