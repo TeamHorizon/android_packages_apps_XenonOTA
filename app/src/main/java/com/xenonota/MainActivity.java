@@ -16,6 +16,9 @@
 
 package com.xenonota;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -23,12 +26,15 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView navigation;
     ViewPager viewPager;
     MenuItem prevMenuItem;
+
+    private static final int STORAGE_PERMISSION_CODE = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewpager);
         viewPager.addOnPageChangeListener(mOnPageChangeListener);
         setupViewPager(viewPager);
+
+        checkStoragePermissions();
     }
 
     @Override
@@ -101,6 +109,26 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    private void checkStoragePermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{ Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    STORAGE_PERMISSION_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == STORAGE_PERMISSION_CODE && grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            Toast.makeText(MainActivity.this,  R.string.permission_not_enabled, Toast.LENGTH_LONG)
+                    .show();
+            finish();
+        }
+    }
 
     private void setupViewPager(ViewPager viewPager)
     {
