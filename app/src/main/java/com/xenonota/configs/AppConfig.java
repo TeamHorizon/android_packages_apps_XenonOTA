@@ -1,5 +1,5 @@
-/*
- * Copyright (C) 2017 Team Horizon
+/**
+ * Copyright (C) 2018 XenonHD
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,53 +33,80 @@ import java.util.Date;
 
 public final class AppConfig {
 
-    private static final String LAST_CHECK = "last_check";
     private static final String UPDATE_INTERVAL = "update_interval";
-    private static final String LATEST_VERSION = "latest_version";
+
+    private static final String GAPPS_VARIANT = "gapps_variant";
+    private static final String PREFERRED_TYPE = "preferred_type";
+
+    private static final String OTA_ZIP_PATH = "ota_zip_path";
+    private static final String OTA_ZIP_CHECKSUM = "ota_zip_md5";
+
+    private static final String GAPPS_ZIP_PATH = "gapps_zip_path";
+
+    private static final String MAGISK_ZIP_PATH = "magisk_zip_path";
 
     private AppConfig() {
     }
 
-    public static String getLatestVersionKey() {
-        return LATEST_VERSION;
-    }
-
-    public static String getLastCheckKey() {
-        return LAST_CHECK;
-    }
-
-    public static String getUpdateIntervalKey() {
-        return UPDATE_INTERVAL;
-    }
-
-    private static String buildLastCheckSummary(long time, Context context) {
-        String prefix = context.getResources().getString(R.string.last_check_summary);
-        if (time > 0) {
-            final String date = DateFormat.getDateTimeInstance().format(new Date(time));
-            return String.format(prefix, date);
-        }
-        return String.format(prefix, context.getResources().getString(R.string.last_check_never));
-    }
-
-    public static String getLastCheck(Context context) {
+    public static String getGappsVariant(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        final long time = sharedPreferences.getLong(LAST_CHECK, 0);
-        return buildLastCheckSummary(time, context);
+        return sharedPreferences.getString(GAPPS_VARIANT, "nano");
     }
 
-    public static String getFullLatestVersion(Context context) {
+    public static String getOtaZipPath(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString(LATEST_VERSION, "");
+        return sharedPreferences.getString(OTA_ZIP_PATH, "");
     }
 
-    public static void persistLatestVersion(String latestVersion, Context context) {
+    public static String getOtaZipChecksum(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        sharedPreferences.edit().putString(LATEST_VERSION, latestVersion).apply();
+        return sharedPreferences.getString(OTA_ZIP_CHECKSUM, "");
     }
 
-    public static void persistLastCheck(Context context) {
+    public static String getGappsZipPath(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        sharedPreferences.edit().putLong(LAST_CHECK, System.currentTimeMillis()).apply();
+        return sharedPreferences.getString(GAPPS_ZIP_PATH, "");
+    }
+
+    public static String getMagiskZipPath(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPreferences.getString(MAGISK_ZIP_PATH, "");
+    }
+
+    public static String getPreferredType(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPreferences.getString(PREFERRED_TYPE, "Experimental");
+    }
+
+    public static void persistGappsVariant(String variant, Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPreferences.edit().putString(GAPPS_VARIANT, variant).apply();
+    }
+
+    public static void persistOtaZipPath(String path, Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPreferences.edit().putString(OTA_ZIP_PATH,path).apply();
+    }
+
+    public static void persistOtaZipChecksum(String checksum, Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPreferences.edit().putString(OTA_ZIP_CHECKSUM,checksum).apply();
+    }
+
+    public static void persistGappsZipPath(String path, Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPreferences.edit().putString(GAPPS_ZIP_PATH,path).apply();
+    }
+
+
+    public static void persistMagiskZipPath(String path, Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPreferences.edit().putString(MAGISK_ZIP_PATH,path).apply();
+    }
+
+    public static void persistPreferredVersion(String preferredType, Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPreferences.edit().putString(PREFERRED_TYPE, preferredType).apply();
     }
 
     public static void persistUpdateIntervalIndex(int intervalIndex, Context context) {
@@ -97,47 +124,38 @@ public final class AppConfig {
             case 3:
                 intervalValue = AlarmManager.INTERVAL_DAY;
                 break;
+            case 4:
+                intervalValue = 0;
+                break;
             default:
                 intervalValue = AlarmManager.INTERVAL_HALF_DAY;
                 break;
         }
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        sharedPreferences.edit().putLong(UPDATE_INTERVAL, intervalValue).apply();
+        sharedPreferences.edit().putInt(UPDATE_INTERVAL, intervalIndex).apply();
 
         JobScheduler jobScheduler = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
 
         if (intervalValue > 0) {
             jobScheduler.cancel(0);
             jobScheduler.schedule(new JobInfo.Builder(0,new ComponentName(context,OTAService.class))
-                .setPeriodic(intervalValue)
-                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
-                .setPersisted(true)
-                .build());
+                    .setPeriodic(intervalValue)
+                    .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+                    .setPersisted(true)
+                    .build());
             OTAUtils.toast(R.string.autoupdate_enabled, context);
         } else {
             jobScheduler.cancel(0);
-            OTAUtils.toast(R.string.autoupdate_disabled, context);
+            if(intervalIndex == 0){
+                OTAUtils.toast(R.string.autoupdate_disabled, context);
+            }
         }
     }
 
     public static int getUpdateIntervalIndex(Context context) {
-        long value = getUpdateIntervalTime(context);
-        int index;
-        if (value == 0) {
-            index = 0;
-        } else if (value == AlarmManager.INTERVAL_HOUR) {
-            index = 1;
-        } else if (value == AlarmManager.INTERVAL_HALF_DAY) {
-            index = 2;
-        } else {
-            index = 3;
-        }
-        return index;
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPreferences.getInt(UPDATE_INTERVAL, 0);
     }
 
-    public static long getUpdateIntervalTime(Context context) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getLong(UPDATE_INTERVAL, AlarmManager.INTERVAL_HALF_DAY);
-    }
 }
