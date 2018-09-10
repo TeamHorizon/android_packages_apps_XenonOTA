@@ -70,6 +70,7 @@
     <string name="title_settings">Settings</string>
 
     <!-- Common -->
+    <string name="open_in_browser">Open in browser</string>
     <string name="my_device">Device</string>
     <string name="download">Download</string>
     <string name="permission_not_enabled">Please allow XenonOTA to write to external storage</string>
