@@ -31,6 +31,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.xenonota.adapters.ViewPagerAdapter;
+import com.xenonota.fragments.Fragment_Gapps;
+
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView navigation;
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     MenuItem prevMenuItem;
 
     private static final int STORAGE_PERMISSION_CODE = 200;
+
+    Fragment_Gapps fragment_gapps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +85,19 @@ public class MainActivity extends AppCompatActivity {
             else
             {
                 navigation.getMenu().getItem(0).setChecked(false);
+            }
+
+            switch(position){
+                case 0:{
+                    break;
+                }
+                case 1:{
+                    fragment_gapps.setHasOptionsMenu(true);
+                    break;
+                }
+                case 2:{
+                    break;
+                }
             }
 
             invalidateOptionsMenu();
@@ -147,6 +165,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager)
     {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        fragment_gapps = Fragment_Gapps.newInstance();
+        adapter.addFragment(fragment_gapps);
+        viewPager.setAdapter(adapter);
         invalidateOptionsMenu();
     }
 

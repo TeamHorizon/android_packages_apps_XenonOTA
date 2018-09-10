@@ -128,22 +128,22 @@ public class XenonOTAFragment extends PreferenceFragment implements
             mRomInfo.setTitle(fullLocalVersion);
 
             String prefix = getActivity().getResources().getString(R.string.latest_version);
-            String fullLatestVersion = AppConfig.getFullLatestVersion(getActivity());
+            String fullLatestVersion = "";//AppConfig.getFullLatestVersion(getActivity());
             String shortLatestVersion = OTAVersion.extractVersionFrom(fullLatestVersion, getActivity());
             if (fullLatestVersion.isEmpty()) {
                 fullLatestVersion = getActivity().getResources().getString(R.string.unknown);
-                mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
+                //mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
             } else if (!OTAVersion.compareVersion(shortLatestVersion, shortLocalVersion, getActivity())) {
                 mRomInfo.setSummary(getActivity().getResources().getString(R.string.system_uptodate));
             } else {
-                mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
+                //mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
             }
         }
     }
 
     private void updateLastCheckSummary() {
         if (mCheckUpdate != null) {
-            mCheckUpdate.setSummary(AppConfig.getLastCheck(getActivity()));
+            //.setSummary(AppConfig.getLastCheck(getActivity()));
         }
     }
 
@@ -211,7 +211,7 @@ public class XenonOTAFragment extends PreferenceFragment implements
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals(AppConfig.getLatestVersionKey())) {
+        /*if (key.equals(AppConfig.getLatestVersionKey())) {
             updateRomInfo();
         }
         if (key.equals(AppConfig.getLastCheckKey())) {
@@ -219,6 +219,6 @@ public class XenonOTAFragment extends PreferenceFragment implements
         }
         if (key.equals(AppConfig.getUpdateIntervalKey())) {
             updateIntervalSummary();
-        }
+        }*/
     }
 }

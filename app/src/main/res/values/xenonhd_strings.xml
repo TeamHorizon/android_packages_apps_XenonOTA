@@ -73,4 +73,27 @@
     <string name="title_rom">ROM</string>
     <string name="title_gapps">GApps</string>
     <string name="title_settings">Settings</string>
+
+    <!-- Common -->
+    <string name="my_device">Device</string>
+    <string name="download">Download</string>
+    <string name="permission_not_enabled">Please allow XenonOTA to write to external storage</string>
+
+    <!-- Dialogs -->
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="confirm">Confirm</string>
+
+    <!-- GApps -->
+    <string name="loading">Loading…</string>
+    <string name="gapps_ok">GApps has been installed!</string>
+    <string name="gapps_warning">GApps has not been installed!</string>
+    <string name="latest_release">Latest release for</string>
+    <string name="choose_gapps_zip">Choose existing GApps zip file</string>
+    <string name="gapps_set">Gapps path set to \"%s\"</string>
+
+    <string name="download_confirm_1">Please confirm these informations before clicking Download button:\n\nAndroid version\t\t:\t</string>
+    <string name="download_confirm_2">\nCPU platform\t\t\t:\t</string>
+    <string name="download_confirm_3">\nPackage variant\t\t:\t</string>
+
 </resources>

@@ -114,12 +114,11 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
                 showToast(R.string.update_available);
             } else {
                 showToast(R.string.no_update_available);
-            }
-            AppConfig.persistLatestVersion(latestVersion, mContext);
+            }//AppConfig.persistLatestVersion(latestVersion, mContext);
             LinkConfig.persistLinks(device.getLinks(), mContext);
         }
 
-        AppConfig.persistLastCheck(mContext);
+        //AppConfig.persistLastCheck(mContext);
 
         hideWaitDialog();
 
