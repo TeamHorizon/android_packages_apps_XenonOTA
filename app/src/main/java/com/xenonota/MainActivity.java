@@ -16,73 +16,95 @@
 
 package com.xenonota;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.os.PowerManager;
-import android.preference.PreferenceActivity;
-import android.view.Menu;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.xenonota.R;
-import com.xenonota.configs.LinkConfig;
-import com.xenonota.dialogs.WaitDialogFragment;
-import com.xenonota.fragments.XenonOTAFragment;
+public class MainActivity extends AppCompatActivity {
 
-import java.io.IOException;
-
-public class MainActivity extends PreferenceActivity implements
-        WaitDialogFragment.OTADialogListener, LinkConfig.LinkConfigListener {
-
-    private static final String FRAGMENT_TAG = XenonOTAFragment.class.getName();
+    BottomNavigationView navigation;
+    ViewPager viewPager;
+    MenuItem prevMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) actionBar.setDisplayHomeAsUpEnabled(true);
+        navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        XenonOTAFragment mFragment = (XenonOTAFragment) getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
-        if (mFragment == null) {
-            getFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new XenonOTAFragment(), FRAGMENT_TAG)
-                    .commit();
-        }
-        assert getActionBar() != null;
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.reboot_recovery, menu);
-        return super.onCreateOptionsMenu(menu);
+        viewPager = findViewById(R.id.viewpager);
+        viewPager.addOnPageChangeListener(mOnPageChangeListener);
+        setupViewPager(viewPager);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 finish();
                 return true;
-            case R.id.recovery:
-                    ((PowerManager) getApplicationContext().getSystemService(Activity.POWER_SERVICE)).reboot("recovery-update");
-                break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onProgressCancelled() {
-        Fragment fragment = getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
-        if (fragment instanceof WaitDialogFragment.OTADialogListener) {
-            ((WaitDialogFragment.OTADialogListener) fragment).onProgressCancelled();
+    private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
         }
+
+        @Override
+        public void onPageSelected(int position) {
+            if (prevMenuItem != null) {
+                prevMenuItem.setChecked(false);
+            }
+            else
+            {
+                navigation.getMenu().getItem(0).setChecked(false);
+            }
+
+            invalidateOptionsMenu();
+
+            navigation.getMenu().getItem(position).setChecked(true);
+            prevMenuItem = navigation.getMenu().getItem(position);
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_rom:
+                    viewPager.setCurrentItem(0);
+                    break;
+                case R.id.navigation_gapps:
+                    viewPager.setCurrentItem(1);
+                    break;
+                case R.id.navigation_settings:
+                    viewPager.setCurrentItem(2);
+                    break;
+            }
+            return true;
+        }
+    };
+
+    private void setupViewPager(ViewPager viewPager)
+    {
+        invalidateOptionsMenu();
     }
 
-    @Override
-    public void onConfigChange() {
-        Fragment fragment = getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
-        if (fragment instanceof LinkConfig.LinkConfigListener) {
-            ((LinkConfig.LinkConfigListener) fragment).onConfigChange();
-        }
-    }
 }

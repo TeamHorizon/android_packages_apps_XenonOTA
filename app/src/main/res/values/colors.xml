@@ -17,4 +17,7 @@
 <resources>
     <color name="statusbar_color">#e6e6e6</color>
     <color name="text_color">@android:color/black</color>
+    <color name="colorPrimary">@*android:color/accent_device_default_light</color>
+    <color name="colorPrimaryDark">@*android:color/accent_device_default_dark</color>
+    <color name="colorAccent">@android:color/white</color>
 </resources>

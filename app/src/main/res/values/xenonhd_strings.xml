@@ -68,4 +68,9 @@
     <string name="links_changelog_summary">View the latest changelog</string>
     <string name="links_donate_title">Support</string>
     <string name="links_donate_summary">Donate to your device maintainer</string>
+
+    <!-- Navigation -->
+    <string name="title_rom">ROM</string>
+    <string name="title_gapps">GApps</string>
+    <string name="title_settings">Settings</string>
 </resources>
