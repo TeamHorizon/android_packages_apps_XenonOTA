@@ -31,13 +31,13 @@
   <!-- Check update -->
   <string name="check_update_title">Güncellemeleri kontrol et</string>
   <string name="last_check_summary">Son kontrol: %1$s</string>
-  <string name="last_check_never">Asla</string>
+  <string name="last_check_never">Hiçbir Zaman</string>
   <string name="check_update_failed">Güncellemeleri kontrol edilmiyor. İnternet bağlantınızı ve cihazınızın resmi olarak desteklenip desteklenmediğini kontrol edin</string>
   <string name="update_available">Güncelleme mevcut!</string>
   <string name="no_update_available">Kullanılabilir güncelleme yok</string>
   <!-- Notification -->
   <string name="notification_title">XenonHD Güncellemeleri</string>
-  <string name="notification_message">Kullanılabilir yeni sürüm mevcut!</string>
+  <string name="notification_message">Yeni bir sürüm kullanılabilir!</string>
   <string name="xenonota_channel">Xenon bildirimleri</string>
   <string name="xenonota_channel_description">Yeni XenonHD güncellemeleri ile ilgili bildirimler</string>
   <!-- Toast -->

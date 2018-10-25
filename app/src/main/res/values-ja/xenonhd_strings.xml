@@ -31,7 +31,7 @@
   <!-- Check update -->
   <string name="check_update_title">更新の確認</string>
   <string name="last_check_summary">前回の更新確認：%1$s</string>
-  <string name="last_check_never">指定なし</string>
+  <string name="last_check_never">なし</string>
   <string name="check_update_failed">更新を確認できません。ネットワーク接続とお使いの端末が公式サポートされているかどうか確認して下さい。</string>
   <string name="update_available">更新があります！</string>
   <string name="no_update_available">利用可能な更新はありません</string>

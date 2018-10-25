@@ -22,7 +22,7 @@
   <string name="ota_category">Seção de atualização</string>
   <string name="links_category">Seção de download</string>
   <!-- Dialog -->
-  <string name="dialog_message">Verificando atualizações, aguarde...</string>
+  <string name="dialog_message">Verificação de atualizações, aguarde...</string>
   <string name="reboot_recovery">Reiniciar para recuperação</string>
   <!-- ROM info -->
   <string name="latest_version">Atualização disponível!\nÚltima versão: %1$s</string>
