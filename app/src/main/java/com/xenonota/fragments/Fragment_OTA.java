@@ -316,7 +316,12 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         rom_version.setText("XenonHD " + Build.VERSION.RELEASE);
         build_type.setText(OTAUtils.getProp("ro.xenonhd.type"));
         device_name.setText(Build.MODEL + " (" + Build.DEVICE + ")");
-        maintainer.setText(OTAUtils.getProp("ro.xenonhd.maintainer"));
+        String maintainer_name=OTAUtils.getProp("ro.xenonhd.maintainer");
+        if (maintainer_name != null && !maintainer_name.trim().isEmpty()) {
+            maintainer.setText(maintainer_name);
+        } else {
+            lv_maintainer.setVisibility(View.GONE);
+        }
     }
 
     void downloadROM() {
