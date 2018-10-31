@@ -16,6 +16,7 @@
 
 package com.xenonota.fragments;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -42,6 +43,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xenonota.R;
+import com.xenonota.configs.AppConfig;
+import com.xenonota.dialogs.Downloader;
 import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.tasks.CheckUpdateTask;
 import com.xenonota.utils.OTAUtils;
@@ -49,7 +52,8 @@ import com.xenonota.xml.OTADevice;
 
 import java.io.File;
 
-public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener {
+public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback {
+
     View view;
     TextView currentVersion;
     TextView rom_version;
@@ -325,6 +329,53 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     void downloadROM() {
+        if(updateAvailable && ota_data != null){
+            Downloader downloader = new Downloader(this.getContext(), this);
+            downloader.Start(url, filePath, "OTA");
+        }
+    }
 
+    @Override
+    public void onDownloadError(String reason) {
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder.setTitle(R.string.download_interrupted_title)
+                .setMessage(getString(R.string.download_interrupted_msg, reason))
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onDownloadSuccess(String filePath) {
+        AppConfig.persistOtaZipPath(filePath,getContext().getApplicationContext());
+        AppConfig.persistOtaZipChecksum(ota_data.getChecksum(),getContext().getApplicationContext());
+        btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.colorPrimaryDark,null));
+        btnFlash.setEnabled(true);
+
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder.setTitle(R.string.download_complete_title)
+                .setMessage(R.string.download_complete_msg)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onDownloadCancelled() {
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder.setTitle(R.string.download_cancelled_title)
+                .setMessage(R.string.download_cancelled_msg)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .show();
     }
 }

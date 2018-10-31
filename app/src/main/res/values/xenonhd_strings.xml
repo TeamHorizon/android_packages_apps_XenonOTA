@@ -128,4 +128,21 @@
     <string name="flash_message">Are you sure you want to reboot and install downloaded zip?</string>
     <string name="verifying_package">Verifying package…</string>
     <string name="verification_failed">Verification failed</string>
+
+    <!-- Downloader -->
+    <string name="downloading">Downloading</string>
+    <string name="starting">Starting Download&#8230;</string>
+    <string name="prog">%1$d%% </string>
+    <string name="size_mb">%1$s MB</string>
+    <string name="size_kb">%1$s KB</string>
+    <string name="size_bytes">%1$d Bytes</string>
+    <string name="progress_size">%1$s / %2$s</string>
+
+    <string name="download_complete_title">Download completed</string>
+    <string name="download_complete_msg">Update has been successfully downloaded. Click "Flash" to reboot and install in recovery</string>
+    <string name="download_interrupted_title">Download interrupted</string>
+    <string name="download_interrupted_msg">Download has been interrupted due to %1$s </string>
+    <string name="download_cancelled_title">Download cancelled</string>
+    <string name="download_cancelled_msg">Download has been cancelled by the user</string>
+
 </resources>
