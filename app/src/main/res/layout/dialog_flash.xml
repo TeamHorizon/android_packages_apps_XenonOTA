@@ -16,70 +16,71 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/flash_message"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/flash_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/flash_message"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flash_message">
+
+        <CheckBox
+            android:id="@+id/cb_flash_gapps"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/flash_message" />
+            android:layout_weight="1"
+            android:button="@drawable/checkbox_selector"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="@string/flash_gapps" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/cb_magisk"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/cb_flash_gapps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@drawable/checkbox_selector"
-                android:checked="false"
-                android:padding="5dp"
-                android:text="@string/flash_gapps" />
-
-            <CheckBox
-                android:id="@+id/cb_magisk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@drawable/checkbox_selector"
-                android:checked="false"
-                android:padding="5dp"
-                android:text="@string/flash_magisk" />
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btn_startFlash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="@string/confirm"
-                android:textColor="@color/colorAccent" />
-        </RelativeLayout>
-
+            android:layout_weight="1"
+            android:button="@drawable/checkbox_selector"
+            android:checked="false"
+            android:padding="5dp"
+            android:text="@string/flash_magisk" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_startFlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="@string/confirm"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 </android.support.constraint.ConstraintLayout>
