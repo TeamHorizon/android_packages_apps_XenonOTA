@@ -20,7 +20,13 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.xenonota.R;
 
@@ -40,10 +46,20 @@ public class WaitDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         setCancelable(true);
 
-        ProgressDialog dialog = new ProgressDialog(getActivity());
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.setMessage(getActivity().getString(R.string.dialog_message));
-        return dialog;
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        View progressDialog_layout = inflater.inflate(R.layout.dialog_progress, null);
+        TextView title = progressDialog_layout.findViewById(R.id.titleTextView);
+        ProgressBar progressBar = progressDialog_layout.findViewById(R.id.progressCircle);
+        title.setText(getActivity().getString(R.string.dialog_message));
+        progressBar.getIndeterminateDrawable().setColorFilter(getContext().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
+
+        AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(this.getContext() );
+        progressDialog_builder.setView(progressDialog_layout);
+        progressDialog_builder.setCancelable(false);
+        AlertDialog progressDialog = progressDialog_builder.create();
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
+        return progressDialog;
     }
 
     @Override
