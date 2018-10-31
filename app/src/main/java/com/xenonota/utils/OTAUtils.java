@@ -124,10 +124,8 @@ public final class OTAUtils {
     }
 
     @NonNull
-    public static String getSizeString(@NonNull final Context context, final long bytes) {
-        if (bytes < 0) {
-            return "";
-        }
+    public static String getSizeString(@NonNull final Context context, long bytes) {
+        if (bytes < 0) bytes = 0;
         double kb = (double) bytes / (double) 1000;
         double mb = kb / (double) 1000;
         final DecimalFormat decimalFormat = new DecimalFormat(".##");
