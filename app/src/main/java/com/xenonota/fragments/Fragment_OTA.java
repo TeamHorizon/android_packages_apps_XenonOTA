@@ -289,8 +289,8 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         ota_data = device;
         if(updateAvailable){
             url = ota_data.getROMURL();
-            filename = url.substring(url.lastIndexOf('/') + 1);
-            filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + filename;
+            filename = device.getFilename();
+            filePath = device.getFilepath();
             btnFlash.setEnabled(device.isDownloadedAlready());
             if(device.isDownloadedAlready()){
                 btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.colorPrimaryDark,null));
@@ -331,7 +331,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     void downloadROM() {
         if(updateAvailable && ota_data != null){
             Downloader downloader = new Downloader(this.getContext(), this);
-            downloader.Start(url, filePath, "OTA");
+            downloader.Start(url, filePath, filename, "OTA");
         }
     }
 

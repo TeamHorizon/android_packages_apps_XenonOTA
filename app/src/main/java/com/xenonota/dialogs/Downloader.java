@@ -149,7 +149,7 @@ public class Downloader {
         }
     });
 
-    public void Start(String url, String filepath, String downloadType) {
+    public void Start(String url, String filepath, String filename, String downloadType) {
         this.filepath = filepath;
 
         OTAUtils.logInfo("Starting Download URL:" + url + " Filename: " + filepath);
@@ -189,7 +189,7 @@ public class Downloader {
         r.setTitle("XenonOTA");
         r.setDescription("Downloading " + downloadType);
         r.setMimeType("application/zip");
-        r.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filepath);
+        r.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
         r.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         downloadID = manager.enqueue(r);
 

@@ -34,6 +34,8 @@ public class OTADevice {
     private String changeLog;
     private String md5;
     private Boolean alreadyDownloaded;
+    private String filename;
+    private String filepath;
 
     OTADevice() {
         mLatestVersion = "";
@@ -77,14 +79,15 @@ public class OTADevice {
     void setChecksumURL(String value) {
         try{
             md5 = readStream(OTAUtils.downloadURL(value)).split(" ")[0];
-            String filename = mROMURL.substring(mROMURL.lastIndexOf('/') + 1);
-            String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + filename;
-            File file = new File(filePath);
+            filename = mROMURL.substring(mROMURL.lastIndexOf('/') + 1);
+            filepath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + filename;
+            OTAUtils.logInfo("Filename : " + filepath);
+            File file = new File(filepath);
             String fileChecksum="";
             if(file.exists()){
                 OTAUtils.logInfo("File exists. Checking integrity.");
                 try {
-                    String command = "md5sum \'" + filePath + "\'\n";
+                    String command = "md5sum \'" + filepath + "\'\n";
                     try {
                         String line;
                         Process process = Runtime.getRuntime().exec("sh");
@@ -121,6 +124,9 @@ public class OTADevice {
             ex.printStackTrace();
         }
     }
+
+    public String getFilename() {return filename;}
+    public String getFilepath() {return filepath;}
 
     public Boolean isDownloadedAlready() {
         return alreadyDownloaded;
