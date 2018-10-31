@@ -45,6 +45,12 @@ public final class OTAUtils {
         }
     }
 
+    public static void logError(String e) {
+        if (DEBUG) {
+            Log.e(TAG, e);
+        }
+    }
+
     public static void logInfo(String message) {
         if (DEBUG) {
             Log.i(TAG, message);
