@@ -19,9 +19,11 @@ package com.xenonota.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.PowerManager;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.xenonota.R;
 import com.xenonota.configs.OTAConfig;
 
 import java.io.BufferedReader;
@@ -30,6 +32,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 public final class OTAUtils {
 
@@ -118,5 +121,22 @@ public final class OTAUtils {
 
     public static void rebootRecovery(Context context){
         ((PowerManager) context.getApplicationContext().getSystemService(Activity.POWER_SERVICE)).reboot("recovery-update");
+    }
+
+    @NonNull
+    public static String getSizeString(@NonNull final Context context, final long bytes) {
+        if (bytes < 0) {
+            return "";
+        }
+        double kb = (double) bytes / (double) 1000;
+        double mb = kb / (double) 1000;
+        final DecimalFormat decimalFormat = new DecimalFormat(".##");
+        if (mb >= 1) {
+            return context.getString(R.string.size_mb, decimalFormat.format(mb));
+        } else if (kb >= 1) {
+            return context.getString(R.string.size_kb, decimalFormat.format(kb));
+        } else {
+            return context.getString(R.string.size_bytes, bytes);
+        }
     }
 }
