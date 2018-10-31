@@ -28,6 +28,11 @@
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
     </style>
 
+    <style name="AlertDialogCustom" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorAccent">@color/colorPrimaryDark</item>
+    </style>
+
     <!-- Preferences -->
     <style name="SettingsPreference" parent="@*android:style/Preference.DeviceDefault">
         <item name="android:singleLineTitle">false</item>

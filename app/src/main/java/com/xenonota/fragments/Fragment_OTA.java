@@ -23,11 +23,9 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -49,8 +47,6 @@ import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.tasks.CheckUpdateTask;
 import com.xenonota.utils.OTAUtils;
 import com.xenonota.xml.OTADevice;
-
-import java.io.File;
 
 public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback {
 
@@ -242,22 +238,13 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         dDialog.show();
     }
 
-    private void showChangelog(){
-        LayoutInflater inflater = getLayoutInflater();
-        View dLayout = inflater.inflate(R.layout.dialog_changelog, null);
-        AlertDialog.Builder dBuilder = new AlertDialog.Builder(getContext());
-        TextView changelog = dLayout.findViewById(R.id.txt_changelog);
-        Button close = dLayout.findViewById(R.id.btn_close_changelog);
-        Button openInBrowser = dLayout.findViewById(R.id.btn_open_in_browser);
-        changelog.setMovementMethod(new ScrollingMovementMethod());
-        changelog.setText(ota_data.getChangelog());
-        dBuilder.setTitle(R.string.changelog_title);
-        dBuilder.setView(dLayout);
-        dBuilder.setCancelable(true);
-        final AlertDialog dDialog = dBuilder.create();
-        openInBrowser.setOnClickListener(new View.OnClickListener() {
+    private void showChangelog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
+        builder.setTitle(R.string.changelog_title);
+        builder.setMessage(ota_data.getChangelog());
+        builder.setNeutralButton(R.string.open_in_browser, new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(DialogInterface dialogInterface, int i) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ota_data.getChangelogURL()));
                 PackageManager pm = getContext().getPackageManager();
                 if (browserIntent.resolveActivity(pm) != null) {
@@ -268,13 +255,13 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
                 }
             }
         });
-        close.setOnClickListener(new View.OnClickListener() {
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                dDialog.dismiss();
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
         });
-        dDialog.show();
+        builder.create().show();
     }
 
     private void checkForUpdate(){
