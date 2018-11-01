@@ -56,6 +56,7 @@ import android.widget.Toast;
 import com.xenonota.MainActivity;
 import com.xenonota.R;
 import com.xenonota.configs.AppConfig;
+import com.xenonota.dialogs.Downloader;
 import com.xenonota.utils.OTAUtils;
 import com.xenonota.dialogs.OpenFileDialog;
 
@@ -69,7 +70,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Fragment_Gapps extends Fragment {
+public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCallback {
 
     public static Fragment_Gapps newInstance() {
         return new Fragment_Gapps();
@@ -205,7 +206,7 @@ public class Fragment_Gapps extends Fragment {
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                downloadGapps("https://github.com/opengapps/"+c_u+"/releases/download/"+date+"/open_gapps-"+c_u+"-"+a_v+"-"+v_r+"-"+date+".zip");
+                downloadGApps("https://github.com/opengapps/"+c_u+"/releases/download/"+date+"/open_gapps-"+c_u+"-"+a_v+"-"+v_r+"-"+date+".zip");
                 dDialog.dismiss();
             }
         });
@@ -466,8 +467,51 @@ public class Fragment_Gapps extends Fragment {
         }).start();
     }
 
-    void downloadGapps(String url) {
+    void downloadGApps(String url) {
         String filename = url.substring(url.lastIndexOf('/') + 1);
         String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + filename;
+        Downloader downloader = new Downloader(this.getContext(), this);
+        downloader.Start(url, filePath, filename, "GApps");
+    }
+
+    @Override
+    public void onDownloadError(String reason) {
+        android.support.v7.app.AlertDialog.Builder builder;
+        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder.setTitle(R.string.download_interrupted_title)
+                .setMessage(getString(R.string.download_interrupted_msg, reason))
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onDownloadSuccess(String filePath) {
+        AppConfig.persistGappsZipPath(filePath,getContext().getApplicationContext());
+
+        android.support.v7.app.AlertDialog.Builder builder;
+        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder.setTitle(R.string.download_complete_title)
+                .setMessage(R.string.download_complete_msg)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onDownloadCancelled() {
+        android.support.v7.app.AlertDialog.Builder builder;
+        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder.setTitle(R.string.download_cancelled_title)
+                .setMessage(R.string.download_cancelled_msg)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .show();
     }
 }
