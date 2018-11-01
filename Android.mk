@@ -17,11 +17,20 @@ LOCAL_SRC_FILES := $(call all-java-files-under, app/src/main)
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/app/src/main/res
 LOCAL_ASSET_DIR := $(LOCAL_PATH)/app/src/main/assets
 
+LOCAL_USE_AAPT2 := true
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 
-LOCAL_STATIC_JAVA_LIBRARIES += \
-    android-support-v4
+LOCAL_STATIC_ANDROID_LIBRARIES := \
+    android-support-compat \
+    android-support-v4 \
+    android-support-design \
+    android-support-v13 \
+    android-support-v7-appcompat \
+    android-support-v7-cardview \
+    android-support-constraint-layout \
+    android-support-constraint-layout-solver \
+    android-support-transition
 
 include $(BUILD_PACKAGE)
 

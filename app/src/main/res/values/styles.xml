@@ -14,18 +14,18 @@
   ~ limitations under the License.
   -->
 <resources>
-    <style name="Theme.Main" parent="Theme.AppCompat.Light.DarkActionBar" >
+    <style name="Theme.Main" parent="@style/Theme.AppCompat.Light.DarkActionBar" >
         <item name="android:switchPreferenceStyle">@style/SettingsSwitchPreference</item>
         <item name="android:preferenceStyle">@style/SettingsPreference</item>
         <item name="android:dialogPreferenceStyle">@style/SettingsDialogPreference</item>
         <item name="android:preferenceScreenStyle">@style/SettingsPreferenceScreen</item>
         <item name="android:listDivider">@null</item>
 
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
 
-        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="android:colorButtonNormal">@color/colorPrimaryDark</item>
     </style>
 
     <style name="AlertDialogCustom" parent="android:Theme.Material.Light.Dialog.Alert">
