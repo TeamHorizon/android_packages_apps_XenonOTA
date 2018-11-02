@@ -33,6 +33,7 @@
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -41,6 +42,7 @@
         android:layout_gravity="top|center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:scrollbars="none"
         tools:context="com.xenonota.fragments.Fragment_OTA">
@@ -114,7 +116,7 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -139,8 +141,8 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="12dp"
                             android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
                             android:background="@android:color/darker_gray" />
 
                         <LinearLayout
@@ -162,8 +164,8 @@
                                 android:id="@+id/current_version"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:paddingBottom="16dp"
                                 android:paddingLeft="15dp"
+                                android:paddingBottom="16dp"
                                 android:textSize="10sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -180,10 +182,10 @@
                         style="@style/Widget.AppCompat.Button"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
                         android:layout_weight="1"
                         android:text="@string/download"
                         android:textColor="@color/colorAccent" />
@@ -193,10 +195,10 @@
                         style="@style/Widget.AppCompat.Button"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="10dp"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
                         android:layout_weight="1"
                         android:text="@string/flash"
                         android:textColor="@color/colorAccent" />
@@ -236,10 +238,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:paddingBottom="10dp"
                         android:paddingLeft="13dp"
-                        android:paddingRight="15dp"
                         android:paddingTop="10dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
                         android:text="@string/changelog_title"
                         android:textStyle="bold"
                         tools:text="@string/changelog_title" />
@@ -276,10 +278,10 @@
                     android:id="@+id/text_device"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="6dp"
                     android:paddingLeft="13dp"
-                    android:paddingRight="6dp"
                     android:paddingTop="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingBottom="6dp"
                     android:text="@string/my_device"
                     android:textAllCaps="true"
                     android:textStyle="bold" />
@@ -302,11 +304,11 @@
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="32dp"
                         android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
                         android:orientation="vertical"
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:id="@+id/device_rom"
@@ -336,11 +338,11 @@
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="32dp"
                         android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
                         android:orientation="vertical"
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:id="@+id/device_build"
@@ -370,11 +372,11 @@
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="32dp"
                         android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
                         android:orientation="vertical"
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:id="@+id/device_codename"
@@ -405,11 +407,11 @@
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="32dp"
                         android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
                         android:orientation="vertical"
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:id="@+id/device_maintainer"
