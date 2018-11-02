@@ -26,6 +26,7 @@ import android.widget.RadioGroup;
 
 import com.xenonota.R;
 import com.xenonota.configs.AppConfig;
+import com.xenonota.configs.GappsConfig;
 import com.xenonota.utils.OTAUtils;
 
 public class Fragment_Settings extends Fragment {
@@ -59,7 +60,7 @@ public class Fragment_Settings extends Fragment {
     }
 
     private void LoadPreferences(){
-        String gappsVariant = AppConfig.getGappsVariant(getContext().getApplicationContext());
+        String gappsVariant = GappsConfig.getVariant(getContext().getApplicationContext());
         switch (gappsVariant){
             case "aroma":{
                 GappsVariant.check(R.id.rb_aroma);
@@ -143,7 +144,7 @@ public class Fragment_Settings extends Fragment {
                 OTAUtils.logInfo("store var ");
                 RadioButton selected = group.findViewById(checkedId);
                 OTAUtils.logInfo("store var " + selected.getText().toString());
-                AppConfig.persistGappsVariant(selected.getText().toString(),getContext().getApplicationContext());
+                GappsConfig.setVariant(selected.getText().toString(),getContext().getApplicationContext());
             }
         });
         AutoUpdateInterval.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

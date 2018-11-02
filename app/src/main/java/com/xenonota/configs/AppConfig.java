@@ -32,7 +32,6 @@ public final class AppConfig {
 
     private static final String UPDATE_INTERVAL = "update_interval";
 
-    private static final String GAPPS_VARIANT = "gapps_variant";
     private static final String PREFERRED_TYPE = "preferred_type";
 
     private static final String OTA_ZIP_PATH = "ota_zip_path";
@@ -43,11 +42,6 @@ public final class AppConfig {
     private static final String MAGISK_ZIP_PATH = "magisk_zip_path";
 
     private AppConfig() {
-    }
-
-    public static String getGappsVariant(Context context) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString(GAPPS_VARIANT, "nano");
     }
 
     public static String getOtaZipPath(Context context) {
@@ -73,11 +67,6 @@ public final class AppConfig {
     public static String getPreferredType(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getString(PREFERRED_TYPE, "Experimental");
-    }
-
-    public static void persistGappsVariant(String variant, Context context) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        sharedPreferences.edit().putString(GAPPS_VARIANT, variant).apply();
     }
 
     public static void persistOtaZipPath(String path, Context context) {
