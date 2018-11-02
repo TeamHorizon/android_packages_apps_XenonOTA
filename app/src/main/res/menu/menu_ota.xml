@@ -20,4 +20,8 @@
         android:id="@+id/recovery"
         android:title="@string/reboot_recovery"
         />
+    <item
+        android:id="@+id/magisk"
+        android:title="@string/download_magisk"
+        />
 </menu>

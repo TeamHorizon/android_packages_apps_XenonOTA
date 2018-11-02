@@ -43,6 +43,7 @@ public class Downloader {
 
     private long downloadID = 0;
     private String filepath = "";
+    private String type = "";
     private DownloadManager manager;
 
     private AlertDialog progressDialog;
@@ -54,7 +55,7 @@ public class Downloader {
 
     public interface DownloaderCallback {
         void onDownloadError(String reason);
-        void onDownloadSuccess(String filepath);
+        void onDownloadSuccess(String filepath, String type);
         void onDownloadCancelled();
     }
 
@@ -141,7 +142,7 @@ public class Downloader {
                     break;
                 case DownloadManager.STATUS_SUCCESSFUL:
                     OTAUtils.logInfo("Download Finished.");
-                    callback.onDownloadSuccess(filepath);
+                    callback.onDownloadSuccess(filepath, type);
                     if (progressDialog.isShowing()) progressDialog.dismiss();
                     break;
             }
@@ -151,6 +152,7 @@ public class Downloader {
 
     public void Start(String url, String filepath, String filename, String downloadType) {
         this.filepath = filepath;
+        this.type = downloadType;
 
         OTAUtils.logInfo("Starting Download URL:" + url + " Filename: " + filepath);
 

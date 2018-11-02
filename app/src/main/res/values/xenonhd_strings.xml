@@ -25,6 +25,7 @@
     <!-- Dialog -->
     <string name="dialog_message">Checking for updates, please wait…</string>
     <string name="reboot_recovery">Reboot to recovery</string>
+    <string name="download_magisk">Download Magisk</string>
 
     <!-- ROM info -->
     <string name="latest_version">Update available!\nLatest version: %1$s</string>
@@ -139,10 +140,17 @@
     <string name="progress_size">%1$s / %2$s</string>
 
     <string name="download_complete_title">Download completed</string>
-    <string name="download_complete_msg">Update has been successfully downloaded. Click "Flash" to reboot and install in recovery</string>
+    <string name="download_complete_msg_ota">Update has been successfully downloaded. Click "Flash" to reboot and install in recovery</string>
+    <string name="download_complete_msg_magisk">Magisk has been successfully downloaded. You can flash Magisk along with ROM by selecting \'Magisk\' option in \'Flash\' dialog.</string>
     <string name="download_interrupted_title">Download interrupted</string>
     <string name="download_interrupted_msg">Download has been interrupted due to %1$s </string>
     <string name="download_cancelled_title">Download cancelled</string>
     <string name="download_cancelled_msg">Download has been cancelled by the user</string>
+
+    <string name="magisk">Magisk</string>
+    <string name="magisk_message">Magisk v%1$s available. Do you want to start download&#8230;?</string>
+    <string name="magisk_error">Can\'t obtain the latest Magisk link…</string>
+    <string name="magisk_download_completed">Magisk downloaded sucessfully. You can flash it with OTA or manually</string>
+    <string name="magisk_check">Checking for latest Magisk version</string>
 
 </resources>

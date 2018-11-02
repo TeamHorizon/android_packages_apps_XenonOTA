@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
@@ -42,11 +43,15 @@ import android.widget.Toast;
 
 import com.xenonota.R;
 import com.xenonota.configs.AppConfig;
+import com.xenonota.configs.MagiskConfig;
 import com.xenonota.dialogs.Downloader;
 import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.tasks.CheckUpdateTask;
+import com.xenonota.tasks.MagiskDownloadTask;
 import com.xenonota.utils.OTAUtils;
 import com.xenonota.xml.OTADevice;
+
+import java.io.File;
 
 public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback {
 
@@ -75,7 +80,8 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     OTADevice ota_data;
     boolean updateAvailable;
 
-    private CheckUpdateTask mTask;
+    private CheckUpdateTask mCheckUpdateTask;
+    private MagiskDownloadTask mCheckMagiskTask;
     private InitiateFlashTask mFlashTask;
 
     public static Fragment_OTA newInstance() {
@@ -108,15 +114,22 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
             case R.id.recovery:
                 ReboottoRecovery();
                 return true;
+            case R.id.magisk:
+                checkForMagisk();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onProgressCancelled() {
-        if (mTask != null) {
-            mTask.cancel(true);
-            mTask = null;
+        if (mCheckUpdateTask != null) {
+            mCheckUpdateTask.cancel(true);
+            mCheckUpdateTask = null;
+        }
+        if (mCheckMagiskTask != null) {
+            mCheckMagiskTask.cancel(true);
+            mCheckMagiskTask = null;
         }
     }
 
@@ -265,9 +278,9 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     private void checkForUpdate(){
-        mTask = CheckUpdateTask.getInstance(false,this);
-        if (!mTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
-            mTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getActivity());
+        mCheckUpdateTask = CheckUpdateTask.getInstance(false,this);
+        if (!mCheckUpdateTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
+            mCheckUpdateTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getActivity());
         }
     }
 
@@ -302,6 +315,37 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         }
     }
 
+    private void checkForMagisk(){
+        mCheckMagiskTask = MagiskDownloadTask.getInstance(this);
+        if (!mCheckMagiskTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
+            mCheckMagiskTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
+    }
+
+    public void processMagiskResult(final MagiskConfig magiskConfig) {
+        if (getContext() == null || magiskConfig == null) return;
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
+        builder.setTitle(R.string.magisk);
+        builder.setMessage(getString(R.string.magisk_message, magiskConfig.getVersion()));
+
+        builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                downloadMagisk(magiskConfig);
+            }
+        });
+
+        builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        builder.create().show();
+    }
+
     private void getROMDetails(){
         currentVersion.setText(OTAUtils.getProp("ro.xenonhd.version"));
         rom_version.setText("XenonHD " + Build.VERSION.RELEASE);
@@ -322,13 +366,22 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         }
     }
 
+    void downloadMagisk(MagiskConfig magiskConfig) {
+        if (getContext() == null) return;
+        Downloader downloader = new Downloader(getContext(), this);
+        String filePath =  Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + magiskConfig.getFilename();
+        downloader.Start(magiskConfig.getUrl(), filePath, magiskConfig.getFilename(), getString(R.string.magisk));
+    }
+
     @Override
     public void onDownloadError(String reason) {
+        if (getContext() == null) return;
+
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
         builder.setTitle(R.string.download_interrupted_title)
                 .setMessage(getString(R.string.download_interrupted_msg, reason))
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 })
@@ -336,30 +389,38 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     @Override
-    public void onDownloadSuccess(String filePath) {
-        AppConfig.persistOtaZipPath(filePath,getContext().getApplicationContext());
-        AppConfig.persistOtaZipChecksum(ota_data.getChecksum(),getContext().getApplicationContext());
-        btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.colorPrimaryDark,null));
-        btnFlash.setEnabled(true);
+    public void onDownloadSuccess(String filePath, String type) {
+        if (getContext() == null) return;
 
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
-        builder.setTitle(R.string.download_complete_title)
-                .setMessage(R.string.download_complete_msg)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                })
-                .show();
+        builder.setTitle(R.string.download_complete_title);
+        if ("OTA".equals(type)){
+            builder.setMessage(R.string.download_complete_msg_ota);
+            AppConfig.persistOtaZipPath(filePath,getContext().getApplicationContext());
+            AppConfig.persistOtaZipChecksum(ota_data.getChecksum(),getContext().getApplicationContext());
+            btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.colorPrimaryDark,null));
+            btnFlash.setEnabled(true);
+        } else if (getString(R.string.magisk).equals(type)) {
+            builder.setMessage(R.string.download_complete_msg_magisk);
+            AppConfig.persistMagiskZipPath(filePath,getContext().getApplicationContext());
+        }
+        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
     }
 
     @Override
     public void onDownloadCancelled() {
+        if (getContext() == null) return;
+
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
         builder.setTitle(R.string.download_cancelled_title)
                 .setMessage(R.string.download_cancelled_msg)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 })

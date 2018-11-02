@@ -1,70 +1,134 @@
-package com.topjohnwu.magisk.asyncs;
+package com.xenonota.tasks;
 
-import com.topjohnwu.magisk.BuildConfig;
-import com.topjohnwu.magisk.MagiskManager;
-import com.topjohnwu.magisk.utils.Const;
-import com.topjohnwu.magisk.utils.ShowUI;
-import com.topjohnwu.magisk.utils.WebService;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Message;
 
-import org.json.JSONException;
+import com.xenonota.R;
+import com.xenonota.configs.MagiskConfig;
+import com.xenonota.dialogs.WaitDialogHandler;
+import com.xenonota.fragments.Fragment_OTA;
+import com.xenonota.utils.OTAUtils;
+
 import org.json.JSONObject;
 
-public class CheckUpdates extends ParallelTask<Void, Void, Void> {
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
-    private boolean showNotification;
+public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
 
-    public CheckUpdates() {
-        this(false);
+    private boolean cancel = false;
+
+    private static MagiskDownloadTask mInstance = null;
+    private final Handler mHandler = new WaitDialogHandler();
+
+    private Fragment_OTA frag;
+
+    public static MagiskDownloadTask getInstance(Fragment_OTA frag) {
+        if (mInstance == null) {
+            mInstance = new MagiskDownloadTask();
+        }
+        mInstance.frag = frag;
+        return mInstance;
     }
 
-    public CheckUpdates(boolean b) {
-        showNotification = b;
+    private static boolean isConnectivityAvailable(Context context) {
+        ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connMgr == null) {
+            return false;
+        } else {
+            NetworkInfo netInfo = connMgr.getActiveNetworkInfo();
+            return (netInfo != null && netInfo.isConnected());
+        }
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
-        MagiskManager mm = MagiskManager.get();
-        String jsonStr = "";
-        switch (mm.updateChannel) {
-            case Const.Value.STABLE_CHANNEL:
-                jsonStr = WebService.getString(Const.Url.STABLE_URL);
-                break;
-            case Const.Value.BETA_CHANNEL:
-                jsonStr = WebService.getString(Const.Url.BETA_URL);
-                break;
-            case Const.Value.CUSTOM_CHANNEL:
-                jsonStr = WebService.getString(mm.prefs.getString(Const.Key.CUSTOM_CHANNEL, ""));
-                break;
+    protected void onPreExecute() {
+        if (frag == null
+                || frag.getContext() == null
+                || !isConnectivityAvailable(frag.getContext())) {
+            cancel = true;
+        } else {
+            showWaitDialog(frag.getContext());
         }
+
+    }
+
+    @Override
+    protected MagiskConfig doInBackground(Void... params) {
+        if (cancel) return null;
+
+        String JSON_URL = "https://raw.githubusercontent.com/topjohnwu/MagiskManager/update/stable.json";
+
         try {
-            JSONObject json = new JSONObject(jsonStr);
+            JSONObject json = new JSONObject(readURL(JSON_URL));
             JSONObject magisk = json.getJSONObject("magisk");
-            mm.remoteMagiskVersionString = magisk.getString("version");
-            mm.remoteMagiskVersionCode = magisk.getInt("versionCode");
-            mm.magiskLink = magisk.getString("link");
-            mm.magiskNoteLink = magisk.getString("note");
-            JSONObject manager = json.getJSONObject("app");
-            mm.remoteManagerVersionString = manager.getString("version");
-            mm.remoteManagerVersionCode = manager.getInt("versionCode");
-            mm.managerLink = manager.getString("link");
-            mm.managerNoteLink = manager.getString("note");
-            JSONObject uninstaller = json.getJSONObject("uninstaller");
-            mm.uninstallerLink = uninstaller.getString("link");
-        } catch (JSONException ignored) {}
+            String url = magisk.getString("link");
+            String version = magisk.getString("version");
+            String filename = "Magisk-v" + version + ".zip";
+
+            if (!"".equals(url)) return new MagiskConfig(url, filename, version);
+        } catch (Exception ex) {OTAUtils.logError(ex);}
         return null;
     }
 
-    @Override
-    protected void onPostExecute(Void v) {
-        MagiskManager mm = MagiskManager.get();
-        if (showNotification) {
-            if (BuildConfig.VERSION_CODE < mm.remoteManagerVersionCode) {
-                ShowUI.managerUpdateNotification();
-            } else if (mm.magiskVersionCode < mm.remoteMagiskVersionCode) {
-                ShowUI.magiskUpdateNotification();
+    private String readURL(String url){
+        String re="";
+        try{
+            InputStream inputStream = OTAUtils.downloadURL(url);
+            BufferedReader r = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder total = new StringBuilder();
+            String line;
+            while ((line = r.readLine()) != null) {
+                total.append(line).append('\n');
             }
+            re=total.toString();
+        }catch(Exception ex){
+            ex.printStackTrace();
         }
-        mm.updateCheckDone.publish();
-        super.onPostExecute(v);
+        return re;
+    }
+
+    @Override
+    protected void onPostExecute(MagiskConfig magiskConfig) {
+        super.onPostExecute(magiskConfig);
+
+        if (magiskConfig == null) {
+            showToast(R.string.magisk_error);
+        } else {
+            frag.processMagiskResult(magiskConfig);
+        }
+
+        hideWaitDialog();
+
+        mInstance = null;
+    }
+
+    @Override
+    protected void onCancelled() {
+        super.onCancelled();
+        mInstance = null;
+    }
+
+    private void showWaitDialog(Context context) {
+        Message msg = mHandler.obtainMessage(WaitDialogHandler.MSG_SHOW_DIALOG);
+        msg.obj = context;
+        msg.arg1 = R.string.magisk_check;
+        mHandler.sendMessage(msg);
+    }
+
+    private void hideWaitDialog() {
+        Message msg = mHandler.obtainMessage(WaitDialogHandler.MSG_CLOSE_DIALOG);
+        mHandler.sendMessage(msg);
+    }
+
+    private void showToast(int messageId) {
+        if (frag != null && frag.getContext() != null) {
+            OTAUtils.toast(messageId, frag.getContext());
+        }
     }
 }
