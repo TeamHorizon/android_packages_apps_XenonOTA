@@ -135,7 +135,7 @@ public class CheckGappsTask extends AsyncTask<Void, Void, String> {
             download_card.setClickable(true);
         }
         progressBar.setVisibility(View.INVISIBLE);
-        status_github.setImageResource(R.drawable.ic_github);
+        status_github.setImageResource(R.drawable.ic_ota_available);
         status_github.setVisibility(View.VISIBLE);
 
         mInstance = null;

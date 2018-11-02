@@ -124,7 +124,7 @@
                             android:layout_width="74dp"
                             android:layout_height="74dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_github"
+                            android:src="@drawable/ic_ota_available"
                             android:visibility="invisible" />
 
                         <ProgressBar
