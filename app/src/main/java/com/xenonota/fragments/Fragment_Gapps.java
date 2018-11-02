@@ -468,14 +468,18 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
     }
 
     void downloadGApps(String url) {
+        if (getContext() == null) return;
+
         String filename = url.substring(url.lastIndexOf('/') + 1);
         String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + filename;
-        Downloader downloader = new Downloader(this.getContext(), this);
+        Downloader downloader = new Downloader(getContext(), this);
         downloader.Start(url, filePath, filename, "GApps");
     }
 
     @Override
     public void onDownloadError(String reason) {
+        if (getContext() == null) return;
+
         android.support.v7.app.AlertDialog.Builder builder;
         builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
         builder.setTitle(R.string.download_interrupted_title)
@@ -488,13 +492,15 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
     }
 
     @Override
-    public void onDownloadSuccess(String filePath) {
+    public void onDownloadSuccess(String filePath, String type) {
+        if (getContext() == null) return;
+
         AppConfig.persistGappsZipPath(filePath,getContext().getApplicationContext());
 
         android.support.v7.app.AlertDialog.Builder builder;
         builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
         builder.setTitle(R.string.download_complete_title)
-                .setMessage(R.string.download_complete_msg)
+                .setMessage(R.string.download_complete_msg_gapps)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }
@@ -504,6 +510,8 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
 
     @Override
     public void onDownloadCancelled() {
+        if (getContext() == null) return;
+
         android.support.v7.app.AlertDialog.Builder builder;
         builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
         builder.setTitle(R.string.download_cancelled_title)
