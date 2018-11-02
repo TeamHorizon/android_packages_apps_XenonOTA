@@ -188,7 +188,7 @@ public class Downloader {
         DownloadManager.Request r = new DownloadManager.Request(uri);
         r.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
         r.setAllowedOverRoaming(false);
-        r.setTitle("XenonOTA");
+        r.setTitle(filename);
         r.setDescription("Downloading " + downloadType);
         r.setMimeType("application/zip");
         r.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
