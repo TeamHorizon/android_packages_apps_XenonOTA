@@ -88,7 +88,7 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
         OTAUtils.logInfo("deviceName: " + deviceName);
         if (!deviceName.isEmpty()) {
             official = fetchURL(OTAConfig.getInstance(mContext).getOfficialOtaUrl(),deviceName);
-            if(AppConfig.getPreferredType(mContext)=="Experimental"){experimental = fetchURL(OTAConfig.getInstance(mContext).getExperimentalOtaUrl(),deviceName);}
+            if("Experimental".equals(AppConfig.getPreferredType(mContext))){experimental = fetchURL(OTAConfig.getInstance(mContext).getExperimentalOtaUrl(),deviceName);}
             if(official==null && experimental!=null){
                 final_ota = experimental;
             }else if(official!=null && experimental==null){
