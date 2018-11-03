@@ -227,23 +227,37 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp">
 
-                        <TextView
-                            android:id="@+id/title_changelog"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="13dp"
-                            android:paddingTop="10dp"
-                            android:paddingRight="15dp"
-                            android:paddingBottom="10dp"
-                            android:text="@string/changelog_title"
-                            android:textStyle="bold"
-                            tools:text="@string/changelog_title" />
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_changelog" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="32dp"
+                            android:orientation="vertical"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <TextView
+                                android:id="@+id/title_changelog"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:text="@string/changelog_title"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
                     </LinearLayout>
 

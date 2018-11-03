@@ -73,7 +73,6 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
 
     Button btnDownload;
     Button btnFlash;
-    TextView btnChangelog;
 
     String url, filename, filePath;
 
@@ -150,7 +149,6 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         otaStatus_img = view.findViewById(R.id.image_ota_state);
         btnDownload = view.findViewById(R.id.btn_download);
         btnFlash = view.findViewById(R.id.btn_flash);
-        btnChangelog = view.findViewById(R.id.title_changelog);
         lv_maintainer = view.findViewById(R.id.maintainer);
     }
 
@@ -167,7 +165,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
                 downloadROM();
             }
         });
-        btnChangelog.setOnClickListener(new Button.OnClickListener() {
+        changelog_cv.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showChangelog();
