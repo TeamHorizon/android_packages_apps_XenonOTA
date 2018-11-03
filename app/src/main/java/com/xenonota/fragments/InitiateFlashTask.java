@@ -16,7 +16,6 @@
 
 package com.xenonota.fragments;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -35,21 +34,20 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 
-public class InitiateFlashTask extends AsyncTask<Context, Void, String> {
+public class InitiateFlashTask extends AsyncTask<Void, Void, String> {
 
     private static InitiateFlashTask mInstance = null;
     private final Handler mHandler = new WaitDialogHandler();
-    private static Context mContext;
     private boolean mIsBackgroundThread;
 
     private Fragment_OTA frag;
     private boolean flash_gapps;
     private boolean flash_magisk;
 
-    static String ota_zip;
-    static String ota_md5;
-    static String gapps_path;
-    static String magisk_path;
+    private static String ota_zip;
+    private static String ota_md5;
+    private static String gapps_path;
+    private static String magisk_path;
 
     private InitiateFlashTask(boolean isBackgroundThread) {
         this.mIsBackgroundThread = isBackgroundThread;
@@ -59,22 +57,21 @@ public class InitiateFlashTask extends AsyncTask<Context, Void, String> {
         if (mInstance == null) {
             mInstance = new InitiateFlashTask(isBackgroundThread);
         }
+        if (frag == null || frag.getContext() == null) return null;
         mInstance.flash_gapps = flash_gapps;
         mInstance.flash_magisk = flash_magisk;
         mInstance.frag = frag;
 
-        mContext = frag.getContext();
-        ota_zip = AppConfig.getOtaZipPath(mContext.getApplicationContext());
-        ota_md5 = AppConfig.getOtaZipChecksum(mContext.getApplicationContext());
-        gapps_path = AppConfig.getGappsZipPath(mContext.getApplicationContext());
-        magisk_path = AppConfig.getMagiskZipPath(mContext.getApplicationContext());
+        ota_zip = AppConfig.getOtaZipPath(frag.getContext().getApplicationContext());
+        ota_md5 = AppConfig.getOtaZipChecksum(frag.getContext().getApplicationContext());
+        gapps_path = AppConfig.getGappsZipPath(frag.getContext().getApplicationContext());
+        magisk_path = AppConfig.getMagiskZipPath(frag.getContext().getApplicationContext());
         return mInstance;
     }
 
 
     @Override
-    protected String doInBackground(Context... params) {
-        mContext = params[0];
+    protected String doInBackground(Void... params) {
         showWaitDialog();
 
         String fileChecksum = "";
@@ -102,6 +99,7 @@ public class InitiateFlashTask extends AsyncTask<Context, Void, String> {
                 process.destroy();
 
             } catch (Exception ex) {
+                ex.printStackTrace();
             }
             OTAUtils.logInfo("OTA Checksum from server\t: " + ota_md5);
             OTAUtils.logInfo("OTA Checksum of file in local\t: " + fileChecksum);
@@ -115,25 +113,27 @@ public class InitiateFlashTask extends AsyncTask<Context, Void, String> {
     protected void onPostExecute(String md5) {
         super.onPostExecute(md5);
 
+        if (frag == null || frag.getContext() == null) return;
+
         if(ota_md5.equals(md5)){
             ORSUtils.clear();
             ORSUtils.InstallZip(ota_zip);
             if(flash_gapps){
-                if(gapps_path.trim() != "" && (new File(gapps_path)).exists()){
+                if( !("".equals(gapps_path.trim())) && (new File(gapps_path)).exists()){
                     ORSUtils.InstallZip(gapps_path);
                 }
             }
             if(flash_magisk){
-                if(magisk_path.trim() != "" && (new File(magisk_path)).exists()){
+                if(!("".equals(magisk_path.trim())) && (new File(magisk_path)).exists()){
                     ORSUtils.InstallZip(magisk_path);
                 }
             }
-            OTAUtils.rebootRecovery(mContext);
+            OTAUtils.rebootRecovery(frag.getContext());
             hideWaitDialog();
             mInstance = null;
         }else{
             hideWaitDialog();
-            AlertDialog.Builder dBuilder = new AlertDialog.Builder(mContext);
+            AlertDialog.Builder dBuilder = new AlertDialog.Builder(frag.getContext());
             dBuilder.setTitle(R.string.failed);
             dBuilder.setMessage(R.string.verification_failed);
             dBuilder.setCancelable(true);
@@ -157,7 +157,7 @@ public class InitiateFlashTask extends AsyncTask<Context, Void, String> {
     private void showWaitDialog() {
         if (!mIsBackgroundThread) {
             Message msg = mHandler.obtainMessage(WaitDialogHandler.MSG_SHOW_DIALOG);
-            msg.obj = mContext;
+            msg.obj = frag.getContext();
             msg.arg1 = R.string.verifying_package;
             mHandler.sendMessage(msg);
         }

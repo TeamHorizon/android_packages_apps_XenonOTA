@@ -17,13 +17,12 @@
 package com.xenonota.dialogs;
 
 import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.ProgressDialog;
+import android.support.annotation.NonNull;
+import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -42,18 +41,17 @@ public class WaitDialogFragment extends DialogFragment {
         setRetainInstance(true);
     }
 
-    @Override
+    @Override @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         setCancelable(true);
 
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-        View progressDialog_layout = inflater.inflate(R.layout.dialog_progress, null);
+        View progressDialog_layout = View.inflate(getContext(), R.layout.dialog_progress, null);
         TextView title = progressDialog_layout.findViewById(R.id.titleTextView);
         ProgressBar progressBar = progressDialog_layout.findViewById(R.id.progressCircle);
-        title.setText(getActivity().getString(R.string.dialog_message));
-        progressBar.getIndeterminateDrawable().setColorFilter(getContext().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
+        if (getActivity() != null) title.setText(getActivity().getString(R.string.dialog_message));
+        if (getContext() != null) progressBar.getIndeterminateDrawable().setColorFilter(getContext().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
 
-        AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(this.getContext() );
+        AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(getContext());
         progressDialog_builder.setView(progressDialog_layout);
         progressDialog_builder.setCancelable(false);
         AlertDialog progressDialog = progressDialog_builder.create();

@@ -104,11 +104,9 @@ public class OTAParser {
                 String tagValue = readTag(parser, tagName);
                 mDevice.setLatestVersion(tagValue);
             } else if (tagName.equalsIgnoreCase(ROMURL_TAG)) {
-                String tagValue = readTag(parser, tagName);
-                ROMURL = tagValue;
+                ROMURL = readTag(parser, tagName);
             } else if (tagName.equalsIgnoreCase(MD5URL_TAG)) {
-                String tagValue = readTag(parser, tagName);
-                CHECKSUMURL = tagValue;
+                CHECKSUMURL = readTag(parser, tagName);
             } else if (tagName.equalsIgnoreCase(CHANGELOGURL_TAG)) {
                 String tagValue = readTag(parser, tagName);
                 mDevice.setChangelogURL(tagValue);

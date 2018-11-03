@@ -73,12 +73,12 @@ public final class OTAUtils {
     }
 
     public static String getProp(String propName) {
-        Process p = null;
+        Process p;
         String result = "";
         try {
             p = new ProcessBuilder("/system/bin/getprop", propName).redirectErrorStream(true).start();
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            String line = "";
+            String line;
             while ((line=br.readLine()) != null) {
                 result = line;
             }

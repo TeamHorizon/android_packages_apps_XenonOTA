@@ -109,6 +109,7 @@ public class OTADevice {
                         process.destroy();
 
                     } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
                     OTAUtils.logInfo("Checksum from server\t: " + md5);
                     OTAUtils.logInfo("Checksum of file\t: " + fileChecksum);

@@ -26,7 +26,7 @@ public class ORSUtils {
     }
     public static void clear(){
         try{
-            new File(ors_path).delete();
+            if (!((new File(ors_path)).delete())) OTAUtils.logError("Unable to clear old ORS script!");
         }catch(Exception ex){ex.printStackTrace();}
     }
 

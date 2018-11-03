@@ -31,7 +31,7 @@ public class DeviceConfig extends Properties {
         }
     }
 
-    public static int getSDK() {
+    private static int getSDK() {
         return android.os.Build.VERSION.SDK_INT;
     }
 

@@ -98,7 +98,7 @@ public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
         super.onPostExecute(magiskConfig);
 
         if (magiskConfig == null) {
-            showToast(R.string.magisk_error);
+            showToast();
         } else {
             frag.processMagiskResult(magiskConfig);
         }
@@ -126,9 +126,9 @@ public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
         mHandler.sendMessage(msg);
     }
 
-    private void showToast(int messageId) {
+    private void showToast() {
         if (frag != null && frag.getContext() != null) {
-            OTAUtils.toast(messageId, frag.getContext());
+            OTAUtils.toast(R.string.magisk_error, frag.getContext());
         }
     }
 }

@@ -24,6 +24,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.app.AlertDialog;
 import android.support.v7.widget.CardView;
@@ -84,15 +85,14 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     private InitiateFlashTask mFlashTask;
 
     public static Fragment_OTA newInstance() {
-        Fragment_OTA fragment = new Fragment_OTA();
-        return fragment;
+        return new Fragment_OTA();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);}
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_ota, container, false);
         assignObjects(view);
@@ -153,6 +153,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     private void assignEvents(){
+        if (getContext() == null) return;
         checkUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -197,8 +198,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     private void flashROM(){
-        LayoutInflater inflater = getLayoutInflater();
-        View dLayout = inflater.inflate(R.layout.dialog_flash, null);
+        View dLayout = View.inflate(getContext(), R.layout.dialog_flash, null);
         AlertDialog.Builder dBuilder = new AlertDialog.Builder(getContext());
         dBuilder.setTitle(R.string.flash);
         dBuilder.setView(dLayout);
@@ -211,8 +211,8 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
             @Override
             public void onClick(View v) {
                 mFlashTask = InitiateFlashTask.getInstance(false,frag,cbFlashGapps.isChecked(),cbFlashMagisk.isChecked());
-                if (!mFlashTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
-                    mFlashTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getActivity());
+                if (mFlashTask != null && !mFlashTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
+                    mFlashTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 }
             }
         });
@@ -221,8 +221,8 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     private void ReboottoRecovery(){
-        LayoutInflater inflater = getLayoutInflater();
-        View dLayout = inflater.inflate(R.layout.custom_alertdialog, null);
+        if (getContext() == null) return;
+        View dLayout = View.inflate(getContext(), R.layout.custom_alertdialog, null);
         AlertDialog.Builder dBuilder = new AlertDialog.Builder(getContext());
         TextView message = dLayout.findViewById(R.id.custom_message);
         Button cancel = dLayout.findViewById(R.id.custom_negative);
@@ -250,6 +250,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     private void showChangelog() {
+        if (getContext() == null) return;
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
         builder.setTitle(R.string.changelog_title);
         builder.setMessage(ota_data.getChangelog());
@@ -278,11 +279,12 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     private void checkForUpdate(){
         mCheckUpdateTask = CheckUpdateTask.getInstance(false,this);
         if (!mCheckUpdateTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
-            mCheckUpdateTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getActivity());
+            mCheckUpdateTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
     }
 
     public void processOTACheckResult(OTADevice device, boolean updateAvailable){
+        if (getContext() == null) return;
         this.updateAvailable=updateAvailable;
         ota_data = device;
         if(updateAvailable){
@@ -346,9 +348,9 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
 
     private void getROMDetails(){
         currentVersion.setText(OTAUtils.getProp("ro.xenonhd.version"));
-        rom_version.setText("XenonHD " + Build.VERSION.RELEASE);
+        rom_version.setText(getString(R.string.xenonhd_version, Build.VERSION.RELEASE));
         build_type.setText(OTAUtils.getProp("ro.xenonhd.type"));
-        device_name.setText(Build.MODEL + " (" + Build.DEVICE + ")");
+        device_name.setText(getString(R.string.device_name, Build.MODEL, Build.DEVICE));
         String maintainer_name=OTAUtils.getProp("ro.xenonhd.maintainer");
         if (maintainer_name != null && !maintainer_name.trim().isEmpty()) {
             maintainer.setText(maintainer_name);
@@ -358,8 +360,8 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     void downloadROM() {
-        if(updateAvailable && ota_data != null){
-            Downloader downloader = new Downloader(this.getContext(), this);
+        if(updateAvailable && ota_data != null && getContext() != null){
+            Downloader downloader = new Downloader(getContext(), this);
             downloader.Start(url, filePath, filename, "OTA");
         }
     }

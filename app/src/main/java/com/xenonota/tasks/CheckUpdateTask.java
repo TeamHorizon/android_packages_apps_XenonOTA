@@ -44,11 +44,10 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
+public class CheckUpdateTask extends AsyncTask<Void, Void, OTADevice> {
 
     private static CheckUpdateTask mInstance = null;
     private final Handler mHandler = new WaitDialogHandler();
-    private Context mContext;
     private boolean mIsBackgroundThread;
 
     private Fragment_OTA frag;
@@ -72,29 +71,29 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
     }
 
     @Override
-    protected OTADevice doInBackground(Context... params) {
-        mContext = params[0];
+    protected OTADevice doInBackground(Void... params) {
+        if (frag == null || frag.getContext() == null) return null;
 
-        if (!isConnectivityAvailable(mContext)) {
+        if (!isConnectivityAvailable(frag.getContext())) {
             return null;
         }
 
         showWaitDialog();
 
-        OTADevice official = null;
+        OTADevice official;
         OTADevice experimental = null;
         OTADevice final_ota = null;
-        String deviceName = OTAUtils.getDeviceName(mContext);
+        String deviceName = OTAUtils.getDeviceName(frag.getContext());
         OTAUtils.logInfo("deviceName: " + deviceName);
         if (!deviceName.isEmpty()) {
-            official = fetchURL(OTAConfig.getInstance(mContext).getOfficialOtaUrl(),deviceName);
-            if("Experimental".equals(AppConfig.getPreferredType(mContext))){experimental = fetchURL(OTAConfig.getInstance(mContext).getExperimentalOtaUrl(),deviceName);}
+            official = fetchURL(OTAConfig.getInstance(frag.getContext()).getOfficialOtaUrl(),deviceName);
+            if("Experimental".equals(AppConfig.getPreferredType(frag.getContext()))){experimental = fetchURL(OTAConfig.getInstance(frag.getContext()).getExperimentalOtaUrl(),deviceName);}
             if(official==null && experimental!=null){
                 final_ota = experimental;
             }else if(official!=null && experimental==null){
                 final_ota = official;
-            }else if(official!=null && experimental != null){
-                boolean result = OTAVersion.checkVersions(official.getLatestVersion(), experimental.getLatestVersion(),mContext);
+            }else if(official!=null){
+                boolean result = OTAVersion.checkVersions(official.getLatestVersion(), experimental.getLatestVersion(), frag.getContext());
                 if(result){
                  final_ota = official;
                 }else{
@@ -114,9 +113,9 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
             showToast(R.string.check_update_failed);
         } else {
             String latestVersion = device.getLatestVersion();
-            boolean updateAvailable = OTAVersion.checkServerVersion(latestVersion, mContext);
+            boolean updateAvailable = OTAVersion.checkServerVersion(latestVersion, frag.getContext());
             if (updateAvailable) {
-                showNotification(mContext);
+                showNotification(frag.getContext());
                 showToast(R.string.update_available);
             } else {
                 showToast(R.string.no_update_available);
@@ -140,7 +139,7 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
         try {
             InputStream is = OTAUtils.downloadURL(otaUrl);
             if (is != null) {
-                final String releaseType = OTAConfig.getInstance(mContext).getReleaseType();
+                final String releaseType = OTAConfig.getInstance(frag.getContext()).getReleaseType();
                 device = OTAParser.getInstance().parse(is, deviceName, releaseType);
                 is.close();
             }
@@ -153,7 +152,7 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
     private void showWaitDialog() {
         if (!mIsBackgroundThread) {
             Message msg = mHandler.obtainMessage(WaitDialogHandler.MSG_SHOW_DIALOG);
-            msg.obj = mContext;
+            msg.obj = frag.getContext();
             msg.arg1 = R.string.dialog_message;
             mHandler.sendMessage(msg);
         }
@@ -168,7 +167,7 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
 
     private void showToast(int messageId) {
         if (!mIsBackgroundThread) {
-            OTAUtils.toast(messageId, mContext);
+            OTAUtils.toast(messageId, frag.getContext());
         }
     }
 
@@ -185,7 +184,7 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
             mChannel.setDescription(description);
             notificationManager.createNotificationChannel(mChannel);
 
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context.getApplicationContext())
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context.getApplicationContext(), "XenonOTA")
                     .setSmallIcon(R.drawable.ic_notification_xenonota)
                     .setContentTitle(context.getString(R.string.notification_title))
                     .setContentText(context.getString(R.string.notification_message))

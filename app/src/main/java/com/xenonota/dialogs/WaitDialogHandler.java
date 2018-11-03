@@ -16,12 +16,12 @@
 
 package com.xenonota.dialogs;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 
 public class WaitDialogHandler extends Handler {
 
@@ -37,10 +37,10 @@ public class WaitDialogHandler extends Handler {
         switch (msg.what) {
             case MSG_SHOW_DIALOG:
                 mContext = (Context) msg.obj;
-                if (mContext instanceof Activity) {
-                    Activity activity = (Activity) mContext;
+                if (mContext instanceof AppCompatActivity) {
+                    AppCompatActivity activity = (AppCompatActivity) mContext;
 
-                    FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
+                    FragmentTransaction ft = activity.getSupportFragmentManager().beginTransaction();
                     Fragment prev = getOTADialogFragment();
                     if (prev != null) {
                         ft.remove(prev);
@@ -63,9 +63,9 @@ public class WaitDialogHandler extends Handler {
     }
 
     private WaitDialogFragment getOTADialogFragment() {
-        if (mContext instanceof Activity) {
-            Activity activity = (Activity) mContext;
-            Fragment fragment = activity.getFragmentManager().findFragmentByTag(DIALOG_TAG);
+        if (mContext instanceof AppCompatActivity) {
+            AppCompatActivity activity = (AppCompatActivity) mContext;
+            Fragment fragment = activity.getSupportFragmentManager().findFragmentByTag(DIALOG_TAG);
             return (WaitDialogFragment) fragment;
         }
         return null;

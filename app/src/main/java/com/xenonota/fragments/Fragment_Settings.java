@@ -17,6 +17,7 @@
 package com.xenonota.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,11 +36,8 @@ public class Fragment_Settings extends Fragment {
     RadioGroup AutoUpdateInterval;
     RadioGroup PreferredType;
 
-    static Fragment_Settings fragment;
-
     public static Fragment_Settings newInstance() {
-        fragment = new Fragment_Settings();
-        return fragment;
+        return new Fragment_Settings();
     }
 
     @Override
@@ -48,7 +46,7 @@ public class Fragment_Settings extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         GappsVariant = view.findViewById(R.id.rg_gapps);
@@ -60,6 +58,7 @@ public class Fragment_Settings extends Fragment {
     }
 
     private void LoadPreferences(){
+        if (getContext() == null) return;
         String gappsVariant = GappsConfig.getVariant(getContext().getApplicationContext());
         switch (gappsVariant){
             case "aroma":{
@@ -138,6 +137,7 @@ public class Fragment_Settings extends Fragment {
     }
 
     private void AssignEvents(){
+        if (getContext() == null) return;
         GappsVariant.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

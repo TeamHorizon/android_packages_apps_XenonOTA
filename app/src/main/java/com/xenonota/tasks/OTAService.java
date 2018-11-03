@@ -26,7 +26,7 @@ public class OTAService extends JobService {
 
         CheckUpdateTask otaChecker = CheckUpdateTask.getInstance(true,null);
         if (!otaChecker.getStatus().equals(AsyncTask.Status.RUNNING)) {
-            otaChecker.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getApplicationContext());
+            otaChecker.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
 
         return false;

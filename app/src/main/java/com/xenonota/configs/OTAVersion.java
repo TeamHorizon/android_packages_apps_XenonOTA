@@ -29,7 +29,7 @@ public class OTAVersion {
 
     private static final String UNAME_R = "uname -r";
 
-    public static String getFullLocalVersion(Context context) {
+    private static String getFullLocalVersion(Context context) {
         String source = OTAConfig.getInstance(context).getVersionSource();
         String sourceString;
         if (source.equalsIgnoreCase(UNAME_R)) {
@@ -61,7 +61,7 @@ public class OTAVersion {
         return compareVersion(version1, version2, context);
     }
 
-    public static boolean compareVersion(String serverVersion, String localVersion, Context context) {
+    private static boolean compareVersion(String serverVersion, String localVersion, Context context) {
         boolean versionIsNew = false;
 
         if (serverVersion.isEmpty() || localVersion.isEmpty()) {
@@ -90,7 +90,7 @@ public class OTAVersion {
         return versionIsNew;
     }
 
-    public static String extractVersionFrom(String str, Context context) {
+    private static String extractVersionFrom(String str, Context context) {
         String version = "";
 
         if (!str.isEmpty()) {
