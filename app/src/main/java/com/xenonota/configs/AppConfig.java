@@ -66,7 +66,9 @@ public final class AppConfig {
 
     public static String getPreferredType(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString(PREFERRED_TYPE, "Experimental");
+        String default_value = OTAUtils.getProp("ro.xenonhd.type");
+        if ( !("Official".equals(default_value)) && !("Experimental").equals(default_value) ) default_value="Official";
+        return sharedPreferences.getString(PREFERRED_TYPE, default_value);
     }
 
     public static void persistOtaZipPath(String path, Context context) {
