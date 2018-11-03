@@ -174,7 +174,10 @@
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="6dp"
+                        android:paddingLeft="13dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="6dp"
+                        android:paddingBottom="6dp"
                         android:text="@string/my_device"
                         android:textAllCaps="true"
                         android:textStyle="bold" />
