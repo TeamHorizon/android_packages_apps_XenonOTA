@@ -242,8 +242,7 @@
                                 android:id="@+id/my_device_model"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                tools:text="Redmi 3S" />
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
                         </LinearLayout>
 

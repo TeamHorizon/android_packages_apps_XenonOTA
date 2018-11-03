@@ -18,10 +18,6 @@
     <string name="app_name">XenonOTA</string>
     <string name="app_title">XenonHD updates</string>
 
-    <!-- Categories -->
-    <string name="ota_category">Update section</string>
-    <string name="links_category">Download section</string>
-
     <!-- Dialog -->
     <string name="dialog_message">Checking for updates, please wait…</string>
     <string name="reboot_recovery">Reboot to recovery</string>
@@ -85,7 +81,6 @@
     <string name="flash">Flash</string>
     <string name="changelog_title">Changelog</string>
     <string name="current_version">Current version:</string>
-    <string name="check_update_title">Check for updates</string>
     <string name="update_available">Update available!</string>
     <string name="update_available1">Update available! - %s</string>
     <string name="no_update_available">No update available</string>
@@ -101,7 +96,6 @@
     <string name="download_confirm_msg">Please confirm these details before clicking Download button:\n\nAndroid version\t\t:\t%1$s\nCPU platform\t\t\t:\t%2$s\nPackage variant\t\t:\t%3$s</string>
 
     <!-- Settings -->
-    <string name="interval_title">Check for updates automatically</string>
     <string name="disabled">Disabled</string>
     <string name="hour">Every hour</string>
     <string name="twelve_hours">Every 12 hours</string>
