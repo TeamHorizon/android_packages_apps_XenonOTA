@@ -118,14 +118,14 @@ public class InitiateFlashTask extends AsyncTask<Void, Void, String> {
         if(ota_md5.equals(md5)){
             ORSUtils.clear();
             ORSUtils.InstallZip(ota_zip);
-            if(flash_gapps){
-                if( !("".equals(gapps_path.trim())) && (new File(gapps_path)).exists()){
-                    ORSUtils.InstallZip(gapps_path);
-                }
-            }
             if(flash_magisk){
                 if(!("".equals(magisk_path.trim())) && (new File(magisk_path)).exists()){
                     ORSUtils.InstallZip(magisk_path);
+                }
+            }
+            if(flash_gapps){
+                if( !("".equals(gapps_path.trim())) && (new File(gapps_path)).exists()){
+                    ORSUtils.InstallZip(gapps_path);
                 }
             }
             OTAUtils.rebootRecovery(frag.getContext());
