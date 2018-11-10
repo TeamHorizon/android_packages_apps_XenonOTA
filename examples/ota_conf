@@ -29,7 +29,8 @@
 #
 # OTA_configuration
 #
-ota_url=https://mirrors.c0urier.net/android/teamhorizon/P/OTA/ota_device.xml
+ota_experimental=https://mirrors.c0urier.net/android/teamhorizon/P/OTA/ota_huashan_experimental.xml
+ota_official=https://mirrors.c0urier.net/android/teamhorizon/P/OTA/ota_huashan_official.xml
 device_name=ro.xenonhd.device
 release_type=Pie
 version_source=ro.xenonhd.version
