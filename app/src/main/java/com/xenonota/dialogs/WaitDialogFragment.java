@@ -31,8 +31,12 @@ import com.xenonota.R;
 
 public class WaitDialogFragment extends DialogFragment {
 
-    public static WaitDialogFragment newInstance() {
-        return new WaitDialogFragment();
+    private int msgId;
+
+    public static WaitDialogFragment newInstance(int msgId) {
+        WaitDialogFragment frag = new WaitDialogFragment();
+        frag.msgId = msgId;
+        return frag;
     }
 
     @Override
@@ -48,8 +52,10 @@ public class WaitDialogFragment extends DialogFragment {
         View progressDialog_layout = View.inflate(getContext(), R.layout.dialog_progress, null);
         TextView title = progressDialog_layout.findViewById(R.id.titleTextView);
         ProgressBar progressBar = progressDialog_layout.findViewById(R.id.progressCircle);
-        if (getActivity() != null) title.setText(getActivity().getString(R.string.dialog_message));
-        if (getContext() != null) progressBar.getIndeterminateDrawable().setColorFilter(getContext().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
+        if (getContext() != null) {
+            progressBar.getIndeterminateDrawable().setColorFilter(getContext().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
+            if (msgId > 0) title.setText(getContext().getText(msgId));
+        }
 
         AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(getContext());
         progressDialog_builder.setView(progressDialog_layout);

@@ -47,7 +47,7 @@ public class WaitDialogHandler extends Handler {
                     }
                     ft.addToBackStack(null);
 
-                    WaitDialogFragment dialog = WaitDialogFragment.newInstance();
+                    WaitDialogFragment dialog = WaitDialogFragment.newInstance(msg.arg1);
                     dialog.show(ft, DIALOG_TAG);
                 }
                 break;
