@@ -15,17 +15,46 @@
   -->
 <resources>
     <style name="Theme.Main" parent="@style/Theme.AppCompat.Light.DarkActionBar" >
-        <item name="android:switchPreferenceStyle">@style/SettingsSwitchPreference</item>
-        <item name="android:preferenceStyle">@style/SettingsPreference</item>
-        <item name="android:dialogPreferenceStyle">@style/SettingsDialogPreference</item>
-        <item name="android:preferenceScreenStyle">@style/SettingsPreferenceScreen</item>
-        <item name="android:listDivider">@null</item>
 
+        <!-- Color palette -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+
+        <!-- Action bar -->
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/overflowButtonStyle</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="actionBarStyle">@style/ActionBarStyle</item>
+        <item name="actionOverflowButtonStyle">@style/overflowButtonStyle</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Navigation bar -->
+        <item name="android:navigationBarDividerColor">#1f000000</item>
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+    </style>
+
+    <style name="ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@color/actionBarColor</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleText</item>
+
+        <item name="background">@color/actionBarColor</item>
+        <item name="titleTextStyle">@style/ActionBarTitleText</item>
+    </style>
+
+    <style name="overflowButtonStyle" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/colorPrimary</item>
+        <item name="tint">@color/colorPrimary</item>
+    </style>
+
+    <style name="ActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="AlertDialogCustom" parent="android:Theme.Material.Light.Dialog.Alert">
@@ -33,31 +62,5 @@
         <item name="android:colorAccent">@color/colorPrimaryDark</item>
     </style>
 
-    <!-- Preferences -->
-    <style name="SettingsPreference" parent="@*android:style/Preference.DeviceDefault">
-        <item name="android:singleLineTitle">false</item>
-        <item name="android:iconSpaceReserved">true</item>
-    </style>
-
-    <style name="SettingsSwitchPreference" parent="@*android:style/Preference.DeviceDefault.SwitchPreference">
-        <item name="android:iconSpaceReserved">true</item>
-        <item name="android:singleLineTitle">false</item>
-    </style>
-
-    <style name="SettingsPreferenceCategory" parent="@*android:style/Preference.DeviceDefault.Category">
-        <item name="android:layout">@layout/preference_category_material_settings</item>
-    </style>
-
-    <style name="SettingsDialogPreference" parent="@*android:style/Preference.DeviceDefault.DialogPreference">
-        <item name="android:singleLineTitle">false</item>
-        <item name="android:iconSpaceReserved">true</item>
-    </style>
-
-    <style name="SettingsPreferenceScreen" parent="@*android:style/Preference.DeviceDefault.PreferenceScreen">
-        <item name="android:singleLineTitle">false</item>
-        <item name="android:iconSpaceReserved">true</item>
-    </style>
-
-    <style name="SettingsListPreference" parent="SettingsPreference"/>
-
 </resources>
+
