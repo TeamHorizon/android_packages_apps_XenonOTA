@@ -49,6 +49,7 @@ import com.xenonota.dialogs.Downloader;
 import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.tasks.CheckUpdateTask;
 import com.xenonota.tasks.MagiskDownloadTask;
+import com.xenonota.utils.ORSUtils;
 import com.xenonota.utils.OTAUtils;
 import com.xenonota.xml.OTADevice;
 
@@ -206,6 +207,16 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         Button btnStartFlash = dLayout.findViewById(R.id.btn_startFlash);
         final CheckBox cbFlashGapps = dLayout.findViewById(R.id.cb_flash_gapps);
         final CheckBox cbFlashMagisk = dLayout.findViewById(R.id.cb_magisk);
+
+        String gapps_path = AppConfig.getGappsZipPath(getContext().getApplicationContext());
+        String magisk_path = AppConfig.getMagiskZipPath(getContext().getApplicationContext());
+        if(("".equals(gapps_path.trim())) || !((new File(gapps_path)).exists())){
+            cbFlashGapps.setEnabled(false);
+        }
+        if(("".equals(magisk_path.trim())) || !((new File(magisk_path)).exists())){
+           cbFlashMagisk.setEnabled(false);
+        }
+
         final Fragment_OTA frag = this;
         btnStartFlash.setOnClickListener(new View.OnClickListener() {
             @Override
