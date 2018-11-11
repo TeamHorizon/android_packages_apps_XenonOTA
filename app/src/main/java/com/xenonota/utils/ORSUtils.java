@@ -34,6 +34,10 @@ public class ORSUtils {
         WriteCommand("install " + absolute_path);
     }
 
+    public static void FactoryReset(){
+        WriteCommand("wipe data");
+    }
+
     private static void WriteCommand(String command){
         try{
             FileWriter fw = new FileWriter(ors_path, true);

@@ -80,6 +80,7 @@
     <string name="current_version">Current version:</string>
     <string name="download">Download</string>
     <string name="flash">Flash</string>
+    <string name="flash_clean">Clean Flash</string>
     <string name="flash_gapps">Flash GApps</string>
     <string name="flash_magisk">Flash Magisk</string>
     <string name="my_device">Device</string>

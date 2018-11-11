@@ -41,6 +41,7 @@ public class InitiateFlashTask extends AsyncTask<Void, Void, String> {
     private boolean mIsBackgroundThread;
 
     private Fragment_OTA frag;
+    private boolean clean_flash;
     private boolean flash_gapps;
     private boolean flash_magisk;
 
@@ -53,11 +54,12 @@ public class InitiateFlashTask extends AsyncTask<Void, Void, String> {
         this.mIsBackgroundThread = isBackgroundThread;
     }
 
-    public static InitiateFlashTask getInstance(boolean isBackgroundThread, Fragment_OTA frag, boolean flash_gapps, boolean flash_magisk) {
+    public static InitiateFlashTask getInstance(boolean isBackgroundThread, Fragment_OTA frag,boolean clean_flash, boolean flash_gapps, boolean flash_magisk) {
         if (mInstance == null) {
             mInstance = new InitiateFlashTask(isBackgroundThread);
         }
         if (frag == null || frag.getContext() == null) return null;
+        mInstance.clean_flash = clean_flash;
         mInstance.flash_gapps = flash_gapps;
         mInstance.flash_magisk = flash_magisk;
         mInstance.frag = frag;
@@ -117,6 +119,7 @@ public class InitiateFlashTask extends AsyncTask<Void, Void, String> {
 
         if(ota_md5.equals(md5)){
             ORSUtils.clear();
+            if(clean_flash) ORSUtils.FactoryReset();
             ORSUtils.InstallZip(ota_zip);
             if(flash_magisk){
                 if(!("".equals(magisk_path.trim())) && (new File(magisk_path)).exists()){

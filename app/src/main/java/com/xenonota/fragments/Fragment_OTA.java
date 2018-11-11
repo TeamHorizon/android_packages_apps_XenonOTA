@@ -205,6 +205,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         dBuilder.setView(dLayout);
         dBuilder.setCancelable(true);
         Button btnStartFlash = dLayout.findViewById(R.id.btn_startFlash);
+        final CheckBox cbFlashClean = dLayout.findViewById(R.id.cb_flash_clean);
         final CheckBox cbFlashGapps = dLayout.findViewById(R.id.cb_flash_gapps);
         final CheckBox cbFlashMagisk = dLayout.findViewById(R.id.cb_magisk);
 
@@ -221,7 +222,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         btnStartFlash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mFlashTask = InitiateFlashTask.getInstance(false,frag,cbFlashGapps.isChecked(),cbFlashMagisk.isChecked());
+                mFlashTask = InitiateFlashTask.getInstance(false,frag,cbFlashClean.isChecked(),cbFlashGapps.isChecked(),cbFlashMagisk.isChecked());
                 if (mFlashTask != null && !mFlashTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
                     mFlashTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 }
