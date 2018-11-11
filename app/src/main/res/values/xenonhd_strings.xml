@@ -102,6 +102,10 @@
     <string name="gapps_super" translatable="false">super</string>
     <string name="gapps_tvstock" translatable="false">tvstock</string>
     <string name="gapps_variant">GApps variant</string>
+    <string name="magisk_variant">Magisk variant</string>
+    <string name="magisk_latest">Latest (Stable &amp; Beta)</string>
+    <string name="magisk_stable">Stable Only</string>
+    <string name="magisk_beta">Beta Only</string>
     <string name="hour">Every hour</string>
     <string name="interval_title">Check for updates schedule</string>
     <string name="official">Official only</string>

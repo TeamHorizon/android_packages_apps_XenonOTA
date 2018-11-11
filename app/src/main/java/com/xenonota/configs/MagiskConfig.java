@@ -19,9 +19,14 @@
 
 package com.xenonota.configs;
 
+import android.content.Context;
+import android.preference.PreferenceManager;
+
 import java.util.Properties;
 
 public class MagiskConfig extends Properties {
+
+    private static final String MAGISK_VARIANT = "magisk_variant";
 
     private String url;
     private String filename;
@@ -38,4 +43,12 @@ public class MagiskConfig extends Properties {
     public String getVersion() {return version;}
 
     public String getFilename() {return filename;}
+
+    public static String getVariant(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getString(MAGISK_VARIANT, "latest");
+    }
+
+    public static void setVariant(String variant, Context context) {
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putString(MAGISK_VARIANT, variant).apply();
+    }
 }

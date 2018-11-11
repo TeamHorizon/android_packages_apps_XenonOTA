@@ -62,18 +62,74 @@ public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
     protected MagiskConfig doInBackground(Void... params) {
         if (cancel) return null;
 
-        String JSON_URL = "https://raw.githubusercontent.com/topjohnwu/MagiskManager/update/stable.json";
+        String JSON_URL_STABLE = "https://raw.githubusercontent.com/topjohnwu/MagiskManager/update/stable.json";
+        String JSON_URL_BETA = "https://raw.githubusercontent.com/topjohnwu/MagiskManager/update/beta.json";
 
         try {
-            JSONObject json = new JSONObject(readURL(JSON_URL));
-            JSONObject magisk = json.getJSONObject("magisk");
-            String url = magisk.getString("link");
-            String version = magisk.getString("version");
-            String filename = "Magisk-v" + version + ".zip";
+            JSONObject json_stable = new JSONObject(readURL(JSON_URL_STABLE));
+            JSONObject json_beta = new JSONObject(readURL(JSON_URL_BETA));
+            JSONObject magisk_stable = json_stable.getJSONObject("magisk");
+            JSONObject magisk_beta = json_beta.getJSONObject("magisk");
+            String url_stable = magisk_stable.getString("link");
+            String url_beta = magisk_beta.getString("link");
+            String version_stable = magisk_stable.getString("version");
+            String version_beta = magisk_beta.getString("version");
+            String filename_stable = "Magisk-v" + version_stable + ".zip";
+            String filename_beta = "Magisk-v" + version_beta + ".zip";
 
-            if (!"".equals(url)) return new MagiskConfig(url, filename, version);
+            String magisk_variant = MagiskConfig.getVariant(frag.getContext());
+
+            switch(magisk_variant) {
+                case "latest":{
+                    int result = compareVersion(version_beta, version_stable);
+                    if (result == 0) {
+                        if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable);
+                    } else if (result < 0) {
+                        if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable);
+                    } else  {
+                        if (!"".equals(url_beta)) return new MagiskConfig(url_beta, filename_beta, version_beta);
+                    }
+                    break;
+                }
+                case "stable":{
+                    if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable);
+                    break;
+                }
+                case "beta":{
+                    if (!"".equals(url_beta)) return new MagiskConfig(url_beta, filename_beta, version_beta);
+                    break;
+                }
+            }
         } catch (Exception ex) {OTAUtils.logError(ex);}
         return null;
+    }
+
+    public int compareVersion(String version1, String version2) {
+        String[] arr1 = version1.split("\\.");
+        String[] arr2 = version2.split("\\.");
+
+        int i=0;
+        while(i<arr1.length || i<arr2.length){
+            if(i<arr1.length && i<arr2.length){
+                if(Integer.parseInt(arr1[i]) < Integer.parseInt(arr2[i])){
+                    return -1;
+                }else if(Integer.parseInt(arr1[i]) > Integer.parseInt(arr2[i])){
+                    return 1;
+                }
+            } else if(i<arr1.length){
+                if(Integer.parseInt(arr1[i]) != 0){
+                    return 1;
+                }
+            } else if(i<arr2.length){
+                if(Integer.parseInt(arr2[i]) != 0){
+                    return -1;
+                }
+            }
+
+            i++;
+        }
+
+        return 0;
     }
 
     private String readURL(String url){

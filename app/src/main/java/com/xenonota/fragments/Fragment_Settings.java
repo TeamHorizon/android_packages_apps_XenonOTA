@@ -28,6 +28,7 @@ import android.widget.RadioGroup;
 import com.xenonota.R;
 import com.xenonota.configs.AppConfig;
 import com.xenonota.configs.GappsConfig;
+import com.xenonota.configs.MagiskConfig;
 import com.xenonota.utils.OTAUtils;
 
 public class Fragment_Settings extends Fragment {
@@ -35,6 +36,7 @@ public class Fragment_Settings extends Fragment {
     RadioGroup GappsVariant;
     RadioGroup AutoUpdateInterval;
     RadioGroup PreferredType;
+    RadioGroup MagiskType;
 
     public static Fragment_Settings newInstance() {
         return new Fragment_Settings();
@@ -52,6 +54,7 @@ public class Fragment_Settings extends Fragment {
         GappsVariant = view.findViewById(R.id.rg_gapps);
         AutoUpdateInterval = view.findViewById(R.id.rg_autocheck_interval);
         PreferredType = view.findViewById(R.id.rg_preferred_type);
+        MagiskType = view.findViewById(R.id.rg_magisk);
         LoadPreferences();
         AssignEvents();
         return view;
@@ -134,6 +137,22 @@ public class Fragment_Settings extends Fragment {
                 break;
             }
         }
+
+        String magiskType = MagiskConfig.getVariant(getContext().getApplicationContext());
+        switch (magiskType){
+            case "latest":{
+                MagiskType.check(R.id.rb_latest);
+                break;
+            }
+            case "stable":{
+                MagiskType.check(R.id.rb_stable);
+                break;
+            }
+            case "beta":{
+                MagiskType.check(R.id.rb_beta);
+                break;
+            }
+        }
     }
 
     private void AssignEvents(){
@@ -186,6 +205,26 @@ public class Fragment_Settings extends Fragment {
                     }
                     case R.id.rb_experimental:{
                         AppConfig.persistPreferredVersion("Experimental",getContext().getApplicationContext());
+                        break;
+                    }
+                }
+            }
+        });
+        MagiskType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selected = group.findViewById(checkedId);
+                switch (selected.getId()){
+                    case R.id.rb_latest:{
+                        MagiskConfig.setVariant("latest",getContext().getApplicationContext());
+                        break;
+                    }
+                    case R.id.rb_stable:{
+                        MagiskConfig.setVariant("stable",getContext().getApplicationContext());
+                        break;
+                    }
+                    case R.id.rb_beta:{
+                        MagiskConfig.setVariant("beta",getContext().getApplicationContext());
                         break;
                     }
                 }
