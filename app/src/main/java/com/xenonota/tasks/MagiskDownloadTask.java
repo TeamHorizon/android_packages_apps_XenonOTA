@@ -62,8 +62,8 @@ public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
     protected MagiskConfig doInBackground(Void... params) {
         if (cancel) return null;
 
-        String JSON_URL_STABLE = "https://raw.githubusercontent.com/topjohnwu/MagiskManager/update/stable.json";
-        String JSON_URL_BETA = "https://raw.githubusercontent.com/topjohnwu/MagiskManager/update/beta.json";
+        String JSON_URL_STABLE = "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json";
+        String JSON_URL_BETA = "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json";
 
         try {
             JSONObject json_stable = new JSONObject(readURL(JSON_URL_STABLE));
