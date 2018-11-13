@@ -237,7 +237,7 @@ public class Downloader {
             }
         }).start();
 
-        AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(context, R.style.AlertDialogCustom);
         progressDialog_builder.setTitle(R.string.downloading);
         progressDialog_builder.setView(progressDialog_layout);
         progressDialog_builder.setCancelable(false);

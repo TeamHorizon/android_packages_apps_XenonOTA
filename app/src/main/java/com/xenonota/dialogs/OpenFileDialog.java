@@ -24,6 +24,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -50,6 +51,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class OpenFileDialog extends AlertDialog.Builder {
+
+    @ColorInt
+    int colorPrimaryDark = android.R.attr.colorPrimaryDark;
 
     private String currentPath = Environment.getExternalStorageDirectory().getPath();
     private List<File> files = new ArrayList<>();
@@ -132,8 +136,8 @@ public class OpenFileDialog extends AlertDialog.Builder {
         files.addAll(getFiles(currentPath));
         listView.setAdapter(new FileAdapter(getContext(), files));
         final AlertDialog dialog = super.show();
-        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getContext().getResources().getColor(R.color.colorPrimaryDark,null));
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getContext().getResources().getColor(R.color.colorPrimaryDark,null));
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(colorPrimaryDark);
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(colorPrimaryDark);
         return dialog;
     }
 

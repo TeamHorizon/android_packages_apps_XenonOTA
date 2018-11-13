@@ -54,6 +54,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
@@ -90,7 +91,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/disabled" />
 
                         <RadioButton
@@ -98,7 +98,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/hour" />
 
                         <RadioButton
@@ -106,7 +105,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/twelve_hours" />
 
                         <RadioButton
@@ -114,7 +112,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/twentyfour_hours" />
 
                         <RadioButton
@@ -122,7 +119,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/onboot" />
                     </RadioGroup>
 
@@ -138,6 +134,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
@@ -174,7 +171,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/official" />
 
                         <RadioButton
@@ -182,7 +178,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/experimental" />
                     </RadioGroup>
 
@@ -198,6 +193,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
@@ -234,7 +230,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_aroma" />
 
                         <RadioButton
@@ -242,7 +237,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_super" />
 
                         <RadioButton
@@ -250,7 +244,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_stock" />
 
                         <RadioButton
@@ -258,7 +251,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_full" />
 
                         <RadioButton
@@ -266,7 +258,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_mini" />
 
                         <RadioButton
@@ -274,7 +265,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_micro" />
 
                         <RadioButton
@@ -282,7 +272,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_nano" />
 
                         <RadioButton
@@ -290,7 +279,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_pico" />
 
                         <RadioButton
@@ -298,7 +286,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/gapps_tvstock" />
                     </RadioGroup>
 
@@ -314,6 +301,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
@@ -350,7 +338,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/magisk_latest" />
 
                         <RadioButton
@@ -358,15 +345,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
                             android:text="@string/magisk_stable" />
 
                         <RadioButton
                             android:id="@+id/rb_beta"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:buttonTint="@color/colorPrimaryDark"
+                            android:layout_weight="1"                            
                             android:text="@string/magisk_beta" />
                     </RadioGroup>
                 </LinearLayout>

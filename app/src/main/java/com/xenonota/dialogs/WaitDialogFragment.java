@@ -51,13 +51,11 @@ public class WaitDialogFragment extends DialogFragment {
 
         View progressDialog_layout = View.inflate(getContext(), R.layout.dialog_progress, null);
         TextView title = progressDialog_layout.findViewById(R.id.titleTextView);
-        ProgressBar progressBar = progressDialog_layout.findViewById(R.id.progressCircle);
         if (getContext() != null) {
-            progressBar.getIndeterminateDrawable().setColorFilter(getContext().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
             if (msgId > 0) title.setText(getContext().getText(msgId));
         }
 
-        AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder progressDialog_builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
         progressDialog_builder.setView(progressDialog_layout);
         progressDialog_builder.setCancelable(false);
         AlertDialog progressDialog = progressDialog_builder.create();

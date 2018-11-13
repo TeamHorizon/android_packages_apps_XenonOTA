@@ -50,14 +50,15 @@
                 android:id="@+id/cv_ota_state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="?android:attr/colorPrimary"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@color/card_gray"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -87,7 +88,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="@android:color/white"
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="@string/no_update_available" />
@@ -102,6 +102,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
@@ -187,7 +188,8 @@
                             android:layout_marginBottom="5dp"
                             android:layout_weight="1"
                             android:text="@string/download"
-                            android:textColor="@color/colorAccent" />
+                            android:backgroundTint="?android:attr/colorAccent"
+                            android:textColor="@android:color/white" />
 
                         <Button
                             android:id="@+id/btn_flash"
@@ -200,7 +202,8 @@
                             android:layout_marginBottom="5dp"
                             android:layout_weight="1"
                             android:text="@string/flash"
-                            android:textColor="@color/colorAccent" />
+                            android:backgroundTint="?android:attr/colorAccent"
+                            android:textColor="@android:color/white" />
                     </TableRow>
 
                 </TableLayout>
@@ -214,6 +217,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
@@ -273,6 +277,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 android:paddingBottom="10dp"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"

@@ -19,15 +19,21 @@ package com.xenonota.fragments;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.app.AlertDialog;
 import android.support.v7.widget.CardView;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -49,13 +55,15 @@ import com.xenonota.dialogs.Downloader;
 import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.tasks.CheckUpdateTask;
 import com.xenonota.tasks.MagiskDownloadTask;
-import com.xenonota.utils.ORSUtils;
 import com.xenonota.utils.OTAUtils;
 import com.xenonota.xml.OTADevice;
 
 import java.io.File;
 
 public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback {
+
+    @ColorInt int colorAccent = android.R.attr.colorAccent;
+    @ColorInt int colorPrimary = android.R.attr.colorPrimary;
 
     View view;
     TextView currentVersion;
@@ -95,16 +103,33 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (getContext() != null) {
+            TypedValue typedValue_accent = new TypedValue();
+            TypedValue typedValue_primary = new TypedValue();
+            Resources.Theme theme = getContext().getTheme();
+            theme.resolveAttribute(android.R.attr.colorAccent, typedValue_accent, true);
+            theme.resolveAttribute(android.R.attr.colorPrimary, typedValue_primary, true);
+            colorAccent = typedValue_accent.data;
+            colorPrimary = typedValue_primary.data;
+        }
+
         view = inflater.inflate(R.layout.fragment_ota, container, false);
         assignObjects(view);
         assignEvents();
         getROMDetails();
+
         return view;
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
         menuInflater.inflate(R.menu.menu_ota, menu);
+        for(int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            SpannableString spanString = new SpannableString(menu.getItem(i).getTitle().toString());
+            spanString.setSpan(new ForegroundColorSpan(colorAccent), 0,     spanString.length(), 0); //fix the color to white
+            item.setTitle(spanString);
+        }
         super.onCreateOptionsMenu(menu,menuInflater);
     }
 
@@ -199,6 +224,8 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     }
 
     private void flashROM(){
+        if (getContext() == null) return;
+        
         View dLayout = View.inflate(getContext(), R.layout.dialog_flash, null);
         AlertDialog.Builder dBuilder = new AlertDialog.Builder(getContext());
         dBuilder.setTitle(R.string.flash);
@@ -263,7 +290,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
 
     private void showChangelog() {
         if (getContext() == null) return;
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(R.string.changelog_title);
         builder.setMessage(ota_data.getChangelog());
         builder.setNeutralButton(R.string.open_in_browser, new DialogInterface.OnClickListener() {
@@ -305,7 +332,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
             filePath = device.getFilepath();
             btnFlash.setEnabled(device.isDownloadedAlready());
             if(device.isDownloadedAlready()){
-                btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.colorPrimaryDark,null));
+                btnFlash.setBackgroundTintList(ColorStateList.valueOf(colorAccent));
             }else{btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.card_gray,null));}
             ota_controls.setVisibility(View.VISIBLE);
             changelog_cv.setVisibility(View.VISIBLE);
@@ -337,7 +364,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     public void processMagiskResult(final MagiskConfig magiskConfig) {
         if (getContext() == null || magiskConfig == null) return;
 
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(R.string.magisk);
         builder.setMessage(getString(R.string.magisk_message, magiskConfig.getVersion()));
 
@@ -405,13 +432,13 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         if (getContext() == null) return;
 
         AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder = new AlertDialog.Builder(getContext(),R.style.AlertDialogCustom);
         builder.setTitle(R.string.download_complete_title);
         if ("OTA".equals(type)){
             builder.setMessage(R.string.download_complete_msg_ota);
             AppConfig.persistOtaZipPath(filePath,getContext().getApplicationContext());
             AppConfig.persistOtaZipChecksum(ota_data.getChecksum(),getContext().getApplicationContext());
-            btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.colorPrimaryDark,null));
+            btnFlash.setBackgroundTintList(ColorStateList.valueOf(colorAccent));
             btnFlash.setEnabled(true);
         } else if (getString(R.string.magisk).equals(type)) {
             builder.setMessage(R.string.download_complete_msg_magisk);

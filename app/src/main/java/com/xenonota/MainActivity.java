@@ -21,14 +21,20 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.TypedValue;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -52,21 +58,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupTheme();
         setContentView(R.layout.activity_main);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material, null);
-            upArrow.setColorFilter(getResources().getColor(R.color.colorPrimary, null), PorterDuff.Mode.SRC_ATOP);
-            actionBar.setHomeAsUpIndicator(upArrow);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
         viewPager = findViewById(R.id.viewpager);
         viewPager.addOnPageChangeListener(mOnPageChangeListener);
         setupViewPager(viewPager);
-
         checkStoragePermissions();
         initChannels(this);
     }
@@ -123,6 +121,34 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+    private void setupTheme() {
+        setTheme(android.R.style.Theme_DeviceDefault_Settings);
+
+        TypedValue typedValue_accent = new TypedValue();
+        TypedValue typedValue_primary = new TypedValue();
+        Resources.Theme theme = getTheme();
+        theme.resolveAttribute(android.R.attr.colorAccent, typedValue_accent, true);
+        theme.resolveAttribute(android.R.attr.colorPrimary, typedValue_primary, true);
+        @ColorInt int colorAccent = typedValue_accent.data;
+        @ColorInt int colorPrimary = typedValue_primary.data;
+
+        android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            if (getActionBar() != null) getActionBar().hide();
+
+            supportActionBar.setBackgroundDrawable(new ColorDrawable(colorPrimary));
+            supportActionBar.getThemedContext().setTheme(android.R.style.Theme_DeviceDefault_Settings);
+            Spannable text = new SpannableString(supportActionBar.getTitle());
+            text.setSpan(new ForegroundColorSpan(colorAccent), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            supportActionBar.setTitle(text);
+
+            final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material, null);
+            upArrow.setColorFilter(colorAccent, PorterDuff.Mode.SRC_ATOP);
+            supportActionBar.setHomeAsUpIndicator(upArrow);
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

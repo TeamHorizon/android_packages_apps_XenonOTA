@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@color/card_gray"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true">
@@ -63,7 +63,7 @@
                     <FrameLayout
                         android:id="@+id/status_container"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="90dp"
                         android:background="@color/card_gray"
                         android:foregroundGravity="center"
                         android:orientation="vertical">
@@ -82,7 +82,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="@android:color/white"
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="@string/gapps_ok"
@@ -100,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="false"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
@@ -114,7 +113,7 @@
                     <FrameLayout
                         android:id="@+id/status_container1"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="90dp"
                         android:background="@color/card_gray"
                         android:foregroundGravity="center"
                         android:orientation="vertical">
@@ -142,11 +141,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="@android:color/white"
                         android:gravity="center"
                         android:padding="6dp"
                         android:text="@string/loading"
-                        android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:visibility="visible" />
 
@@ -160,6 +157,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:backgroundTint="?android:attr/colorPrimary"
                 app:cardCornerRadius="@dimen/cardview_default_radius"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"

@@ -15,52 +15,23 @@
   -->
 <resources>
     <style name="Theme.Main" parent="@style/Theme.AppCompat.Light.DarkActionBar" >
-
-        <!-- Color palette -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
-
-        <!-- Action bar -->
-        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
-        <item name="android:actionOverflowButtonStyle">@style/overflowButtonStyle</item>
-        <item name="android:windowActionBar">true</item>
-        <item name="actionBarStyle">@style/ActionBarStyle</item>
-        <item name="actionOverflowButtonStyle">@style/overflowButtonStyle</item>
-
-        <!-- Status bar -->
-        <item name="android:statusBarColor">@color/statusBarColor</item>
-        <item name="android:windowLightStatusBar">true</item>
-
-        <!-- Navigation bar -->
-        <item name="android:navigationBarDividerColor">#1f000000</item>
-        <item name="android:navigationBarColor">@color/navigationBarColor</item>
-        <item name="android:windowLightNavigationBar">true</item>
-
+        <item name="android:actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
+        <item name="actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
+        <item name="android:actionOverflowMenuStyle">@style/Theme.Main.OverFlow.Popup</item>
+        <item name="actionOverflowMenuStyle">@style/Theme.Main.OverFlow.Popup</item>
     </style>
 
-    <style name="ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
-        <item name="android:background">@color/actionBarColor</item>
-        <item name="android:titleTextStyle">@style/ActionBarTitleText</item>
-
-        <item name="background">@color/actionBarColor</item>
-        <item name="titleTextStyle">@style/ActionBarTitleText</item>
+    <style name="Theme.Main.OverFlow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">?android:attr/colorAccent</item>
+        <item name="tint">?android:attr/colorAccent</item>
     </style>
 
-    <style name="overflowButtonStyle" parent="@style/Widget.AppCompat.ActionButton.Overflow">
-        <item name="android:tint">@color/colorPrimary</item>
-        <item name="tint">@color/colorPrimary</item>
+    <style name="Theme.Main.OverFlow.Popup" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">?android:attr/colorPrimary</item>
     </style>
 
-    <style name="ActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/colorPrimary</item>
+    <style name="AlertDialogCustom" parent="@*android:style/Theme.Material.Settings.Dialog.BaseAlert">
+        <item name="android:windowNoTitle">true</item>
     </style>
-
-    <style name="AlertDialogCustom" parent="android:Theme.Material.Light.Dialog.Alert">
-        <item name="android:colorPrimary">@color/colorPrimary</item>
-        <item name="android:colorAccent">@color/colorPrimaryDark</item>
-    </style>
-
 </resources>
 

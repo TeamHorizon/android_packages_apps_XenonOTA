@@ -24,10 +24,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -71,6 +76,16 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
         menuInflater.inflate(R.menu.menu_gapps, menu);
+        TypedValue typedValue_accent = new TypedValue();
+        Resources.Theme theme = getContext().getTheme();
+        theme.resolveAttribute(android.R.attr.colorAccent, typedValue_accent, true);
+        @ColorInt int colorAccent = typedValue_accent.data;
+        for(int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            SpannableString spanString = new SpannableString(menu.getItem(i).getTitle().toString());
+            spanString.setSpan(new ForegroundColorSpan(colorAccent), 0,     spanString.length(), 0); //fix the color to white
+            item.setTitle(spanString);
+        }
         super.onCreateOptionsMenu(menu,menuInflater);
     }
 
@@ -131,7 +146,7 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
     private void clickDownload(){
         if (getContext() == null) return;
         View dLayout = View.inflate(getContext(),  R.layout.custom_alertdialog, null);
-        android.support.v7.app.AlertDialog.Builder dBuilder = new android.support.v7.app.AlertDialog.Builder(getContext());
+        android.support.v7.app.AlertDialog.Builder dBuilder = new android.support.v7.app.AlertDialog.Builder(getContext(), R.style.AlertDialogCustom);
         TextView message = dLayout.findViewById(R.id.custom_message);
         Button cancel = dLayout.findViewById(R.id.custom_negative);
         Button download = dLayout.findViewById(R.id.custom_positive);
