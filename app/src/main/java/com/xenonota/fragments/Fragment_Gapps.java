@@ -216,7 +216,7 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
         if (getContext() == null) return;
 
         android.support.v7.app.AlertDialog.Builder builder;
-        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.AlertDialogCustom);
         builder.setTitle(R.string.download_interrupted_title)
                 .setMessage(getString(R.string.download_interrupted_msg, reason))
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
@@ -233,7 +233,7 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
         AppConfig.persistGappsZipPath(filePath,getContext().getApplicationContext());
 
         android.support.v7.app.AlertDialog.Builder builder;
-        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.AlertDialogCustom);
         builder.setTitle(R.string.download_complete_title)
                 .setMessage(R.string.download_complete_msg_gapps)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
@@ -248,7 +248,7 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
         if (getContext() == null) return;
 
         android.support.v7.app.AlertDialog.Builder builder;
-        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder = new android.support.v7.app.AlertDialog.Builder(getContext(),R.style.AlertDialogCustom);
         builder.setTitle(R.string.download_cancelled_title)
                 .setMessage(R.string.download_cancelled_msg)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {

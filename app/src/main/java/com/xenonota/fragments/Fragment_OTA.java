@@ -428,7 +428,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         if (getContext() == null) return;
 
         AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder = new AlertDialog.Builder(getContext(),R.style.AlertDialogCustom);
         builder.setTitle(R.string.download_interrupted_title)
                 .setMessage(getString(R.string.download_interrupted_msg, reason))
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -467,7 +467,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         if (getContext() == null) return;
 
         AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(getContext(),R.style.Theme_AppCompat_Light_Dialog_Alert);
+        builder = new AlertDialog.Builder(getContext(),R.style.AlertDialogCustom);
         builder.setTitle(R.string.download_cancelled_title)
                 .setMessage(R.string.download_cancelled_msg)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
