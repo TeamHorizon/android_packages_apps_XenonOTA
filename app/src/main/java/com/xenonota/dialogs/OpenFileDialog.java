@@ -19,6 +19,7 @@ package com.xenonota.dialogs;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -53,7 +54,7 @@ import java.util.List;
 public class OpenFileDialog extends AlertDialog.Builder {
 
     @ColorInt
-    int colorPrimaryDark = android.R.attr.colorPrimaryDark;
+    private int colorAccent;
 
     private String currentPath = Environment.getExternalStorageDirectory().getPath();
     private List<File> files = new ArrayList<>();
@@ -129,6 +130,10 @@ public class OpenFileDialog extends AlertDialog.Builder {
                     }
                 })
                 .setNegativeButton(android.R.string.cancel, null);
+        TypedValue typedValue_accent = new TypedValue();        ;
+        Resources.Theme theme = getContext().getTheme();
+        theme.resolveAttribute(android.R.attr.colorAccent, typedValue_accent, true);
+        colorAccent = typedValue_accent.data;
     }
 
     @Override
@@ -136,8 +141,8 @@ public class OpenFileDialog extends AlertDialog.Builder {
         files.addAll(getFiles(currentPath));
         listView.setAdapter(new FileAdapter(getContext(), files));
         final AlertDialog dialog = super.show();
-        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(colorPrimaryDark);
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(colorPrimaryDark);
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(colorAccent);
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(colorAccent);
         return dialog;
     }
 
