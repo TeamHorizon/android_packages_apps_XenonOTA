@@ -15,6 +15,7 @@
   -->
 <resources>
     <style name="Theme.Main" parent="@style/Theme.AppCompat.Light.DarkActionBar" >
+        <item name="android:windowDisablePreview">true</item>
         <item name="android:actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
         <item name="actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
         <item name="android:actionOverflowMenuStyle">@style/Theme.Main.OverFlow.Popup</item>
