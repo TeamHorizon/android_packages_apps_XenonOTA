@@ -54,6 +54,7 @@ import com.xenonota.configs.MagiskConfig;
 import com.xenonota.dialogs.Downloader;
 import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.tasks.CheckUpdateTask;
+import com.xenonota.tasks.InitiateFlashTask;
 import com.xenonota.tasks.MagiskDownloadTask;
 import com.xenonota.utils.OTAUtils;
 import com.xenonota.xml.OTADevice;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xenonota.fragments;
+package com.xenonota.tasks;
 
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -25,6 +25,7 @@ import android.support.v7.app.AlertDialog;
 import com.xenonota.R;
 import com.xenonota.configs.AppConfig;
 import com.xenonota.dialogs.WaitDialogHandler;
+import com.xenonota.fragments.Fragment_OTA;
 import com.xenonota.utils.ORSUtils;
 import com.xenonota.utils.OTAUtils;
 
