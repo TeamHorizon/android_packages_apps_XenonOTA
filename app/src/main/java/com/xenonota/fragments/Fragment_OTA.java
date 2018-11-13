@@ -61,7 +61,7 @@ import com.xenonota.xml.OTADevice;
 
 import java.io.File;
 
-public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback {
+public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback, CheckUpdateTask.UpdateCheckerCallback {
 
     @ColorInt int colorAccent = android.R.attr.colorAccent;
     @ColorInt int colorPrimary = android.R.attr.colorPrimary;
@@ -94,6 +94,8 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
     private MagiskDownloadTask mCheckMagiskTask;
     private InitiateFlashTask mFlashTask;
 
+    public OTADevice deviceFromExtras = null;
+
     public static Fragment_OTA newInstance() {
         return new Fragment_OTA();
     }
@@ -118,7 +120,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         assignObjects(view);
         assignEvents();
         getROMDetails();
-
+        checkDeviceUpdates();
         return view;
     }
 
@@ -224,6 +226,13 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         });
     }
 
+    public void checkDeviceUpdates(){
+        if (deviceFromExtras != null) {
+            processOTACheckResult(deviceFromExtras,true);
+            deviceFromExtras = null;
+        }
+    }
+
     private void flashROM(){
         if (getContext() == null) return;
         
@@ -323,6 +332,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         }
     }
 
+    @Override
     public void processOTACheckResult(OTADevice device, boolean updateAvailable){
         if (getContext() == null) return;
         this.updateAvailable=updateAvailable;

@@ -19,7 +19,9 @@ package com.xenonota;
 import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
@@ -42,6 +44,8 @@ import com.xenonota.adapters.ViewPagerAdapter;
 import com.xenonota.fragments.Fragment_Gapps;
 import com.xenonota.fragments.Fragment_OTA;
 import com.xenonota.fragments.Fragment_Settings;
+import com.xenonota.tasks.BootCompletedReceiver;
+import com.xenonota.xml.OTADevice;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,9 +59,12 @@ public class MainActivity extends AppCompatActivity {
     Fragment_Gapps fragment_gapps;
     Fragment_Settings fragment_settings;
 
+    OTADevice deviceFromExtras = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupIndent(getIntent());
         setupTheme();
         setContentView(R.layout.activity_main);
         navigation = findViewById(R.id.navigation);
@@ -67,6 +74,23 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
         checkStoragePermissions();
         initChannels(this);
+        final ComponentName onBootReceiver = new ComponentName(getApplication().getPackageName(), BootCompletedReceiver.class.getName());
+        if(getPackageManager().getComponentEnabledSetting(onBootReceiver) != PackageManager.COMPONENT_ENABLED_STATE_ENABLED)
+            getPackageManager().setComponentEnabledSetting(onBootReceiver,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
+    }
+
+    @Override
+    public void onNewIntent(Intent intent){
+        setupIndent(intent);
+        if (viewPager != null && fragment_ota != null) {viewPager.setCurrentItem(0); fragment_ota.deviceFromExtras = deviceFromExtras; fragment_ota.checkDeviceUpdates();}
+    }
+
+    private void setupIndent(Intent intent) {
+        Bundle extras = intent.getExtras();
+        if(extras != null) {
+            OTADevice device = (OTADevice) extras.getSerializable("OTADevice");
+            if (device != null) deviceFromExtras = device;
+        }
     }
 
     @Override
@@ -208,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(fragment_gapps);
         adapter.addFragment(fragment_settings);
         fragment_ota.setHasOptionsMenu(true);
+        fragment_ota.deviceFromExtras = deviceFromExtras;
         viewPager.setAdapter(adapter);
         invalidateOptionsMenu();
     }

@@ -25,8 +25,9 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.Serializable;
 
-public class OTADevice {
+public class OTADevice implements Serializable {
 
     private String mLatestVersion;
     private String mROMURL;

@@ -18,22 +18,37 @@ package com.xenonota.tasks;
 
 import android.app.job.JobParameters;
 import android.app.job.JobService;
+import android.content.Context;
 import android.os.AsyncTask;
 
-public class OTAService extends JobService {
+import com.xenonota.utils.OTAUtils;
+import com.xenonota.xml.OTADevice;
+
+public class OTAService extends JobService implements CheckUpdateTask.UpdateCheckerCallback {
 
     public boolean onStartJob(final JobParameters jobParameters) {
 
-        CheckUpdateTask otaChecker = CheckUpdateTask.getInstance(true,null);
-        if (!otaChecker.getStatus().equals(AsyncTask.Status.RUNNING)) {
-            otaChecker.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        try {
+            CheckUpdateTask otaChecker = CheckUpdateTask.getInstance(true,this);
+            if (!otaChecker.getStatus().equals(AsyncTask.Status.RUNNING)) {
+                otaChecker.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR).get();
+            }
+        } catch (Exception ex) {
+            OTAUtils.logError(ex);
         }
 
         return false;
     }
 
+    @Override
+    public void processOTACheckResult(OTADevice device, boolean updateAvailable) {
+        OTAUtils.logInfo("OTACheckResult JobService - " + (updateAvailable ? "Update available" : "Update Not Available"));
+    }
 
-
+    @Override
+    public Context getContext() {
+        return  getApplicationContext();
+    }
 
     @Override
     public boolean onStopJob(JobParameters jobParameters) {
