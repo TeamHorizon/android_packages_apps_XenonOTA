@@ -15,49 +15,30 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">Atualizações XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">Secção de atualizações</string>
-  <string name="links_category">Secção de transferências</string>
-  <!-- Dialog -->
-  <string name="dialog_message">A procurar por atualizações, por favor aguarde…</string>
-  <string name="reboot_recovery">Reiniciar para a recovery</string>
-  <!-- ROM info -->
-  <string name="latest_version">Atualização disponível!\nÚltima versão: %1$s</string>
-  <string name="unknown">Desconhecido</string>
-  <string name="system_uptodate">O seu sistema está atualizado</string>
-  <!-- Check update -->
-  <string name="check_update_title">Procurar atualizações</string>
-  <string name="last_check_summary">Última verificação: %1$s</string>
-  <string name="last_check_never">Nunca</string>
-  <string name="check_update_failed">Não foi possível verificar se há atualizações. Verifique a ligação à Internet e se o dispositivo é suportado oficialmente</string>
-  <string name="update_available">Atualização disponível!</string>
-  <string name="no_update_available">Sem atualizações disponíveis</string>
-  <!-- Notification -->
-  <string name="notification_title">Atualização XenonHD</string>
-  <string name="notification_message">Nova versão disponível!</string>
-  <string name="xenonota_channel">Notificações XenonOTA</string>
-  <string name="xenonota_channel_description">Notificações sobre novas atualizações XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">Não existe navegador instalado\nVeja a app BrowserInstaller</string>
-  <!-- Update interval -->
-  <string name="interval_title">Verificar se há atualizações automaticamente</string>
-  <string name="autoupdate_enabled">Verificação automática de atualizações ativada</string>
-  <string name="autoupdate_disabled">Verificação automática de atualizações desativada</string>
-  <string name="disabled">Desactivado</string>
-  <string name="hour">A cada hora</string>
-  <string name="twelve_hours">A cada 12 horas</string>
-  <string name="twentyfour_hours">A cada 24 horas</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">Transferir a última build</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">Transferir o checksum da última build</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Transferir Open Gapps</string>
-  <string name="links_changelog_title">Registo de alterações</string>
-  <string name="links_changelog_summary">Ver changelog mais recente</string>
-  <string name="links_donate_title">Ajuda</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Atualizações XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Cancelar</string>
+    <string name="dialog_message">A procurar por atualizações, por favor aguarde…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <string name="reboot_recovery">Reiniciar para a recovery</string>
+    <!-- GApps -->
+    <!-- Navigation -->
+    <string name="title_rom">ROM</string>
+    <!-- Notifications -->
+    <string name="xenonota_channel">Notificações XenonOTA</string>
+    <string name="xenonota_channel_description">Notificações sobre novas atualizações XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Registo de alterações</string>
+    <string name="check_update_title">Procurar atualizações</string>
+    <!-- Settings -->
+    <string name="disabled">Desactivado</string>
+    <string name="hour">A cada hora</string>
+    <string name="twelve_hours">A cada 12 horas</string>
+    <string name="twentyfour_hours">A cada 24 horas</string>
+    <!-- Toast -->
+    <string name="check_update_failed">Não foi possível verificar se há atualizações. Verifique a ligação à Internet e se o dispositivo é suportado oficialmente</string>
+    <string name="update_available">Atualização disponível!</string>
 </resources>

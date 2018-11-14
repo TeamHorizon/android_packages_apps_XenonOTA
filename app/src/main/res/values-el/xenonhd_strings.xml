@@ -15,52 +15,30 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">Ενημερώσεις λειτουργικού XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">Τμήμα ενημερώσεων</string>
-  <string name="links_category">Τμήμα λήψεων</string>
-  <!-- Dialog -->
-  <string name="dialog_message">Ελέγχος για ενημερώσεις, παρακαλώ περιμένετε…</string>
-  <string name="reboot_recovery">Επανεκκίνηση στη Recovery</string>
-  <!-- ROM info -->
-  <string name="latest_version">Μια ενημέρωση είναι διαθέσιμη!\n τελευταία έκδοση: %1$s</string>
-  <string name="unknown">Άγνωστο</string>
-  <string name="system_uptodate">Η συσκευή σας είναι ενημερωμένη</string>
-  <!-- Check update -->
-  <string name="check_update_title">Έλεγχος για ενημερώσεις</string>
-  <string name="last_check_summary">Τελευταίος έλεγχος: %1$s</string>
-  <string name="last_check_never">Ποτέ</string>
-  <string name="check_update_failed">Δεν είναι εφικτός ο έλεγχος για ενημερώσεις. Ελέγξτε την σύνδεση σας στο διαδίκτυο και αν η συσκευή σας είναι επισήμως υποστηριζόμενη</string>
-  <string name="update_available">Μια νέα ενημέρωση είναι διαθέσιμη!</string>
-  <string name="no_update_available">Δεν υπάρχουν διαθέσιμες ενημερώσεις</string>
-  <!-- Notification -->
-  <string name="notification_title">Ενημερώση XenonHD</string>
-  <string name="notification_message">Μία νέα έκδοση είναι διαθέσιμη!</string>
-  <string name="xenonota_channel">Ειδοποιήσεις για ενημερώσεις XenonHD</string>
-  <string name="xenonota_channel_description">Ειδοποιήσεις για νέες ενημερώσεις XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">Δεν έχετε εγκαταστήσει κάποιον περιηγητή.\in
-
-Ρίξτε μια ματία στην εφαρμογή BrowserInstaller!</string>
-  <!-- Update interval -->
-  <string name="interval_title">Αυτόματος έλεγχος για ενημερώσεις</string>
-  <string name="autoupdate_enabled">Οι αυτόματες ενημερώσεις είναι ενεργοποιημένες</string>
-  <string name="autoupdate_disabled">Οι αυτόματες ενημερώσεις είναι απενεργοποιημένες</string>
-  <string name="disabled">Απενεργοποιημένο</string>
-  <string name="hour">Κάθε ώρα</string>
-  <string name="twelve_hours">Κάθε 12 ώρες</string>
-  <string name="twentyfour_hours">Κάθε 24 ώρες</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">Κατεβάστε την πιο πρόσφατη έκδοση</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">Κατεβάστε το checksum της τελευταίας έκδοσης</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Κατεβάστε τις Open Gapps</string>
-  <string name="links_changelog_title">Κατάλογος αλλαγών</string>
-  <string name="links_changelog_summary">Δείτε το πιο πρόσφατο changelog</string>
-  <string name="links_donate_title">Υποστήριξη</string>
-  <string name="links_donate_summary">Δωρίστε στον συντηρητή της συσκευής σας</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Ενημερώσεις λειτουργικού XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Ακύρωση</string>
+    <string name="dialog_message">Ελέγχος για ενημερώσεις, παρακαλώ περιμένετε…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <string name="reboot_recovery">Επανεκκίνηση στη Recovery</string>
+    <!-- GApps -->
+    <!-- Navigation -->
+    <string name="title_rom">ROM</string>
+    <!-- Notifications -->
+    <string name="xenonota_channel">Ειδοποιήσεις για ενημερώσεις XenonHD</string>
+    <string name="xenonota_channel_description">Ειδοποιήσεις για νέες ενημερώσεις XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Κατάλογος αλλαγών</string>
+    <string name="check_update_title">Έλεγχος για ενημερώσεις</string>
+    <!-- Settings -->
+    <string name="disabled">Απενεργοποιημένο</string>
+    <string name="hour">Κάθε ώρα</string>
+    <string name="twelve_hours">Κάθε 12 ώρες</string>
+    <string name="twentyfour_hours">Κάθε 24 ώρες</string>
+    <!-- Toast -->
+    <string name="check_update_failed">Δεν είναι εφικτός ο έλεγχος για ενημερώσεις. Ελέγξτε την σύνδεση σας στο διαδίκτυο και αν η συσκευή σας είναι επισήμως υποστηριζόμενη</string>
+    <string name="update_available">Μια νέα ενημέρωση είναι διαθέσιμη!</string>
 </resources>

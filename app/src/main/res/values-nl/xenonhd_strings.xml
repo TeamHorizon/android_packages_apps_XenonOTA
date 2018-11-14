@@ -15,27 +15,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <!-- Categories -->
-  <!-- Dialog -->
-  <string name="dialog_message">Controleren op updates, even geduld alstublieft…</string>
-  <!-- ROM info -->
-  <string name="unknown">Onbekend</string>
-  <string name="system_uptodate">Uw systeem is up to date</string>
-  <!-- Check update -->
-  <string name="check_update_title">Op updates controleren</string>
-  <string name="last_check_summary">Laatst gecontroleerd: %1$s</string>
-  <string name="last_check_never">Nooit</string>
-  <string name="no_update_available">No update available</string>
-  <!-- Notification -->
-  <string name="notification_title">XenonHD Update</string>
-  <string name="notification_message">Er is een nieuwe versie beschikbaar!</string>
-  <!-- Toast -->
-  <!-- Update interval -->
-  <string name="disabled">Uitgeschakeld</string>
-  <string name="hour">Elk uur</string>
-  <string name="twelve_hours">Iedere 12 uur</string>
-  <string name="twentyfour_hours">Iedere 24 uur</string>
-  <!-- Links -->
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <!-- Dialogs -->
+    <string name="dialog_message">Controleren op updates, even geduld alstublieft…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <!-- GApps -->
+    <!-- Navigation -->
+    <!-- Notifications -->
+    <!-- ROM -->
+    <string name="check_update_title">Op updates controleren</string>
+    <!-- Settings -->
+    <string name="disabled">Uitgeschakeld</string>
+    <string name="hour">Elk uur</string>
+    <string name="twelve_hours">Iedere 12 uur</string>
+    <string name="twentyfour_hours">Iedere 24 uur</string>
+    <!-- Toast -->
 </resources>

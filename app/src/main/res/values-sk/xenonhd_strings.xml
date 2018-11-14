@@ -15,50 +15,30 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">Aktualizácie XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">Sekcia aktualizácie</string>
-  <string name="links_category">Sekcia sťahovania</string>
-  <!-- Dialog -->
-  <string name="dialog_message">Kontrolujem aktualizácie, počkajte prosím…</string>
-  <string name="reboot_recovery">Reštartovať do recovery</string>
-  <!-- ROM info -->
-  <string name="latest_version">K dispozícii je aktualizácia! \nPosledná verzia: %1$s</string>
-  <string name="unknown">Neznáma</string>
-  <string name="system_uptodate">Váš systém je aktuálny</string>
-  <!-- Check update -->
-  <string name="check_update_title">Skontrolovať aktualizácie</string>
-  <string name="last_check_summary">Posledná kontrola: %1$s</string>
-  <string name="last_check_never">Nikdy</string>
-  <string name="check_update_failed">Nemôže skontrolovať aktualizácie. Skontrolujte pripojenie na internet a či je vaše zariadenie oficiálne podporované</string>
-  <string name="update_available">K dispozícii je aktualizácia!</string>
-  <string name="no_update_available">Neboli nájdené žiadne aktualizácie</string>
-  <!-- Notification -->
-  <string name="notification_title">Aktualizácie XenonHD</string>
-  <string name="notification_message">Nová verzia je k dispozícii!</string>
-  <string name="xenonota_channel">Upozornenia XenonOTA</string>
-  <string name="xenonota_channel_description">Upozornenia na nové aktualizácie XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">Nie je nainštalovaný žiadny prehliadač\nSkontrolujte aplikáciu BrowserInstaller</string>
-  <!-- Update interval -->
-  <string name="interval_title">Automaticky kontrolovať aktualizácie</string>
-  <string name="autoupdate_enabled">Automatická aktualizácia je zapnutá</string>
-  <string name="autoupdate_disabled">Automatická aktualizácia je zapnutá</string>
-  <string name="disabled">Vypnuté</string>
-  <string name="hour">Každú hodinu</string>
-  <string name="twelve_hours">Každých 12 hodín</string>
-  <string name="twentyfour_hours">Každých 24 hodín</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">Stiahnuť najnovšiu zostavu</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">Stiahnite si kontrolný súčet najnovšej zostavy</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Stiahnuť Open Gapps</string>
-  <string name="links_changelog_title">Prehľad zmien</string>
-  <string name="links_changelog_summary">Zobraziť zoznam zmien</string>
-  <string name="links_donate_title">Podpora</string>
-  <string name="links_donate_summary">Podporte správcu zariadenia</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Aktualizácie XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Zrušiť</string>
+    <string name="dialog_message">Kontrolujem aktualizácie, počkajte prosím…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <string name="reboot_recovery">Reštartovať do recovery</string>
+    <!-- GApps -->
+    <!-- Navigation -->
+    <string name="title_rom">ROM</string>
+    <!-- Notifications -->
+    <string name="xenonota_channel">Upozornenia XenonOTA</string>
+    <string name="xenonota_channel_description">Upozornenia na nové aktualizácie XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Prehľad zmien</string>
+    <string name="check_update_title">Skontrolovať aktualizácie</string>
+    <!-- Settings -->
+    <string name="disabled">Vypnuté</string>
+    <string name="hour">Každú hodinu</string>
+    <string name="twelve_hours">Každých 12 hodín</string>
+    <string name="twentyfour_hours">Každých 24 hodín</string>
+    <!-- Toast -->
+    <string name="check_update_failed">Nemôže skontrolovať aktualizácie. Skontrolujte pripojenie na internet a či je vaše zariadenie oficiálne podporované</string>
+    <string name="update_available">K dispozícii je aktualizácia!</string>
 </resources>

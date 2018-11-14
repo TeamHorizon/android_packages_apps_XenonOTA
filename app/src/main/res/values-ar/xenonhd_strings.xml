@@ -15,50 +15,85 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">تحديث الزينون على الهواء</string>
-  <string name="app_title">تحديثات XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">قسم التحديث</string>
-  <string name="links_category">قسم التحميل</string>
-  <!-- Dialog -->
-  <string name="dialog_message">التحقق من وجود تحديثات، الرجاء الإنتظار.</string>
-  <string name="reboot_recovery">اعادة التشغيل إلى وضع الإسترداد</string>
-  <!-- ROM info -->
-  <string name="latest_version">تحديث متوفر!\nاخر إصدار: %1$s</string>
-  <string name="unknown">مجهول</string>
-  <string name="system_uptodate">نظامك محدث</string>
-  <!-- Check update -->
-  <string name="check_update_title">تحقق من وجود تحديثات</string>
-  <string name="last_check_summary">آخر فحص: %1$s</string>
-  <string name="last_check_never">أبداً</string>
-  <string name="check_update_failed">لا يمكن التحقق من وجود تحديثات. تحقق من اتصال الإنترنت الخاص بك، وما إذا كان الجهاز الخاص بك معتمد رسميا</string>
-  <string name="update_available">تحديث متوفر!</string>
-  <string name="no_update_available">لا توجد تحديثات متوفرة</string>
-  <!-- Notification -->
-  <string name="notification_title">تحديثات XenonHD</string>
-  <string name="notification_message">يتوفر إصدار جديد!</string>
-  <string name="xenonota_channel">اشعارات XenonOTA</string>
-  <string name="xenonota_channel_description">إشعارات حول التحديثات الجديدة لـ XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">لا يوجد متصفح مثبت\nتحقق من مثبت المتصفح</string>
-  <!-- Update interval -->
-  <string name="interval_title">التحقق تلقائياً من وجود تحديثات</string>
-  <string name="autoupdate_enabled">التحقق تلقائياً من وجود تحديثات ممكن</string>
-  <string name="autoupdate_disabled">التحقق تلقائياً من وجود تحديثات معطل</string>
-  <string name="disabled">غير مفعل</string>
-  <string name="hour">كل ساعة</string>
-  <string name="twelve_hours">كل 12 ساعة</string>
-  <string name="twentyfour_hours">كل ٢٤ ساعة</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">تحميل الإصدار الأحدث</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">تحميل المجموع الاختباري للأصدار الأحدث</string>
-  <string name="links_gapps_title">تطبيقات Google</string>
-  <string name="links_gapps_summary">التحميل من موقع Open Gapps</string>
-  <string name="links_changelog_title">سجل التغيرات</string>
-  <string name="links_changelog_summary">عرض سجل التغييرات الأخيرة</string>
-  <string name="links_donate_title">الدعم</string>
-  <string name="links_donate_summary">التبرع للمطور</string>
+    <!-- App -->
+    <string name="app_name">تحديث الزينون على الهواء</string>
+    <string name="app_title">تحديثات XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">إلغاء</string>
+    <string name="close">إغلاق</string>
+    <string name="confirm">تأكيد</string>
+    <string name="dialog_message">التحقق من وجود تحديثات، الرجاء الإنتظار.</string>
+    <string name="download_cancelled_msg">تم إلغاء التحميل</string>
+    <string name="download_cancelled_title">تم إلغاء التحميل</string>
+    <string name="download_complete_msg_gapps">تم تنزيل تطبيقات GApp بنجاح. قم بتثبيت GApps إلى جانب ROM عن طريق تحديد خيار GApps في مربع حوار التثبيت</string>
+    <string name="download_complete_msg_magisk">تم تحميل Magisk بنجاح. قم بتثبيتMagisk مع ROM بتحديد خيار Magisk في مربع حوار التثبيت</string>
+    <string name="download_complete_msg_ota">تم تنزيل التحديث بنجاح. اضغط على \"تثبيت\" لإعادة التشغيل والتثبيت في الاسترداد</string>
+    <string name="download_complete_title">إكتمل التحميل</string>
+    <string name="download_confirm_msg">الرجاء التأكيد قبل التحميل:\n\nإصدار الاندرويد\t\t:\t%1$s\nمنصة المعالج\t\t\t:\t%2$s\nنوع الحزمة\t\t:\t%3$s</string>
+    <string name="download_interrupted_msg">تم ايقاف التنزيل بسبب %1$s</string>
+    <string name="download_interrupted_title">تمت مقاطعة التحميل</string>
+    <string name="failed">فشل</string>
+    <string name="flash_message">هل تريد إعادة التشغيل وتثبيت ملف zip الذي تم تنزيله؟</string>
+    <string name="magisk_check">التحقق من أحدث إصدار من Magisk…</string>
+    <string name="magisk_download_completed">تم تحميل Magisk بنجاح. يمكنك تثبيته مع ROM الآن</string>
+    <string name="magisk_message">Magisk v%1$s متوفر.\nهل تريد تحميله؟</string>
+    <string name="open_in_browser">فتح في المتصفح</string>
+    <string name="reboot_warning">هل تريد الاقلاع إلى وضع الإسترداد؟</string>
+    <string name="verification_failed">فشل التحقق</string>
+    <string name="verifying_package">التحقق من الحزمة…</string>
+    <!-- Downloader -->
+    <string name="downloading">تحميل…</string>
+    <!-- Dropdowns -->
+    <string name="choose_gapps_zip">اختر ملف GApps zip موجود</string>
+    <string name="download_magisk">تحميل Magisk</string>
+    <string name="reboot_recovery">اعادة التشغيل إلى وضع الإسترداد</string>
+    <!-- GApps -->
+    <string name="gapps_ok">تم تثبيت GApps!</string>
+    <string name="gapps_warning">لم يتم تثبيت GApps!</string>
+    <string name="latest_release_msg">أحدث إصدار لأجل %1$s %2$s</string>
+    <string name="loading">قيد التحميل…</string>
+    <!-- Navigation -->
+    <string name="title_gapps">تطبيقات Google</string>
+    <string name="title_rom">ROM</string>
+    <string name="title_settings">الإعدادات</string>
+    <!-- Notifications -->
+    <string name="notification_message">هناك إصدار جديد متوفر!</string>
+    <string name="notification_title">تحديث XenonHD</string>
+    <string name="xenonota_channel">اشعارات XenonOTA</string>
+    <string name="xenonota_channel_description">إشعارات حول التحديثات الجديدة لـ XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">سجل التغيرات</string>
+    <string name="check_update_title">تحقق من وجود تحديثات</string>
+    <string name="current_version">النسخة الحالية:</string>
+    <string name="download">تنزيل</string>
+    <string name="flash">فلاش</string>
+    <string name="flash_clean">تثبيت نظيف</string>
+    <string name="flash_gapps">فلاش GApps</string>
+    <string name="flash_magisk">فلاش Magisk</string>
+    <string name="my_device">الجهاز</string>
+    <string name="no_update_available">لا توجد تحديثات متوفرة</string>
+    <string name="update_available1">تحديث متوفر!\n%s</string>
+    <string name="xenonhd_version">XenonHD %s</string>
+    <!-- Settings -->
+    <string name="disabled">غير مفعل</string>
+    <string name="gapps_variant">نوع GApps</string>
+    <string name="magisk_variant">نوع Magisk</string>
+    <string name="magisk_latest">الأحدث (مستقر و بيتا)</string>
+    <string name="magisk_stable">المستقر فقط</string>
+    <string name="magisk_beta">بيتا فقط</string>
+    <string name="hour">كل ساعة</string>
+    <string name="interval_title">جدول تحقق من وجود التحديثات</string>
+    <string name="onboot">في التمهيد</string>
+    <string name="preferred_type">نوع البناء المفضل</string>
+    <string name="twelve_hours">كل 12 ساعة</string>
+    <string name="twentyfour_hours">كل ٢٤ ساعة</string>
+    <!-- Toast -->
+    <string name="autoupdate_disabled">التحقق تلقائياً من وجود التحديثات معطل</string>
+    <string name="autoupdate_enabled">التحقق تلقائياً من وجود التحديثات مفعل</string>
+    <string name="check_update_failed">لا يمكن التحقق من وجود تحديثات. تحقق من اتصال الإنترنت الخاص بك، وما إذا كان الجهاز الخاص بك معتمد رسميا</string>
+    <string name="gapps_set">تعيين مسار Gapps إلى %s</string>
+    <string name="magisk_error">لا يمكن الحصول على أحدث ارتباط Magisk</string>
+    <string name="permission_not_enabled">تحديث Xenon ليس لديه إذن لحفظ الملفات. يرجى السماح بالوصول إلى التخزين أولاً</string>
+    <string name="toast_message">لا يوجد متصفحث مُثبت</string>
+    <string name="update_available">تحديث متوفر!</string>
 </resources>

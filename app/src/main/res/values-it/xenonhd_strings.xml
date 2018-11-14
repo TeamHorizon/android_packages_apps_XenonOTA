@@ -15,50 +15,30 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">Aggiornamenti XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">Aggiornamento della sezione</string>
-  <string name="links_category">Sezione download</string>
-  <!-- Dialog -->
-  <string name="dialog_message">Controllo degli aggiornamenti, si prega di attendere…</string>
-  <string name="reboot_recovery">Riavvia in recovery</string>
-  <!-- ROM info -->
-  <string name="latest_version">Aggiornamento disponibile! \nL’ultima versione è: %1$s</string>
-  <string name="unknown">Sconosciuto</string>
-  <string name="system_uptodate">Il tuo sistema è aggiornato</string>
-  <!-- Check update -->
-  <string name="check_update_title">Cerca aggiornamenti</string>
-  <string name="last_check_summary">Ultimo controllo: %1$s</string>
-  <string name="last_check_never">Mai</string>
-  <string name="check_update_failed">Impossibile controllare gli aggiornamenti. Controlla la connessione internet e se il dispositivo è ufficialmente supportato</string>
-  <string name="update_available">Aggiornamento disponibile!</string>
-  <string name="no_update_available">Nessun aggiornamento disponibile</string>
-  <!-- Notification -->
-  <string name="notification_title">Aggiornamento XenonHD</string>
-  <string name="notification_message">È disponibile una nuova versione!</string>
-  <string name="xenonota_channel">Notifiche di XenonOTA</string>
-  <string name="xenonota_channel_description">Notifiche sui nuovi aggiornamenti di XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">Nessun browser è installato, controlla l\'applicazione Browser Installer</string>
-  <!-- Update interval -->
-  <string name="interval_title">Controlla automaticamente gli aggiornamenti</string>
-  <string name="autoupdate_enabled">Controllo automatico degli aggiornamenti è attivato</string>
-  <string name="autoupdate_disabled">Controllo automatico degli aggiornamenti è disattivato</string>
-  <string name="disabled">Disabilitato</string>
-  <string name="hour">Ogni ora</string>
-  <string name="twelve_hours">Ogni 12 ore</string>
-  <string name="twentyfour_hours">Ogni 24 ore</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">Scarica l\'ultima build</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">Scarica checksum della build più recente</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Scarica Open Gapps</string>
-  <string name="links_changelog_title">Modifiche</string>
-  <string name="links_changelog_summary">Visualizza i cambiamenti più recente</string>
-  <string name="links_donate_title">Supporto</string>
-  <string name="links_donate_summary">Fai una donazione al manutentore del tuo dispositivo</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Aggiornamenti XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Annulla</string>
+    <string name="dialog_message">Controllo degli aggiornamenti, si prega di attendere…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <string name="reboot_recovery">Riavvia in recovery</string>
+    <!-- GApps -->
+    <!-- Navigation -->
+    <string name="title_rom">ROM</string>
+    <!-- Notifications -->
+    <string name="xenonota_channel">Notifiche di XenonOTA</string>
+    <string name="xenonota_channel_description">Notifiche sui nuovi aggiornamenti di XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Modifiche</string>
+    <string name="check_update_title">Cerca aggiornamenti</string>
+    <!-- Settings -->
+    <string name="disabled">Disabilitato</string>
+    <string name="hour">Ogni ora</string>
+    <string name="twelve_hours">Ogni 12 ore</string>
+    <string name="twentyfour_hours">Ogni 24 ore</string>
+    <!-- Toast -->
+    <string name="check_update_failed">Impossibile controllare gli aggiornamenti. Controlla la connessione internet e se il dispositivo è ufficialmente supportato</string>
+    <string name="update_available">Aggiornamento disponibile!</string>
 </resources>

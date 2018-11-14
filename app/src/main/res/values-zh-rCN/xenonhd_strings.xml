@@ -15,50 +15,85 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">Xenon更新</string>
-  <string name="app_title">XenonHD更新</string>
-  <!-- Categories -->
-  <string name="ota_category">更新部分</string>
-  <string name="links_category">下载部分</string>
-  <!-- Dialog -->
-  <string name="dialog_message">正在检查更新，请稍等......</string>
-  <string name="reboot_recovery">重启至恢复模式</string>
-  <!-- ROM info -->
-  <string name="latest_version">更新可用! 最新版本为:</string>
-  <string name="unknown">未知</string>
-  <string name="system_uptodate">您的系统已是最新版本</string>
-  <!-- Check update -->
-  <string name="check_update_title">检查更新</string>
-  <string name="last_check_summary">上次检查：%1$s</string>
-  <string name="last_check_never">从不</string>
-  <string name="check_update_failed">无法检查更新。检查您的互联网连接以及您的设备是否得到官方支持</string>
-  <string name="update_available">有可用更新！</string>
-  <string name="no_update_available">没有可用的更新</string>
-  <!-- Notification -->
-  <string name="notification_title">XenonHD更新</string>
-  <string name="notification_message">一个新的版本可用。</string>
-  <string name="xenonota_channel">XenonOTA 通知</string>
-  <string name="xenonota_channel_description">有关新 XenonHD 更新的通知</string>
-  <!-- Toast -->
-  <string name="toast_message">没有安装浏览器。 \n检查浏览器安装程序的应用程序</string>
-  <!-- Update interval -->
-  <string name="interval_title">自动检查更新</string>
-  <string name="autoupdate_enabled">自动检查更新已启用</string>
-  <string name="autoupdate_disabled">自动检查更新已禁用</string>
-  <string name="disabled">已禁用</string>
-  <string name="hour">每小时</string>
-  <string name="twelve_hours">每12小时</string>
-  <string name="twentyfour_hours">每24小时</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">下载最新版本</string>
-  <string name="links_md5_title">MD5 值</string>
-  <string name="links_md5_summary">下载最新版本的校验和</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">下载 Open Gapps</string>
-  <string name="links_changelog_title">更新日志</string>
-  <string name="links_changelog_summary">查看最新的更新日志</string>
-  <string name="links_donate_title">支持</string>
-  <string name="links_donate_summary">捐赠你的设备维护者</string>
+    <!-- App -->
+    <string name="app_name">Xenon更新</string>
+    <string name="app_title">XenonHD更新</string>
+    <!-- Dialogs -->
+    <string name="cancel">取消</string>
+    <string name="close">关闭</string>
+    <string name="confirm">确认</string>
+    <string name="dialog_message">正在检查更新，请稍等......</string>
+    <string name="download_cancelled_msg">下载已被取消</string>
+    <string name="download_cancelled_title">下载已取消</string>
+    <string name="download_complete_msg_gapps">GApps已成功下载。通过在刷入对话框中选择GApps选项与ROM一起刷入</string>
+    <string name="download_complete_msg_magisk">Magisk已成功下载。通过在刷入对话框中选择Magisk选项与ROM一起刷入</string>
+    <string name="download_complete_msg_ota">更新已成功下载。按下「刷入」重启并在 recovery 模式中安装</string>
+    <string name="download_complete_title">下载已完成</string>
+    <string name="download_confirm_msg">请在下载前确认：\n\nAndroid 版本\t\t：\t%1$s\nCPU 平台\t\t\t：\t%2$s\n包版本\t\t：\t%3$s</string>
+    <string name="download_interrupted_msg">由于 %1$s，下载已被中断</string>
+    <string name="download_interrupted_title">下载已中断</string>
+    <string name="failed">失败</string>
+    <string name="flash_message">是否要重启并安装下载的 zip？</string>
+    <string name="magisk_check">正在检查最新的 Magisk 版本…</string>
+    <string name="magisk_download_completed">已成功下载 Magisk。您现在可以与ROM一起刷入</string>
+    <string name="magisk_message">Magisk v%1$s 可用。\n你想下载吗？</string>
+    <string name="open_in_browser">在浏览器中打开</string>
+    <string name="reboot_warning">是否要启动到 recovery 模式？</string>
+    <string name="verification_failed">验证失败</string>
+    <string name="verifying_package">正在验证包…</string>
+    <!-- Downloader -->
+    <string name="downloading">下载中…</string>
+    <!-- Dropdowns -->
+    <string name="choose_gapps_zip">选择现有的 GApps ZIP 文件</string>
+    <string name="download_magisk">下载 Magisk</string>
+    <string name="reboot_recovery">重启至恢复模式</string>
+    <!-- GApps -->
+    <string name="gapps_ok">GApps 已安装!</string>
+    <string name="gapps_warning">GApps 尚未安装！</string>
+    <string name="latest_release_msg">%1$s %2$s 为最新版本</string>
+    <string name="loading">加载中...</string>
+    <!-- Navigation -->
+    <string name="title_gapps">GApps</string>
+    <string name="title_rom">ROM</string>
+    <string name="title_settings">设置</string>
+    <!-- Notifications -->
+    <string name="notification_message">有新版本！</string>
+    <string name="notification_title">XenonHD 更新</string>
+    <string name="xenonota_channel">XenonOTA 通知</string>
+    <string name="xenonota_channel_description">有关新 XenonHD 更新的通知</string>
+    <!-- ROM -->
+    <string name="changelog_title">更新日志</string>
+    <string name="check_update_title">检查更新</string>
+    <string name="current_version">当前版本:</string>
+    <string name="download">下载</string>
+    <string name="flash">刷入</string>
+    <string name="flash_clean">清洁刷入</string>
+    <string name="flash_gapps">刷入 GApps</string>
+    <string name="flash_magisk">刷入 Magisk</string>
+    <string name="my_device">设备</string>
+    <string name="no_update_available">暂无更新</string>
+    <string name="update_available1">有可用更新！\n%s</string>
+    <string name="xenonhd_version">XenonHD %s</string>
+    <!-- Settings -->
+    <string name="disabled">已禁用</string>
+    <string name="gapps_variant">GApps版本</string>
+    <string name="magisk_variant">Magisk版本</string>
+    <string name="magisk_latest">最新 (稳定版和测试版)</string>
+    <string name="magisk_stable">仅稳定版</string>
+    <string name="magisk_beta">仅测试版</string>
+    <string name="hour">每小时</string>
+    <string name="interval_title">定期检查更新</string>
+    <string name="onboot">启动时</string>
+    <string name="preferred_type">首选构建版本</string>
+    <string name="twelve_hours">每12小时</string>
+    <string name="twentyfour_hours">每24小时</string>
+    <!-- Toast -->
+    <string name="autoupdate_disabled">自动检查更新已禁用</string>
+    <string name="autoupdate_enabled">自动检查更新已启用</string>
+    <string name="check_update_failed">无法检查更新。检查您的互联网连接以及您的设备是否得到官方支持</string>
+    <string name="gapps_set">Gapps 路径设置为 %s</string>
+    <string name="magisk_error">无法获取最新的 Magisk 链接</string>
+    <string name="permission_not_enabled">XenonOTA 没有保存文件的权限。请首先允许存储访问</string>
+    <string name="toast_message">没有安装浏览器</string>
+    <string name="update_available">有可用更新！</string>
 </resources>

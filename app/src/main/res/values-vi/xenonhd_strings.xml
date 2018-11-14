@@ -15,28 +15,23 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <!-- Categories -->
-  <!-- Dialog -->
-  <string name="dialog_message">Đang kiểm tra cập nhật, vui lòng chờ....</string>
-  <!-- ROM info -->
-  <string name="unknown">Không rõ</string>
-  <string name="system_uptodate">Hệ thống đã được cập nhật</string>
-  <!-- Check update -->
-  <string name="check_update_title">Kiểm tra cập nhật</string>
-  <string name="last_check_summary">Kiểm tra cuối: %1$s</string>
-  <string name="last_check_never">Không bao giờ</string>
-  <string name="no_update_available">Không có bản cập nhật mới hơn</string>
-  <!-- Notification -->
-  <string name="notification_title">XenonHD Update</string>
-  <string name="notification_message">Một phiên bản mới có sẵn!</string>
-  <!-- Toast -->
-  <!-- Update interval -->
-  <string name="disabled">Vô hiệu hóa</string>
-  <string name="hour">Hàng giờ</string>
-  <string name="twelve_hours">Mỗi 12 tiếng</string>
-  <string name="twentyfour_hours">Mỗi 24 tiếng</string>
-  <!-- Links -->
-  <string name="links_changelog_title">Nhật ký thay đổi</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <!-- Dialogs -->
+    <string name="cancel">Hủy bỏ</string>
+    <string name="dialog_message">Đang kiểm tra cập nhật, vui lòng chờ....</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <!-- GApps -->
+    <!-- Navigation -->
+    <!-- Notifications -->
+    <!-- ROM -->
+    <string name="changelog_title">Nhật ký thay đổi</string>
+    <string name="check_update_title">Kiểm tra cập nhật</string>
+    <!-- Settings -->
+    <string name="disabled">Vô hiệu hóa</string>
+    <string name="hour">Hàng giờ</string>
+    <string name="twelve_hours">Mỗi 12 tiếng</string>
+    <string name="twentyfour_hours">Mỗi 24 tiếng</string>
+    <!-- Toast -->
 </resources>

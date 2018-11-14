@@ -15,28 +15,22 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <!-- Categories -->
-  <!-- Dialog -->
-  <string name="dialog_message">Перевірка наявності оновлень, зачекайте...</string>
-  <!-- ROM info -->
-  <string name="unknown">Невідомо</string>
-  <string name="system_uptodate">Ваша система є актуальна</string>
-  <!-- Check update -->
-  <string name="check_update_title">Перевірка оновлень</string>
-  <string name="last_check_summary">Остання перевірка: %1$s</string>
-  <string name="last_check_never">Ніколи</string>
-  <string name="no_update_available">Оновлень не знайдено</string>
-  <!-- Notification -->
-  <string name="notification_title">Оновлення XenonHD</string>
-  <string name="notification_message">Нова версія доступна!</string>
-  <!-- Toast -->
-  <!-- Update interval -->
-  <string name="disabled">Вимкнено</string>
-  <string name="hour">Кожну годину</string>
-  <string name="twelve_hours">Кожні 12 годин</string>
-  <string name="twentyfour_hours">Кожні 24 години</string>
-  <!-- Links -->
-  <string name="links_changelog_title">Список змін</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <!-- Dialogs -->
+    <string name="dialog_message">Перевірка наявності оновлень, зачекайте...</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <!-- GApps -->
+    <!-- Navigation -->
+    <!-- Notifications -->
+    <!-- ROM -->
+    <string name="changelog_title">Список змін</string>
+    <string name="check_update_title">Перевірка оновлень</string>
+    <!-- Settings -->
+    <string name="disabled">Вимкнено</string>
+    <string name="hour">Кожну годину</string>
+    <string name="twelve_hours">Кожні 12 годин</string>
+    <string name="twentyfour_hours">Кожні 24 години</string>
+    <!-- Toast -->
 </resources>

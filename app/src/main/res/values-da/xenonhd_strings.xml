@@ -15,14 +15,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <!-- Categories -->
-  <!-- Dialog -->
-  <!-- ROM info -->
-  <!-- Check update -->
-  <!-- Notification -->
-  <!-- Toast -->
-  <!-- Update interval -->
-  <string name="disabled">Deaktiveret</string>
-  <!-- Links -->
+    <!-- App -->
+    <!-- Dialogs -->
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <!-- GApps -->
+    <!-- Navigation -->
+    <!-- Notifications -->
+    <!-- ROM -->
+    <!-- Settings -->
+    <string name="disabled">Deaktiveret</string>
+    <!-- Toast -->
 </resources>

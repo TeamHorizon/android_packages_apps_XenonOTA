@@ -80,7 +80,7 @@
     <string name="current_version">Current version:</string>
     <string name="download">Download</string>
     <string name="flash">Flash</string>
-    <string name="flash_clean">Clean Flash</string>
+    <string name="flash_clean">Clean flash</string>
     <string name="flash_gapps">Flash GApps</string>
     <string name="flash_magisk">Flash Magisk</string>
     <string name="my_device">Device</string>
@@ -106,8 +106,8 @@
     <string name="gapps_variant">GApps variant</string>
     <string name="magisk_variant">Magisk variant</string>
     <string name="magisk_latest">Latest (Stable &amp; Beta)</string>
-    <string name="magisk_stable">Stable Only</string>
-    <string name="magisk_beta">Beta Only</string>
+    <string name="magisk_stable">Stable only</string>
+    <string name="magisk_beta">Beta only</string>
     <string name="hour">Every hour</string>
     <string name="interval_title">Check for updates schedule</string>
     <string name="onboot">On boot</string>

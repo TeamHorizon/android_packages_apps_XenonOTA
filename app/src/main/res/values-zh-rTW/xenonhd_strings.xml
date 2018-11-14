@@ -15,50 +15,79 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">XenonHD 更新</string>
-  <!-- Categories -->
-  <string name="ota_category">更新部分</string>
-  <string name="links_category">已下載部分</string>
-  <!-- Dialog -->
-  <string name="dialog_message">正在檢查更新，請稍候…</string>
-  <string name="reboot_recovery">重新啟動至 Recovery 模式</string>
-  <!-- ROM info -->
-  <string name="latest_version">有可用更新！\n最新版本為：%1$s</string>
-  <string name="unknown">未知</string>
-  <string name="system_uptodate">您的系統已處於最新狀態</string>
-  <!-- Check update -->
-  <string name="check_update_title">檢查更新</string>
-  <string name="last_check_summary">上次檢查：%1$s</string>
-  <string name="last_check_never">永不</string>
-  <string name="check_update_failed">無法檢查更新。請檢查您的網際網路連線和是否正式支援您的裝置</string>
-  <string name="update_available">可用的更新 ！</string>
-  <string name="no_update_available">沒有可用的更新</string>
-  <!-- Notification -->
-  <string name="notification_title">XenonHD 更新</string>
-  <string name="notification_message">有可用的新版本！</string>
-  <string name="xenonota_channel">XenonOTA 通知</string>
-  <string name="xenonota_channel_description">有關新的 XenonHD 更新的通知</string>
-  <!-- Toast -->
-  <string name="toast_message">沒有安裝瀏覽器。\n檢查瀏覽器安裝程式的應用程式</string>
-  <!-- Update interval -->
-  <string name="interval_title">自動檢查更新</string>
-  <string name="autoupdate_enabled">自動檢查更新已啟用</string>
-  <string name="autoupdate_disabled">自動檢查更新已停用</string>
-  <string name="disabled">已停用</string>
-  <string name="hour">每小時</string>
-  <string name="twelve_hours">每 12 小時</string>
-  <string name="twentyfour_hours">每 24 小時</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">下載最新版本</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">下載最新版本的校驗和</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">下載開啟 Gapps</string>
-  <string name="links_changelog_title">更新日誌</string>
-  <string name="links_changelog_summary">查看最新的日誌</string>
-  <string name="links_donate_title">支援服務</string>
-  <string name="links_donate_summary">捐贈給您的裝置維護者</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">XenonHD 更新</string>
+    <!-- Dialogs -->
+    <string name="cancel">取消</string>
+    <string name="close">關閉</string>
+    <string name="confirm">確認</string>
+    <string name="dialog_message">正在檢查更新，請稍候…</string>
+    <string name="download_cancelled_msg">下載已被取消</string>
+    <string name="download_cancelled_title">下載已取消</string>
+    <string name="download_complete_msg_gapps">GApps 成功下載。 透過在刷入對話框中選擇 GApps 選項，刷入與 ROM 一起使用</string>
+    <string name="download_complete_msg_magisk">Magisk 成功下載。透過在刷入對話框中選擇 Magisk 選項，將刷入與 ROM 一起使用</string>
+    <string name="download_complete_msg_ota">更新已成功下載。按下「刷入」重新開機並在 recovery 模式中安裝</string>
+    <string name="download_complete_title">下載已完成</string>
+    <string name="download_confirm_msg">請在下載前確認：\n\nAndroid 版本\t\t：\t%1$s\nCPU 平台\t\t\t：\t%2$s\n封包變數\t\t：\t%3$s</string>
+    <string name="download_interrupted_msg">由於 %1$s，下載已被中斷</string>
+    <string name="download_interrupted_title">下載已中斷</string>
+    <string name="failed">失敗</string>
+    <string name="flash_message">是否要重新開機並安裝下載的 zip？</string>
+    <string name="magisk_check">正在檢查最新的 Magisk 版本…</string>
+    <string name="magisk_download_completed">已成功下載 Magisk。您現在可以用 ROM 一起刷入</string>
+    <string name="magisk_message">Magisk v%1$s 可用。\n你想下載嗎？</string>
+    <string name="open_in_browser">在瀏覽器中開啟</string>
+    <string name="reboot_warning">是否要啟動到 recovery 模式？</string>
+    <string name="verification_failed">驗證失敗</string>
+    <string name="verifying_package">正在驗證封包…</string>
+    <!-- Downloader -->
+    <string name="downloading">下載中…</string>
+    <!-- Dropdowns -->
+    <string name="choose_gapps_zip">選擇現有的 GApps ZIP 檔案</string>
+    <string name="download_magisk">下載 Magisk</string>
+    <string name="reboot_recovery">重新啟動至 Recovery 模式</string>
+    <!-- GApps -->
+    <string name="gapps_ok">GApps 已安裝!</string>
+    <string name="gapps_warning">GApps 尚未安裝！</string>
+    <string name="latest_release_msg">%1$s %2$s 為最新版本</string>
+    <string name="loading">載入中...</string>
+    <!-- Navigation -->
+    <string name="title_gapps">GApps</string>
+    <string name="title_rom">ROM</string>
+    <string name="title_settings">設定</string>
+    <!-- Notifications -->
+    <string name="notification_message">有新版本！</string>
+    <string name="notification_title">XenonHD 更新</string>
+    <string name="xenonota_channel">XenonOTA 通知</string>
+    <string name="xenonota_channel_description">有關新的 XenonHD 更新的通知</string>
+    <!-- ROM -->
+    <string name="changelog_title">更新日誌</string>
+    <string name="check_update_title">檢查更新</string>
+    <string name="current_version">目前版本：</string>
+    <string name="download">下載</string>
+    <string name="flash">刷入</string>
+    <string name="flash_gapps">刷入 GApps</string>
+    <string name="flash_magisk">刷入 Magisk</string>
+    <string name="my_device">裝置</string>
+    <string name="no_update_available">尚無更新</string>
+    <string name="update_available1">有可用更新！\n%s</string>
+    <string name="xenonhd_version">XenonHD %s</string>
+    <!-- Settings -->
+    <string name="disabled">已停用</string>
+    <string name="gapps_variant">GApps 變數</string>
+    <string name="hour">每小時</string>
+    <string name="onboot">啟動時</string>
+    <string name="preferred_type">偏好構建類型</string>
+    <string name="twelve_hours">每 12 小時</string>
+    <string name="twentyfour_hours">每 24 小時</string>
+    <!-- Toast -->
+    <string name="autoupdate_disabled">自動檢查更新已停用</string>
+    <string name="autoupdate_enabled">自動檢查更新已啟用</string>
+    <string name="check_update_failed">無法檢查更新。請檢查您的網際網路連線和是否正式支援您的裝置</string>
+    <string name="gapps_set">Gapps 路徑設定為 %s</string>
+    <string name="magisk_error">無取得最新的 Magisk 連結</string>
+    <string name="permission_not_enabled">XenonOTA 無權儲存檔案。 請先允許儲存存取的權限</string>
+    <string name="toast_message">沒有安裝瀏覽器</string>
+    <string name="update_available">可用的更新 ！</string>
 </resources>

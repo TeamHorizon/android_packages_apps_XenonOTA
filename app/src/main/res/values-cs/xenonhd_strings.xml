@@ -15,50 +15,51 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">Aktualizace XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">Sekce aktualizace</string>
-  <string name="links_category">Sekce stažení</string>
-  <!-- Dialog -->
-  <string name="dialog_message">Kontrola aktualizací, počkejte prosím…</string>
-  <string name="reboot_recovery">Restartovat do recovery</string>
-  <!-- ROM info -->
-  <string name="latest_version">Aktualizace k dispozici!\nPoslední verze: %1$s</string>
-  <string name="unknown">Neznámá</string>
-  <string name="system_uptodate">Váš systém je aktuální</string>
-  <!-- Check update -->
-  <string name="check_update_title">Zkontrolovat aktualizace</string>
-  <string name="last_check_summary">Poslední kontrola: %1$s</string>
-  <string name="last_check_never">Nikdy</string>
-  <string name="check_update_failed">Nelze zkontrolovat aktualizace. Zkontrolujte připojení k Internetu a zda je vaše zařízení oficiálně podporováno</string>
-  <string name="update_available">Aktualizace k dispozici!</string>
-  <string name="no_update_available">Nejsou dostupné žádné aktualizace</string>
-  <!-- Notification -->
-  <string name="notification_title">Aktualizace XenonHD</string>
-  <string name="notification_message">Nová verze je k dispozici!</string>
-  <string name="xenonota_channel">Upozornění XenonOTA</string>
-  <string name="xenonota_channel_description">Upozornění na nové aktualizace XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">Není nainstalován žádný prohlížeč\nZkontrolujte aplikaci BrowserInstaller</string>
-  <!-- Update interval -->
-  <string name="interval_title">Automaticky kontrolovat dostupnost aktualizací</string>
-  <string name="autoupdate_enabled">Automatická kontrola aktualizace je povolena</string>
-  <string name="autoupdate_disabled">Automatická kontrola aktualizace je zakázána</string>
-  <string name="disabled">Vypnuto</string>
-  <string name="hour">Každou hodinu</string>
-  <string name="twelve_hours">Každých 12 hodin</string>
-  <string name="twentyfour_hours">Každých 24 hodin</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">Stáhnout nejnovější sestavení</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">Stáhnout kontrolní součet nejnovější verze</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Stáhnout Open Gapps</string>
-  <string name="links_changelog_title">Protokol změn</string>
-  <string name="links_changelog_summary">Zobrazit poslední seznam změn</string>
-  <string name="links_donate_title">Podpora</string>
-  <string name="links_donate_summary">Darujte správci zařízení</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Aktualizace XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Zrušit</string>
+    <string name="close">Zavřít</string>
+    <string name="confirm">Potvrdit</string>
+    <string name="dialog_message">Kontrola aktualizací, počkejte prosím…</string>
+    <string name="download_cancelled_msg">Stahování bylo zrušeno</string>
+    <string name="download_cancelled_title">Stahování zrušeno</string>
+    <string name="download_complete_title">Kopírování dokončeno</string>
+    <string name="open_in_browser">Otevřít v prohlížeči</string>
+    <string name="verification_failed">Ověření selhalo</string>
+    <string name="verifying_package">Ověřování balíčku…</string>
+    <!-- Downloader -->
+    <string name="downloading">Stahování…</string>
+    <!-- Dropdowns -->
+    <string name="reboot_recovery">Restartovat do recovery</string>
+    <!-- GApps -->
+    <string name="latest_release_msg">Poslední verze pro %1$s %2$s</string>
+    <string name="loading">Načítání…</string>
+    <!-- Navigation -->
+    <string name="title_gapps">GApps</string>
+    <string name="title_rom">ROM</string>
+    <string name="title_settings">Nastavení</string>
+    <!-- Notifications -->
+    <string name="notification_message">Je k dispozici nová verze!</string>
+    <string name="notification_title">Aktualizace XenonHD</string>
+    <string name="xenonota_channel">Upozornění XenonOTA</string>
+    <string name="xenonota_channel_description">Upozornění na nové aktualizace XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Protokol změn</string>
+    <string name="check_update_title">Zkontrolovat aktualizace</string>
+    <string name="current_version">Aktuální verze:</string>
+    <string name="download">Stáhnout</string>
+    <string name="my_device">Zařízení</string>
+    <string name="no_update_available">Nejsou k dispozici žádné aktualizace</string>
+    <string name="update_available1">Dostupná aktualizace!\n%s</string>
+    <string name="xenonhd_version">XenonHD %s</string>
+    <!-- Settings -->
+    <string name="disabled">Vypnuto</string>
+    <string name="hour">Každou hodinu</string>
+    <string name="twelve_hours">Každých 12 hodin</string>
+    <string name="twentyfour_hours">Každých 24 hodin</string>
+    <!-- Toast -->
+    <string name="check_update_failed">Nelze zkontrolovat aktualizace. Zkontrolujte připojení k Internetu a zda je vaše zařízení oficiálně podporováno</string>
+    <string name="update_available">Aktualizace k dispozici!</string>
 </resources>

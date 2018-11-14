@@ -15,50 +15,30 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">Абнаўлення XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">Раздзел абнаўленняў</string>
-  <string name="links_category">Раздзел спамповак</string>
-  <!-- Dialog -->
-  <string name="dialog_message">Ідзе праверка наяўнасці абнаўленняў, пачакайце…</string>
-  <string name="reboot_recovery">Перазагрузіць ў рэжым аднаўлення</string>
-  <!-- ROM info -->
-  <string name="latest_version">Даступна абнаўленне! Апошняя версія</string>
-  <string name="unknown">Невядома</string>
-  <string name="system_uptodate">Ваша сістэма ў актуальным стане</string>
-  <!-- Check update -->
-  <string name="check_update_title">Праверыць абнаўленні</string>
-  <string name="last_check_summary">Апошняя праверка: %1$s</string>
-  <string name="last_check_never">Ніколі</string>
-  <string name="check_update_failed">Не ўдаецца праверыць наяўнасць абнаўленняў. Праверце падключэнне да Інтэрнэту і ці падтрымліваецца ваша прылада афіцыйна</string>
-  <string name="update_available">Даступныя абнаўленні!</string>
-  <string name="no_update_available">Няма даступных абнаўленняў</string>
-  <!-- Notification -->
-  <string name="notification_title">Абнаўленне XenonHD</string>
-  <string name="notification_message">Даступная новая версія!</string>
-  <string name="xenonota_channel">Апавяшчэнні XenonOTA</string>
-  <string name="xenonota_channel_description">Апавяшчэнні аб абнаўленні XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">Няма ўсталяванага браузера\nПраверце праграму усталёўшчык браўзера</string>
-  <!-- Update interval -->
-  <string name="interval_title">Аўтаматычна правяраць наяўнасць новых версій</string>
-  <string name="autoupdate_enabled">Аўтаматычная праверка абнаўленняў ўключаная</string>
-  <string name="autoupdate_disabled">Аўтаматычная праверка абнаўленняў адключаная</string>
-  <string name="disabled">Адключана</string>
-  <string name="hour">Кожную гадзіну</string>
-  <string name="twelve_hours">Кожных 12 гадзін</string>
-  <string name="twentyfour_hours">Кожных 24 гадзіны</string>
-  <!-- Links -->
-  <string name="links_rom_title">Прашыўка</string>
-  <string name="links_rom_summary">Спампаваць апошнюю версію</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">Спампаваць кантрольную суму апошняй зборкі</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Спампаваць Open Gapps</string>
-  <string name="links_changelog_title">Спіс змен</string>
-  <string name="links_changelog_summary">Прагледзець апошнія змены</string>
-  <string name="links_donate_title">Падтрымка</string>
-  <string name="links_donate_summary">Ахвяраванні для суправаджальніка вашай прылады</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Абнаўлення XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Скасаваць</string>
+    <string name="dialog_message">Ідзе праверка наяўнасці абнаўленняў, пачакайце…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <string name="reboot_recovery">Перазагрузіць ў рэжым аднаўлення</string>
+    <!-- GApps -->
+    <!-- Navigation -->
+    <string name="title_rom">Прашыўка</string>
+    <!-- Notifications -->
+    <string name="xenonota_channel">Апавяшчэнні XenonOTA</string>
+    <string name="xenonota_channel_description">Апавяшчэнні аб абнаўленні XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Спіс змен</string>
+    <string name="check_update_title">Праверыць абнаўленні</string>
+    <!-- Settings -->
+    <string name="disabled">Адключана</string>
+    <string name="hour">Кожную гадзіну</string>
+    <string name="twelve_hours">Кожных 12 гадзін</string>
+    <string name="twentyfour_hours">Кожных 24 гадзіны</string>
+    <!-- Toast -->
+    <string name="check_update_failed">Не ўдаецца праверыць наяўнасць абнаўленняў. Праверце падключэнне да Інтэрнэту і ці падтрымліваецца ваша прылада афіцыйна</string>
+    <string name="update_available">Даступныя абнаўленні!</string>
 </resources>

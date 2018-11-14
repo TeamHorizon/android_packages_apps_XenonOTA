@@ -15,28 +15,28 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">Actualización Xenon</string>
-  <!-- Categories -->
-  <!-- Dialog -->
-  <string name="dialog_message">Buscando actualizaciones, por favor espere…</string>
-  <!-- ROM info -->
-  <string name="unknown">Desconocido</string>
-  <string name="system_uptodate">Tu sistema está actualizado</string>
-  <!-- Check update -->
-  <string name="check_update_title">Buscar actualizaciones</string>
-  <string name="last_check_summary">Última vez: %1$s</string>
-  <string name="last_check_never">Nunca</string>
-  <string name="no_update_available">No hay actualizaciones disponibles</string>
-  <!-- Notification -->
-  <string name="notification_title">Actualización XenonHD</string>
-  <string name="notification_message">¡Una nueva versión está disponible!</string>
-  <!-- Toast -->
-  <!-- Update interval -->
-  <string name="disabled">Deshabilitado</string>
-  <string name="hour">Cada Hora</string>
-  <string name="twelve_hours">Cada 12 Horas</string>
-  <string name="twentyfour_hours">Cada 24 horas</string>
-  <!-- Links -->
-  <string name="links_changelog_title">Lista de cambios</string>
+    <!-- App -->
+    <string name="app_name">Actualización Xenon</string>
+    <string name="app_title">Actualizaciones XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Cancelar</string>
+    <string name="dialog_message">Buscando actualizaciones, por favor espere…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <string name="reboot_recovery">Reiniciar en modo recuperación</string>
+    <!-- GApps -->
+    <!-- Navigation -->
+    <string name="title_rom">ROM</string>
+    <!-- Notifications -->
+    <string name="xenonota_channel_description">Notificaciones sobre nuevas actualizaciones de XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Lista de cambios</string>
+    <string name="check_update_title">Buscar actualizaciones</string>
+    <!-- Settings -->
+    <string name="disabled">Deshabilitado</string>
+    <string name="hour">Cada Hora</string>
+    <string name="twelve_hours">Cada 12 Horas</string>
+    <string name="twentyfour_hours">Cada 24 horas</string>
+    <!-- Toast -->
+    <string name="update_available">Hay actualizaciones disponibles!</string>
 </resources>

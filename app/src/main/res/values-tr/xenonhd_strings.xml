@@ -15,50 +15,85 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">Xenon Güncellemeleri</string>
-  <string name="app_title">XenonHD güncellemeleri</string>
-  <!-- Categories -->
-  <string name="ota_category">Güncelleme bölümü</string>
-  <string name="links_category">İndirme bölümü</string>
-  <!-- Dialog -->
-  <string name="dialog_message">Güncellemeler kontrol ediliyor, lütfen bekleyin…</string>
-  <string name="reboot_recovery">Kurtarma modunda başlat</string>
-  <!-- ROM info -->
-  <string name="latest_version">Güncelleme mevcut!\nYeni sürüm: %1$s</string>
-  <string name="unknown">Bilinmiyor</string>
-  <string name="system_uptodate">Sisteminiz güncel</string>
-  <!-- Check update -->
-  <string name="check_update_title">Güncellemeleri kontrol et</string>
-  <string name="last_check_summary">Son kontrol: %1$s</string>
-  <string name="last_check_never">Hiçbir Zaman</string>
-  <string name="check_update_failed">Güncellemeleri kontrol edilmiyor. İnternet bağlantınızı ve cihazınızın resmi olarak desteklenip desteklenmediğini kontrol edin</string>
-  <string name="update_available">Güncelleme mevcut!</string>
-  <string name="no_update_available">Kullanılabilir güncelleme yok</string>
-  <!-- Notification -->
-  <string name="notification_title">XenonHD Güncellemeleri</string>
-  <string name="notification_message">Yeni bir sürüm kullanılabilir!</string>
-  <string name="xenonota_channel">Xenon bildirimleri</string>
-  <string name="xenonota_channel_description">Yeni XenonHD güncellemeleri ile ilgili bildirimler</string>
-  <!-- Toast -->
-  <string name="toast_message">Tarayıcı yüklü değil\nTarayıcı yükleyici uygulamasını kontrol edin</string>
-  <!-- Update interval -->
-  <string name="interval_title">Güncellemeleri otomatik kontrol et</string>
-  <string name="autoupdate_enabled">Otomatik güncelleme kontrolu etkin</string>
-  <string name="autoupdate_disabled">Otomatik güncelleme kontrolu devre dışı</string>
-  <string name="disabled">Devre dışı</string>
-  <string name="hour">Saat başı </string>
-  <string name="twelve_hours">12 saatte bir</string>
-  <string name="twentyfour_hours">24 saatte bir</string>
-  <!-- Links -->
-  <string name="links_rom_title">ROM</string>
-  <string name="links_rom_summary">En son yapıyı indirin</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">En son yapının sağlama toplamını indirin</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Google gapps paketi indirin</string>
-  <string name="links_changelog_title">Değişiklikler</string>
-  <string name="links_changelog_summary">En son değişiklikleri görüntüle</string>
-  <string name="links_donate_title">Bağış yap</string>
-  <string name="links_donate_summary">Cihazına destek olan geliştiriciye katkıda bulun</string>
+    <!-- App -->
+    <string name="app_name">Xenon Güncellemeleri</string>
+    <string name="app_title">XenonHD güncellemeleri</string>
+    <!-- Dialogs -->
+    <string name="cancel">İptal</string>
+    <string name="close">Kapat</string>
+    <string name="confirm">Onayla</string>
+    <string name="dialog_message">Güncellemeler kontrol ediliyor, lütfen bekleyin…</string>
+    <string name="download_cancelled_msg">İndirme işlemi iptal edildi</string>
+    <string name="download_cancelled_title">İndirme iptal edildi</string>
+    <string name="download_complete_msg_gapps">GApps başarıyla indirildi. Yükleme iletişim kutusunda GApps seçeneğini seçerek ROM ile birlikte yükleyebilirsiniz</string>
+    <string name="download_complete_msg_magisk">Magisk başarıyla indirildi. Yükleme iletişim kutusunda Magisk seçeneğini seçerek ROM ile birlikte Magisk yükleyebilirsiniz</string>
+    <string name="download_complete_msg_ota">Güncelleme başarıyla indirildi. Kurtarma işlemini yeniden başlatmak ve yüklemek için \"Yükleye\" basın</string>
+    <string name="download_complete_title">İndirme tamamlandı</string>
+    <string name="download_confirm_msg">İndirmeden önce lütfen olanylayın:\n\nAndroid sürümü\t\t:\t%1$s\nCPU platformu\t\t\t:\t%2$s\nPaket variant\t\t:\t%3$s</string>
+    <string name="download_interrupted_msg">İndirme %1$s nedeniyle kesintiye uğradı</string>
+    <string name="download_interrupted_title">İndirme kesildi</string>
+    <string name="failed">Başarısız</string>
+    <string name="flash_message">İndirilen zip\'i yeniden yüklemek mi istiyorsunuz?</string>
+    <string name="magisk_check">En son Magisk sürümü kontrol ediliyor…</string>
+    <string name="magisk_download_completed">Magisk başarıyla indirildi. Şimdi ROM ile birlikte yükleme yapabilirsiniz</string>
+    <string name="magisk_message">Magisk v%1$s kullanılabilir.\nBunu indirmek istiyor musunuz?</string>
+    <string name="open_in_browser">Tarayıcıda aç</string>
+    <string name="reboot_warning">Kurtarma modunda başlatmak istiyormusunuz?</string>
+    <string name="verification_failed">Doğrulama başarısız</string>
+    <string name="verifying_package">Paket doğrulanıyor…</string>
+    <!-- Downloader -->
+    <string name="downloading">İndiriliyor…</string>
+    <!-- Dropdowns -->
+    <string name="choose_gapps_zip">Mevcut GApps zip dosyası seç</string>
+    <string name="download_magisk">Magisk indir</string>
+    <string name="reboot_recovery">Kurtarma modunda başlat</string>
+    <!-- GApps -->
+    <string name="gapps_ok">Gapps yüklendi!</string>
+    <string name="gapps_warning">GApps yüklü değil!</string>
+    <string name="latest_release_msg">%1$s %2$s için son sürüm</string>
+    <string name="loading">Yükleniyor…</string>
+    <!-- Navigation -->
+    <string name="title_gapps">Gapps</string>
+    <string name="title_rom">ROM</string>
+    <string name="title_settings">Ayarlar</string>
+    <!-- Notifications -->
+    <string name="notification_message">Kullanılabilir yeni sürüm mevcut!</string>
+    <string name="notification_title">XenonHD güncellemeleri</string>
+    <string name="xenonota_channel">Xenon bildirimleri</string>
+    <string name="xenonota_channel_description">Yeni XenonHD güncellemeleri ile ilgili bildirimler</string>
+    <!-- ROM -->
+    <string name="changelog_title">Değişiklikler</string>
+    <string name="check_update_title">Güncellemeleri kontrol et</string>
+    <string name="current_version">Mevcut sürüm:</string>
+    <string name="download">İndir</string>
+    <string name="flash">Yükle</string>
+    <string name="flash_clean">Temiz yükle</string>
+    <string name="flash_gapps">Gapps yükle</string>
+    <string name="flash_magisk">Magisk yükle</string>
+    <string name="my_device">Cihaz</string>
+    <string name="no_update_available">Güncelleme mevcut değil</string>
+    <string name="update_available1">Güncelleme mevcut!\n%s</string>
+    <string name="xenonhd_version">XenonHD %s</string>
+    <!-- Settings -->
+    <string name="disabled">Devre dışı</string>
+    <string name="gapps_variant">Gapps varyant</string>
+    <string name="magisk_variant">Magisk varyant</string>
+    <string name="magisk_latest">Son (Kararlı ve Beta)</string>
+    <string name="magisk_stable">Sadece kararlı</string>
+    <string name="magisk_beta">Sadece beta</string>
+    <string name="hour">Saat başı </string>
+    <string name="interval_title">Güncelleme programını kontrol et</string>
+    <string name="onboot">Açılışta başlat</string>
+    <string name="preferred_type">Tercih edilen yapı tipi</string>
+    <string name="twelve_hours">12 saatte bir</string>
+    <string name="twentyfour_hours">24 saatte bir</string>
+    <!-- Toast -->
+    <string name="autoupdate_disabled">Güncellemeler için otomatik kontrol devre dışı</string>
+    <string name="autoupdate_enabled">Güncellemeler için otomatik kontrol etkin</string>
+    <string name="check_update_failed">Güncellemeleri kontrol edilmiyor. İnternet bağlantınızı ve cihazınızın resmi olarak desteklenip desteklenmediğini kontrol edin</string>
+    <string name="gapps_set">Gapps %s olarak ayarlandı</string>
+    <string name="magisk_error">En yeni Magisk bağlantısı bulunamadı</string>
+    <string name="permission_not_enabled">XenonOTA\'nın dosyaları kaydetme izni yoktur. Lütfen önce depolama erişimine izin verin</string>
+    <string name="toast_message">Yüklü tarayıcı yok</string>
+    <string name="update_available">Güncelleme mevcut!</string>
 </resources>

@@ -15,50 +15,85 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <string name="app_title">Обновления XenonHD</string>
-  <!-- Categories -->
-  <string name="ota_category">Раздел обновлений</string>
-  <string name="links_category">Раздел загрузок</string>
-  <!-- Dialog -->
-  <string name="dialog_message">Проверка наличия обновлений, пожалуйста подождите...</string>
-  <string name="reboot_recovery">Перезагрузить в рекавери</string>
-  <!-- ROM info -->
-  <string name="latest_version">Доступно обновление! Последняя версия</string>
-  <string name="unknown">Неизвестно</string>
-  <string name="system_uptodate">Ваша система обновлена до последней версии</string>
-  <!-- Check update -->
-  <string name="check_update_title">Проверить наличие обновлений</string>
-  <string name="last_check_summary">Последняя проверка: %1$s</string>
-  <string name="last_check_never">Никогда</string>
-  <string name="check_update_failed">Не удается проверить наличие обновлений. Проверьте подключение к Интернету и поддерживается ли ваше устройство официально</string>
-  <string name="update_available">Доступны обновления!</string>
-  <string name="no_update_available">Нет доступных обновлений</string>
-  <!-- Notification -->
-  <string name="notification_title">Обновления XenonHD</string>
-  <string name="notification_message">Новая версия доступна!</string>
-  <string name="xenonota_channel">Уведомления XenonOTA</string>
-  <string name="xenonota_channel_description">Уведомления об обновлениях XenonHD</string>
-  <!-- Toast -->
-  <string name="toast_message">Нет установленного браузера\nПроверьте приложение BrowserInstaller</string>
-  <!-- Update interval -->
-  <string name="interval_title">Автоматически проверять наличие обновлений</string>
-  <string name="autoupdate_enabled">Автоматическая проверка обновлений включена</string>
-  <string name="autoupdate_disabled">Автоматическая проверка обновлений выключена</string>
-  <string name="disabled">Отключено</string>
-  <string name="hour">Каждый час</string>
-  <string name="twelve_hours">Каждые 12 часов</string>
-  <string name="twentyfour_hours">Каждые 24 часа</string>
-  <!-- Links -->
-  <string name="links_rom_title">Прошивка</string>
-  <string name="links_rom_summary">Загрузить последнюю версию</string>
-  <string name="links_md5_title">MD5</string>
-  <string name="links_md5_summary">Загрузить контрольную сумму последней сборки</string>
-  <string name="links_gapps_title">Gapps</string>
-  <string name="links_gapps_summary">Загрузить Open Gapps</string>
-  <string name="links_changelog_title">Список изменений</string>
-  <string name="links_changelog_summary">Просмотреть последние изменения</string>
-  <string name="links_donate_title">Поддержка</string>
-  <string name="links_donate_summary">Пожертвования для сопровождающего вашего устройства</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Обновления XenonHD</string>
+    <!-- Dialogs -->
+    <string name="cancel">Отмена</string>
+    <string name="close">Закрыть</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="dialog_message">Проверка наличия обновлений, пожалуйста подождите...</string>
+    <string name="download_cancelled_msg">Загрузка будет отменена</string>
+    <string name="download_cancelled_title">Загрузка отменена</string>
+    <string name="download_complete_msg_gapps">GApps успешно загружены. Прошейте GApps вместе с ROM, выбрав GApps в диалоговом окне</string>
+    <string name="download_complete_msg_magisk">Magisk успешно загружен. Прошейте Magisk вместе с ROM, выбрав Magisk в диалоговом окне</string>
+    <string name="download_complete_msg_ota">Обновление успешно загружено. Нажмите «Прошить» для перезагрузки и установки в рекавери</string>
+    <string name="download_complete_title">Загрузка завершена</string>
+    <string name="download_confirm_msg">Пожалуйста, подтвердите перед загрузкой: \n\nAndroid version\t\t:\t%1$s\nCPU platform\t\t\t:\t%2$s\nPackage variant\t\t:\t%3$s</string>
+    <string name="download_interrupted_msg">Загрузка была прервана из-за %1$s</string>
+    <string name="download_interrupted_title">Загрузка прервана</string>
+    <string name="failed">Не выполнено</string>
+    <string name="flash_message">Вы хотите перезагрузиться и установить загруженный zip?</string>
+    <string name="magisk_check">Проверка последней версии Magisk…</string>
+    <string name="magisk_download_completed">Magisk загружен. Можете прошить вместе с прошивкой сейчас</string>
+    <string name="magisk_message">Magisk v%1$s доступен.\n Скачать сейчас?</string>
+    <string name="open_in_browser">Открыть в браузере</string>
+    <string name="reboot_warning">Вы хотите загрузиться в рекавери?</string>
+    <string name="verification_failed">Проверка не удалась</string>
+    <string name="verifying_package">Проверка пакета…</string>
+    <!-- Downloader -->
+    <string name="downloading">Загрузка…</string>
+    <!-- Dropdowns -->
+    <string name="choose_gapps_zip">Выбор существующего zip-файл GApps</string>
+    <string name="download_magisk">Скачать Magisk</string>
+    <string name="reboot_recovery">Перезагрузить в рекавери</string>
+    <!-- GApps -->
+    <string name="gapps_ok">GApps установлены!</string>
+    <string name="gapps_warning">GApps не установлены!</string>
+    <string name="latest_release_msg">Последний релиз %1$s - %2$s</string>
+    <string name="loading">Загрузка…</string>
+    <!-- Navigation -->
+    <string name="title_gapps">Gapps</string>
+    <string name="title_rom">Прошивка</string>
+    <string name="title_settings">Настройки</string>
+    <!-- Notifications -->
+    <string name="notification_message">Доступна новая версия!</string>
+    <string name="notification_title">Обновления XenonHD</string>
+    <string name="xenonota_channel">Уведомления XenonOTA</string>
+    <string name="xenonota_channel_description">Уведомления об обновлениях XenonHD</string>
+    <!-- ROM -->
+    <string name="changelog_title">Список изменений</string>
+    <string name="check_update_title">Проверить наличие обновлений</string>
+    <string name="current_version">Текущая версия:</string>
+    <string name="download">Загрузить</string>
+    <string name="flash">Прошить</string>
+    <string name="flash_clean">Прошивка с полной очисткой</string>
+    <string name="flash_gapps">Прошить GApps</string>
+    <string name="flash_magisk">Прошить Magisk</string>
+    <string name="my_device">Устройство</string>
+    <string name="no_update_available">Нет доступных обновлений</string>
+    <string name="update_available1">Доступно обновление!\n%s</string>
+    <string name="xenonhd_version">XenonHD %s</string>
+    <!-- Settings -->
+    <string name="disabled">Отключено</string>
+    <string name="gapps_variant">Варианты GApps</string>
+    <string name="magisk_variant">Варианты Magisk</string>
+    <string name="magisk_latest">Последняя (Стабильная &amp; Бета)</string>
+    <string name="magisk_stable">Только стабильные</string>
+    <string name="magisk_beta">Только беты</string>
+    <string name="hour">Каждый час</string>
+    <string name="interval_title">Проверить расписание обновлений</string>
+    <string name="onboot">При загрузке</string>
+    <string name="preferred_type">Предпочтительный тип</string>
+    <string name="twelve_hours">Каждые 12 часов</string>
+    <string name="twentyfour_hours">Каждые 24 часа</string>
+    <!-- Toast -->
+    <string name="autoupdate_disabled">Автоматическая проверка обновлений выключена</string>
+    <string name="autoupdate_enabled">Автоматическая проверка обновлений включена</string>
+    <string name="check_update_failed">Не удается проверить наличие обновлений. Проверьте подключение к Интернету и поддерживается ли ваше устройство официально</string>
+    <string name="gapps_set">Установить путь Gapps %s</string>
+    <string name="magisk_error">Не удается получить последнюю ссылку Magisk</string>
+    <string name="permission_not_enabled">XenonOTA не имеет разрешения на сохранение файлов. Пожалуйста, сначала предоставьте доступ к хранилищу</string>
+    <string name="toast_message">Браузер не установлен</string>
+    <string name="update_available">Доступны обновления!</string>
 </resources>

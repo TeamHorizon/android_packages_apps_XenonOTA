@@ -15,28 +15,22 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <!-- Categories -->
-  <!-- Dialog -->
-  <string name="dialog_message">Söker efter uppdateringar, vänligen vänta…</string>
-  <!-- ROM info -->
-  <string name="unknown">Okänd</string>
-  <string name="system_uptodate">Ditt system är uppdaterat</string>
-  <!-- Check update -->
-  <string name="check_update_title">Sök efter uppdateringar</string>
-  <string name="last_check_summary">Senast kontrollerad: %1$s</string>
-  <string name="last_check_never">Aldrig</string>
-  <string name="no_update_available">Ingen uppdatering tillgänglig</string>
-  <!-- Notification -->
-  <string name="notification_title">XenonHD-uppdatering</string>
-  <string name="notification_message">En ny version är tillgänglig!</string>
-  <!-- Toast -->
-  <!-- Update interval -->
-  <string name="disabled">Inaktiverad</string>
-  <string name="hour">Varje timme</string>
-  <string name="twelve_hours">Var 12:e timme</string>
-  <string name="twentyfour_hours">Var 24:e timme</string>
-  <!-- Links -->
-  <string name="links_changelog_title">Ändringslogg</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <!-- Dialogs -->
+    <string name="dialog_message">Söker efter uppdateringar, vänligen vänta…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <!-- GApps -->
+    <!-- Navigation -->
+    <!-- Notifications -->
+    <!-- ROM -->
+    <string name="changelog_title">Ändringslogg</string>
+    <string name="check_update_title">Sök efter uppdateringar</string>
+    <!-- Settings -->
+    <string name="disabled">Inaktiverad</string>
+    <string name="hour">Varje timme</string>
+    <string name="twelve_hours">Var 12:e timme</string>
+    <string name="twentyfour_hours">Var 24:e timme</string>
+    <!-- Toast -->
 </resources>

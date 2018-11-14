@@ -15,16 +15,16 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <!-- Categories -->
-  <!-- Dialog -->
-  <!-- ROM info -->
-  <string name="unknown">Necunoscut</string>
-  <!-- Check update -->
-  <!-- Notification -->
-  <!-- Toast -->
-  <!-- Update interval -->
-  <!-- Links -->
-  <string name="links_changelog_title">Istoricul schimbărilor</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <!-- Dialogs -->
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <!-- GApps -->
+    <!-- Navigation -->
+    <!-- Notifications -->
+    <!-- ROM -->
+    <string name="changelog_title">Istoricul schimbărilor</string>
+    <!-- Settings -->
+    <!-- Toast -->
 </resources>

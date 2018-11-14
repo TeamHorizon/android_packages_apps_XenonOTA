@@ -15,28 +15,22 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- App -->
-  <string name="app_name">XenonOTA</string>
-  <!-- Categories -->
-  <!-- Dialog -->
-  <string name="dialog_message">Vérification des mises à jour, veuillez patienter…</string>
-  <!-- ROM info -->
-  <string name="unknown">Inconnue</string>
-  <string name="system_uptodate">Votre système est à jour</string>
-  <!-- Check update -->
-  <string name="check_update_title">Vérification des mises à jour</string>
-  <string name="last_check_summary">Dernière vérification : %1$s</string>
-  <string name="last_check_never">Jamais</string>
-  <string name="no_update_available">Aucune mise à jour n’est actuellement disponible</string>
-  <!-- Notification -->
-  <string name="notification_title">Mises à jour XenonHD</string>
-  <string name="notification_message">Une nouvelle version est disponible!</string>
-  <!-- Toast -->
-  <!-- Update interval -->
-  <string name="disabled">Désactivé</string>
-  <string name="hour">Toutes les heures</string>
-  <string name="twelve_hours">Toutes les 12 heures</string>
-  <string name="twentyfour_hours">Toutes les 24 heures</string>
-  <!-- Links -->
-  <string name="links_changelog_title">Note de version</string>
+    <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <!-- Dialogs -->
+    <string name="dialog_message">Vérification des mises à jour, veuillez patienter…</string>
+    <!-- Downloader -->
+    <!-- Dropdowns -->
+    <!-- GApps -->
+    <!-- Navigation -->
+    <!-- Notifications -->
+    <!-- ROM -->
+    <string name="changelog_title">Note de version</string>
+    <string name="check_update_title">Vérification des mises à jour</string>
+    <!-- Settings -->
+    <string name="disabled">Désactivé</string>
+    <string name="hour">Toutes les heures</string>
+    <string name="twelve_hours">Toutes les 12 heures</string>
+    <string name="twentyfour_hours">Toutes les 24 heures</string>
+    <!-- Toast -->
 </resources>
