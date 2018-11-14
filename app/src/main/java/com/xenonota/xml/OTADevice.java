@@ -30,16 +30,18 @@ import java.io.Serializable;
 public class OTADevice implements Serializable {
 
     private String mLatestVersion;
+    private String mBuildTime;
     private String mROMURL;
     private String mChangelogURL;
     private String changeLog;
     private String md5;
     private Boolean alreadyDownloaded;
     private String filename;
-    private String filepath;
+    private String filepath;    
 
     OTADevice() {
         mLatestVersion = "";
+        mBuildTime = "";
         mROMURL = "";
         mChangelogURL = "";
         alreadyDownloaded = false;
@@ -50,6 +52,13 @@ public class OTADevice implements Serializable {
     }
     void setLatestVersion(String value) {
         this.mLatestVersion = value;
+    }
+
+    public String getBuildTime() {
+        return mBuildTime;
+    }
+    void setBuildTime(String value) {
+        this.mBuildTime = value;
     }
 
     public String getROMURL() {

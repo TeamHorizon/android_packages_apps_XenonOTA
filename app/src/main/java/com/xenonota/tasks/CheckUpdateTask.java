@@ -97,7 +97,7 @@ public class CheckUpdateTask extends AsyncTask<Void, Void, OTADevice> {
             }else if(official!=null && experimental==null){
                 final_ota = official;
             }else if(official!=null){
-                boolean result = OTAVersion.checkVersions(official.getLatestVersion(), experimental.getLatestVersion(), callBack.getContext());
+                boolean result = OTAVersion.checkVersions(official.getLatestVersion(), experimental.getLatestVersion(), official.getBuildTime(), experimental.getBuildTime(), callBack.getContext());
                 if(result){
                     final_ota = official;
                 }else{
@@ -116,8 +116,7 @@ public class CheckUpdateTask extends AsyncTask<Void, Void, OTADevice> {
         if (device == null) {
             showToast(R.string.check_update_failed);
         } else {
-            String latestVersion = device.getLatestVersion();
-            updateAvailable = OTAVersion.checkServerVersion(latestVersion, callBack.getContext());
+            updateAvailable = OTAVersion.checkServerVersion(device.getLatestVersion(), device.getBuildTime(), callBack.getContext());
             if (updateAvailable) {
                 showNotification(callBack.getContext(), device);
                 showToast(R.string.update_available);

@@ -28,6 +28,7 @@ public class OTAParser {
 
     private static final String ns = null;
     private static final String FILENAME_TAG = "Filename";
+    private static final String BUILDTIME_TAG = "BuildTime";
     private static final String ROMURL_TAG = "RomUrl";
     private static final String MD5URL_TAG = "MD5Url";
     private static final String CHANGELOGURL_TAG = "ChangelogUrl";
@@ -103,6 +104,9 @@ public class OTAParser {
             if (tagName.equalsIgnoreCase(FILENAME_TAG)) {
                 String tagValue = readTag(parser, tagName);
                 mDevice.setLatestVersion(tagValue);
+            } else if (tagName.equalsIgnoreCase(BUILDTIME_TAG)) {
+                String tagValue = readTag(parser, tagName);
+                mDevice.setBuildTime(tagValue);
             } else if (tagName.equalsIgnoreCase(ROMURL_TAG)) {
                 ROMURL = readTag(parser, tagName);
             } else if (tagName.equalsIgnoreCase(MD5URL_TAG)) {
