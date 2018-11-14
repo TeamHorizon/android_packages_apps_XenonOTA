@@ -16,6 +16,12 @@
 <resources>
     <style name="Theme.Main" parent="@style/Theme.AppCompat.Light.DarkActionBar" >
         <item name="android:windowDisablePreview">true</item>
+        <item name="android:actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
+        <item name="actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
+    </style>
+
+    <style name="Theme.Main.OverFlow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">?android:attr/colorAccent</item>
     </style>
 
     <style name="AlertDialogCustom" parent="@*android:style/Theme.Material.Settings.Dialog.BaseAlert">
