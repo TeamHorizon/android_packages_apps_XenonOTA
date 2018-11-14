@@ -83,14 +83,15 @@ public class CheckUpdateTask extends AsyncTask<Void, Void, OTADevice> {
 
         showWaitDialog();
 
-        OTADevice official;
+        OTADevice official = null;
         OTADevice experimental = null;
         OTADevice final_ota = null;
         String deviceName = OTAUtils.getDeviceName(callBack.getContext());
         OTAUtils.logInfo("deviceName: " + deviceName);
         if (!deviceName.isEmpty()) {
-            official = fetchURL(OTAConfig.getInstance(callBack.getContext()).getOfficialOtaUrl(),deviceName);
-            if("Experimental".equals(AppConfig.getPreferredType(callBack.getContext()))){experimental = fetchURL(OTAConfig.getInstance(callBack.getContext()).getExperimentalOtaUrl(),deviceName);}
+            String preferredType = AppConfig.getPreferredType(callBack.getContext());
+            if("Official".equals(preferredType) || "Latest".equals(preferredType)) official = fetchURL(OTAConfig.getInstance(callBack.getContext()).getOfficialOtaUrl(),deviceName);
+            if("Experimental".equals(preferredType) || "Latest".equals(preferredType)) experimental = fetchURL(OTAConfig.getInstance(callBack.getContext()).getExperimentalOtaUrl(),deviceName);
             if(official==null && experimental!=null){
                 final_ota = experimental;
             }else if(official!=null && experimental==null){
@@ -98,7 +99,7 @@ public class CheckUpdateTask extends AsyncTask<Void, Void, OTADevice> {
             }else if(official!=null){
                 boolean result = OTAVersion.checkVersions(official.getLatestVersion(), experimental.getLatestVersion(), callBack.getContext());
                 if(result){
-                 final_ota = official;
+                    final_ota = official;
                 }else{
                     final_ota = experimental;
                 }

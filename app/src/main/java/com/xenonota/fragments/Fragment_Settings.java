@@ -104,12 +104,16 @@ public class Fragment_Settings extends Fragment {
 
         String preferredType = AppConfig.getPreferredType(getContext().getApplicationContext());
         switch (preferredType){
+            case "Latest":{
+                PreferredType.check(R.id.rb_rom_latest);
+                break;
+            }
             case "Official":{
-                PreferredType.check(R.id.rb_official);
+                PreferredType.check(R.id.rb_rom_official);
                 break;
             }
             case "Experimental":{
-                PreferredType.check(R.id.rb_experimental);
+                PreferredType.check(R.id.rb_rom_experimental);
                 break;
             }
         }
@@ -141,15 +145,15 @@ public class Fragment_Settings extends Fragment {
         String magiskType = MagiskConfig.getVariant(getContext().getApplicationContext());
         switch (magiskType){
             case "latest":{
-                MagiskType.check(R.id.rb_latest);
+                MagiskType.check(R.id.rb_magisk_latest);
                 break;
             }
             case "stable":{
-                MagiskType.check(R.id.rb_stable);
+                MagiskType.check(R.id.rb_magisk_stable);
                 break;
             }
             case "beta":{
-                MagiskType.check(R.id.rb_beta);
+                MagiskType.check(R.id.rb_magisk_beta);
                 break;
             }
         }
@@ -199,11 +203,15 @@ public class Fragment_Settings extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton selected = group.findViewById(checkedId);
                 switch (selected.getId()){
-                    case R.id.rb_official:{
+                    case R.id.rb_rom_latest:{
+                        AppConfig.persistPreferredVersion("Latest",getContext().getApplicationContext());
+                        break;
+                    }
+                    case R.id.rb_rom_official:{
                         AppConfig.persistPreferredVersion("Official",getContext().getApplicationContext());
                         break;
                     }
-                    case R.id.rb_experimental:{
+                    case R.id.rb_rom_experimental:{
                         AppConfig.persistPreferredVersion("Experimental",getContext().getApplicationContext());
                         break;
                     }
@@ -215,15 +223,15 @@ public class Fragment_Settings extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton selected = group.findViewById(checkedId);
                 switch (selected.getId()){
-                    case R.id.rb_latest:{
+                    case R.id.rb_magisk_latest:{
                         MagiskConfig.setVariant("latest",getContext().getApplicationContext());
                         break;
                     }
-                    case R.id.rb_stable:{
+                    case R.id.rb_magisk_stable:{
                         MagiskConfig.setVariant("stable",getContext().getApplicationContext());
                         break;
                     }
-                    case R.id.rb_beta:{
+                    case R.id.rb_magisk_beta:{
                         MagiskConfig.setVariant("beta",getContext().getApplicationContext());
                         break;
                     }

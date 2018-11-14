@@ -91,7 +91,9 @@
 
     <!-- Settings -->
     <string name="disabled">Disabled</string>
-    <string name="experimental">Latest (Experimental &amp; Official)</string>
+    <string name="rom_latest">Latest (Official &amp; Experimental)</string>
+    <string name="rom_official">Official only</string>
+    <string name="rom_experimental">Experimental only</string>
     <string name="gapps_aroma" translatable="false">aroma</string>
     <string name="gapps_full" translatable="false">full</string>
     <string name="gapps_micro" translatable="false">micro</string>
@@ -108,7 +110,6 @@
     <string name="magisk_beta">Beta Only</string>
     <string name="hour">Every hour</string>
     <string name="interval_title">Check for updates schedule</string>
-    <string name="official">Official only</string>
     <string name="onboot">On boot</string>
     <string name="preferred_type">Preferred build type</string>
     <string name="twelve_hours">Every 12 hours</string>

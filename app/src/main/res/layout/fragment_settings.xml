@@ -167,18 +167,25 @@
                         android:paddingLeft="25dp">
 
                         <RadioButton
-                            android:id="@+id/rb_official"
+                            android:id="@+id/rb_rom_latest"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/official" />
+                            android:text="@string/rom_latest" />
 
                         <RadioButton
-                            android:id="@+id/rb_experimental"
+                            android:id="@+id/rb_rom_official"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/experimental" />
+                            android:text="@string/rom_official" />
+
+                        <RadioButton
+                            android:id="@+id/rb_rom_experimental"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/rom_experimental" />
                     </RadioGroup>
 
 
@@ -226,21 +233,21 @@
                         android:paddingLeft="25dp">
 
                         <RadioButton
-                            android:id="@+id/rb_latest"
+                            android:id="@+id/rb_magisk_latest"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/magisk_latest" />
 
                         <RadioButton
-                            android:id="@+id/rb_stable"
+                            android:id="@+id/rb_magisk_stable"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/magisk_stable" />
 
                         <RadioButton
-                            android:id="@+id/rb_beta"
+                            android:id="@+id/rb_magisk_beta"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
