@@ -58,6 +58,8 @@ import java.io.File;
 
 public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCallback {
 
+    private boolean checkedForUpdate = false;
+
     public static Fragment_Gapps newInstance() {
         return new Fragment_Gapps();
     }
@@ -67,7 +69,6 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
         super.onCreate(savedInstanceState);
     }
 
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -76,6 +77,7 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
+        if (getContext() == null) return;
         menuInflater.inflate(R.menu.menu_gapps, menu);
         TypedValue typedValue_accent = new TypedValue();
         Resources.Theme theme = getContext().getTheme();
@@ -113,9 +115,15 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
                 }
             });
         }
-        CheckGappsTask task = CheckGappsTask.getInstance(this);
-        if (task.getStatus() != AsyncTask.Status.RUNNING && task.getStatus() != AsyncTask.Status.PENDING) task.execute();
         setHasOptionsMenu(true);
+    }
+
+    public void checkGappsUpdate() {
+        if (!checkedForUpdate) {
+            CheckGappsTask task = CheckGappsTask.getInstance(this);
+            if (task.getStatus() != AsyncTask.Status.RUNNING) task.execute();
+            checkedForUpdate = true;
+        }
     }
 
     private void ChooseGappsZIP(){

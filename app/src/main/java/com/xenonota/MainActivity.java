@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 case 1:{
                     fragment_gapps.setHasOptionsMenu(true);
+                    fragment_gapps.checkGappsUpdate();
                     break;
                 }
                 case 2:{
