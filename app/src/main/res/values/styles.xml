@@ -16,18 +16,6 @@
 <resources>
     <style name="Theme.Main" parent="@style/Theme.AppCompat.Light.DarkActionBar" >
         <item name="android:windowDisablePreview">true</item>
-        <item name="android:actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
-        <item name="actionOverflowButtonStyle">@style/Theme.Main.OverFlow</item>
-        <item name="android:actionOverflowMenuStyle">@style/Theme.Main.OverFlow.Popup</item>
-        <item name="actionOverflowMenuStyle">@style/Theme.Main.OverFlow.Popup</item>
-    </style>
-
-    <style name="Theme.Main.OverFlow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
-        <item name="android:tint">?android:attr/colorAccent</item>
-    </style>
-
-    <style name="Theme.Main.OverFlow.Popup" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:popupBackground">?android:attr/colorPrimary</item>
     </style>
 
     <style name="AlertDialogCustom" parent="@*android:style/Theme.Material.Settings.Dialog.BaseAlert">

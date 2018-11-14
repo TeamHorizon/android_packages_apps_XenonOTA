@@ -36,8 +36,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.xenonota.adapters.ViewPagerAdapter;
@@ -61,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
     OTADevice deviceFromExtras = null;
 
+    @ColorInt int colorAccent;
+    @ColorInt int colorPrimary;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +89,14 @@ public class MainActivity extends AppCompatActivity {
     public void onNewIntent(Intent intent){
         setupIndent(intent);
         if (viewPager != null && fragment_ota != null) {viewPager.setCurrentItem(0); fragment_ota.deviceFromExtras = deviceFromExtras; fragment_ota.checkDeviceUpdates();}
+    }
+
+    @Override public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        if (name.equals("android.support.v7.view.menu.ListMenuItemView") &&
+                parent.getParent() instanceof FrameLayout) {
+            ((View) parent.getParent()).setBackgroundColor(colorPrimary);
+        }
+        return super.onCreateView(parent, name, context, attrs);
     }
 
     private void setupIndent(Intent intent) {
@@ -154,8 +168,8 @@ public class MainActivity extends AppCompatActivity {
         Resources.Theme theme = getTheme();
         theme.resolveAttribute(android.R.attr.colorAccent, typedValue_accent, true);
         theme.resolveAttribute(android.R.attr.colorPrimary, typedValue_primary, true);
-        @ColorInt int colorAccent = typedValue_accent.data;
-        @ColorInt int colorPrimary = typedValue_primary.data;
+        colorAccent = typedValue_accent.data;
+        colorPrimary = typedValue_primary.data;
 
         android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
