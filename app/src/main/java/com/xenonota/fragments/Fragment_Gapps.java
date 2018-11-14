@@ -25,6 +25,7 @@ import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.ColorInt;
@@ -112,7 +113,8 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
                 }
             });
         }
-        CheckGappsTask.getInstance(this).execute();
+        CheckGappsTask task = CheckGappsTask.getInstance(this);
+        if (task.getStatus() != AsyncTask.Status.RUNNING && task.getStatus() != AsyncTask.Status.PENDING) task.execute();
         setHasOptionsMenu(true);
     }
 
