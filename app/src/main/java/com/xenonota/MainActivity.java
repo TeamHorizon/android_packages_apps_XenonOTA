@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewpager);
         viewPager.addOnPageChangeListener(mOnPageChangeListener);
         setupViewPager(viewPager);
-        checkStoragePermissions();
         initChannels(this);
         final ComponentName onBootReceiver = new ComponentName(getApplication().getPackageName(), BootCompletedReceiver.class.getName());
         if(getPackageManager().getComponentEnabledSetting(onBootReceiver) != PackageManager.COMPONENT_ENABLED_STATE_ENABLED)
@@ -97,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
             ((View) parent.getParent()).setBackgroundColor(colorPrimary);
         }
         return super.onCreateView(parent, name, context, attrs);
+    }
+
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        checkStoragePermissions();
     }
 
     private void setupIndent(Intent intent) {
@@ -210,8 +215,8 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void checkStoragePermissions() {
-            requestPermissions(new String[]{ Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    STORAGE_PERMISSION_CODE);
+        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+            requestPermissions(new String[]{ Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
 
     @Override
