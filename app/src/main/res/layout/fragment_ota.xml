@@ -188,7 +188,6 @@
                             android:layout_marginBottom="5dp"
                             android:layout_weight="1"
                             android:text="@string/download"
-                            android:backgroundTint="?android:attr/colorAccent"
                             android:textColor="@android:color/white" />
 
                         <Button
@@ -202,7 +201,6 @@
                             android:layout_marginBottom="5dp"
                             android:layout_weight="1"
                             android:text="@string/flash"
-                            android:backgroundTint="?android:attr/colorAccent"
                             android:textColor="@android:color/white" />
                     </TableRow>
 

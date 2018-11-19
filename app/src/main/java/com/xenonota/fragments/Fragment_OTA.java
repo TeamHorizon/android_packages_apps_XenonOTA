@@ -64,7 +64,6 @@ import java.io.File;
 public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback, CheckUpdateTask.UpdateCheckerCallback {
 
     @ColorInt int colorAccent = android.R.attr.colorAccent;
-    @ColorInt int colorPrimary = android.R.attr.colorPrimary;
 
     View view;
     TextView currentVersion;
@@ -108,12 +107,9 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
                              Bundle savedInstanceState) {
         if (getContext() != null) {
             TypedValue typedValue_accent = new TypedValue();
-            TypedValue typedValue_primary = new TypedValue();
             Resources.Theme theme = getContext().getTheme();
             theme.resolveAttribute(android.R.attr.colorAccent, typedValue_accent, true);
-            theme.resolveAttribute(android.R.attr.colorPrimary, typedValue_primary, true);
             colorAccent = typedValue_accent.data;
-            colorPrimary = typedValue_primary.data;
         }
 
         view = inflater.inflate(R.layout.fragment_ota, container, false);
@@ -179,6 +175,9 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         btnDownload = view.findViewById(R.id.btn_download);
         btnFlash = view.findViewById(R.id.btn_flash);
         lv_maintainer = view.findViewById(R.id.maintainer);
+
+        btnDownload.setBackgroundTintList(ColorStateList.valueOf(colorAccent));
+        btnFlash.setBackgroundTintList(ColorStateList.valueOf(colorAccent));
     }
 
     private void assignEvents(){
