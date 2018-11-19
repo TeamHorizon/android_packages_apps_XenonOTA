@@ -32,6 +32,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 import java.text.DecimalFormat;
 
 public final class OTAUtils {
@@ -117,6 +118,18 @@ public final class OTAUtils {
         conn.connect();
         logInfo("downloadStatus: " + conn.getResponseCode());
         return conn.getInputStream();
+    }
+
+    public static String getSizeFromURL(@NonNull final Context context, final String URL) {
+        int size = 0;
+        try {
+            URLConnection urlConnection = (new URL(URL)).openConnection();
+            urlConnection.connect();
+            size = urlConnection.getContentLength();
+        } catch (Exception ex) {
+            logError("Unable to get size from URL.");
+        }
+        return getSizeString(context, size);
     }
 
     public static void rebootRecovery(Context context){

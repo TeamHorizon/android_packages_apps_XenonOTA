@@ -31,11 +31,13 @@ public class MagiskConfig extends Properties {
     private String url;
     private String filename;
     private String version;
+    private String size;
 
-    public MagiskConfig(String url, String filename, String version) {
+    public MagiskConfig(String url, String filename, String version, String size) {
         this.url = url;
         this.filename = filename;
         this.version = version;
+        this.size = size;
     }
 
     public String getUrl() {return url;}
@@ -43,6 +45,8 @@ public class MagiskConfig extends Properties {
     public String getVersion() {return version;}
 
     public String getFilename() {return filename;}
+
+    public String getSize() {return size;}
 
     public static String getVariant(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context).getString(MAGISK_VARIANT, "latest");

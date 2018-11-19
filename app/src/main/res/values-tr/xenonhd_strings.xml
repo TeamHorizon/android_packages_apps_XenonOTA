@@ -36,7 +36,7 @@
     <string name="flash_message">İndirilen zip\'i yeniden yüklemek mi istiyorsunuz?</string>
     <string name="magisk_check">En son Magisk sürümü kontrol ediliyor…</string>
     <string name="magisk_download_completed">Magisk başarıyla indirildi. Şimdi ROM ile birlikte yükleme yapabilirsiniz</string>
-    <string name="magisk_message">Magisk v%1$s kullanılabilir.\nBunu indirmek istiyor musunuz?</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) kullanılabilir.\nBunu indirmek istiyor musunuz?</string>
     <string name="open_in_browser">Tarayıcıda aç</string>
     <string name="reboot_warning">Kurtarma modunda başlatmak istiyormusunuz?</string>
     <string name="verification_failed">Doğrulama başarısız</string>
@@ -72,7 +72,7 @@
     <string name="flash_magisk">Magisk yükle</string>
     <string name="my_device">Cihaz</string>
     <string name="no_update_available">Güncelleme mevcut değil</string>
-    <string name="update_available1">Güncelleme mevcut!\n%s</string>
+    <string name="update_available1">Güncelleme mevcut!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Devre dışı</string>

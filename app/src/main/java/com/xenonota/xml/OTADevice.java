@@ -32,6 +32,7 @@ public class OTADevice implements Serializable {
     private String mLatestVersion;
     private String mBuildTime;
     private String mROMURL;
+    private String mROMSize;
     private String mChangelogURL;
     private String changeLog;
     private String md5;
@@ -43,6 +44,7 @@ public class OTADevice implements Serializable {
         mLatestVersion = "";
         mBuildTime = "";
         mROMURL = "";
+        mROMSize = "";
         mChangelogURL = "";
         alreadyDownloaded = false;
     }
@@ -66,6 +68,13 @@ public class OTADevice implements Serializable {
     }
     void setROMURL(String value) {
         this.mROMURL = value;
+    }
+    
+    public String getROMSize() {
+        return mROMSize;
+    }
+    public void setROMSize(String value) {
+        this.mROMSize = value;
     }
 
     public String getChangelog() {

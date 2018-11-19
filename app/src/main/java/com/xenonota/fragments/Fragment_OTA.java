@@ -347,7 +347,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
             }else{btnFlash.setBackgroundTintList(getContext().getResources().getColorStateList(R.color.card_gray,null));}
             ota_controls.setVisibility(View.VISIBLE);
             changelog_cv.setVisibility(View.VISIBLE);
-            otaStatus.setText(String.format(getString(R.string.update_available1), device.getLatestVersion()));
+            otaStatus.setText(String.format(getString(R.string.update_available1), device.getLatestVersion(), device.getROMSize()));
             otaStatus_cv.setCardBackgroundColor(getResources().getColor(R.color.card_green,null));
             otaStatus_frame.setBackgroundColor(getResources().getColor(R.color.card_green,null));
             otaStatus_img.setImageDrawable(getResources().getDrawable(R.drawable.ic_ota_available,null));
@@ -377,7 +377,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(R.string.magisk);
-        builder.setMessage(getString(R.string.magisk_message, magiskConfig.getVersion()));
+        builder.setMessage(getString(R.string.magisk_message, magiskConfig.getVersion(), magiskConfig.getSize()));
 
         builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override

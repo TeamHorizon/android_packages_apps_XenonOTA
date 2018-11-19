@@ -36,7 +36,7 @@
     <string name="flash_message">هل تريد إعادة التشغيل وتثبيت ملف zip الذي تم تنزيله؟</string>
     <string name="magisk_check">التحقق من أحدث إصدار من Magisk…</string>
     <string name="magisk_download_completed">تم تحميل Magisk بنجاح. يمكنك تثبيته مع ROM الآن</string>
-    <string name="magisk_message">Magisk v%1$s متوفر.\nهل تريد تحميله؟</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) متوفر.\nهل تريد تحميله؟</string>
     <string name="open_in_browser">فتح في المتصفح</string>
     <string name="reboot_warning">هل تريد الاقلاع إلى وضع الإسترداد؟</string>
     <string name="verification_failed">فشل التحقق</string>
@@ -72,7 +72,7 @@
     <string name="flash_magisk">فلاش Magisk</string>
     <string name="my_device">الجهاز</string>
     <string name="no_update_available">لا توجد تحديثات متوفرة</string>
-    <string name="update_available1">تحديث متوفر!\n%s</string>
+    <string name="update_available1">تحديث متوفر!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">غير مفعل</string>

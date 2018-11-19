@@ -106,6 +106,8 @@ public class CheckUpdateTask extends AsyncTask<Void, Void, OTADevice> {
             }else{final_ota = null;}
         }
 
+        if (final_ota != null) final_ota.setROMSize(OTAUtils.getSizeFromURL(callBack.getContext(), final_ota.getROMURL()));
+
         return final_ota;
     }
 

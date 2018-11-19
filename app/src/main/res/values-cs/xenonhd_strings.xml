@@ -52,7 +52,7 @@
     <string name="download">Stáhnout</string>
     <string name="my_device">Zařízení</string>
     <string name="no_update_available">Nejsou k dispozici žádné aktualizace</string>
-    <string name="update_available1">Dostupná aktualizace!\n%s</string>
+    <string name="update_available1">Dostupná aktualizace!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Vypnuto</string>

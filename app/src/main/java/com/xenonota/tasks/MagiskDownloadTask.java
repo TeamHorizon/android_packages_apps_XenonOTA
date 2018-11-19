@@ -60,7 +60,7 @@ public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
 
     @Override
     protected MagiskConfig doInBackground(Void... params) {
-        if (cancel) return null;
+        if (cancel || frag == null || frag.getContext() == null) return null;
 
         String JSON_URL_STABLE = "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json";
         String JSON_URL_BETA = "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json";
@@ -76,27 +76,29 @@ public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
             String version_beta = magisk_beta.getString("version");
             String filename_stable = "Magisk-v" + version_stable + ".zip";
             String filename_beta = "Magisk-v" + version_beta + ".zip";
-
+            String size_stable = OTAUtils.getSizeFromURL(frag.getContext(), url_stable);
+            String size_beta = OTAUtils.getSizeFromURL(frag.getContext(), url_beta);
+            
             String magisk_variant = MagiskConfig.getVariant(frag.getContext());
 
             switch(magisk_variant) {
                 case "latest":{
                     int result = compareVersion(version_beta, version_stable);
                     if (result == 0) {
-                        if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable);
+                        if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable, size_stable);
                     } else if (result < 0) {
-                        if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable);
+                        if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable, size_stable);
                     } else  {
-                        if (!"".equals(url_beta)) return new MagiskConfig(url_beta, filename_beta, version_beta);
+                        if (!"".equals(url_beta)) return new MagiskConfig(url_beta, filename_beta, version_beta, size_beta);
                     }
                     break;
                 }
                 case "stable":{
-                    if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable);
+                    if (!"".equals(url_stable)) return new MagiskConfig(url_stable, filename_stable, version_stable, size_stable);
                     break;
                 }
                 case "beta":{
-                    if (!"".equals(url_beta)) return new MagiskConfig(url_beta, filename_beta, version_beta);
+                    if (!"".equals(url_beta)) return new MagiskConfig(url_beta, filename_beta, version_beta, size_beta);
                     break;
                 }
             }
@@ -104,7 +106,7 @@ public class MagiskDownloadTask extends AsyncTask<Void, Void, MagiskConfig> {
         return null;
     }
 
-    public int compareVersion(String version1, String version2) {
+    private int compareVersion(String version1, String version2) {
         String[] arr1 = version1.split("\\.");
         String[] arr2 = version2.split("\\.");
 

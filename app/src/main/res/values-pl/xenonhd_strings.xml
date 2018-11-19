@@ -36,7 +36,7 @@
     <string name="flash_message">Czy chcesz zrestartować i zainstalować pobrany plik ZIP?</string>
     <string name="magisk_check">Sprawdzanie najnowszej wersji Magisk…</string>
     <string name="magisk_download_completed">Magisk został pobrany pomyślnie. Możesz teraz zainstalować go wraz z ROMem</string>
-    <string name="magisk_message">Magisk v%1$s dostępny.\nCzy chcesz go pobrać?</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) dostępny.\nCzy chcesz go pobrać?</string>
     <string name="open_in_browser">Otwórz w przeglądarce</string>
     <string name="reboot_warning">Czy chcesz uruchomić tryb recovery?</string>
     <string name="verification_failed">Weryfikacja nie powiodła się</string>
@@ -72,7 +72,7 @@
     <string name="flash_magisk">Zainstaluj Magisk</string>
     <string name="my_device">Urządzenie</string>
     <string name="no_update_available">Brak dostępnych aktualizacji</string>
-    <string name="update_available1">Aktualizacja jest dostępna!\n%s</string>
+    <string name="update_available1">Aktualizacja jest dostępna!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Wyłączony</string>

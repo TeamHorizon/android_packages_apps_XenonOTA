@@ -36,7 +36,7 @@
     <string name="flash_message">Вы хотите перезагрузиться и установить загруженный zip?</string>
     <string name="magisk_check">Проверка последней версии Magisk…</string>
     <string name="magisk_download_completed">Magisk загружен. Можете прошить вместе с прошивкой сейчас</string>
-    <string name="magisk_message">Magisk v%1$s доступен.\n Скачать сейчас?</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) доступен.\n Скачать сейчас?</string>
     <string name="open_in_browser">Открыть в браузере</string>
     <string name="reboot_warning">Вы хотите загрузиться в рекавери?</string>
     <string name="verification_failed">Проверка не удалась</string>
@@ -72,7 +72,7 @@
     <string name="flash_magisk">Прошить Magisk</string>
     <string name="my_device">Устройство</string>
     <string name="no_update_available">Нет доступных обновлений</string>
-    <string name="update_available1">Доступно обновление!\n%s</string>
+    <string name="update_available1">Доступно обновление!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Отключено</string>
