@@ -45,7 +45,7 @@ public class OTAVersion {
 
     public static boolean checkServerVersion(String serverVersion, String serverBuildTime, Context context) {
         String localVersion = getFullLocalVersion(context);
-        String localBuildTime = OTAUtils.getProp("ro.build.date.utc");
+        String localBuildTime = OTAUtils.getProp("ro.xenonhd.timestamp");
         localVersion = extractVersionFrom(localVersion, context);
         serverVersion = extractVersionFrom(serverVersion, context);
 
