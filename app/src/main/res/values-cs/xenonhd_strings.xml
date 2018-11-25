@@ -26,6 +26,7 @@
     <string name="download_cancelled_msg">Stahování bylo zrušeno</string>
     <string name="download_cancelled_title">Stahování zrušeno</string>
     <string name="download_complete_title">Kopírování dokončeno</string>
+    <string name="failed">Chyba</string>
     <string name="open_in_browser">Otevřít v prohlížeči</string>
     <string name="verification_failed">Ověření selhalo</string>
     <string name="verifying_package">Ověřování balíčku…</string>
@@ -52,14 +53,17 @@
     <string name="download">Stáhnout</string>
     <string name="my_device">Zařízení</string>
     <string name="no_update_available">Nejsou k dispozici žádné aktualizace</string>
-    <string name="update_available1">Dostupná aktualizace!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Vypnuto</string>
     <string name="hour">Každou hodinu</string>
+    <string name="onboot">Při spuštění</string>
     <string name="twelve_hours">Každých 12 hodin</string>
     <string name="twentyfour_hours">Každých 24 hodin</string>
     <!-- Toast -->
+    <string name="autoupdate_disabled">Automatická kontrola aktualizace je zakázána</string>
+    <string name="autoupdate_enabled">Automatická kontrola aktualizace je povolena</string>
     <string name="check_update_failed">Nelze zkontrolovat aktualizace. Zkontrolujte připojení k Internetu a zda je vaše zařízení oficiálně podporováno</string>
+    <string name="toast_message">Není nainstalován žádný prohlížeč</string>
     <string name="update_available">Aktualizace k dispozici!</string>
 </resources>

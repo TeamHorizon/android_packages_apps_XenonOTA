@@ -76,6 +76,9 @@
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Devre dışı</string>
+    <string name="rom_latest">Son (Resmi &amp; Deneysel)</string>
+    <string name="rom_official">Sadece resmi</string>
+    <string name="rom_experimental">Sadece deneysel</string>
     <string name="gapps_variant">Gapps varyant</string>
     <string name="magisk_variant">Magisk varyant</string>
     <string name="magisk_latest">Son (Kararlı ve Beta)</string>

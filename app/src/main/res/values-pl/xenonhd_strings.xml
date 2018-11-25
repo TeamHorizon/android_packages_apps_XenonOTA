@@ -72,7 +72,7 @@
     <string name="flash_magisk">Zainstaluj Magisk</string>
     <string name="my_device">Urządzenie</string>
     <string name="no_update_available">Brak dostępnych aktualizacji</string>
-    <string name="update_available1">Aktualizacja jest dostępna!\n%s (%s)</string>
+    <string name="update_available1">Aktualizacja dostępna!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Wyłączony</string>

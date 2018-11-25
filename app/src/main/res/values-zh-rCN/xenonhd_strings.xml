@@ -36,7 +36,6 @@
     <string name="flash_message">是否要重启并安装下载的 zip？</string>
     <string name="magisk_check">正在检查最新的 Magisk 版本…</string>
     <string name="magisk_download_completed">已成功下载 Magisk。您现在可以与ROM一起刷入</string>
-    <string name="magisk_message">Magisk v%1$s (%2$s) 可用。\n你想下载吗？</string>
     <string name="open_in_browser">在浏览器中打开</string>
     <string name="reboot_warning">是否要启动到 recovery 模式？</string>
     <string name="verification_failed">验证失败</string>
@@ -72,10 +71,12 @@
     <string name="flash_magisk">刷入 Magisk</string>
     <string name="my_device">设备</string>
     <string name="no_update_available">暂无更新</string>
-    <string name="update_available1">有可用更新！\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">已禁用</string>
+    <string name="rom_latest">最新 (官方版和试验版)</string>
+    <string name="rom_official">仅官方版</string>
+    <string name="rom_experimental">仅试验版</string>
     <string name="gapps_variant">GApps版本</string>
     <string name="magisk_variant">Magisk版本</string>
     <string name="magisk_latest">最新 (稳定版和测试版)</string>

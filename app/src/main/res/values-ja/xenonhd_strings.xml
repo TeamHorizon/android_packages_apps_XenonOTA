@@ -25,24 +25,46 @@
     <string name="dialog_message">更新を確認しています。 しばらくお待ち下さい...</string>
     <string name="download_cancelled_msg">ダウンロードが取り消されました</string>
     <string name="download_cancelled_title">ダウンロードがキャンセルされました</string>
+    <string name="download_complete_title">ダウンロードが完了しました</string>
+    <string name="failed">失敗しました</string>
+    <string name="open_in_browser">ブラウザで開く</string>
+    <string name="verification_failed">認証に失敗しました</string>
+    <string name="verifying_package">パッケージを確認しています…</string>
     <!-- Downloader -->
+    <string name="downloading">ダウンロード中…</string>
     <!-- Dropdowns -->
     <string name="reboot_recovery">リカバリーへ再起動</string>
     <!-- GApps -->
+    <string name="loading">読み込み中…</string>
     <!-- Navigation -->
+    <string name="title_gapps">GApps</string>
     <string name="title_rom">ROM</string>
+    <string name="title_settings">設定</string>
     <!-- Notifications -->
+    <string name="notification_title">XenonHDの更新</string>
     <string name="xenonota_channel">XenonOTAの通知</string>
     <string name="xenonota_channel_description">新しいXenonHDアップデートの通知</string>
     <!-- ROM -->
     <string name="changelog_title">更新履歴</string>
     <string name="check_update_title">更新の確認</string>
+    <string name="current_version">現在のバージョン:</string>
+    <string name="download">ダウンロード</string>
+    <string name="flash">フラッシュ</string>
+    <string name="flash_clean">クリーンフラッシュ</string>
+    <string name="my_device">端末</string>
+    <string name="no_update_available">利用可能な更新はありません</string>
+    <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">無効</string>
+    <string name="magisk_stable">安定版のみ</string>
+    <string name="magisk_beta">ベータ版のみ</string>
     <string name="hour">1時間毎</string>
     <string name="twelve_hours">12時間毎</string>
     <string name="twentyfour_hours">24時間毎</string>
     <!-- Toast -->
+    <string name="autoupdate_disabled">自動更新確認は無効です</string>
+    <string name="autoupdate_enabled">自動更新確認は有効です</string>
     <string name="check_update_failed">更新を確認できません。ネットワーク接続とお使いの端末が公式サポートされているかどうか確認して下さい。</string>
+    <string name="toast_message">ブラウザがインストールされていません</string>
     <string name="update_available">更新があります！</string>
 </resources>
