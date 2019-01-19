@@ -24,4 +24,8 @@
         android:id="@+id/magisk"
         android:title="@string/download_magisk"
         />
+    <item
+        android:id="@+id/credits"
+        android:title="@string/credits"
+        />
 </menu>
