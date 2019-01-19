@@ -51,6 +51,7 @@ import android.widget.Toast;
 import com.xenonota.R;
 import com.xenonota.configs.AppConfig;
 import com.xenonota.configs.MagiskConfig;
+import com.xenonota.dialogs.CreditsDialog;
 import com.xenonota.dialogs.Downloader;
 import com.xenonota.dialogs.WaitDialogFragment;
 import com.xenonota.tasks.CheckUpdateTask;
@@ -60,6 +61,7 @@ import com.xenonota.utils.OTAUtils;
 import com.xenonota.xml.OTADevice;
 
 import java.io.File;
+import java.util.Arrays;
 
 public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADialogListener, Downloader.DownloaderCallback, CheckUpdateTask.UpdateCheckerCallback {
 
@@ -129,6 +131,15 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
             spanString.setSpan(new ForegroundColorSpan(colorAccent), 0,     spanString.length(), 0); //fix the color to white
             item.setTitle(spanString);
         }
+
+        try {
+            if (!Arrays.asList(getResources().getAssets().list("")).contains(CreditsDialog.FILENAME)) {
+               menu.findItem(R.id.credits).setVisible(false);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
         super.onCreateOptionsMenu(menu,menuInflater);
     }
 
@@ -140,6 +151,9 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
                 return true;
             case R.id.magisk:
                 checkForMagisk();
+                return true;
+            case R.id.credits:
+                (new CreditsDialog(getActivity())).show();
                 return true;
         }
         return super.onOptionsItemSelected(item);

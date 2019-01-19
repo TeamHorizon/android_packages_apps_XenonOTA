@@ -16,7 +16,7 @@
  * Created by Devil7DK for XenonHD
  *
  * Taken from: https://stackoverflow.com/questions/46113518/circular-image-view-in-android-without-using-any-external-library
- * 
+ *
  */
 
 package com.xenonota.utils;
