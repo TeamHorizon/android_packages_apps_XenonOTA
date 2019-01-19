@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<credits>
+    <member>
+        <name>Devil7DK</name>
+        <description>Developer of XenonOTA app</description>
+        <avatar>https://avatars0.githubusercontent.com/u/3296620?s=460&amp;v=4</avatar>
+        <link>https://github.com/Devil7DK</link>
+    </member>
+    <member>
+        <name>dadi11</name>
+        <description>New design concept and maintenance</description>
+        <avatar>https://avatars3.githubusercontent.com/u/7272087?s=400&amp;v=4</avatar>
+        <link>https://github.com/dadi11</link>
+    </member>
+    <member>
+        <name>fusionjack</name>
+        <description>Creator of the base SlimOTA app</description>
+        <avatar>https://avatars1.githubusercontent.com/u/3637578?s=400&amp;v=4</avatar>
+        <link>https://github.com/fusionjack</link>
+    </member>
+    <member>
+        <name>topjohnwu</name>
+        <description>MagiskManager code used for Magisk downloader</description>
+        <avatar>https://avatars3.githubusercontent.com/u/7337301?s=400&amp;v=4</avatar>
+        <link>https://github.com/topjohnwu</link>
+    </member>
+    <member>
+        <name>hjthjthjt</name>
+        <description>RnOpenGapps code used for GApps downloader</description>
+        <avatar>https://avatars0.githubusercontent.com/u/3889846?s=400&amp;v=4</avatar>
+        <link>https://github.com/hjthjthjt</link>
+    </member>
+</credits>
