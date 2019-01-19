@@ -305,14 +305,7 @@ public class Fragment_OTA extends Fragment implements WaitDialogFragment.OTADial
         builder.setNeutralButton(R.string.open_in_browser, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ota_data.getChangelogURL()));
-                PackageManager pm = getContext().getPackageManager();
-                if (browserIntent.resolveActivity(pm) != null) {
-                    startActivity(browserIntent);
-                } else {
-                    Toast toast = Toast.makeText(getContext(), R.string.toast_message, Toast.LENGTH_LONG);
-                    toast.show();
-                }
+                OTAUtils.launchURL(getContext(), ota_data.getChangelogURL());
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {

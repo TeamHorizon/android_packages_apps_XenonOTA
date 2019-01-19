@@ -18,6 +18,9 @@ package com.xenonota.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.PowerManager;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -118,6 +121,17 @@ public final class OTAUtils {
         conn.connect();
         logInfo("downloadStatus: " + conn.getResponseCode());
         return conn.getInputStream();
+    }
+
+    public static void launchURL(Context context, String URL) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
+        PackageManager pm = context.getPackageManager();
+        if (browserIntent.resolveActivity(pm) != null) {
+            context.startActivity(browserIntent);
+        } else {
+            Toast toast = Toast.makeText(context, R.string.toast_message, Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 
     public static String getSizeFromURL(@NonNull final Context context, final String URL) {
