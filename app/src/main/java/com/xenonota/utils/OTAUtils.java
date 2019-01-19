@@ -33,6 +33,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -132,6 +133,23 @@ public final class OTAUtils {
             Toast toast = Toast.makeText(context, R.string.toast_message, Toast.LENGTH_LONG);
             toast.show();
         }
+    }
+
+    public static void CopyStream(InputStream is, OutputStream os)
+    {
+        final int buffer_size=1024;
+        try
+        {
+            byte[] bytes=new byte[buffer_size];
+            for(;;)
+            {
+                int count=is.read(bytes, 0, buffer_size);
+                if(count==-1)
+                    break;
+                os.write(bytes, 0, count);
+            }
+        }
+        catch(Exception ex){}
     }
 
     public static String getSizeFromURL(@NonNull final Context context, final String URL) {
