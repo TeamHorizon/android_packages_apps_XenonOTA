@@ -25,22 +25,39 @@
     <string name="dialog_message">更新を確認しています。 しばらくお待ち下さい...</string>
     <string name="download_cancelled_msg">ダウンロードが取り消されました</string>
     <string name="download_cancelled_title">ダウンロードがキャンセルされました</string>
+    <string name="download_complete_msg_gapps">GApps は正常にダウンロードされました。フラッシュダイアログで GApps オプションを選択してROMと一緒に GApps をフラッシュして下さい。</string>
+    <string name="download_complete_msg_magisk">Magisk は正常にダウンロードされました。フラッシュダイアログで Magisk オプションを選択してROMと一緒に Magisk をフラッシュして下さい。</string>
+    <string name="download_complete_msg_ota">アップデートは正常にダウンロードされました。リカバリーに再起動してインストールするには「Flash」を押して下さい。</string>
     <string name="download_complete_title">ダウンロードが完了しました</string>
+    <string name="download_confirm_msg">ダウンロード前にご確認ください: \n\nAndroid バージョン\t\t: \t%1$s\nCPU プラットフォーム\t\t\t: \t%2$s\nパッケージ種別\t\t: \t%3$s</string>
+    <string name="download_interrupted_msg">%1$s によりダウンロードが中断されました</string>
+    <string name="download_interrupted_title">ダウンロードが中断されました</string>
     <string name="failed">失敗しました</string>
+    <string name="flash_message">再起動してダウンロードした ZIP ファイルをインストールしますか?</string>
+    <string name="magisk_check">最新の Magisk バージョンを確認中…</string>
+    <string name="magisk_download_completed">Magisk が正常にダウンロードされました。現在の ROM にフラッシュできます。</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) が利用可能です。\nダウンロードしますか?</string>
     <string name="open_in_browser">ブラウザで開く</string>
+    <string name="reboot_warning">リカバリーに再起動しますか?</string>
     <string name="verification_failed">認証に失敗しました</string>
     <string name="verifying_package">パッケージを確認しています…</string>
     <!-- Downloader -->
     <string name="downloading">ダウンロード中…</string>
     <!-- Dropdowns -->
+    <string name="choose_gapps_zip">保存されている GApps の ZIP ファイルを選択して下さい</string>
+    <string name="download_magisk">Magisk のダウンロード</string>
     <string name="reboot_recovery">リカバリーへ再起動</string>
     <!-- GApps -->
+    <string name="gapps_ok">GApps がインストールされました!</string>
+    <string name="gapps_warning">GApps がインストールされませんでした!</string>
+    <string name="latest_release_msg">最新リリース %1$s - %2$s</string>
     <string name="loading">読み込み中…</string>
     <!-- Navigation -->
     <string name="title_gapps">GApps</string>
     <string name="title_rom">ROM</string>
     <string name="title_settings">設定</string>
     <!-- Notifications -->
+    <string name="notification_message">新しいバージョンが利用可能です</string>
     <string name="notification_title">XenonHDの更新</string>
     <string name="xenonota_channel">XenonOTAの通知</string>
     <string name="xenonota_channel_description">新しいXenonHDアップデートの通知</string>
@@ -51,20 +68,35 @@
     <string name="download">ダウンロード</string>
     <string name="flash">フラッシュ</string>
     <string name="flash_clean">クリーンフラッシュ</string>
+    <string name="flash_gapps">GApps のフラッシュ</string>
+    <string name="flash_magisk">Magisk のフラッシュ</string>
     <string name="my_device">端末</string>
     <string name="no_update_available">利用可能な更新はありません</string>
+    <string name="update_available1">アップデート可能です\n%s(%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">無効</string>
+    <string name="rom_latest">最新(公式&amp;試験版)</string>
+    <string name="rom_official">公式のみ</string>
+    <string name="rom_experimental">試験版のみ</string>
+    <string name="gapps_variant">GApps の種類</string>
+    <string name="magisk_variant">Magisk の種類</string>
+    <string name="magisk_latest">最新(安定板&amp;ベータ版)</string>
     <string name="magisk_stable">安定版のみ</string>
     <string name="magisk_beta">ベータ版のみ</string>
     <string name="hour">1時間毎</string>
+    <string name="interval_title">アップデートのスケジュールを確認</string>
+    <string name="onboot">起動時</string>
+    <string name="preferred_type">お勧めのビルドタイプ</string>
     <string name="twelve_hours">12時間毎</string>
     <string name="twentyfour_hours">24時間毎</string>
     <!-- Toast -->
     <string name="autoupdate_disabled">自動更新確認は無効です</string>
     <string name="autoupdate_enabled">自動更新確認は有効です</string>
     <string name="check_update_failed">更新を確認できません。ネットワーク接続とお使いの端末が公式サポートされているかどうか確認して下さい。</string>
+    <string name="gapps_set">GAppsのパスを %s に指定しました</string>
+    <string name="magisk_error">最新版の Magisk リンクを取得できません</string>
+    <string name="permission_not_enabled">XenonOTA にファイル保存の許可がありません。最初にストレージアクセスを許可して下さい。</string>
     <string name="toast_message">ブラウザがインストールされていません</string>
     <string name="update_available">更新があります！</string>
 </resources>

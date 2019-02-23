@@ -47,6 +47,7 @@
     <string name="choose_gapps_zip">Wybierz istniejący plik GApps</string>
     <string name="download_magisk">Pobierz Magisk</string>
     <string name="reboot_recovery">Restart do recovery</string>
+    <string name="credits">Twórcy</string>
     <!-- GApps -->
     <string name="gapps_ok">GApps zostały zainstalowane!</string>
     <string name="gapps_warning">Nie zainstalowano GApps!</string>

@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App -->
-    <string name="app_name">Xenon Güncellemeleri</string>
+    <string name="app_name">Xenon güncellemeleri</string>
     <string name="app_title">XenonHD güncellemeleri</string>
     <!-- Dialogs -->
     <string name="cancel">İptal</string>
