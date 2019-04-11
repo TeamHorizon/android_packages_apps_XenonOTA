@@ -36,6 +36,9 @@ public class ORSUtils {
 
     public static void FactoryReset(){
         WriteCommand("wipe data");
+        WriteCommand("wipe system");
+        WriteCommand("wipe cache");
+        WriteCommand("wipe dalvik");
     }
 
     private static void WriteCommand(String command){
