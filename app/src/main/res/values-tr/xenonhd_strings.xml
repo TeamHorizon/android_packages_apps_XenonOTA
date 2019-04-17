@@ -47,6 +47,7 @@
     <string name="choose_gapps_zip">Mevcut GApps zip dosyası seç</string>
     <string name="download_magisk">Magisk indir</string>
     <string name="reboot_recovery">Kurtarma modunda başlat</string>
+    <string name="credits">Katkıda bulunanlar</string>
     <!-- GApps -->
     <string name="gapps_ok">Gapps yüklendi!</string>
     <string name="gapps_warning">GApps yüklü değil!</string>

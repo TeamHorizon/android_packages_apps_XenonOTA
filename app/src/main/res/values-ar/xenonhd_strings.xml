@@ -47,6 +47,7 @@
     <string name="choose_gapps_zip">اختر ملف GApps zip موجود</string>
     <string name="download_magisk">تحميل Magisk</string>
     <string name="reboot_recovery">اعادة التشغيل إلى وضع الإسترداد</string>
+    <string name="credits">الإمضاء</string>
     <!-- GApps -->
     <string name="gapps_ok">تم تثبيت GApps!</string>
     <string name="gapps_warning">لم يتم تثبيت GApps!</string>

@@ -47,6 +47,7 @@
     <string name="choose_gapps_zip">Выбор существующего zip-файл GApps</string>
     <string name="download_magisk">Скачать Magisk</string>
     <string name="reboot_recovery">Перезагрузить в рекавери</string>
+    <string name="credits">Создатели</string>
     <!-- GApps -->
     <string name="gapps_ok">GApps установлены!</string>
     <string name="gapps_warning">GApps не установлены!</string>

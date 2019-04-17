@@ -27,7 +27,7 @@
     <string name="download_cancelled_title">ダウンロードがキャンセルされました</string>
     <string name="download_complete_msg_gapps">GApps は正常にダウンロードされました。フラッシュダイアログで GApps オプションを選択してROMと一緒に GApps をフラッシュして下さい。</string>
     <string name="download_complete_msg_magisk">Magisk は正常にダウンロードされました。フラッシュダイアログで Magisk オプションを選択してROMと一緒に Magisk をフラッシュして下さい。</string>
-    <string name="download_complete_msg_ota">アップデートは正常にダウンロードされました。リカバリーに再起動してインストールするには「Flash」を押して下さい。</string>
+    <string name="download_complete_msg_ota">更新は正常にダウンロードされました。リカバリーに再起動してインストールするには「Flash」を押して下さい。</string>
     <string name="download_complete_title">ダウンロードが完了しました</string>
     <string name="download_confirm_msg">ダウンロード前にご確認ください: \n\nAndroid バージョン\t\t: \t%1$s\nCPU プラットフォーム\t\t\t: \t%2$s\nパッケージ種別\t\t: \t%3$s</string>
     <string name="download_interrupted_msg">%1$s によりダウンロードが中断されました</string>
@@ -47,6 +47,7 @@
     <string name="choose_gapps_zip">保存されている GApps の ZIP ファイルを選択して下さい</string>
     <string name="download_magisk">Magisk のダウンロード</string>
     <string name="reboot_recovery">リカバリーへ再起動</string>
+    <string name="credits">クレジット</string>
     <!-- GApps -->
     <string name="gapps_ok">GApps がインストールされました!</string>
     <string name="gapps_warning">GApps がインストールされませんでした!</string>
@@ -72,7 +73,7 @@
     <string name="flash_magisk">Magisk のフラッシュ</string>
     <string name="my_device">端末</string>
     <string name="no_update_available">利用可能な更新はありません</string>
-    <string name="update_available1">アップデート可能です\n%s(%s)</string>
+    <string name="update_available1">更新可能です\n%s(%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">無効</string>
@@ -85,7 +86,7 @@
     <string name="magisk_stable">安定版のみ</string>
     <string name="magisk_beta">ベータ版のみ</string>
     <string name="hour">1時間毎</string>
-    <string name="interval_title">アップデートのスケジュールを確認</string>
+    <string name="interval_title">更新のスケジュールを確認</string>
     <string name="onboot">起動時</string>
     <string name="preferred_type">お勧めのビルドタイプ</string>
     <string name="twelve_hours">12時間毎</string>

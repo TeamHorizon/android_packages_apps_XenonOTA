@@ -47,6 +47,7 @@
     <string name="choose_gapps_zip">選擇現有的 GApps ZIP 檔案</string>
     <string name="download_magisk">下載 Magisk</string>
     <string name="reboot_recovery">重新啟動至 Recovery 模式</string>
+    <string name="credits">感謝</string>
     <!-- GApps -->
     <string name="gapps_ok">GApps 已安裝!</string>
     <string name="gapps_warning">GApps 尚未安裝！</string>
