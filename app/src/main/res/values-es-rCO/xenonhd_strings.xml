@@ -28,6 +28,7 @@
     <!-- Navigation -->
     <string name="title_rom">ROM</string>
     <!-- Notifications -->
+    <string name="xenonota_channel">Notificaciones XenonOTA</string>
     <string name="xenonota_channel_description">Notificaciones sobre nuevas actualizaciones de XenonHD</string>
     <!-- ROM -->
     <string name="changelog_title">Lista de cambios</string>
@@ -38,5 +39,6 @@
     <string name="twelve_hours">Cada 12 Horas</string>
     <string name="twentyfour_hours">Cada 24 horas</string>
     <!-- Toast -->
+    <string name="check_update_failed">No se puede comprobar la actualización. Comprueba tu conexión a Internet y si tu dispositivo está oficialmente soportado</string>
     <string name="update_available">Hay actualizaciones disponibles!</string>
 </resources>

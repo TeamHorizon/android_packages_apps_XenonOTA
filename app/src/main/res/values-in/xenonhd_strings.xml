@@ -23,6 +23,8 @@
     <!-- Navigation -->
     <!-- Notifications -->
     <!-- ROM -->
+    <string name="changelog_title">Perubahan</string>
     <!-- Settings -->
+    <string name="disabled">Dimatikan</string>
     <!-- Toast -->
 </resources>

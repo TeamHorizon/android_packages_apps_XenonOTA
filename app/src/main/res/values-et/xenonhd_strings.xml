@@ -20,25 +20,84 @@
     <string name="app_title">XenonHD Uuendused</string>
     <!-- Dialogs -->
     <string name="cancel">Tühista</string>
+    <string name="close">Sulge</string>
+    <string name="confirm">Kinnita</string>
     <string name="dialog_message">Uuenduste kontrollimine, palun oodake…</string>
+    <string name="download_cancelled_msg">Allalaadimine on tühistatud</string>
+    <string name="download_cancelled_title">Allalaadimine katkestatud</string>
+    <string name="download_complete_msg_gapps">GApps on edukalt alla laaditud. Flash GApps koos ROMiga, valides Flashi dialoogis GApps-suvandi</string>
+    <string name="download_complete_msg_magisk">Magisk allalaadimine õnnestus. Flash Magisk koos ROMiga, valides Flash dialoogis Magisk</string>
+    <string name="download_complete_msg_ota">Värskendus on edukalt alla laaditud. Vajuta \"Flash\", et taaskäivitada ja installida taasterežiimis</string>
+    <string name="download_complete_title">Allalaadimine lõpetatud</string>
+    <string name="download_confirm_msg">Enne allalaadimist kinnitage palun:\n\nAndroid versioon\t\t:\t%1$s\nCPU platvorm\t\t\t:\t%2$s\nPaketi variant\t\t:\t%3$s</string>
+    <string name="download_interrupted_msg">Allalaadimine on katkestatud %1$s tõttu</string>
+    <string name="download_interrupted_title">Allalaadimine katkestati</string>
+    <string name="failed">Ebaõnnestus</string>
+    <string name="flash_message">Kas soovite taaskäivitada ja installida allalaaditud zipi?</string>
+    <string name="magisk_check">Uusima Magisk versiooni kontrollimine…</string>
+    <string name="magisk_download_completed">Magisk allalaadimine õnnestus. Nüüd saate selle ROMiga kohe flash-i teha</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) saadaval.\nKas soovite selle alla laadida?</string>
+    <string name="open_in_browser">Ava brauseris</string>
+    <string name="reboot_warning">Kas soovite alglaadimise taaskäivitada?</string>
+    <string name="verification_failed">Kinnitamine ebaõnnestus</string>
+    <string name="verifying_package">Paketi kinnitamine…</string>
     <!-- Downloader -->
+    <string name="downloading">Allalaadimine…</string>
     <!-- Dropdowns -->
+    <string name="choose_gapps_zip">Valige olemasolev GApps-i zip-fail</string>
+    <string name="download_magisk">Laadi alla Magisk</string>
     <string name="reboot_recovery">Taaskäivita taastamise režiimi</string>
+    <string name="credits">Laenud</string>
     <!-- GApps -->
+    <string name="gapps_ok">GApps on paigaldatud!</string>
+    <string name="gapps_warning">GApps on paigaldamatta!</string>
+    <string name="latest_release_msg">Viimane väljaanne %1$s - %2$s</string>
+    <string name="loading">Laadib...</string>
     <!-- Navigation -->
+    <string name="title_gapps">GApps</string>
     <string name="title_rom">ROM</string>
+    <string name="title_settings">Seaded</string>
     <!-- Notifications -->
+    <string name="notification_message">Uus versioon on saadaval!</string>
+    <string name="notification_title">XenonHD Uuendused</string>
     <string name="xenonota_channel">XenonOTA teated</string>
     <string name="xenonota_channel_description">Teavitused uute XenonHD uuenduste kohta</string>
     <!-- ROM -->
     <string name="changelog_title">Muudatuste logi</string>
     <string name="check_update_title">Kontrolli uuendusi</string>
+    <string name="current_version">Kasutuselolev versioon:</string>
+    <string name="download">Laadi alla</string>
+    <string name="flash">Flash</string>
+    <string name="flash_clean">Puhastage flash</string>
+    <string name="flash_gapps">Flash GApps</string>
+    <string name="flash_magisk">Flash Magisk</string>
+    <string name="my_device">Seade</string>
+    <string name="no_update_available">Uusi värskendusi pole saadaval</string>
+    <string name="update_available1">Uuendus saadaval!\n%s (%s)</string>
+    <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Keelatud</string>
+    <string name="rom_latest">Viimased (Ametlikud &amp; Katselised)</string>
+    <string name="rom_official">Ainult ametlik</string>
+    <string name="rom_experimental">Ainult katseline</string>
+    <string name="gapps_variant">GApps variant</string>
+    <string name="magisk_variant">Magisk variant</string>
+    <string name="magisk_latest">Viimased (Stabiilne &amp; Beeta)</string>
+    <string name="magisk_stable">Ainult stabiilsed</string>
+    <string name="magisk_beta">Ainult beeta</string>
     <string name="hour">Iga tund</string>
+    <string name="interval_title">Vaadake värskenduste ajakava</string>
+    <string name="onboot">Käivitamisel</string>
+    <string name="preferred_type">Eelistatud ehitustüüp</string>
     <string name="twelve_hours">Iga 12 tunni järel</string>
     <string name="twentyfour_hours">Iga 24 tunni järelt</string>
     <!-- Toast -->
+    <string name="autoupdate_disabled">Automaatne uuenduste kontroll on keelatud</string>
+    <string name="autoupdate_enabled">Automaatne uuenduste kontroll on lubatud</string>
     <string name="check_update_failed">Ei saa värskendusi kontrollida. Kontrollige oma internetiühendust ja kas sinu seade on ametlikult toetatud</string>
+    <string name="gapps_set">Gapps rada seatud %s</string>
+    <string name="magisk_error">Ei saa kätte viimast Magisk linki</string>
+    <string name="permission_not_enabled">XenonOTAl pole õigust failide salvestamiseks. Esmalt lubage salvestusjuurdepääs</string>
+    <string name="toast_message">Brauserit pole installitud</string>
     <string name="update_available">Värskendus saadaval!</string>
 </resources>
