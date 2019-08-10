@@ -17,20 +17,87 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App -->
     <string name="app_name">XenonOTA</string>
+    <string name="app_title">Оновлення XenonHD</string>
     <!-- Dialogs -->
+    <string name="cancel">Скасувати</string>
+    <string name="close">Закрити</string>
+    <string name="confirm">Підтвердити</string>
     <string name="dialog_message">Перевірка наявності оновлень, зачекайте...</string>
+    <string name="download_cancelled_msg">Завантаження буде скасовано</string>
+    <string name="download_cancelled_title">Завантаження скасовано</string>
+    <string name="download_complete_msg_gapps">GApps успішно завантажені. Прошийте GApps разом з прошивкою, вибравши GApps в діалоговому вікні</string>
+    <string name="download_complete_msg_magisk">Magisk успішно завантажений. Прошийте Magisk разом з прошивкою, вибравши Magisk в діалоговому вікні</string>
+    <string name="download_complete_msg_ota">Оновлення успішно завантажено. Натисніть «Прошити» для перезавантаження і установки в рекавери</string>
+    <string name="download_complete_title">Завантаження завершено</string>
+    <string name="download_confirm_msg">Будь ласка, підтвердіть перед завантаженням:\n\nВерсія Android\t\t:\t%1$s\nПлатформа ЦП\t\t\t:\t%2$s\nВаріант пакета\t\t:\t%3$s</string>
+    <string name="download_interrupted_msg">Завантаження було перервано через %1$s</string>
+    <string name="download_interrupted_title">Завантаження перервано</string>
+    <string name="failed">Не вдалося</string>
+    <string name="flash_message">Ви хочете перезавантажити та встановити завантажений zip?</string>
+    <string name="magisk_check">Перевірка останньої версії Magisk…</string>
+    <string name="magisk_download_completed">Magisk завантажений. Можете прошити разом з прошивкою зараз</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) доступний.\nВи хочете завантажити його?</string>
+    <string name="open_in_browser">Відкрити в браузері</string>
+    <string name="reboot_warning">Ви хочете завантажитися у режим відновлення?</string>
+    <string name="verification_failed">Не вдалося виконати перевірку</string>
+    <string name="verifying_package">Перевірка пакета…</string>
     <!-- Downloader -->
+    <string name="downloading">Завантаження...</string>
     <!-- Dropdowns -->
+    <string name="choose_gapps_zip">Виберіть існуючий zip-файл GApps</string>
+    <string name="download_magisk">Завантажити Magisk</string>
+    <string name="reboot_recovery">Перезантаження у режим відновлення</string>
+    <string name="credits">Розробники</string>
     <!-- GApps -->
+    <string name="gapps_ok">GApps встановлено!</string>
+    <string name="gapps_warning">GApps не встановлено!</string>
+    <string name="latest_release_msg">Останній реліз за %1$s %2$s</string>
+    <string name="loading">Завантаження...</string>
     <!-- Navigation -->
+    <string name="title_gapps">GApps</string>
+    <string name="title_rom">Прошивка</string>
+    <string name="title_settings">Налаштування</string>
     <!-- Notifications -->
+    <string name="notification_message">Доступна нова версія!</string>
+    <string name="notification_title">Оновлення XenonHD</string>
+    <string name="xenonota_channel">Сповіщення XenonOTA</string>
+    <string name="xenonota_channel_description">Сповіщення про нові оновлення XenonHD</string>
     <!-- ROM -->
     <string name="changelog_title">Список змін</string>
     <string name="check_update_title">Перевірка оновлень</string>
+    <string name="current_version">Поточна версія:</string>
+    <string name="download">Завантажити</string>
+    <string name="flash">Прошити</string>
+    <string name="flash_clean">Прошивка з повною очисткою</string>
+    <string name="flash_gapps">Прошити GApps</string>
+    <string name="flash_magisk">Прошити Magisk</string>
+    <string name="my_device">Пристрій</string>
+    <string name="no_update_available">Оновлень немає</string>
+    <string name="update_available1">Доступно оновлення!\n%s (%s)</string>
+    <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Вимкнено</string>
+    <string name="rom_latest">Останні (офіційні &amp; експериментальні)</string>
+    <string name="rom_official">Тільки офіційні</string>
+    <string name="rom_experimental">Тільки експериментальні</string>
+    <string name="gapps_variant">Варіанти GApps</string>
+    <string name="magisk_variant">Варіанти Magisk</string>
+    <string name="magisk_latest">Останні (стабільна &amp; бета)</string>
+    <string name="magisk_stable">Тільки стабільна</string>
+    <string name="magisk_beta">Тільки бета</string>
     <string name="hour">Кожну годину</string>
+    <string name="interval_title">Перевірити розклад оновлень</string>
+    <string name="onboot">При завантаженні</string>
+    <string name="preferred_type">Бажаний тип збірки</string>
     <string name="twelve_hours">Кожні 12 годин</string>
     <string name="twentyfour_hours">Кожні 24 години</string>
     <!-- Toast -->
+    <string name="autoupdate_disabled">Автоматична перевірка на наявність оновлень відключена</string>
+    <string name="autoupdate_enabled">Автоматична перевірка на наявність оновлень ввімкнено</string>
+    <string name="check_update_failed">Неможливо перевірити наявність оновлень. Перевірте підключення до Інтернету та чи підтримується ваш пристрій офіційно</string>
+    <string name="gapps_set">Шлях до Gapps встановлено на %s</string>
+    <string name="magisk_error">Не вдається отримати останнє посилання Magisk</string>
+    <string name="permission_not_enabled">XenonOTA не має дозволу на збереження файлів. Будь ласка, дозвольте спочатку доступ до пам’яті</string>
+    <string name="toast_message">Браузер не встановлено</string>
+    <string name="update_available">Доступне оновлення!</string>
 </resources>

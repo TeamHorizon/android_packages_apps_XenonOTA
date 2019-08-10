@@ -25,18 +25,18 @@
     <string name="dialog_message">Проверка наличия обновлений, пожалуйста подождите...</string>
     <string name="download_cancelled_msg">Загрузка будет отменена</string>
     <string name="download_cancelled_title">Загрузка отменена</string>
-    <string name="download_complete_msg_gapps">GApps успешно загружены. Прошейте GApps вместе с ROM, выбрав GApps в диалоговом окне</string>
-    <string name="download_complete_msg_magisk">Magisk успешно загружен. Прошейте Magisk вместе с ROM, выбрав Magisk в диалоговом окне</string>
+    <string name="download_complete_msg_gapps">GApps успешно загружены. Прошейте GApps вместе с прошивкой, выбрав GApps в диалоговом окне</string>
+    <string name="download_complete_msg_magisk">Magisk успешно загружен. Прошейте Magisk вместе с прошивкой, выбрав Magisk в диалоговом окне</string>
     <string name="download_complete_msg_ota">Обновление успешно загружено. Нажмите «Прошить» для перезагрузки и установки в рекавери</string>
     <string name="download_complete_title">Загрузка завершена</string>
-    <string name="download_confirm_msg">Пожалуйста, подтвердите перед загрузкой: \n\nAndroid version\t\t:\t%1$s\nCPU platform\t\t\t:\t%2$s\nPackage variant\t\t:\t%3$s</string>
+    <string name="download_confirm_msg">Пожалуйста, подтвердите перед загрузкой:\n\nВерсия Android\t\t:\t%1$s\nПлатформа ЦП\t\t\t:\t%2$s\nВариант пакета\t\t:\t%3$s</string>
     <string name="download_interrupted_msg">Загрузка была прервана из-за %1$s</string>
     <string name="download_interrupted_title">Загрузка прервана</string>
     <string name="failed">Не выполнено</string>
     <string name="flash_message">Вы хотите перезагрузиться и установить загруженный zip?</string>
     <string name="magisk_check">Проверка последней версии Magisk…</string>
     <string name="magisk_download_completed">Magisk загружен. Можете прошить вместе с прошивкой сейчас</string>
-    <string name="magisk_message">Magisk v%1$s доступен. Скачать сейчас?</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) доступен.\nВы хотите скачать его?</string>
     <string name="open_in_browser">Открыть в браузере</string>
     <string name="reboot_warning">Вы хотите загрузиться в рекавери?</string>
     <string name="verification_failed">Проверка не удалась</string>
@@ -51,7 +51,7 @@
     <!-- GApps -->
     <string name="gapps_ok">GApps установлены!</string>
     <string name="gapps_warning">GApps не установлены!</string>
-    <string name="latest_release_msg">Последний релиз %1$s - %2$s</string>
+    <string name="latest_release_msg">Последний релиз за %1$s %2$s</string>
     <string name="loading">Загрузка…</string>
     <!-- Navigation -->
     <string name="title_gapps">Gapps</string>
@@ -73,7 +73,7 @@
     <string name="flash_magisk">Прошить Magisk</string>
     <string name="my_device">Устройство</string>
     <string name="no_update_available">Нет доступных обновлений</string>
-    <string name="update_available1">Доступно обновление! \n(%s)</string>
+    <string name="update_available1">Доступно обновление!\n%s (%s)</string>
     <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
     <string name="disabled">Отключено</string>

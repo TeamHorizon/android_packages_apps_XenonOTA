@@ -16,15 +16,88 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App -->
+    <string name="app_name">XenonOTA</string>
+    <string name="app_title">Pembaruan XenonHD</string>
     <!-- Dialogs -->
+    <string name="cancel">Membatalkan</string>
+    <string name="close">Dekat</string>
+    <string name="confirm">Memastikan</string>
+    <string name="dialog_message">Memeriksa pembaruan, harap tunggu...</string>
+    <string name="download_cancelled_msg">Unduhan telah dibatalkan</string>
+    <string name="download_cancelled_title">Unduhan dibatalkan</string>
+    <string name="download_complete_msg_gapps">GApps berhasil diunduh. Flash GApps bersama dengan ROM dengan memilih opsi GApps dalam dialog Flash</string>
+    <string name="download_complete_msg_magisk">Magisk berhasil diunduh. Flash Magisk bersama dengan ROM dengan memilih opsi Magisk di dialog Flash</string>
+    <string name="download_complete_msg_ota">Pembaruan berhasil diunduh. Tekan \"Flash\" untuk mem-boot ulang dan menginstal pemulihan</string>
+    <string name="download_complete_title">Pengunduhan selesai</string>
+    <string name="download_confirm_msg">Harap konfirmasikan sebelum mengunduh:\n\nAndroid versi\t\t:\t%1$s\nCPU platform\t\t\t:\t%2$s\nVarian paket\t\t:\t%3$s</string>
+    <string name="download_interrupted_msg">Unduhan telah terputus karena%1$s</string>
+    <string name="download_interrupted_title">Unduhan terputus</string>
+    <string name="failed">Gagal</string>
+    <string name="flash_message">Apakah Anda ingin memulai ulang dan menginstal zip yang diunduh?</string>
+    <string name="magisk_check">Memeriksa versi Magisk terbaru...</string>
+    <string name="magisk_download_completed">Magisk berhasil diunduh. Anda dapat menginstalnya dengan ROM sekarang</string>
+    <string name="magisk_message">Magisk v%1$s (%2$s) tersedia.\nApakah Anda ingin mengunduhnya?</string>
+    <string name="open_in_browser">Buka di browser</string>
+    <string name="reboot_warning">Apakah Anda ingin boot ke pemulihan?</string>
+    <string name="verification_failed">Verifikasi gagal</string>
+    <string name="verifying_package">Memverifikasi paket...</string>
     <!-- Downloader -->
+    <string name="downloading">Mengunduh...</string>
     <!-- Dropdowns -->
+    <string name="choose_gapps_zip">Pilih file zip GApps yang ada</string>
+    <string name="download_magisk">Unduh Magisk</string>
+    <string name="reboot_recovery">Reboot ke pemulihan</string>
+    <string name="credits">Kredit</string>
     <!-- GApps -->
+    <string name="gapps_ok">GApps telah diinstal!</string>
+    <string name="gapps_warning">GApps belum diinstal!</string>
+    <string name="latest_release_msg">Rilis terbaru untuk %1$s %2$s</string>
+    <string name="loading">Pemuatan…</string>
     <!-- Navigation -->
+    <string name="title_gapps">GApps</string>
+    <string name="title_rom">ROM</string>
+    <string name="title_settings">Pengaturan</string>
     <!-- Notifications -->
+    <string name="notification_message">Versi baru tersedia!</string>
+    <string name="notification_title">Pembaruan XenonHD</string>
+    <string name="xenonota_channel">Notifikasi XenonOTA</string>
+    <string name="xenonota_channel_description">Pemberitahuan tentang pembaruan XenonHD baru</string>
     <!-- ROM -->
-    <string name="changelog_title">Perubahan</string>
+    <string name="changelog_title">Changelog</string>
+    <string name="check_update_title">Periksa pembaruan</string>
+    <string name="current_version">Versi sekarang:</string>
+    <string name="download">Unduh</string>
+    <string name="flash">Flash</string>
+    <string name="flash_clean">Bersihkan flash</string>
+    <string name="flash_gapps">Flash GApps</string>
+    <string name="flash_magisk">Flash Magisk</string>
+    <string name="my_device">Alat</string>
+    <string name="no_update_available">Tidak ada pembaruan yang tersedia</string>
+    <string name="update_available1">Pembaruan tersedia!\n%s (%s)</string>
+    <string name="xenonhd_version">XenonHD %s</string>
     <!-- Settings -->
-    <string name="disabled">Dimatikan</string>
+    <string name="disabled">Dengan disabilitas</string>
+    <string name="rom_latest">Terbaru (Resmi &amp; Eksperimental)</string>
+    <string name="rom_official">Hanya resmi</string>
+    <string name="rom_experimental">Eksperimental saja</string>
+    <string name="gapps_variant">Varian GApps</string>
+    <string name="magisk_variant">Varian magisk</string>
+    <string name="magisk_latest">Terbaru (Stabil &amp; Beta)</string>
+    <string name="magisk_stable">Stabil saja</string>
+    <string name="magisk_beta">Hanya beta</string>
+    <string name="hour">Setiap jam</string>
+    <string name="interval_title">Periksa jadwal pembaruan</string>
+    <string name="onboot">Saat boot</string>
+    <string name="preferred_type">Tipe bangunan yang disukai</string>
+    <string name="twelve_hours">Setiap 12 jam</string>
+    <string name="twentyfour_hours">Setiap 24 jam</string>
     <!-- Toast -->
+    <string name="autoupdate_disabled">Otomatis memeriksa pembaruan dinonaktifkan</string>
+    <string name="autoupdate_enabled">Otomatis memeriksa pembaruan diaktifkan</string>
+    <string name="check_update_failed">Tidak dapat memeriksa pembaruan. Periksa koneksi internet Anda dan apakah perangkat Anda didukung secara resmi</string>
+    <string name="gapps_set">Jalur Gapps disetel ke%s</string>
+    <string name="magisk_error">Tidak dapat memperoleh tautan Magisk terbaru</string>
+    <string name="permission_not_enabled">XenonOTA tidak memiliki izin untuk menyimpan file. Tolong izinkan akses penyimpanan terlebih dahulu</string>
+    <string name="toast_message">Tidak ada browser yang diinstal</string>
+    <string name="update_available">Pembaruan tersedia!</string>
 </resources>
