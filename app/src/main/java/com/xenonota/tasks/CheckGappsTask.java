@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -80,37 +81,64 @@ public class CheckGappsTask extends AsyncTask<Void, Void, String> {
         if (cancel) return null;
 
         String version = null;
-        HttpURLConnection connection = null;
-        BufferedReader reader = null;
+        String gappsUrl = null;
+        HttpURLConnection connection1 = null;
+        HttpURLConnection connection2 = null;
+        BufferedReader reader1 = null;
+        BufferedReader reader2 = null;
         try{
-            URL url = new URL("https://api.github.com/repos/opengapps/" + DeviceConfig.getCPU() + "/releases/latest");
-            connection = (HttpURLConnection)url.openConnection();
-            connection.setRequestMethod("GET");
-            connection.setConnectTimeout(8000);
-            connection.setReadTimeout(8000);
-            InputStream in = connection.getInputStream();
-            reader = new BufferedReader(new InputStreamReader(in));
-            StringBuilder response = new StringBuilder();
+            URL listUrl = new URL("https://api.opengapps.org/list");
+            connection1 = (HttpURLConnection)listUrl.openConnection();
+            connection1.setRequestMethod("GET");
+            connection1.setConnectTimeout(8000);
+            connection1.setReadTimeout(8000);
+            InputStream in1 = connection1.getInputStream();
+            reader1 = new BufferedReader(new InputStreamReader(in1));
+            StringBuilder response1 = new StringBuilder();
             String line;
-            while((line = reader.readLine()) !=null){
-                response.append(line);
+            while((line = reader1.readLine()) !=null){
+                response1.append(line);
             }
-            String responseData = response.toString();
-            JSONObject json = new JSONObject(responseData);
-            version = json.getString("tag_name");
+            JSONObject archData = (new JSONObject(response1.toString())).getJSONObject("archs").getJSONObject(DeviceConfig.getCPU());
+            version = archData.getString("date");
+
+            URL downloadUrl = new URL("https://api.opengapps.org/download?arch=" + DeviceConfig.getCPU() + "&api=" + DeviceConfig.getRelease() + "&variant=" + GappsConfig.getVariant(frag.getContext()) + "&date=" + version);
+            connection2 = (HttpURLConnection)downloadUrl.openConnection();
+            connection2.setRequestMethod("GET");
+            connection2.setConnectTimeout(8000);
+            connection2.setReadTimeout(8000);
+            InputStream in = connection2.getInputStream();
+            reader2 = new BufferedReader(new InputStreamReader(in));
+            StringBuilder response2 = new StringBuilder();
+            while((line = reader2.readLine()) !=null){
+                response2.append(line);
+            }
+            gappsUrl = (new JSONObject(response2.toString())).getString("zip");
+            Log.e("GAPPS", "Version:" + version + " URL:" + gappsUrl);
             GappsConfig.setLatestVersion(version, frag.getContext());
+            GappsConfig.setURL(gappsUrl, frag.getContext());
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-            if(reader!=null){
+            if(reader1!=null){
                 try{
-                    reader.close();
+                    reader1.close();
                 }catch (IOException e){
                     e.printStackTrace();
                 }
             }
-            if(connection!=null){
-                connection.disconnect();
+            if(reader2!=null){
+                try{
+                    reader2.close();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+            if(connection1!=null){
+                connection1.disconnect();
+            }
+            if(connection2!=null){
+                connection2.disconnect();
             }
         }
 

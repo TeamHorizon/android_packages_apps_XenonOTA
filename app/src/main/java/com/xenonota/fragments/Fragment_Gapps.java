@@ -170,7 +170,7 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                downloadGApps("https://github.com/opengapps/" + DeviceConfig.getCPU() + "/releases/download/"+ GappsConfig .getLatestVersion(getContext()) + "/open_gapps-" + DeviceConfig.getCPU() + "-" + DeviceConfig.getRelease() + "-" + GappsConfig.getVariant(getContext()) + "-" + GappsConfig.getLatestVersion(getContext()) + ".zip");
+                downloadGApps(GappsConfig.getURL(getContext()));
                 dDialog.dismiss();
             }
         });
@@ -216,6 +216,8 @@ public class Fragment_Gapps extends Fragment implements Downloader.DownloaderCal
         if (getContext() == null) return;
 
         String filename = url.substring(url.lastIndexOf('/') + 1);
+        if (filename.contains("?"))
+            filename = filename.substring(0, filename.lastIndexOf("?"));
         String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + filename;
         Downloader downloader = new Downloader(getContext(), this);
         downloader.Start(url, filePath, filename, "GApps");
